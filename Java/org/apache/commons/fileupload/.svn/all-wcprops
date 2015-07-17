@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload
+END
+DiskFileUpload.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/DiskFileUpload.java
+END
+DefaultFileItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/DefaultFileItem.java
+END
+FileUploadException.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/FileUploadException.java
+END
+FileItemIterator.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/FileItemIterator.java
+END
+ProgressListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/ProgressListener.java
+END
+FileItemStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/FileItemStream.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/package.html
+END
+FileUploadBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/FileUploadBase.java
+END
+FileUpload.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/FileUpload.java
+END
+FileItemFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/FileItemFactory.java
+END
+FileItemHeadersSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/FileItemHeadersSupport.java
+END
+FileItemHeaders.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/FileItemHeaders.java
+END
+DefaultFileItemFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/DefaultFileItemFactory.java
+END
+RequestContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/RequestContext.java
+END
+MultipartStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/MultipartStream.java
+END
+ParameterParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/ParameterParser.java
+END
+FileItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/FileItem.java
+END

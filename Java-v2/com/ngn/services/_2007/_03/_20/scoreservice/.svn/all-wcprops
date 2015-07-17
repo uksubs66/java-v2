@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice
+END
+UpdateScoreIdsRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/UpdateScoreIdsRequest.java
+END
+FetchScoresResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/FetchScoresResponse.java
+END
+UpdateScoresResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/UpdateScoresResponse.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/ObjectFactory.java
+END
+ScoreService_Service.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/ScoreService_Service.java
+END
+FetchScoresByNetworkIdRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/FetchScoresByNetworkIdRequest.java
+END
+FetchScoresByClubRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/FetchScoresByClubRequest.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/package-info.java
+END
+UpdateScoresRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/UpdateScoresRequest.java
+END
+ScoreService.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/ScoreService.java
+END
+FetchHandicapScoresByHandicapIdRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/FetchHandicapScoresByHandicapIdRequest.java
+END
+FetchScoresByUserRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/FetchScoresByUserRequest.java
+END
+FetchScoresBySourceRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoreservice/FetchScoresBySourceRequest.java
+END

@@ -1,0 +1,168 @@
+/* 
+    Document   : buttons_rwd
+    Created on : Oct 28, 2013, 3:02:04 PM
+    Author     : Owner
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.ftB-36-White {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #000;
+    overflow:visible;
+    width:auto;
+    height: 36px;
+    width: 36px;
+    text-decoration: none;
+    position:relative;
+}
+
+.ftB-36-White:hover {
+    background-color: #4b4b4b;
+}
+
+.ftB-36-White span:first-child {
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url('../images/icons-36-white.png');
+    background-clip: content-box;
+    width:36px;
+    height: 36px;
+    
+}
+
+.ftB-36-White span+span {
+    position:absolute;
+    background-image: none;
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+    left:36px;
+    top:0px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #2b2b2b;
+    font-weight: bold;
+}
+
+.ftB-36-Right span+span {
+    position:absolute;
+    padding-left:5px;
+    left:auto;
+    right:36px;
+}
+
+.ftB-36-Menu span {
+    background-position: -1576px 0px;
+}
+
+.ftB-36-Edit span {
+    background-position: -1647px 0px;
+}
+
+.ftB-36-TCircle span {
+    background-position: -1508px 0px;
+}
+
+.ftB-36-TCircleDot span {
+    background-position: -1435px 0px;
+}
+
+.ftB-36-TSquare span {
+    background-position: -1364px 0px;
+}
+
+.ftB-36-TSquareCheck span {
+    background-position: -1293px 0px;
+}
+
+.ftB-36-Search span {
+    background-position: -1221px 0px;
+}
+
+.ftB-36-Home span {
+    background-position: -1150px 0px;
+}
+
+.ftB-36-Info span {
+    background-position: -1077px 0px;
+}
+
+.ftB-36-Alert span {
+    background-position: -1006px 0px;
+}
+
+.ftB-36-Star span {
+    background-position: -934px 0px;
+}
+
+.ftB-36-Grid span {
+    background-position: -862px 0px;
+}
+
+.ftB-36-Undo span {
+    background-position: -789px 0px;
+}
+
+.ftB-36-Redo span {
+    background-position: -718px 0px;
+}
+
+.ftB-36-Reload span {
+    background-position: -646px 0px;
+}
+
+.ftB-36-Settings span {
+    background-position: -575px 0px;
+}
+
+.ftB-36-Check span {
+    background-position: -503px 0px;
+}
+
+.ftB-36-Down span {
+    background-position: -430px 0px;
+}
+
+.ftB-36-Up span {
+    background-position: -359px 0px;
+}
+
+.ftB-36-Left span {
+    background-position: -287px 0px;
+}
+
+.ftB-36-Right span {
+    background-position: -216px 0px;
+}
+
+.ftB-36-Help span {
+    background-position: -2000px 0px;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat-Bold'), url(http://themes.googleusercontent.com/static/fonts/montserrat/v3/IQHow_FEYlDC4Gzy_m8fcgFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+}
+.ftB-36-Help:after {
+    background-image: none;
+    display:block;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:36px;
+    height:36px;
+    line-height:36px;
+    color:#fff;
+    content:"?";
+    font-size: 28px;
+    text-align: center;
+}
+
+.ftB-36-Close span {
+    background-position: -144px 0px;
+}

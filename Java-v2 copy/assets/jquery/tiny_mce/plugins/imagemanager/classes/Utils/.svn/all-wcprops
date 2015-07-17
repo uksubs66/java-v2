@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Utils
+END
+Error.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Utils/Error.php
+END
+JSON.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Utils/JSON.php
+END
+CSSCompressor.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Utils/CSSCompressor.php
+END
+ClientResources.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Utils/ClientResources.php
+END
+Logger.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Utils/Logger.class.php
+END
+JSCompressor.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Utils/JSCompressor.php
+END
+LanguagePack.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Utils/LanguagePack.php
+END
+ResultSet.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Utils/ResultSet.php
+END

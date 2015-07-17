@@ -1,0 +1,552 @@
+/***************************************************************************************
+ *   FormModel:  This class represents the elements of data to display in a form
+ *
+ *
+ *   created: 10/02/2003   jag
+ *
+ *   last updated:       ******* keep this accurate *******
+ *
+ *   04/14/10  Updated the rows & hiddenInputs array decleration so that it's not using unchecked raw type
+ *
+ ***************************************************************************************
+ */
+
+package com.foretees.client.form;
+
+import java.io.*;
+import java.util.ArrayList;
+import javax.servlet.http.*;
+
+import com.foretees.client.StyleSheetConstants;
+import com.foretees.client.attribute.HiddenInput;
+import com.foretees.client.action.ActionModel;
+import com.foretees.client.layout.Separator;
+import com.foretees.client.table.Cell;
+import com.foretees.client.table.RowModel;
+
+/**
+ ***************************************************************************************
+ *
+ *   This class holds information necessary to properly construct an html form.
+ *
+ ***************************************************************************************
+ **/
+
+public class FormModel {
+
+  // Initialize the attributes
+
+  public static String POST  = "post";
+  public static String GET  = "get";
+
+  private ArrayList<RowModel> rows = new ArrayList<RowModel>();
+  private ActionModel actions = new ActionModel();
+  private ArrayList<HiddenInput> hiddenInputs = new ArrayList<HiddenInput>();
+  private ArrayList helpSteps = new ArrayList();
+  private String name = "";
+  private String method = POST;
+  private String action = null;
+  private String target = null;
+  private String enctype = null;
+  private String styleShtClass = StyleSheetConstants.FORM_BGC;
+  private int numColumns = 1;
+
+  /**
+  ***************************************************************************************
+  *
+  * This constructor initializes the name and action for the form.
+  *
+  ***************************************************************************************
+  **/
+
+  public FormModel(String theName, String theAction)
+  {
+    theName = theName;
+    theAction = theAction;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * This constructor initializes the name, method and target for this form.
+  *
+  ***************************************************************************************
+  **/
+
+  public FormModel(String theName, String theMethod, String theTarget)
+  {
+    name = theName;
+    method = theMethod;
+    target = theTarget;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * This constructor initializes the name, method, target and enctype for this form.
+  *
+  ***************************************************************************************
+  **/
+
+  public FormModel(String theName, String theMethod, String theTarget, String theEncType)
+  {
+    name = theName;
+    method = theMethod;
+    target = theTarget;
+    enctype = theEncType;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Sets the name to use to identify this form.  This name should be unique for all forms
+  * when there are more than one on a page.
+  *
+  * @param theName the name to use to identify this form.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setName(String theName)
+  {
+
+    name = theName;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the name that identifies this form.
+  *
+  * @return the name.
+  *
+  ***************************************************************************************
+  **/
+
+  public String getName()
+  {
+
+    return name;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Sets the target to use when this form is submitted.
+  *
+  * @param theTarget the name to use for the target.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setTarget(String theTarget)
+  {
+
+    target = theTarget;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the name to use for the target of this form.
+  *
+  * @return the name for the target.
+  *
+  ***************************************************************************************
+  **/
+
+  public String getTarget()
+  {
+
+    return target;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Sets the enctype to use when this form is submitted.
+  *
+  * @param theMethod the method to use for this form.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setEncType(String theEncType)
+  {
+
+    enctype = theEncType;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the enctype to use when submitting this form
+  * @return the enctype to use when submitting the form.
+  *
+  ***************************************************************************************
+  **/
+
+  public String getEncType()
+  {
+
+    return enctype;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Sets the method to use when this form is submitted.
+  *
+  * @param theMethod the method to use for this form.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setMethod(String theMethod)
+  {
+
+    method = theMethod;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the method to use when submitting this form
+  * @return the method to use when submitting the form.
+  *
+  ***************************************************************************************
+  **/
+
+  public String getMethod()
+  {
+
+    return method;
+  }
+
+   /**
+  ***************************************************************************************
+  *
+  * Sets the style sheet class to use for this form.
+  *
+  * @param theBgColor the name of the style sheet class to use for this form.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setStyleSheetClass(String theClass)
+  {
+
+    styleShtClass = theClass;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the style sheet class to use for this form.
+  *
+  * @return the name of the style sheet class.
+  *
+  ***************************************************************************************
+  **/
+
+  public String getStyleSheetClass()
+  {
+
+    return styleShtClass;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Sets the action model to use for this form.
+  *
+  * @param theActions the actions to make available for this form.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setActions(ActionModel theActions)
+  {
+
+    actions = theActions;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the Action model that contains the actions for this form.
+  *
+  * @return the actions.
+  *
+  ***************************************************************************************
+  **/
+
+  public ActionModel getActions()
+  {
+
+    return actions;
+  }
+
+
+  /**
+  ***************************************************************************************
+  *
+  * Adds a hidden input field to the list of input fields needed for this form.
+  *
+  * @param theInput the hidden input field to add to the form.
+  *
+  ***************************************************************************************
+  **/
+
+  public void addHiddenInput(HiddenInput theInput)
+  {
+
+    hiddenInputs.add(theInput);
+  }
+
+   /**
+  ***************************************************************************************
+  *
+  * Creates a HiddenInput field and adds it to the list of input fields needed for this form.
+  *
+  * @param theName the name of the hidden field
+  * @param theValue the value of the hidden field
+  *
+  ***************************************************************************************
+  **/
+
+  public void addHiddenInput(String theName, String theValue)
+  {
+
+    HiddenInput input = new HiddenInput(theName, theValue);
+
+    hiddenInputs.add(input);
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the hidden input at the given index.
+  *
+  * @return the hidden input.
+  *
+  ***************************************************************************************
+  **/
+
+  public HiddenInput getHiddenInput(int theIndex)
+  {
+
+    return (HiddenInput)(hiddenInputs.get(theIndex));
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the number of hidden inputs for this form.
+  *
+  * @return the number of hidden inputs.
+  *
+  ***************************************************************************************
+  **/
+
+  public int numHiddenInputs()
+  {
+
+    return hiddenInputs.size();
+
+  }
+
+   /**
+  ***************************************************************************************
+  *
+  * Adds a row to the form that contains a html head rule.
+  *
+  * @param theSeparator the separator.
+  *
+  ***************************************************************************************
+  **/
+
+  public void addSeparator(Separator theSeparator)
+  {
+
+    RowModel row = new RowModel();
+
+    Cell cell = new Cell(theSeparator);
+    cell.setColSpan(this.numColumns);
+    cell.setStyleSheetClass("frm");
+
+    row.add(cell);
+    addRow(row);
+
+  }
+
+   /**
+  ***************************************************************************************
+  *
+  * Adds a row to the form.
+  *
+  * @param theRow the row to add to the form.
+  *
+  ***************************************************************************************
+  **/
+
+  public void addRow(RowModel theRow)
+  {
+
+    rows.add(theRow);
+
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the row at the given index.
+  *
+  * @return the hidden input.
+  *
+  ***************************************************************************************
+  **/
+
+  public RowModel getRow(int theIndex)
+  {
+
+    return (RowModel)(rows.get(theIndex));
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the number of rows for this form.
+  *
+  * @return the number of rows.
+  *
+  ***************************************************************************************
+  **/
+
+  public int numRows()
+  {
+
+    return rows.size();
+
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Sets the number of columns for this form.
+  *
+  * @param theNumColumns the number of columns for this form.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setNumColumns(int theNumColumns)
+  {
+
+    numColumns = theNumColumns;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the number of columns for this form.
+  *
+  * @return the number of columns.
+  *
+  ***************************************************************************************
+  **/
+
+  public int getNumColumns()
+  {
+
+    return numColumns;
+  }
+
+    /**
+  ***************************************************************************************
+  *
+  * Sets the steps for help text to use when displaying this form in the ui.
+  *
+  * @param theHelpSteps to display.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setHelpSteps(ArrayList theHelpSteps){
+
+    helpSteps = theHelpSteps;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the help steps to use when displaying this form in the ui
+  * in edit mode.
+  *
+  * @return the help steps.
+  *
+  *
+  ***************************************************************************************
+  **/
+
+  public ArrayList getHelpSteps(){
+
+    return helpSteps;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the row that has the given row id.
+  *
+  * @return the row model, null if a row is not found with that id.
+  *
+  ***************************************************************************************
+  **/
+
+  public RowModel getRow(String rowId)
+  {
+
+    RowModel row = null;
+    for (int i=0; i<rows.size(); i++)
+    {
+
+      RowModel nxtRow = (RowModel)rows.get(i);
+      if ((nxtRow.getId()).equals(rowId))
+      {
+        row = nxtRow;
+        break;
+      }
+    }
+    return row;
+
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Updates the form with the form data from the http reques.
+  *
+  * @param theStep the selected wizard step.
+  *
+  ***************************************************************************************
+  **/
+
+  public void update(HttpServletRequest request, HttpServletResponse response, PrintWriter out)
+  {
+
+
+    for (int i=0; i<this.numRows(); i++)
+    {
+
+      RowModel row = this.getRow(i);
+
+      if (row != null)
+      {
+        row.update(request, response, out);
+      }
+
+
+    }
+  }
+}

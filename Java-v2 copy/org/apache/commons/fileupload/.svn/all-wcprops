@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload
+END
+DiskFileUpload.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/DiskFileUpload.java
+END
+DefaultFileItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/DefaultFileItem.java
+END
+FileUploadException.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/FileUploadException.java
+END
+FileItemIterator.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/FileItemIterator.java
+END
+FileItemStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/FileItemStream.java
+END
+ProgressListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/ProgressListener.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/package.html
+END
+FileUploadBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/FileUploadBase.java
+END
+FileUpload.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/FileUpload.java
+END
+FileItemFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/FileItemFactory.java
+END
+FileItemHeadersSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/FileItemHeadersSupport.java
+END
+FileItemHeaders.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/FileItemHeaders.java
+END
+DefaultFileItemFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/DefaultFileItemFactory.java
+END
+MultipartStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/MultipartStream.java
+END
+ParameterParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/ParameterParser.java
+END
+RequestContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/RequestContext.java
+END
+FileItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/FileItem.java
+END

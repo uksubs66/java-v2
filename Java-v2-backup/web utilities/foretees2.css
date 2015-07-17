@@ -1,0 +1,100 @@
+input { cursor: hand;}
+
+.mteetime:active {text-decoration: underline; color: green}
+.mteetime:link {text-decoration: underline; color: green}
+.mteetime:visited {text-decoration: underline; color: green}
+.mteetime {color:green}
+
+.mlottery:active {text-decoration: underline; color: brown}
+.mlottery:link {text-decoration: underline; color: brown}
+.mlottery:visited {text-decoration: underline; color: brown}
+.mlottery {color:brown}
+
+.meventblue:active {text-decoration: underline; color: blue}
+.meventblue:link {text-decoration: underline; color: blue}
+.meventblue:visited {text-decoration: underline; color: blue}
+.meventblue {color:blue}
+
+.meventred:active {text-decoration: underline; color: red}
+.meventred:link {text-decoration: underline; color: red}
+.meventred:visited {text-decoration: underline; color: red}
+.meventred {color:red}
+
+.meventblack:active {text-decoration: underline; color: black}
+.meventblack:link {text-decoration: underline; color: black}
+.meventblack:visited {text-decoration: underline; color: black}
+.meventblack {color:black}
+
+.mlesson:active {text-decoration: underline; color: goldenrod}
+.mlesson:link {text-decoration: underline; color: goldenrod}
+.mlesson:visited {text-decoration: underline; color: goldenrod}
+.mlesson {color:goldenrod}
+
+.mWLsignup:active {text-decoration: underline; color: #114411}
+.mWLsignup:link {text-decoration: underline; color: #114411}
+.mWLsignup:visited {text-decoration: underline; color: #114411}
+.mWLsignup {color:#114411}
+
+#scrollUp {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 5px;
+    width: 48px;
+    height: 48px;
+    background-image: url('/v5/assets/images/scrollUp-green.png');/* ../images/scrollUp-green.png*/
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* Hack for <= IE8  */
+}
+#scrollUp:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* Hack for <= IE8 */
+}
+
+/* Invoice menu item */
+
+a.ftHasUnpaid {
+    color:firebrick !important;
+}
+
+a.ftHasPastDue {
+    margin:-5px;
+    padding:5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #FF3300;
+    box-shadow: 0 0 10px #FF3300;
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+    color:black !important;
+}
+
+@-webkit-keyframes glowing {
+  0% { background-color: #CC3300; -webkit-box-shadow: 0 0 3px #CC3300; }
+  50% { background-color: #FF3300; -webkit-box-shadow: 0 0 10px #FF3300; }
+  100% { background-color: #CC3300; -webkit-box-shadow: 0 0 3px #CC3300; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #CC3300; -moz-box-shadow: 0 0 3px #CC3300; }
+  50% { background-color: #FF3300; -moz-box-shadow: 0 0 10px #FF3300; }
+  100% { background-color: #CC3300; -moz-box-shadow: 0 0 3px #CC3300; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #CC3300; box-shadow: 0 0 3px #CC3300; }
+  50% { background-color: #FF3300; box-shadow: 0 0 10px #FF3300; }
+  100% { background-color: #CC3300; box-shadow: 0 0 3px #CC3300; }
+}
+
+@keyframes glowing {
+  0% { background-color: #CC3300; box-shadow: 0 0 3px #CC3300; }
+  50% { background-color: #FF3300; box-shadow: 0 0 10px #FF3300; }
+  100% { background-color: #CC3300; box-shadow: 0 0 3px #CC3300; }
+}
+
+

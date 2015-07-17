@@ -1,0 +1,417 @@
+/* 
+    Document   : jquery.foreTeesMemberSelect
+    Created on : Oct 20, 2013, 8:59:41 AM
+    Author     : John Kielkopf
+    Description:
+        CSS for member search/select widget/dialog
+*/
+
+.ftMs-memberSelect, .ftMemberPopupSelect {
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0; 
+}
+.ftPlOverlay, .ftMsPopupOverlay, .ftMs-pageOverlay {
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #000;
+    opacity: 0.6;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    z-index:99;
+}
+.ftMsPopupOverlay {
+    display:block;
+}
+.ftMsPopupOverlay.hide {
+    display:none;
+}
+.ftMemberPopupSelect {
+    top:34px;
+}
+.memberReservationSearch, .memberDiningReservationSearch, .memberSelectContainer, .ftPlMemberSelect {
+    position:relative;
+    max-width: 320px;
+    margin:auto;
+    height: 400px;
+}
+.memberSelectContainer .memberSelectPrompt {
+    display:none;
+}
+.memberSelectContainer .memberSelectPrompt .standard_button {
+    float:right;
+}
+.memberSelectContainer .memberSelectPrompt>div {
+    height:27px;
+    line-height: 27px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+#memberSelectPrompt+.ftMs-memberSelect {
+    top:33px;
+}
+#memberSelectPrompt {
+    line-height: 33px;
+    padding:0 5px 0 5px;
+    font-weight: bold;
+    text-align: center;
+}
+#memberSelectPrompt .ftS-closeButton {
+    display:none;
+}
+
+.ftPlSelect .standard_button {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display:block;
+    float:left;
+    width:48%;
+    margin:0 1% 5px 1%;
+}
+.ftPlSelect .standard_button:last-child:nth-child(odd) {
+    width:98%;
+}
+.ftPlMsTitle {
+    display:none;
+    border-bottom: 1px solid #aaa;
+    padding:0 3px 3px 3px;
+    margin-bottom: 3px;
+    line-height: 27px;
+    height:27px;
+}
+.ftMsPopup .ftPlMsTitle {
+    display:block;
+}
+.ftMsPopup {
+    display:block;
+    float:none;
+    position:absolute;
+    z-index:100;
+    background:#fff;
+    border:1px solid #aaa;
+    padding-top:3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width:290px;
+}
+.ftMsPopup.hide {
+    display:none;
+}
+.ftPlMsTitle a {
+    float:right;
+}
+.ftPlMsTitle > span {
+    display:block;
+    line-height: 27px;
+    font-weight: bold;
+}
+
+.ftMs-block {
+    display:none;
+    position:absolute;
+    top:32px;
+    right:0;
+    left:0;
+    bottom:0;
+    border: 1px solid #bbb;
+    margin: 0 2px 2px 2px;
+    background-color: #fff;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    overflow:hidden;
+}
+.ftMs-noTabs .ftMs-block {
+    top:0;
+    margin-top: 2px;
+}
+.ftMs-search, .ftMs-filter {
+    height:30px;
+    line-height: 30px;
+    position:relative;
+    white-space: nowrap;
+    padding:3px;
+}
+.ftMs-search+.ftMs-results {
+    top:36px;
+}
+.ftMs-search+.ftMs-filter {
+    position:absolute;
+    top:30px;
+    left:0;
+    right:0;
+}
+.ftMs-search+.ftMs-filter+.ftMs-filter {
+    position:absolute;
+    top:60px;
+    left:0;
+    right:0;
+}
+.ftMs-search+.ftMs-filter+.ftMs-results {
+    top:66px;
+}
+.ftMs-search+.ftMs-filter+.ftMs-filter+.ftMs-results {
+    top:94px;
+}
+
+.ftMs-search input, .ftMs-filter select {
+    height: 27px;
+    width:100%;
+    font-weight: bold; 
+    border: 1px solid grey;
+    background-color: #fff;
+    color: #000;
+    margin:0;
+    padding: 2px 20px 2px 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ftMs-filter select {
+    padding-right: 5px;
+}
+
+.ftMs-search input:hover,  .ftMs-filter select:hover {
+    -moz-box-shadow: 0px 0px 15px #0099ff;
+    -webkit-box-shadow: 0px 0px 15px #0099ff;
+    box-shadow: 0px 0px 15px #0099ff;
+}
+
+.ftMs-search .ftMs-clear {
+    cursor: pointer;
+    display:block;
+    background-image: url('../../images/grey_x_20x20.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width:20px;
+    height: 20px;
+    position:absolute;
+    right:6px;
+    top:8px;
+}
+
+.ftMs-results {
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+
+.ftMs-resultList {
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    overflow:auto;
+    /* overflow-y:scroll; */
+    -webkit-overflow-scrolling:touch;
+    overflow-scrolling:touch;
+}
+
+.ftMs-resultList * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ftMs-resultList>div {
+    cursor: pointer;
+    padding: 1px 0 1px 0;
+    text-align: left; /*  FOR IE8 compat. */
+}
+.ftMs-resultList>div:nth-child(even) {
+    background-color: #eee;
+}
+
+.ftMs-resultList>div>span {
+    display:block;
+    padding:0 6px 0 6px;
+    line-height: 30px;
+}
+.ftMs-resultList>div>span.selectHighlight {
+    background-color:#99CC66;
+}
+
+.ftMs-resultList>div.selected {
+    border:1px solid black;
+    padding:0;
+}
+.ftMs-resultList>div.selected>span {
+    padding:0 5px 0 5px;
+}
+.ftMs-resultList>div:hover {
+    background-color:#fcefa1;
+}
+
+.ftMs-overlay {
+    display:none;
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    right:0px;
+    left:0px;
+    background: #fff url('../../images/ajax-loader.gif') no-repeat center center;
+    opacity: 0.6;
+    z-index:1;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+
+.ftMs-results.inUse .ftMs-overlay {
+    display:block;
+}
+
+.ftMs-block.active {
+    display:block;
+}
+.ftMs-tabs {
+    position:absolute;
+    display:block;
+    width:100%;
+    list-style: none;
+    padding:0;
+    margin:0;
+    text-align: center;
+    z-index:1;
+}
+.ftMs-tabs>li {
+    display:inline-block;
+    padding:0;
+    margin:0 2px 0 2px;
+}
+.ftMs-tabs>li>div {
+    height:30px;
+    padding:0 5px 0 5px;
+    line-height: 30px;
+    cursor: pointer;
+    background-color: #888;
+    color:#fff;
+    border: 1px solid #bbb;
+    border-bottom: none;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ftMs-tabs>li>div.active {
+    background-color: #fff;
+    color:#000;
+    height:31px;
+    margin-bottom: -1px;
+    margin-top: 1px;
+    
+}
+.ftMs-resultList>div.ftMs-resultMessage {
+    border: 1px solid #bbb;
+    margin: 3px;
+    padding: 5px;
+    text-align: center;
+    background-color: #d0fd6d;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    cursor:default;
+}
+.ftMs-resultList>div.ftMs-resultMessage.ftMs-empty,
+.ftMs-resultList>div.ftMs-resultMessage.ftMs-overflow{
+    background-color: #ffff66;
+}
+.ftMs-resultList>div.ftMs-resultMessage>p {
+    margin:0;
+}
+.ftMs-resultList>div.ftMs-resultMessage>p+p {
+    margin-top:10px;
+}
+.ftMs-resultList>.ftMs-nameInUse {
+    color:#888; /* grey out in use */
+}
+.ftMs-listItem {
+    position:relative;
+    overflow:hidden;
+}
+.ftMs-resultList .ftMs-memNum {
+    position:absolute;
+    right:6px;
+}
+.ftMs-resultList.ftMs-hasGender .ftMs-memNum {
+    right:20px;
+}
+.ftMs-resultList.ftMs-hasMtypeAbrv .ftMs-memNum {
+    right:30px;
+}
+.ftMs-resultList.ftMs-hasGender.ftMs-hasMtypeAbrv .ftMs-memNum {
+    right:46px;
+}
+.ftMs-resultList .ftMs-mtypeAbrv, .ftMs-resultList .ftMs-gender {
+    position:absolute;
+    display:none;
+    right: 3px;
+    top: 7px;
+    color: #fff;
+    width:15px;
+    height:15px;
+    overflow:hidden;
+    text-align:center;
+    line-height:15px;
+    font-size:10px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color:#ccc;
+}
+.ftMs-resultList.ftMs-hasGender.ftMs-hasMtypeAbrv .ftMs-gender {
+    border-top-left-radius:0;
+    border-bottom-left-radius:0;
+    -moz-border-top-left-radius:0;
+    -moz-border-bottom-left-radius:0;
+}
+.ftMs-resultList .ftGndrF .ftMs-gender {
+    /* Female */
+    background-color: #ffc6ff;
+}
+.ftMs-resultList .ftGndrM .ftMs-gender {
+    /* Male */
+    background-color: #bad3ff;
+}
+.ftMs-resultList.ftMs-hasGender .ftMs-gender, .ftMs-resultList.ftMs-hasMtypeAbrv .ftMs-mtypeAbrv {
+    display:block;    
+}
+.ftMs-resultList.ftMs-hasMtypeAbrv .ftMs-mtypeAbrv {
+    width: 25px;
+    background-color:#bbb;
+}
+.ftMs-resultList.ftMs-hasGender.ftMs-hasMtypeAbrv .ftMs-mtypeAbrv {
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+    -moz-border-top-right-radius:0;
+    -moz-border-bottom-right-radius:0;
+    right:18px
+}
+.ftMs-resultList .ftMtypPri .ftMs-mtypeAbrv {
+    background-color:#df8787;
+}
+.ftMs-resultList .ftMtypSec .ftMs-mtypeAbrv {
+    background-color:#deadad;
+}
+.ftMs-resultList .ftMtypSpo .ftMs-mtypeAbrv {
+    background-color:#96afff;
+}
+
+
+

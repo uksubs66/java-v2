@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7400/com/foretees/api/clientReportTypes
+END
+visibleForeTeesAnnouncements.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/java/trunk/!svn/ver/7400/com/foretees/api/clientReportTypes/visibleForeTeesAnnouncements.java
+END
+upcommingBirthdays.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/6602/com/foretees/api/clientReportTypes/upcommingBirthdays.java
+END
+vipsWithReservations.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/java/trunk/!svn/ver/6617/com/foretees/api/clientReportTypes/vipsWithReservations.java
+END
+activityReservationsBarChart.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/java/trunk/!svn/ver/6602/com/foretees/api/clientReportTypes/activityReservationsBarChart.java
+END

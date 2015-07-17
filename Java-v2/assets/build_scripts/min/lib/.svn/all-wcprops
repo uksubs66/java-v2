@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib
+END
+closure-compiler-20130823.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/closure-compiler-20130823.jar
+END
+JSMin.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/JSMin.php
+END
+closure-stylesheets-20111230.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/closure-stylesheets-20111230.jar
+END
+Minify.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify.php
+END
+yuicompressor-2.4.8.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/yuicompressor-2.4.8.jar
+END
+closure-stylesheets-custom.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/closure-stylesheets-custom.jar
+END
+CSSmin.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/CSSmin.php
+END
+DooDigestAuth.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/DooDigestAuth.php
+END
+FirePHP.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/FirePHP.php
+END
+JSMinPlus.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/JSMinPlus.php
+END

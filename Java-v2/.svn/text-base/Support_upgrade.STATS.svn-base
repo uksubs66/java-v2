@@ -1,0 +1,2759 @@
+/***************************************************************************************
+ *   Support_upgrade:  This servlet will process the upgrade request from Support's Upgrade page.
+ *
+ *
+ *   This version used to gather stats for 2 days for Scamore Creek.
+ *
+ *
+ *
+ ***************************************************************************************
+ */
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.*;
+import java.sql.*;
+
+import com.foretees.common.parmCourse;
+import com.foretees.common.getParms;
+import com.foretees.common.parmClub;
+import com.foretees.common.getClub;
+
+
+public class Support_upgrade extends HttpServlet {
+
+
+ // Process the form request from support_upgrade.htm.....
+
+ public void doPost(HttpServletRequest req, HttpServletResponse resp)
+         throws ServletException, IOException {
+
+   resp.setContentType("text/html");
+   PrintWriter out = resp.getWriter();
+
+   Connection con = null;                  // init DB objects
+   ResultSet rs = null;
+
+   String support = "support";             // valid username
+
+   HttpSession session = null;
+
+
+   // Make sure user didn't enter illegally.........
+
+   session = req.getSession(false);  // Get user's session object (no new one)
+
+   if (session == null) {
+
+      invalidUser(out);            // Intruder - reject
+      return;
+   }
+
+   String userName = (String)session.getAttribute("user");   // get username
+
+   if (!userName.equals( support )) {
+
+      invalidUser(out);            // Intruder - reject
+      return;
+   }
+
+   //
+   // Load the JDBC Driver and connect to DB
+   //
+   String club = "sycamore";   // get club name
+
+   try {
+      con = SystemUtils.Connect(club);
+
+   }
+   catch (Exception exc) {
+
+      // Error connecting to db....
+
+      out.println("<HTML><HEAD><TITLE>DB Connection Error Received</TITLE></HEAD>");
+      out.println("<BODY><CENTER><H3>DB Connection Error</H3>");
+      out.println("<BR><BR>Unable to connect to the DB.");
+      out.println("<BR>Exception: "+ exc.getMessage());
+      out.println("<BR><BR> <A HREF=\"/v5/support_main.htm\">Return</A>.");
+      out.println("</CENTER></BODY></HTML>");
+      return;
+   }
+
+
+   long date = 20040801;
+   int year = 2004;
+   int month = 8;
+   int day = 1;
+
+   //
+   moveStats(con, club, date, year, month, day);         // go build stats
+
+
+   out.println("<HTML><HEAD><TITLE>Upgrade Complete</TITLE></HEAD>");
+   out.println("<BODY><CENTER><H3>Upgrade Complete</H3>");
+   out.println("<BR><BR>The stats have been added for " +club);
+   out.println("<BR><BR> <A HREF=\"/v5/support_main.htm\">Return</A>");
+   out.println("</CENTER></BODY></HTML>");
+ }
+
+
+ // *********************************************************
+ //  moveStats - gather stats from teepast and put in stats table
+ // *********************************************************
+
+   private static void moveStats(Connection con, String club, long sdate, int year, int month, int day) {
+
+
+   Statement stmt = null;
+   ResultSet rs = null;
+   ResultSet rs2 = null;
+   PreparedStatement pstmt1 = null;
+   PreparedStatement pstmt2 = null;
+   PreparedStatement pstmt3 = null;
+   PreparedStatement pstmt4 = null;
+
+
+   boolean guest = false;
+
+   int i  = 0;
+   int mm  = 0;
+   int dd = 0;
+   int yy = 0;
+   int hr = 0;
+   int min = 0;
+   int count = 0;
+
+   int show1 = 0;
+   int show2 = 0;
+   int show3 = 0;
+   int show4 = 0;
+   int show5 = 0;
+   int p91 = 0;
+   int p92 = 0;
+   int p93 = 0;
+   int p94 = 0;
+   int p95 = 0;
+
+   int mem9Unknown = 0;
+   int mship9Unknown = 0;
+   int mem18Unknown = 0;
+   int mship18Unknown = 0;
+
+   int cart9Rounds = 0;
+   int cady9Rounds = 0;
+   int wa9Rounds = 0;
+   int pc9Rounds = 0;
+   int cart18Rounds = 0;
+   int cady18Rounds = 0;
+   int wa18Rounds = 0;
+   int pc18Rounds = 0;
+
+   int [] tmode9R = new int [16];       // modes of trans (up to 16)
+   int [] tmode18R = new int [16];
+
+   int memnoshow9 = 0;
+   int memnoshow18 = 0;
+   int gstnoshow9 = 0;
+   int gstnoshow18 = 0;
+
+   int other9Rounds = 0;
+   int other18Rounds = 0;
+
+   int mem1Rounds9 = 0;
+   int mem2Rounds9 = 0;
+   int mem3Rounds9 = 0;
+   int mem4Rounds9 = 0;
+   int mem5Rounds9 = 0;
+   int mem6Rounds9 = 0;
+   int mem7Rounds9 = 0;
+   int mem8Rounds9 = 0;
+   int mem1Rounds18 = 0;
+   int mem2Rounds18 = 0;
+   int mem3Rounds18 = 0;
+   int mem4Rounds18 = 0;
+   int mem5Rounds18 = 0;
+   int mem6Rounds18 = 0;
+   int mem7Rounds18 = 0;
+   int mem8Rounds18 = 0;
+
+   int mship1Rounds9 = 0;
+   int mship2Rounds9 = 0;
+   int mship3Rounds9 = 0;
+   int mship4Rounds9 = 0;
+   int mship5Rounds9 = 0;
+   int mship6Rounds9 = 0;
+   int mship7Rounds9 = 0;
+   int mship8Rounds9 = 0;
+   int mship1Rounds18 = 0;
+   int mship2Rounds18 = 0;
+   int mship3Rounds18 = 0;
+   int mship4Rounds18 = 0;
+   int mship5Rounds18 = 0;
+   int mship6Rounds18 = 0;
+   int mship7Rounds18 = 0;
+   int mship8Rounds18 = 0;
+
+   //
+   //  Arrays for guest rounds
+   //
+   int [] g9Rounds = new int [36];     // guest 9 hole rounds
+   int [] g18Rounds = new int [36];    // guest 18 hole rounds
+
+   int multi = 0;                 // multiple course support
+   int index= 0;
+   int count2 = 0;                 // number of courses
+
+
+   //
+   //  Array to hold the course names
+   //
+   String [] course = new String [20];                     // max of 20 courses per club
+
+   String courseName = "";        // course names
+
+   String player1 = "";
+   String player2 = "";
+   String player3 = "";
+   String player4 = "";
+   String player5 = "";
+   String p1cw = "";
+   String p2cw = "";
+   String p3cw = "";
+   String p4cw = "";
+   String p5cw = "";
+   String username1 = "";
+   String username2 = "";
+   String username3 = "";
+   String username4 = "";
+   String username5 = "";
+   String user1 = "";
+   String user2 = "";
+   String user3 = "";
+   String user4 = "";
+   String user5 = "";
+
+   String mem1 = "";
+   String mem2 = "";
+   String mem3 = "";
+   String mem4 = "";
+   String mem5 = "";
+   String mem6 = "";
+   String mem7 = "";
+   String mem8 = "";
+   String mship1 = "";
+   String mship2 = "";
+   String mship3 = "";
+   String mship4 = "";
+   String mship5 = "";
+   String mship6 = "";
+   String mship7 = "";
+   String mship8 = "";
+
+   String mtype = "";
+   String mship = "";
+
+   //
+   //  parm block to hold the club parameters
+   //
+   parmClub parm = new parmClub();          // allocate a parm block
+
+   //
+   //  parm block to hold the course parameters
+   //
+   parmCourse parmc = new parmCourse();          // allocate a parm block
+
+   //
+   //   Get multi option, member types, and guest types
+   //
+   try {
+      getClub.getParms(con, parm);
+   }
+   catch (Exception e1) {
+      //
+      //  save error message in /" +rev+ "/error.txt
+      //
+      String errorMsg = "Error1 in SystemUtils moveStats for club " +club+ ": ";
+      errorMsg = errorMsg + e1;                                 // build error msg
+
+      SystemUtils.logError(errorMsg);                                       // log it
+   }
+
+   //
+   //   Remove any guest types that are null - for tests below
+   //
+   for (i = 0; i < 36; i++) {
+
+      if (parm.guestN[i].equals( "" )) {
+
+         parm.guestN[i] = "$@#!^&*";      // make so it won't match player name
+      }
+   }
+
+   //
+   //   Check for multiple courses
+   //
+   multi = parm.multi;
+   count2 = 1;                  // init to 1 course
+
+   if (multi != 0) {           // if multiple courses supported for this club
+
+      while (index < 20) {
+
+         course[index] = "";       // init the course array
+         index++;
+      }
+
+      index = 0;
+
+      try {
+         //
+         //  Get the names of all courses for this club
+         //
+         stmt = con.createStatement();        // create a statement
+
+         rs = stmt.executeQuery("SELECT courseName " +
+                                "FROM clubparm2 WHERE first_hr != 0");
+
+         while (rs.next() && index < 20) {
+
+            courseName = rs.getString(1);
+
+            course[index] = courseName;      // add course name to array
+            index++;
+         }
+         stmt.close();
+         count2 = index;                      // number of courses
+      }
+      catch (Exception exc) {
+         //
+         //  save error message in /" +rev+ "/error.txt
+         //
+         String errorMsg2 = "Error2 in SystemUtils moveStats for club " +club+ ": ";
+         errorMsg2 = errorMsg2 + exc;                              // build error msg
+
+         SystemUtils.logError(errorMsg2);                                       // log it
+      }
+   }
+
+   courseName = "";            // init as not multi
+   index = 0;
+
+   //
+   // execute searches and display for each course (count2 = number of courses, or 1 if only one)
+   //
+   while (count2 > 0) {
+
+      if (multi != 0) {           // if multiple courses supported for this club
+
+         courseName = course[index];      // get first course name
+      }
+
+      //
+      // use the date and course to search the tee times tables
+      //
+      //
+      //  init count fields for each course
+      //
+      mem9Unknown = 0;
+      mship9Unknown = 0;
+      mem18Unknown = 0;
+      mship18Unknown = 0;
+
+      cart9Rounds = 0;
+      cady9Rounds = 0;
+      wa9Rounds = 0;
+      pc9Rounds = 0;
+      cart18Rounds = 0;
+      cady18Rounds = 0;
+      wa18Rounds = 0;
+      pc18Rounds = 0;
+
+      memnoshow9 = 0;
+      memnoshow18 = 0;
+      gstnoshow9 = 0;
+      gstnoshow18 = 0;
+
+      other9Rounds = 0;
+      other18Rounds = 0;
+
+      mem1Rounds9 = 0;
+      mem2Rounds9 = 0;
+      mem3Rounds9 = 0;
+      mem4Rounds9 = 0;
+      mem5Rounds9 = 0;
+      mem6Rounds9 = 0;
+      mem7Rounds9 = 0;
+      mem8Rounds9 = 0;
+      mem1Rounds18 = 0;
+      mem2Rounds18 = 0;
+      mem3Rounds18 = 0;
+      mem4Rounds18 = 0;
+      mem5Rounds18 = 0;
+      mem6Rounds18 = 0;
+      mem7Rounds18 = 0;
+      mem8Rounds18 = 0;
+
+      mship1Rounds9 = 0;
+      mship2Rounds9 = 0;
+      mship3Rounds9 = 0;
+      mship4Rounds9 = 0;
+      mship5Rounds9 = 0;
+      mship6Rounds9 = 0;
+      mship7Rounds9 = 0;
+      mship8Rounds9 = 0;
+      mship1Rounds18 = 0;
+      mship2Rounds18 = 0;
+      mship3Rounds18 = 0;
+      mship4Rounds18 = 0;
+      mship5Rounds18 = 0;
+      mship6Rounds18 = 0;
+      mship7Rounds18 = 0;
+      mship8Rounds18 = 0;
+
+      //
+      //  init the guest round arrays
+      //
+      for (i = 0; i < 36; i++) {
+
+         g9Rounds[i] = 0;
+         g18Rounds[i] = 0;
+      }
+
+      //
+      //  Init the Modes of Trans arrays
+      //
+      for (i = 0; i < 16; i++) {
+         tmode9R[i] = 0;
+         tmode18R[i] = 0;
+      }
+
+      //
+      //   Get tee times for yesterday
+      //
+      try {
+
+         //
+         //  Get the System Parameters for this Course
+         //
+         getParms.getCourse(con, parmc, courseName);
+
+         //
+         //  build an entry in the stats table
+         //
+         pstmt2 = con.prepareStatement (
+            "INSERT INTO stats2 (date, year, month, day, course, " +
+             "mem1Rounds9, mem1Rounds18, mem2Rounds9, mem2Rounds18, " +
+             "mem3Rounds9, mem3Rounds18, mem4Rounds9, mem4Rounds18, " +
+             "mem5Rounds9, mem5Rounds18, mem6Rounds9, mem6Rounds18, " +
+             "mem7Rounds9, mem7Rounds18, mem8Rounds9, mem8Rounds18, " +
+             "gst1Rounds9, gst1Rounds18, gst2Rounds9, gst2Rounds18, " +
+             "gst3Rounds9, gst3Rounds18, gst4Rounds9, gst4Rounds18, " +
+             "gst5Rounds9, gst5Rounds18, gst6Rounds9, gst6Rounds18, " +
+             "gst7Rounds9, gst7Rounds18, gst8Rounds9, gst8Rounds18, " +
+             "mship1Rounds9, mship1Rounds18, mship2Rounds9, mship2Rounds18, " +
+             "mship3Rounds9, mship3Rounds18, mship4Rounds9, mship4Rounds18, " +
+             "mship5Rounds9, mship5Rounds18, mship6Rounds9, mship6Rounds18, " +
+             "mship7Rounds9, mship7Rounds18, mship8Rounds9, mship8Rounds18, " +
+             "otherRounds9, otherRounds18, cartsRounds9, cartsRounds18, " +
+             "caddyRounds9, caddyRounds18, pullcartRounds9, pullcartRounds18, " +
+             "walkRounds9, walkRounds18, memnoshow9, memnoshow18, " +
+             "gstnoshow9, gstnoshow18, mem9unknown, mem18unknown, mship9unknown, mship18unknown, " +
+             "gst9Rounds9, gst9Rounds18, gst10Rounds9, gst10Rounds18, " +
+             "gst11Rounds9, gst11Rounds18, gst12Rounds9, gst12Rounds18, " +
+             "gst13Rounds9, gst13Rounds18, gst14Rounds9, gst14Rounds18, " +
+             "gst15Rounds9, gst15Rounds18, gst16Rounds9, gst16Rounds18, " +
+             "gst17Rounds9, gst17Rounds18, gst18Rounds9, gst18Rounds18, " +
+             "gst19Rounds9, gst19Rounds18, gst20Rounds9, gst20Rounds18, " +
+             "gst21Rounds9, gst21Rounds18, gst22Rounds9, gst22Rounds18, " +
+             "gst23Rounds9, gst23Rounds18, gst24Rounds9, gst24Rounds18, " +
+             "gst25Rounds9, gst25Rounds18, gst26Rounds9, gst26Rounds18, " +
+             "gst27Rounds9, gst27Rounds18, gst28Rounds9, gst28Rounds18, " +
+             "gst29Rounds9, gst29Rounds18, gst30Rounds9, gst30Rounds18, " +
+             "gst31Rounds9, gst31Rounds18, gst32Rounds9, gst32Rounds18, " +
+             "gst33Rounds9, gst33Rounds18, gst34Rounds9, gst34Rounds18, " +
+             "gst35Rounds9, gst35Rounds18, gst36Rounds9, gst36Rounds18, " +
+             "tmode1R9, tmode1R18, tmode2R9, tmode2R18, tmode3R9, tmode3R18, tmode4R9, tmode4R18, " +
+             "tmode5R9, tmode5R18, tmode6R9, tmode6R18, tmode7R9, tmode7R18, tmode8R9, tmode8R18, " +
+             "tmode9R9, tmode9R18, tmode10R9, tmode10R18, tmode11R9, tmode11R18, tmode12R9, tmode12R18, " +
+             "tmode13R9, tmode13R18, tmode14R9, tmode14R18, tmode15R9, tmode15R18, tmode16R9, tmode16R18) " +
+             "VALUES (?,?,?,?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0," +
+             "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0," +
+             "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0," +
+             "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, " +
+             "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)");
+
+         pstmt2.clearParameters();        // clear the parms
+         pstmt2.setLong(1, sdate);
+         pstmt2.setInt(2, year);
+         pstmt2.setInt(3, month);
+         pstmt2.setInt(4, day);
+         pstmt2.setString(5, courseName);
+         pstmt2.executeUpdate();          // execute the prepared stmt
+
+         pstmt2.close();
+
+         //
+         //  Gather the stats for sdate
+         //
+         pstmt1 = con.prepareStatement (
+            "SELECT player1, player2, player3, player4, username1, username2, username3, username4, " +
+            "p1cw, p2cw, p3cw, p4cw, show1, show2, show3, show4, " +
+            "player5, username5, p5cw, show5, p91, p92, p93, p94, p95 " +
+            "FROM teepast2 WHERE date = ? AND courseName = ?");
+
+         pstmt1.clearParameters();        // clear the parms
+         pstmt1.setLong(1, sdate);
+         pstmt1.setString(2, courseName);
+         rs = pstmt1.executeQuery();      // execute the prepared stmt
+
+         while (rs.next()) {
+
+            player1 = rs.getString(1);
+            player2 = rs.getString(2);
+            player3 = rs.getString(3);
+            player4 = rs.getString(4);
+            username1 = rs.getString(5);
+            username2 = rs.getString(6);
+            username3 = rs.getString(7);
+            username4 = rs.getString(8);
+            p1cw = rs.getString(9);
+            p2cw = rs.getString(10);
+            p3cw = rs.getString(11);
+            p4cw = rs.getString(12);
+            show1 = rs.getInt(13);
+            show2 = rs.getInt(14);
+            show3 = rs.getInt(15);
+            show4 = rs.getInt(16);
+            player5 = rs.getString(17);
+            username5 = rs.getString(18);
+            p5cw = rs.getString(19);
+            show5 = rs.getInt(20);
+            p91 = rs.getInt(21);
+            p92 = rs.getInt(22);
+            p93 = rs.getInt(23);
+            p94 = rs.getInt(24);
+            p95 = rs.getInt(25);
+
+            if ((!player1.equals( "" )) && (!player1.equalsIgnoreCase( "x" ))) {
+
+               guest = false;
+               i = 0;
+
+               ploop1:
+               while (i < 36) {
+
+                  if (player1.startsWith( parm.guestN[i] )) {
+
+                     guest = true;
+                     break ploop1;
+                  }
+                  i++;
+               }
+
+               if (guest == true) {
+
+                  if (show1 == 0) {           // if guest is a no-show
+
+                     if (p91 == 1) {                          // 9 holes
+
+                        gstnoshow9++;
+
+                     } else {
+
+                        gstnoshow18++;
+                     }
+
+                  } else {                    // guest was a show
+
+                     if (p91 == 1) {                          // 9 holes
+
+                        g9Rounds[i]++;
+
+                     } else {
+
+                        g18Rounds[i]++;                       // 18 holes
+                     }
+
+                     //
+                     // check all modes of trans
+                     //
+                     i = 0;
+                     loop1a:
+                     while (i < 16) {
+                        if (p1cw.equals( parmc.tmodea[i] )) {   // if matches mode of trans
+
+                           if (p91 == 1) {                          // 9 holes
+
+                              tmode9R[i]++;
+
+                           } else {
+
+                              tmode18R[i]++;
+                           }
+                           break loop1a;
+                        }
+                        i++;
+                     }
+
+                  }         // end of IF guest is a show
+
+               } else {     // else not a guest
+
+                  //
+                  //  player must be a member
+                  //
+                  if (show1 == 0) {           // if member is a no-show
+
+                     if (p91 == 1) {                          // 9 holes
+
+                        memnoshow9++;
+
+                     } else {
+
+                        memnoshow18++;
+                     }
+
+                  } else {                     // member is a show
+
+                     if (username1.equals( "" )) {               // unrecognized name
+
+                        if (p91 == 1) {                          // 9 holes
+
+                           other9Rounds++;
+
+                        } else {
+
+                           other18Rounds++;                       // 18 holes
+                        }
+
+                     } else {
+
+                        //
+                        //  Member - get member type and membership type for this member
+                        //
+                        pstmt4 = con.prepareStatement (
+                           "SELECT m_ship, m_type FROM member2b WHERE " +
+                           "username = ?");
+
+                        pstmt4.clearParameters();
+                        pstmt4.setString(1, username1);
+                        rs2 = pstmt4.executeQuery();
+
+                        if (rs2.next()) {
+
+                           mship = rs2.getString(1);
+                           mtype = rs2.getString(2);
+
+                           //
+                           //  Process the Membership Type (mship)
+                           //
+                           if (mship.equalsIgnoreCase( parm.mship1 )) {
+
+                              if (p91 == 1) {              // 9 holes
+
+                                 mship1Rounds9++;
+
+                              } else {
+
+                                 mship1Rounds18++;
+                              }
+
+                           } else {
+
+                             if (mship.equalsIgnoreCase( parm.mship2 )) {
+
+                                if (p91 == 1) {              // 9 holes
+
+                                   mship2Rounds9++;
+
+                                } else {
+
+                                   mship2Rounds18++;
+                                }
+
+                             } else {
+
+                               if (mship.equalsIgnoreCase( parm.mship3 )) {
+
+                                  if (p91 == 1) {              // 9 holes
+
+                                     mship3Rounds9++;
+
+                                  } else {
+
+                                     mship3Rounds18++;
+                                  }
+
+                               } else {
+
+                                 if (mship.equalsIgnoreCase( parm.mship4 )) {
+
+                                    if (p91 == 1) {              // 9 holes
+
+                                       mship4Rounds9++;
+
+                                    } else {
+
+                                       mship4Rounds18++;
+                                    }
+
+                                 } else {
+
+                                   if (mship.equalsIgnoreCase( parm.mship5 )) {
+
+                                      if (p91 == 1) {              // 9 holes
+
+                                         mship5Rounds9++;
+
+                                      } else {
+
+                                         mship5Rounds18++;
+                                      }
+
+                                   } else {
+
+                                     if (mship.equalsIgnoreCase( parm.mship6 )) {
+
+                                        if (p91 == 1) {              // 9 holes
+
+                                           mship6Rounds9++;
+
+                                        } else {
+
+                                           mship6Rounds18++;
+                                        }
+
+                                     } else {
+
+                                       if (mship.equalsIgnoreCase( parm.mship7 )) {
+
+                                          if (p91 == 1) {              // 9 holes
+
+                                             mship7Rounds9++;
+
+                                          } else {
+
+                                             mship7Rounds18++;
+                                          }
+
+                                       } else {
+
+                                         if (mship.equalsIgnoreCase( parm.mship8 )) {
+
+                                            if (p91 == 1) {              // 9 holes
+
+                                               mship8Rounds9++;
+
+                                            } else {
+
+                                               mship8Rounds18++;
+                                            }
+
+                                         } else {
+
+                                            if (p91 == 1) {              // 9 holes
+
+                                               mship9Unknown++;
+
+                                            } else {
+
+                                               mship18Unknown++;
+                                            }
+                                         }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           }
+                           //
+                           //  Process the Member Type (mtype)
+                           //
+                           if (mtype.equalsIgnoreCase( parm.mem1 )) {
+
+                              if (p91 == 1) {              // 9 holes
+
+                                 mem1Rounds9++;
+
+                              } else {
+
+                                 mem1Rounds18++;
+                              }
+
+                           } else {
+
+                             if (mtype.equalsIgnoreCase( parm.mem2 )) {
+
+                                if (p91 == 1) {              // 9 holes
+
+                                   mem2Rounds9++;
+
+                                } else {
+
+                                   mem2Rounds18++;
+                                }
+
+                             } else {
+
+                               if (mtype.equalsIgnoreCase( parm.mem3 )) {
+
+                                  if (p91 == 1) {              // 9 holes
+
+                                     mem3Rounds9++;
+
+                                  } else {
+
+                                     mem3Rounds18++;
+                                  }
+
+                               } else {
+
+                                 if (mtype.equalsIgnoreCase( parm.mem4 )) {
+
+                                    if (p91 == 1) {              // 9 holes
+
+                                       mem4Rounds9++;
+
+                                    } else {
+
+                                       mem4Rounds18++;
+                                    }
+
+                                 } else {
+
+                                   if (mtype.equalsIgnoreCase( parm.mem5 )) {
+
+                                      if (p91 == 1) {              // 9 holes
+
+                                         mem5Rounds9++;
+
+                                      } else {
+
+                                         mem5Rounds18++;
+                                      }
+
+                                   } else {
+
+                                     if (mtype.equalsIgnoreCase( parm.mem6 )) {
+
+                                        if (p91 == 1) {              // 9 holes
+
+                                           mem6Rounds9++;
+
+                                        } else {
+
+                                           mem6Rounds18++;
+                                        }
+
+                                     } else {
+
+                                       if (mtype.equalsIgnoreCase( parm.mem7 )) {
+
+                                          if (p91 == 1) {              // 9 holes
+
+                                             mem7Rounds9++;
+
+                                          } else {
+
+                                             mem7Rounds18++;
+                                          }
+
+                                       } else {
+
+                                         if (mtype.equalsIgnoreCase( parm.mem8 )) {
+
+                                            if (p91 == 1) {              // 9 holes
+
+                                               mem8Rounds9++;
+
+                                            } else {
+
+                                               mem8Rounds18++;
+                                            }
+
+                                         } else {
+
+                                            if (p91 == 1) {              // 9 holes
+
+                                               mem9Unknown++;
+
+                                            } else {
+
+                                               mem18Unknown++;
+                                            }
+                                         }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           }
+
+                        } else {         // username not found in member table
+
+                           if (p91 == 1) {              // 9 holes
+
+                              other9Rounds++;
+
+                           } else {
+
+                              other18Rounds++;
+                           }
+                        }
+                        pstmt4.close();
+                     }
+
+                     //
+                     //  Member is a show
+                     //
+                     // check all modes of trans
+                     //
+                     i = 0;
+                     loop1b:
+                     while (i < 16) {
+                        if (p1cw.equals( parmc.tmodea[i] )) {   // if matches mode of trans
+
+                           if (p91 == 1) {                          // 9 holes
+
+                              tmode9R[i]++;
+
+                           } else {
+
+                              tmode18R[i]++;
+                           }
+                           break loop1b;
+                        }
+                        i++;
+                     }
+                  }    // end of IF no-show
+               }       // end of IF guest or member
+            }          // end of IF player is null or x
+
+            if ((!player2.equals( "" )) && (!player2.equalsIgnoreCase( "x" ))) {
+
+               guest = false;
+               i = 0;
+
+               ploop2:
+               while (i < 36) {
+
+                  if (player2.startsWith( parm.guestN[i] )) {
+
+                     guest = true;
+                     break ploop2;
+                  }
+                  i++;
+               }
+
+               if (guest == true) {
+
+                  if (show2 == 0) {           // if guest is a no-show
+
+                     if (p92 == 1) {              // 9 holes
+
+                        gstnoshow9++;
+
+                     } else {
+
+                        gstnoshow18++;
+                     }
+
+                  } else {                    // guest was a show
+
+                     if (p92 == 1) {              // 9 holes
+
+                        g9Rounds[i]++;
+
+                     } else {
+
+                        g18Rounds[i]++;                       // 18 holes
+                     }
+
+                     //
+                     // check all modes of trans
+                     //
+                     i = 0;
+                     loop2a:
+                     while (i < 16) {
+                        if (p2cw.equals( parmc.tmodea[i] )) {   // if matches mode of trans
+
+                           if (p92 == 1) {                          // 9 holes
+
+                              tmode9R[i]++;
+
+                           } else {
+
+                              tmode18R[i]++;
+                           }
+                           break loop2a;
+                        }
+                        i++;
+                     }
+                  }         // end of IF guest is a show
+
+               } else {     // else not a guest
+
+                  //
+                  //  player must be a member
+                  //
+                  if (show2 == 0) {           // if member is a no-show
+
+                     if (p92 == 1) {              // 9 holes
+
+                        memnoshow9++;
+
+                     } else {
+
+                        memnoshow18++;
+                     }
+
+                  } else {                     // member is a show
+
+                     if (username2.equals( "" )) {               // unrecognized name
+
+                        if (p92 == 1) {              // 9 holes
+
+                           other9Rounds++;
+
+                        } else {
+
+                           other18Rounds++;                       // 18 holes
+                        }
+
+                     } else {
+
+                        //
+                        //  Member - get member type and membership type for this member
+                        //
+                        pstmt4 = con.prepareStatement (
+                           "SELECT m_ship, m_type FROM member2b WHERE " +
+                           "username = ?");
+
+                        pstmt4.clearParameters();
+                        pstmt4.setString(1, username2);
+                        rs2 = pstmt4.executeQuery();
+
+                        if (rs2.next()) {
+
+                           mship = rs2.getString(1);
+                           mtype = rs2.getString(2);
+
+                           //
+                           //  Process the Membership Type (mship)
+                           //
+                           if (mship.equalsIgnoreCase( parm.mship1 )) {
+
+                              if (p92 == 1) {                         // 9 holes
+
+                                 mship1Rounds9++;
+
+                              } else {
+
+                                 mship1Rounds18++;
+                              }
+
+                           } else {
+
+                             if (mship.equalsIgnoreCase( parm.mship2 )) {
+
+                                if (p92 == 1) {                         // 9 holes
+
+                                   mship2Rounds9++;
+
+                                } else {
+
+                                   mship2Rounds18++;
+                                }
+
+                             } else {
+
+                               if (mship.equalsIgnoreCase( parm.mship3 )) {
+
+                                  if (p92 == 1) {                         // 9 holes
+
+                                     mship3Rounds9++;
+
+                                  } else {
+
+                                     mship3Rounds18++;
+                                  }
+
+                               } else {
+
+                                 if (mship.equalsIgnoreCase( parm.mship4 )) {
+
+                                    if (p92 == 1) {                         // 9 holes
+
+                                       mship4Rounds9++;
+
+                                    } else {
+
+                                       mship4Rounds18++;
+                                    }
+
+                                 } else {
+
+                                   if (mship.equalsIgnoreCase( parm.mship5 )) {
+
+                                      if (p92 == 1) {                         // 9 holes
+
+                                         mship5Rounds9++;
+
+                                      } else {
+
+                                         mship5Rounds18++;
+                                      }
+
+                                   } else {
+
+                                     if (mship.equalsIgnoreCase( parm.mship6 )) {
+
+                                        if (p92 == 1) {                         // 9 holes
+
+                                           mship6Rounds9++;
+
+                                        } else {
+
+                                           mship6Rounds18++;
+                                        }
+
+                                     } else {
+
+                                       if (mship.equalsIgnoreCase( parm.mship7 )) {
+
+                                          if (p92 == 1) {                         // 9 holes
+
+                                             mship7Rounds9++;
+
+                                          } else {
+
+                                             mship7Rounds18++;
+                                          }
+
+                                       } else {
+
+                                         if (mship.equalsIgnoreCase( parm.mship8 )) {
+
+                                            if (p92 == 1) {                         // 9 holes
+
+                                               mship8Rounds9++;
+
+                                            } else {
+
+                                               mship8Rounds18++;
+                                            }
+
+                                         } else {
+
+                                            if (p92 == 1) {                         // 9 holes
+
+                                               mship9Unknown++;
+
+                                            } else {
+
+                                               mship18Unknown++;
+                                            }
+                                         }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           }
+                           //
+                           //  Process the Member Type (mtype)
+                           //
+                           if (mtype.equalsIgnoreCase( parm.mem1 )) {
+
+                              if (p92 == 1) {                         // 9 holes
+
+                                 mem1Rounds9++;
+
+                              } else {
+
+                                 mem1Rounds18++;
+                              }
+
+                           } else {
+
+                             if (mtype.equalsIgnoreCase( parm.mem2 )) {
+
+                                if (p92 == 1) {                         // 9 holes
+
+                                   mem2Rounds9++;
+
+                                } else {
+
+                                   mem2Rounds18++;
+                                }
+
+                             } else {
+
+                               if (mtype.equalsIgnoreCase( parm.mem3 )) {
+
+                                  if (p92 == 1) {              // 9 holes
+
+                                     mem3Rounds9++;
+
+                                  } else {
+
+                                     mem3Rounds18++;
+                                  }
+
+                               } else {
+
+                                 if (mtype.equalsIgnoreCase( parm.mem4 )) {
+
+                                    if (p92 == 1) {              // 9 holes
+
+                                       mem4Rounds9++;
+
+                                    } else {
+
+                                       mem4Rounds18++;
+                                    }
+
+                                 } else {
+
+                                   if (mtype.equalsIgnoreCase( parm.mem5 )) {
+
+                                      if (p92 == 1) {              // 9 holes
+
+                                         mem5Rounds9++;
+
+                                      } else {
+
+                                         mem5Rounds18++;
+                                      }
+
+                                   } else {
+
+                                     if (mtype.equalsIgnoreCase( parm.mem6 )) {
+
+                                        if (p92 == 1) {              // 9 holes
+
+                                           mem6Rounds9++;
+
+                                        } else {
+
+                                           mem6Rounds18++;
+                                        }
+
+                                     } else {
+
+                                       if (mtype.equalsIgnoreCase( parm.mem7 )) {
+
+                                          if (p92 == 1) {              // 9 holes
+
+                                             mem7Rounds9++;
+
+                                          } else {
+
+                                             mem7Rounds18++;
+                                          }
+
+                                       } else {
+
+                                         if (mtype.equalsIgnoreCase( parm.mem8 )) {
+
+                                            if (p92 == 1) {              // 9 holes
+
+                                               mem8Rounds9++;
+
+                                            } else {
+
+                                               mem8Rounds18++;
+                                            }
+
+                                         } else {
+
+                                            if (p92 == 1) {              // 9 holes
+
+                                               mem9Unknown++;
+
+                                            } else {
+
+                                               mem18Unknown++;
+                                            }
+                                         }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           }
+
+                        } else {         // username not found in member table
+
+                           if (p92 == 1) {              // 9 holes
+
+                              other9Rounds++;
+
+                           } else {
+
+                              other18Rounds++;
+                           }
+                        }
+                        pstmt4.close();
+                     }
+
+                     //
+                     //  Member is a show
+                     //
+                     i = 0;
+                     loop2b:
+                     while (i < 16) {
+                        if (p2cw.equals( parmc.tmodea[i] )) {   // if matches mode of trans
+
+                           if (p92 == 1) {                          // 9 holes
+
+                              tmode9R[i]++;
+
+                           } else {
+
+                              tmode18R[i]++;
+                           }
+                           break loop2b;
+                        }
+                        i++;
+                     }
+                  }    // end of IF no-show
+               }       // end of IF guest or member
+            }          // end of IF player is null or x
+
+            if ((!player3.equals( "" )) && (!player3.equalsIgnoreCase( "x" ))) {
+
+               guest = false;
+               i = 0;
+
+               ploop3:
+               while (i < 36) {
+
+                  if (player3.startsWith( parm.guestN[i] )) {
+
+                     guest = true;
+                     break ploop3;
+                  }
+                  i++;
+               }
+
+               if (guest == true) {
+
+                  if (show3 == 0) {           // if guest is a no-show
+
+                     if (p93 == 1) {              // 9 holes
+
+                        gstnoshow9++;
+
+                     } else {
+
+                        gstnoshow18++;
+                     }
+
+                  } else {                    // guest was a show
+
+                     if (p93 == 1) {              // 9 holes
+
+                        g9Rounds[i]++;
+
+                     } else {
+
+                        g18Rounds[i]++;                       // 18 holes
+                     }
+
+                     //
+                     // check all modes of trans
+                     //
+                     i = 0;
+                     loop3a:
+                     while (i < 16) {
+                        if (p3cw.equals( parmc.tmodea[i] )) {   // if matches mode of trans
+
+                           if (p93 == 1) {                          // 9 holes
+
+                              tmode9R[i]++;
+
+                           } else {
+
+                              tmode18R[i]++;
+                           }
+                           break loop3a;
+                        }
+                        i++;
+                     }
+
+                  }         // end of IF guest is a show
+
+               } else {     // else not a guest
+
+                  //
+                  //  player must be a member
+                  //
+                  if (show3 == 0) {           // if member is a no-show
+
+                     if (p93 == 1) {              // 9 holes
+
+                        memnoshow9++;
+
+                     } else {
+
+                        memnoshow18++;
+                     }
+
+                  } else {                     // member is a show
+
+                     if (username3.equals( "" )) {               // unrecognized name
+
+                        if (p93 == 1) {              // 9 holes
+
+                           other9Rounds++;
+
+                        } else {
+
+                           other18Rounds++;                       // 18 holes
+                        }
+
+                     } else {
+
+                        //
+                        //  Member - get member type and membership type for this member
+                        //
+                        pstmt4 = con.prepareStatement (
+                           "SELECT m_ship, m_type FROM member2b WHERE " +
+                           "username = ?");
+
+                        pstmt4.clearParameters();
+                        pstmt4.setString(1, username3);
+                        rs2 = pstmt4.executeQuery();
+
+                        if (rs2.next()) {
+
+                           mship = rs2.getString(1);
+                           mtype = rs2.getString(2);
+
+                           //
+                           //  Process the Membership Type (mship)
+                           //
+                           if (mship.equalsIgnoreCase( parm.mship1 )) {
+
+                              if (p93 == 1) {              // 9 holes
+
+                                 mship1Rounds9++;
+
+                              } else {
+
+                                 mship1Rounds18++;
+                              }
+
+                           } else {
+
+                             if (mship.equalsIgnoreCase( parm.mship2 )) {
+
+                                if (p93 == 1) {              // 9 holes
+
+                                   mship2Rounds9++;
+
+                                } else {
+
+                                   mship2Rounds18++;
+                                }
+
+                             } else {
+
+                               if (mship.equalsIgnoreCase( parm.mship3 )) {
+
+                                  if (p93 == 1) {              // 9 holes
+
+                                     mship3Rounds9++;
+
+                                  } else {
+
+                                     mship3Rounds18++;
+                                  }
+
+                               } else {
+
+                                 if (mship.equalsIgnoreCase( parm.mship4 )) {
+
+                                    if (p93 == 1) {              // 9 holes
+
+                                       mship4Rounds9++;
+
+                                    } else {
+
+                                       mship4Rounds18++;
+                                    }
+
+                                 } else {
+
+                                   if (mship.equalsIgnoreCase( parm.mship5 )) {
+
+                                      if (p93 == 1) {              // 9 holes
+
+                                         mship5Rounds9++;
+
+                                      } else {
+
+                                         mship5Rounds18++;
+                                      }
+
+                                   } else {
+
+                                     if (mship.equalsIgnoreCase( parm.mship6 )) {
+
+                                        if (p93 == 1) {              // 9 holes
+
+                                           mship6Rounds9++;
+
+                                        } else {
+
+                                           mship6Rounds18++;
+                                        }
+
+                                     } else {
+
+                                       if (mship.equalsIgnoreCase( parm.mship7 )) {
+
+                                          if (p93 == 1) {              // 9 holes
+
+                                             mship7Rounds9++;
+
+                                          } else {
+
+                                             mship7Rounds18++;
+                                          }
+
+                                       } else {
+
+                                         if (mship.equalsIgnoreCase( parm.mship8 )) {
+
+                                            if (p93 == 1) {              // 9 holes
+
+                                               mship8Rounds9++;
+
+                                            } else {
+
+                                               mship8Rounds18++;
+                                            }
+
+                                         } else {
+
+                                            if (p93 == 1) {              // 9 holes
+
+                                               mship9Unknown++;
+
+                                            } else {
+
+                                               mship18Unknown++;
+                                            }
+                                         }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           }
+                           //
+                           //  Process the Member Type (mtype)
+                           //
+                           if (mtype.equalsIgnoreCase( parm.mem1 )) {
+
+                              if (p93 == 1) {              // 9 holes
+
+                                 mem1Rounds9++;
+
+                              } else {
+
+                                 mem1Rounds18++;
+                              }
+
+                           } else {
+
+                             if (mtype.equalsIgnoreCase( parm.mem2 )) {
+
+                                if (p93 == 1) {              // 9 holes
+
+                                   mem2Rounds9++;
+
+                                } else {
+
+                                   mem2Rounds18++;
+                                }
+
+                             } else {
+
+                               if (mtype.equalsIgnoreCase( parm.mem3 )) {
+
+                                  if (p93 == 1) {              // 9 holes
+
+                                     mem3Rounds9++;
+
+                                  } else {
+
+                                     mem3Rounds18++;
+                                  }
+
+                               } else {
+
+                                 if (mtype.equalsIgnoreCase( parm.mem4 )) {
+
+                                    if (p93 == 1) {              // 9 holes
+
+                                       mem4Rounds9++;
+
+                                    } else {
+
+                                       mem4Rounds18++;
+                                    }
+
+                                 } else {
+
+                                   if (mtype.equalsIgnoreCase( parm.mem5 )) {
+
+                                      if (p93 == 1) {              // 9 holes
+
+                                         mem5Rounds9++;
+
+                                      } else {
+
+                                         mem5Rounds18++;
+                                      }
+
+                                   } else {
+
+                                     if (mtype.equalsIgnoreCase( parm.mem6 )) {
+
+                                        if (p93 == 1) {              // 9 holes
+
+                                           mem6Rounds9++;
+
+                                        } else {
+
+                                           mem6Rounds18++;
+                                        }
+
+                                     } else {
+
+                                       if (mtype.equalsIgnoreCase( parm.mem7 )) {
+
+                                          if (p93 == 1) {              // 9 holes
+
+                                             mem7Rounds9++;
+
+                                          } else {
+
+                                             mem7Rounds18++;
+                                          }
+
+                                       } else {
+
+                                         if (mtype.equalsIgnoreCase( parm.mem8 )) {
+
+                                            if (p93 == 1) {              // 9 holes
+
+                                               mem8Rounds9++;
+
+                                            } else {
+
+                                               mem8Rounds18++;
+                                            }
+
+                                         } else {
+
+                                            if (p93 == 1) {              // 9 holes
+
+                                               mem9Unknown++;
+
+                                            } else {
+
+                                               mem18Unknown++;
+                                            }
+                                         }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           }
+
+                        } else {         // username not found in member table
+
+                           if (p93 == 1) {              // 9 holes
+
+                              other9Rounds++;
+
+                           } else {
+
+                              other18Rounds++;
+                           }
+                        }
+                        pstmt4.close();
+                     }
+
+                     //
+                     //  Member is a show
+                     //
+                     i = 0;
+                     loop3b:
+                     while (i < 16) {
+                        if (p3cw.equals( parmc.tmodea[i] )) {   // if matches mode of trans
+
+                           if (p93 == 1) {                          // 9 holes
+
+                              tmode9R[i]++;
+
+                           } else {
+
+                              tmode18R[i]++;
+                           }
+                           break loop3b;
+                        }
+                        i++;
+                     }
+                  }    // end of IF no-show
+               }       // end of IF guest or member
+            }          // end of IF player is null or x
+
+            if ((!player4.equals( "" )) && (!player4.equalsIgnoreCase( "x" ))) {
+
+               guest = false;
+               i = 0;
+
+               ploop4:
+               while (i < 36) {
+
+                  if (player4.startsWith( parm.guestN[i] )) {
+
+                     guest = true;
+                     break ploop4;
+                  }
+                  i++;
+               }
+
+               if (guest == true) {
+
+                  if (show4 == 0) {           // if guest is a no-show
+
+                     if (p94 == 1) {              // 9 holes
+
+                        gstnoshow9++;
+
+                     } else {
+
+                        gstnoshow18++;
+                     }
+
+                  } else {                    // guest was a show
+
+                     if (p94 == 1) {              // 9 holes
+
+                        g9Rounds[i]++;
+
+                     } else {
+
+                        g18Rounds[i]++;                       // 18 holes
+                     }
+
+                     //
+                     // check all modes of trans
+                     //
+                     i = 0;
+                     loop4a:
+                     while (i < 16) {
+                        if (p4cw.equals( parmc.tmodea[i] )) {   // if matches mode of trans
+
+                           if (p94 == 1) {                          // 9 holes
+
+                              tmode9R[i]++;
+
+                           } else {
+
+                              tmode18R[i]++;
+                           }
+                           break loop4a;
+                        }
+                        i++;
+                     }
+
+                  }         // end of IF guest is a show
+
+               } else {     // else not a guest
+
+                  //
+                  //  player must be a member
+                  //
+                  if (show4 == 0) {           // if member is a no-show
+
+                     if (p94 == 1) {              // 9 holes
+
+                        memnoshow9++;
+
+                     } else {
+
+                        memnoshow18++;
+                     }
+
+                  } else {                     // member is a show
+
+                     if (username4.equals( "" )) {               // unrecognized name
+
+                        if (p94 == 1) {              // 9 holes
+
+                           other9Rounds++;
+
+                        } else {
+
+                           other18Rounds++;                       // 18 holes
+                        }
+
+                     } else {
+
+                        //
+                        //  Member - get member type and membership type for this member
+                        //
+                        pstmt4 = con.prepareStatement (
+                           "SELECT m_ship, m_type FROM member2b WHERE " +
+                           "username = ?");
+
+                        pstmt4.clearParameters();
+                        pstmt4.setString(1, username4);
+                        rs2 = pstmt4.executeQuery();
+
+                        if (rs2.next()) {
+
+                           mship = rs2.getString(1);
+                           mtype = rs2.getString(2);
+
+                           //
+                           //  Process the Membership Type (mship)
+                           //
+                           if (mship.equalsIgnoreCase( parm.mship1 )) {
+
+                              if (p94 == 1) {              // 9 holes
+
+                                 mship1Rounds9++;
+
+                              } else {
+
+                                 mship1Rounds18++;
+                              }
+
+                           } else {
+
+                             if (mship.equalsIgnoreCase( parm.mship2 )) {
+
+                                if (p94 == 1) {              // 9 holes
+
+                                   mship2Rounds9++;
+
+                                } else {
+
+                                   mship2Rounds18++;
+                                }
+
+                             } else {
+
+                               if (mship.equalsIgnoreCase( parm.mship3 )) {
+
+                                  if (p94 == 1) {              // 9 holes
+
+                                     mship3Rounds9++;
+
+                                  } else {
+
+                                     mship3Rounds18++;
+                                  }
+
+                               } else {
+
+                                 if (mship.equalsIgnoreCase( parm.mship4 )) {
+
+                                    if (p94 == 1) {              // 9 holes
+
+                                       mship4Rounds9++;
+
+                                    } else {
+
+                                       mship4Rounds18++;
+                                    }
+
+                                 } else {
+
+                                   if (mship.equalsIgnoreCase( parm.mship5 )) {
+
+                                      if (p94 == 1) {              // 9 holes
+
+                                         mship5Rounds9++;
+
+                                      } else {
+
+                                         mship5Rounds18++;
+                                      }
+
+                                   } else {
+
+                                     if (mship.equalsIgnoreCase( parm.mship6 )) {
+
+                                        if (p94 == 1) {              // 9 holes
+
+                                           mship6Rounds9++;
+
+                                        } else {
+
+                                           mship6Rounds18++;
+                                        }
+
+                                     } else {
+
+                                       if (mship.equalsIgnoreCase( parm.mship7 )) {
+
+                                          if (p94 == 1) {              // 9 holes
+
+                                             mship7Rounds9++;
+
+                                          } else {
+
+                                             mship7Rounds18++;
+                                          }
+
+                                       } else {
+
+                                         if (mship.equalsIgnoreCase( parm.mship8 )) {
+
+                                            if (p94 == 1) {              // 9 holes
+
+                                               mship8Rounds9++;
+
+                                            } else {
+
+                                               mship8Rounds18++;
+                                            }
+
+                                         } else {
+
+                                            if (p94 == 1) {              // 9 holes
+
+                                               mship9Unknown++;
+
+                                            } else {
+
+                                               mship18Unknown++;
+                                            }
+                                         }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           }
+                           //
+                           //  Process the Member Type (mtype)
+                           //
+                           if (mtype.equalsIgnoreCase( parm.mem1 )) {
+
+                              if (p94 == 1) {              // 9 holes
+
+                                 mem1Rounds9++;
+
+                              } else {
+
+                                 mem1Rounds18++;
+                              }
+
+                           } else {
+
+                             if (mtype.equalsIgnoreCase( parm.mem2 )) {
+
+                                if (p94 == 1) {              // 9 holes
+
+                                   mem2Rounds9++;
+
+                                } else {
+
+                                   mem2Rounds18++;
+                                }
+
+                             } else {
+
+                               if (mtype.equalsIgnoreCase( parm.mem3 )) {
+
+                                  if (p94 == 1) {              // 9 holes
+
+                                     mem3Rounds9++;
+
+                                  } else {
+
+                                     mem3Rounds18++;
+                                  }
+
+                               } else {
+
+                                 if (mtype.equalsIgnoreCase( parm.mem4 )) {
+
+                                    if (p94 == 1) {              // 9 holes
+
+                                       mem4Rounds9++;
+
+                                    } else {
+
+                                       mem4Rounds18++;
+                                    }
+
+                                 } else {
+
+                                   if (mtype.equalsIgnoreCase( parm.mem5 )) {
+
+                                      if (p94 == 1) {              // 9 holes
+
+                                         mem5Rounds9++;
+
+                                      } else {
+
+                                         mem5Rounds18++;
+                                      }
+
+                                   } else {
+
+                                     if (mtype.equalsIgnoreCase( parm.mem6 )) {
+
+                                        if (p94 == 1) {              // 9 holes
+
+                                           mem6Rounds9++;
+
+                                        } else {
+
+                                           mem6Rounds18++;
+                                        }
+
+                                     } else {
+
+                                       if (mtype.equalsIgnoreCase( parm.mem7 )) {
+
+                                          if (p94 == 1) {              // 9 holes
+
+                                             mem7Rounds9++;
+
+                                          } else {
+
+                                             mem7Rounds18++;
+                                          }
+
+                                       } else {
+
+                                         if (mtype.equalsIgnoreCase( parm.mem8 )) {
+
+                                            if (p94 == 1) {              // 9 holes
+
+                                               mem8Rounds9++;
+
+                                            } else {
+
+                                               mem8Rounds18++;
+                                            }
+
+                                         } else {
+
+                                            if (p94 == 1) {              // 9 holes
+
+                                               mem9Unknown++;
+
+                                            } else {
+
+                                               mem18Unknown++;
+                                            }
+                                         }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           }
+
+                        } else {         // username not found in member table
+
+                           if (p94 == 1) {              // 9 holes
+
+                              other9Rounds++;
+
+                           } else {
+
+                              other18Rounds++;
+                           }
+                        }
+                        pstmt4.close();
+                     }
+
+                     //
+                     //  Member is a show
+                     //
+                     //
+                     // check all modes of trans
+                     //
+                     i = 0;
+                     loop4b:
+                     while (i < 16) {
+                        if (p4cw.equals( parmc.tmodea[i] )) {   // if matches mode of trans
+
+                           if (p94 == 1) {                          // 9 holes
+
+                              tmode9R[i]++;
+
+                           } else {
+
+                              tmode18R[i]++;
+                           }
+                           break loop4b;
+                        }
+                        i++;
+                     }
+                  }    // end of IF no-show
+               }       // end of IF guest or member
+            }          // end of IF player is null or x
+
+            if ((!player5.equals( "" )) && (!player5.equalsIgnoreCase( "x" ))) {
+
+               guest = false;
+               i = 0;
+
+               ploop5:
+               while (i < 36) {
+
+                  if (player5.startsWith( parm.guestN[i] )) {
+
+                     guest = true;
+                     break ploop5;
+                  }
+                  i++;
+               }
+
+               if (guest == true) {
+
+                  if (show5 == 0) {           // if guest is a no-show
+
+                     if (p95 == 1) {              // 9 holes
+
+                        gstnoshow9++;
+
+                     } else {
+
+                        gstnoshow18++;
+                     }
+
+                  } else {                    // guest was a show
+
+                     if (p95 == 1) {              // 9 holes
+
+                        g9Rounds[i]++;
+
+                     } else {
+
+                        g18Rounds[i]++;                       // 18 holes
+                     }
+
+                     //
+                     // check all modes of trans
+                     //
+                     i = 0;
+                     loop5a:
+                     while (i < 16) {
+                        if (p5cw.equals( parmc.tmodea[i] )) {   // if matches mode of trans
+
+                           if (p95 == 1) {                          // 9 holes
+
+                              tmode9R[i]++;
+
+                           } else {
+
+                              tmode18R[i]++;
+                           }
+                           break loop5a;
+                        }
+                        i++;
+                     }
+
+                  }         // end of IF guest is a show
+
+               } else {     // else not a guest
+
+                  //
+                  //  player must be a member
+                  //
+                  if (show5 == 0) {           // if member is a no-show
+
+                     if (p95 == 1) {              // 9 holes
+
+                        memnoshow9++;
+
+                     } else {
+
+                        memnoshow18++;
+                     }
+
+                  } else {                     // member is a show
+
+                     if (username5.equals( "" )) {               // unrecognized name
+
+                        if (p95 == 1) {              // 9 holes
+
+                           other9Rounds++;
+
+                        } else {
+
+                           other18Rounds++;                       // 18 holes
+                        }
+
+                     } else {
+
+                        //
+                        //  Member - get member type and membership type for this member
+                        //
+                        pstmt4 = con.prepareStatement (
+                           "SELECT m_ship, m_type FROM member2b WHERE " +
+                           "username = ?");
+
+                        pstmt4.clearParameters();
+                        pstmt4.setString(1, username5);
+                        rs2 = pstmt4.executeQuery();
+
+                        if (rs2.next()) {
+
+                           mship = rs2.getString(1);
+                           mtype = rs2.getString(2);
+
+                           //
+                           //  Process the Membership Type (mship)
+                           //
+                           if (mship.equalsIgnoreCase( parm.mship1 )) {
+
+                              if (p95 == 1) {              // 9 holes
+
+                                 mship1Rounds9++;
+
+                              } else {
+
+                                 mship1Rounds18++;
+                              }
+
+                           } else {
+
+                             if (mship.equalsIgnoreCase( parm.mship2 )) {
+
+                                if (p95 == 1) {              // 9 holes
+
+                                   mship2Rounds9++;
+
+                                } else {
+
+                                   mship2Rounds18++;
+                                }
+
+                             } else {
+
+                               if (mship.equalsIgnoreCase( parm.mship3 )) {
+
+                                  if (p95 == 1) {              // 9 holes
+
+                                     mship3Rounds9++;
+
+                                  } else {
+
+                                     mship3Rounds18++;
+                                  }
+
+                               } else {
+
+                                 if (mship.equalsIgnoreCase( parm.mship4 )) {
+
+                                    if (p95 == 1) {              // 9 holes
+
+                                       mship4Rounds9++;
+
+                                    } else {
+
+                                       mship4Rounds18++;
+                                    }
+
+                                 } else {
+
+                                   if (mship.equalsIgnoreCase( parm.mship5 )) {
+
+                                      if (p95 == 1) {              // 9 holes
+
+                                         mship5Rounds9++;
+
+                                      } else {
+
+                                         mship5Rounds18++;
+                                      }
+
+                                   } else {
+
+                                     if (mship.equalsIgnoreCase( parm.mship6 )) {
+
+                                        if (p95 == 1) {              // 9 holes
+
+                                           mship6Rounds9++;
+
+                                        } else {
+
+                                           mship6Rounds18++;
+                                        }
+
+                                     } else {
+
+                                       if (mship.equalsIgnoreCase( parm.mship7 )) {
+
+                                          if (p95 == 1) {              // 9 holes
+
+                                             mship7Rounds9++;
+
+                                          } else {
+
+                                             mship7Rounds18++;
+                                          }
+
+                                       } else {
+
+                                         if (mship.equalsIgnoreCase( parm.mship8 )) {
+
+                                            if (p95 == 1) {              // 9 holes
+
+                                               mship8Rounds9++;
+
+                                            } else {
+
+                                               mship8Rounds18++;
+                                            }
+
+                                         } else {
+
+                                            if (p95 == 1) {              // 9 holes
+
+                                               mship9Unknown++;
+
+                                            } else {
+
+                                               mship18Unknown++;
+                                            }
+                                         }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           }
+                           //
+                           //  Process the Member Type (mtype)
+                           //
+                           if (mtype.equalsIgnoreCase( parm.mem1 )) {
+
+                              if (p95 == 1) {              // 9 holes
+
+                                 mem1Rounds9++;
+
+                              } else {
+
+                                 mem1Rounds18++;
+                              }
+
+                           } else {
+
+                             if (mtype.equalsIgnoreCase( parm.mem2 )) {
+
+                                if (p95 == 1) {              // 9 holes
+
+                                   mem2Rounds9++;
+
+                                } else {
+
+                                   mem2Rounds18++;
+                                }
+
+                             } else {
+
+                               if (mtype.equalsIgnoreCase( parm.mem3 )) {
+
+                                  if (p95 == 1) {              // 9 holes
+
+                                     mem3Rounds9++;
+
+                                  } else {
+
+                                     mem3Rounds18++;
+                                  }
+
+                               } else {
+
+                                 if (mtype.equalsIgnoreCase( parm.mem4 )) {
+
+                                    if (p95 == 1) {              // 9 holes
+
+                                       mem4Rounds9++;
+
+                                    } else {
+
+                                       mem4Rounds18++;
+                                    }
+
+                                 } else {
+
+                                   if (mtype.equalsIgnoreCase( parm.mem5 )) {
+
+                                      if (p95 == 1) {              // 9 holes
+
+                                         mem5Rounds9++;
+
+                                      } else {
+
+                                         mem5Rounds18++;
+                                      }
+
+                                   } else {
+
+                                     if (mtype.equalsIgnoreCase( parm.mem6 )) {
+
+                                        if (p95 == 1) {              // 9 holes
+
+                                           mem6Rounds9++;
+
+                                        } else {
+
+                                           mem6Rounds18++;
+                                        }
+
+                                     } else {
+
+                                       if (mtype.equalsIgnoreCase( parm.mem7 )) {
+
+                                          if (p95 == 1) {              // 9 holes
+
+                                             mem7Rounds9++;
+
+                                          } else {
+
+                                             mem7Rounds18++;
+                                          }
+
+                                       } else {
+
+                                         if (mtype.equalsIgnoreCase( parm.mem8 )) {
+
+                                            if (p95 == 1) {              // 9 holes
+
+                                               mem8Rounds9++;
+
+                                            } else {
+
+                                               mem8Rounds18++;
+                                            }
+
+                                         } else {
+
+                                            if (p95 == 1) {              // 9 holes
+
+                                               mem9Unknown++;
+
+                                            } else {
+
+                                               mem18Unknown++;
+                                            }
+                                         }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           }
+
+                        } else {         // username not found in member table
+
+                           if (p95 == 1) {              // 9 holes
+
+                              other9Rounds++;
+
+                           } else {
+
+                              other18Rounds++;
+                           }
+                        }
+                        pstmt4.close();
+                     }
+
+                     //
+                     //  Member is a show
+                     //
+                     //
+                     // check all modes of trans
+                     //
+                     i = 0;
+                     loop5b:
+                     while (i < 16) {
+                        if (p5cw.equals( parmc.tmodea[i] )) {   // if matches mode of trans
+
+                           if (p95 == 1) {                          // 9 holes
+
+                              tmode9R[i]++;
+
+                           } else {
+
+                              tmode18R[i]++;
+                           }
+                           break loop5b;
+                        }
+                        i++;
+                     }
+                  }    // end of IF no-show
+               }       // end of IF guest or member
+
+            }      // end of IF username exists
+
+         }         // end of while this day and course
+
+         pstmt1.close();
+
+         //
+         //  Now store the stats
+         //
+         pstmt3 = con.prepareStatement (
+            "UPDATE stats2 SET " +
+             "mem1Rounds9=?, mem1Rounds18=?, mem2Rounds9=?, mem2Rounds18=?, " +
+             "mem3Rounds9=?, mem3Rounds18=?, mem4Rounds9=?, mem4Rounds18=?, " +
+             "mem5Rounds9=?, mem5Rounds18=?, mem6Rounds9=?, mem6Rounds18=?, " +
+             "mem7Rounds9=?, mem7Rounds18=?, mem8Rounds9=?, mem8Rounds18=?, " +
+             "gst1Rounds9=?, gst1Rounds18=?, gst2Rounds9=?, gst2Rounds18=?, " +
+             "gst3Rounds9=?, gst3Rounds18=?, gst4Rounds9=?, gst4Rounds18=?, " +
+             "gst5Rounds9=?, gst5Rounds18=?, gst6Rounds9=?, gst6Rounds18=?, " +
+             "gst7Rounds9=?, gst7Rounds18=?, gst8Rounds9=?, gst8Rounds18=?, " +
+             "mship1Rounds9=?, mship1Rounds18=?, mship2Rounds9=?, mship2Rounds18=?, " +
+             "mship3Rounds9=?, mship3Rounds18=?, mship4Rounds9=?, mship4Rounds18=?, " +
+             "mship5Rounds9=?, mship5Rounds18=?, mship6Rounds9=?, mship6Rounds18=?, " +
+             "mship7Rounds9=?, mship7Rounds18=?, mship8Rounds9=?, mship8Rounds18=?, " +
+             "otherRounds9=?, otherRounds18=?, cartsRounds9=?, cartsRounds18=?, " +
+             "caddyRounds9=?, caddyRounds18=?, pullcartRounds9=?, pullcartRounds18=?, " +
+             "walkRounds9=?, walkRounds18=?, memnoshow9=?, memnoshow18=?, " +
+             "gstnoshow9=?, gstnoshow18=?, mem9unknown=?, mem18unknown=?, mship9unknown=?, mship18unknown=?, " +
+             "gst9Rounds9=?, gst9Rounds18=?, gst10Rounds9=?, gst10Rounds18=?, " +
+             "gst11Rounds9=?, gst11Rounds18=?, gst12Rounds9=?, gst12Rounds18=?, " +
+             "gst13Rounds9=?, gst13Rounds18=?, gst14Rounds9=?, gst14Rounds18=?, " +
+             "gst15Rounds9=?, gst15Rounds18=?, gst16Rounds9=?, gst16Rounds18=?, " +
+             "gst17Rounds9=?, gst17Rounds18=?, gst18Rounds9=?, gst18Rounds18=?, " +
+             "gst19Rounds9=?, gst19Rounds18=?, gst20Rounds9=?, gst20Rounds18=?, " +
+             "gst21Rounds9=?, gst21Rounds18=?, gst22Rounds9=?, gst22Rounds18=?, " +
+             "gst23Rounds9=?, gst23Rounds18=?, gst24Rounds9=?, gst24Rounds18=?, " +
+             "gst25Rounds9=?, gst25Rounds18=?, gst26Rounds9=?, gst26Rounds18=?, " +
+             "gst27Rounds9=?, gst27Rounds18=?, gst28Rounds9=?, gst28Rounds18=?, " +
+             "gst29Rounds9=?, gst29Rounds18=?, gst30Rounds9=?, gst30Rounds18=?, " +
+             "gst31Rounds9=?, gst31Rounds18=?, gst32Rounds9=?, gst32Rounds18=?, " +
+             "gst33Rounds9=?, gst33Rounds18=?, gst34Rounds9=?, gst34Rounds18=?, " +
+             "gst35Rounds9=?, gst35Rounds18=?, gst36Rounds9=?, gst36Rounds18=?, " +
+             "tmode1R9=?, tmode1R18=?, tmode2R9=?, tmode2R18=?, tmode3R9=?, tmode3R18=?, tmode4R9=?, tmode4R18=?, " +
+             "tmode5R9=?, tmode5R18=?, tmode6R9=?, tmode6R18=?, tmode7R9=?, tmode7R18=?, tmode8R9=?, tmode8R18=?, " +
+             "tmode9R9=?, tmode9R18=?, tmode10R9=?, tmode10R18=?, tmode11R9=?, tmode11R18=?, tmode12R9=?, tmode12R18=?, " +
+             "tmode13R9=?, tmode13R18=?, tmode14R9=?, tmode14R18=?, tmode15R9=?, tmode15R18=?, tmode16R9=?, tmode16R18=? " +
+             "WHERE date=? AND course=?");
+
+         pstmt3.clearParameters();        // clear the parms
+         pstmt3.setInt(1, mem1Rounds9);
+         pstmt3.setInt(2, mem1Rounds18);
+         pstmt3.setInt(3, mem2Rounds9);
+         pstmt3.setInt(4, mem2Rounds18);
+         pstmt3.setInt(5, mem3Rounds9);
+         pstmt3.setInt(6, mem3Rounds18);
+         pstmt3.setInt(7, mem4Rounds9);
+         pstmt3.setInt(8, mem4Rounds18);
+         pstmt3.setInt(9, mem5Rounds9);
+         pstmt3.setInt(10, mem5Rounds18);
+         pstmt3.setInt(11, mem6Rounds9);
+         pstmt3.setInt(12, mem6Rounds18);
+         pstmt3.setInt(13, mem7Rounds9);
+         pstmt3.setInt(14, mem7Rounds18);
+         pstmt3.setInt(15, mem8Rounds9);
+         pstmt3.setInt(16, mem8Rounds18);
+         pstmt3.setInt(17, g9Rounds[0]);
+         pstmt3.setInt(18, g18Rounds[0]);
+         pstmt3.setInt(19, g9Rounds[1]);
+         pstmt3.setInt(20, g18Rounds[1]);
+         pstmt3.setInt(21, g9Rounds[2]);
+         pstmt3.setInt(22, g18Rounds[2]);
+         pstmt3.setInt(23, g9Rounds[3]);
+         pstmt3.setInt(24, g18Rounds[3]);
+         pstmt3.setInt(25, g9Rounds[4]);
+         pstmt3.setInt(26, g18Rounds[4]);
+         pstmt3.setInt(27, g9Rounds[5]);
+         pstmt3.setInt(28, g18Rounds[5]);
+         pstmt3.setInt(29, g9Rounds[6]);
+         pstmt3.setInt(30, g18Rounds[6]);
+         pstmt3.setInt(31, g9Rounds[7]);
+         pstmt3.setInt(32, g18Rounds[7]);
+         pstmt3.setInt(33, mship1Rounds9);
+         pstmt3.setInt(34, mship1Rounds18);
+         pstmt3.setInt(35, mship2Rounds9);
+         pstmt3.setInt(36, mship2Rounds18);
+         pstmt3.setInt(37, mship3Rounds9);
+         pstmt3.setInt(38, mship3Rounds18);
+         pstmt3.setInt(39, mship4Rounds9);
+         pstmt3.setInt(40, mship4Rounds18);
+         pstmt3.setInt(41, mship5Rounds9);
+         pstmt3.setInt(42, mship5Rounds18);
+         pstmt3.setInt(43, mship6Rounds9);
+         pstmt3.setInt(44, mship6Rounds18);
+         pstmt3.setInt(45, mship7Rounds9);
+         pstmt3.setInt(46, mship7Rounds18);
+         pstmt3.setInt(47, mship8Rounds9);
+         pstmt3.setInt(48, mship8Rounds18);
+         pstmt3.setInt(49, other9Rounds);
+         pstmt3.setInt(50, other18Rounds);
+         pstmt3.setInt(51, cart9Rounds);
+         pstmt3.setInt(52, cart18Rounds);
+         pstmt3.setInt(53, cady9Rounds);
+         pstmt3.setInt(54, cady18Rounds);
+         pstmt3.setInt(55, pc9Rounds);
+         pstmt3.setInt(56, pc18Rounds);
+         pstmt3.setInt(57, wa9Rounds);
+         pstmt3.setInt(58, wa18Rounds);
+         pstmt3.setInt(59, memnoshow9);
+         pstmt3.setInt(60, memnoshow18);
+         pstmt3.setInt(61, gstnoshow9);
+         pstmt3.setInt(62, gstnoshow18);
+         pstmt3.setInt(63, mem9Unknown);
+         pstmt3.setInt(64, mem18Unknown);
+         pstmt3.setInt(65, mship9Unknown);
+         pstmt3.setInt(66, mship18Unknown);
+         pstmt3.setInt(67, g9Rounds[8]);
+         pstmt3.setInt(68, g18Rounds[8]);
+         pstmt3.setInt(69, g9Rounds[9]);
+         pstmt3.setInt(70, g18Rounds[9]);
+         pstmt3.setInt(71, g9Rounds[10]);
+         pstmt3.setInt(72, g18Rounds[10]);
+         pstmt3.setInt(73, g9Rounds[11]);
+         pstmt3.setInt(74, g18Rounds[11]);
+         pstmt3.setInt(75, g9Rounds[12]);
+         pstmt3.setInt(76, g18Rounds[12]);
+         pstmt3.setInt(77, g9Rounds[13]);
+         pstmt3.setInt(78, g18Rounds[13]);
+         pstmt3.setInt(79, g9Rounds[14]);
+         pstmt3.setInt(80, g18Rounds[14]);
+         pstmt3.setInt(81, g9Rounds[15]);
+         pstmt3.setInt(82, g18Rounds[15]);
+         pstmt3.setInt(83, g9Rounds[16]);
+         pstmt3.setInt(84, g18Rounds[16]);
+         pstmt3.setInt(85, g9Rounds[17]);
+         pstmt3.setInt(86, g18Rounds[17]);
+         pstmt3.setInt(87, g9Rounds[18]);
+         pstmt3.setInt(88, g18Rounds[18]);
+         pstmt3.setInt(89, g9Rounds[19]);
+         pstmt3.setInt(90, g18Rounds[19]);
+         pstmt3.setInt(91, g9Rounds[20]);
+         pstmt3.setInt(92, g18Rounds[20]);
+         pstmt3.setInt(93, g9Rounds[21]);
+         pstmt3.setInt(94, g18Rounds[21]);
+         pstmt3.setInt(95, g9Rounds[22]);
+         pstmt3.setInt(96, g18Rounds[22]);
+         pstmt3.setInt(97, g9Rounds[23]);
+         pstmt3.setInt(98, g18Rounds[23]);
+         pstmt3.setInt(99, g9Rounds[24]);
+         pstmt3.setInt(100, g18Rounds[24]);
+         pstmt3.setInt(101, g9Rounds[25]);
+         pstmt3.setInt(102, g18Rounds[25]);
+         pstmt3.setInt(103, g9Rounds[26]);
+         pstmt3.setInt(104, g18Rounds[26]);
+         pstmt3.setInt(105, g9Rounds[27]);
+         pstmt3.setInt(106, g18Rounds[27]);
+         pstmt3.setInt(107, g9Rounds[28]);
+         pstmt3.setInt(108, g18Rounds[28]);
+         pstmt3.setInt(109, g9Rounds[29]);
+         pstmt3.setInt(110, g18Rounds[29]);
+         pstmt3.setInt(111, g9Rounds[30]);
+         pstmt3.setInt(112, g18Rounds[30]);
+         pstmt3.setInt(113, g9Rounds[31]);
+         pstmt3.setInt(114, g18Rounds[31]);
+         pstmt3.setInt(115, g9Rounds[32]);
+         pstmt3.setInt(116, g18Rounds[32]);
+         pstmt3.setInt(117, g9Rounds[33]);
+         pstmt3.setInt(118, g18Rounds[33]);
+         pstmt3.setInt(119, g9Rounds[34]);
+         pstmt3.setInt(120, g18Rounds[34]);
+         pstmt3.setInt(121, g9Rounds[35]);
+         pstmt3.setInt(122, g18Rounds[35]);
+         pstmt3.setInt(123, tmode9R[0]);
+         pstmt3.setInt(124, tmode18R[0]);
+         pstmt3.setInt(125, tmode9R[1]);
+         pstmt3.setInt(126, tmode18R[1]);
+         pstmt3.setInt(127, tmode9R[2]);
+         pstmt3.setInt(128, tmode18R[2]);
+         pstmt3.setInt(129, tmode9R[3]);
+         pstmt3.setInt(130, tmode18R[3]);
+         pstmt3.setInt(131, tmode9R[4]);
+         pstmt3.setInt(132, tmode18R[4]);
+         pstmt3.setInt(133, tmode9R[5]);
+         pstmt3.setInt(134, tmode18R[5]);
+         pstmt3.setInt(135, tmode9R[6]);
+         pstmt3.setInt(136, tmode18R[6]);
+         pstmt3.setInt(137, tmode9R[7]);
+         pstmt3.setInt(138, tmode18R[7]);
+         pstmt3.setInt(139, tmode9R[8]);
+         pstmt3.setInt(140, tmode18R[8]);
+         pstmt3.setInt(141, tmode9R[9]);
+         pstmt3.setInt(142, tmode18R[9]);
+         pstmt3.setInt(143, tmode9R[10]);
+         pstmt3.setInt(144, tmode18R[10]);
+         pstmt3.setInt(145, tmode9R[11]);
+         pstmt3.setInt(146, tmode18R[11]);
+         pstmt3.setInt(147, tmode9R[12]);
+         pstmt3.setInt(148, tmode18R[12]);
+         pstmt3.setInt(149, tmode9R[13]);
+         pstmt3.setInt(150, tmode18R[13]);
+         pstmt3.setInt(151, tmode9R[14]);
+         pstmt3.setInt(152, tmode18R[14]);
+         pstmt3.setInt(153, tmode9R[15]);
+         pstmt3.setInt(154, tmode18R[15]);
+
+         pstmt3.setLong(155, sdate);
+         pstmt3.setString(156, courseName);
+         pstmt3.executeUpdate();          // execute the prepared stmt
+
+         pstmt3.close();
+
+      }
+      catch (Exception exc) {
+         //
+         //  save error message in /" +rev+ "/error.txt
+         //
+         String errorMsg3 = "Error3 in SystemUtils moveStats for club " +club+ ": ";
+         errorMsg3 = errorMsg3 + exc;                               // build error msg
+
+         SystemUtils.logError(errorMsg3);                                       // log it
+      }
+
+      count2--;           // decrement # of courses
+      index++;           // bump course index
+   }                     // end of course while (do next course)
+ }
+
+
+ // *********************************************************
+ // Illegal access by user - force user to login....
+ // *********************************************************
+
+ private void invalidUser(PrintWriter out) {
+
+   out.println(SystemUtils.HeadTitle("Access Error - Redirect"));
+   out.println("<BODY><CENTER><img src=\"/v5/images/foretees.gif\"><BR>");
+   out.println("<hr width=\"40%\">");
+   out.println("<BR><H2>Access Error</H2><BR>");
+   out.println("<BR><BR>Sorry, you must login before attempting to access these features.<BR>");
+   out.println("<BR><BR>Please <A HREF=\"/v5/servlet/Logout\">login</A>");
+   out.println("</CENTER></BODY></HTML>");
+ }
+}

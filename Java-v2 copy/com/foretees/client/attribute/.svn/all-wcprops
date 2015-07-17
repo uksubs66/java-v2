@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute
+END
+FileInput.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/FileInput.java
+END
+SelectionList.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/SelectionList.java
+END
+Image.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/Image.java
+END
+Attribute.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/Attribute.java
+END
+Checkbox.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/Checkbox.java
+END
+Option.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/Option.java
+END
+SelectionListRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/SelectionListRenderer.java
+END
+DatePicker.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/DatePicker.java
+END
+HiddenInput.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/HiddenInput.java
+END
+MultiChooser.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/MultiChooser.java
+END
+TextBox.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/1/com/foretees/client/attribute/TextBox.java
+END

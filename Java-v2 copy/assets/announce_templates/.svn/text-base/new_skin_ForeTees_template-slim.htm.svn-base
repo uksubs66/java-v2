@@ -1,0 +1,131 @@
+<!-- BEGIN -->
+<div class="block_container"></div>
+<div class="widget_list_left"><span></span>
+<div class="block_container"></div>
+<div class="block_container">
+<div class="widget_container">
+<div class="widget_content center_content center_heading">
+<h3><img title="Logo" alt="Logo" src="../AEimages/aaaa/logo.jpg"><br>Your Club Name</h3>
+</div>
+</div>
+</div>
+<div class="block_container"></div>
+<div class="block_container">
+<div class="widget_container">
+<div class="widget_content">
+<h3>Current Conditions</h3>
+<div class="slide_container"><span class="slide_settings"></span>
+<div>
+<p>&nbsp;</p>
+<p>Stay tuned.....</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="block_container"></div>
+<div class="block_container">
+<div class="widget_container">
+<div class="widget_content">
+<h3>Golf Shop info</h3>
+<ul>
+<li>(555) 555-1234<br>
+<ul>
+<li>&nbsp;</li>
+</ul>
+</li>
+<li>John Doe<br>Head Golf Professional<br>
+<ul>
+<li><a target="_blank" href="mailto:example@foretees.com">example@foretees.com</a></li>
+</ul>
+</li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="block_container"></div>
+<div class="block_container">
+<div class="widget_container">
+<div class="widget_content">
+<h3>Links</h3>
+<br> <br>
+<ul>
+<li>Club Web Site
+<ul>
+<li><a target="_blank" href="#">www.yourclubsite.com</a></li>
+</ul>
+</li>
+</ul>
+<br><br>
+<ul>
+<li>ForeTees</li>
+<ul>
+<li><a target="_blank" href="http://www.foretees.com">www.foretees.com</a></li>
+</ul>
+</ul>
+</div>
+</div>
+</div>
+<div class="block_container"></div>
+<span></span>
+<div class="clearfloat"></div>
+</div>
+<div class="widget_list_primary"><span></span>
+<div class="block_container"></div>
+<div class="block_container">
+<div class="widget_container">
+<div class="widget_content weather_widget_accuweather_wide">
+<div id="NetweatherContainer"></div>
+<div class="accuweather_footer">
+<div style="float: left; padding-left: 10px;"><a style="color: #ffffff;" target="_blank" href="http://www.accuweather.com/us/mn/saint-paul/bbbbb/city-weather-forecast.asp?partner=accuweather">Weather Forecast</a> | <a style="color: #ffffff;" target="_blank" href="http://www.accuweather.com/maps-satellite.asp">Weather Maps</a> | <a style="color: #ffffff;" target="_blank" href="http://www.accuweather.com/index-radar.asp?partner=accuweather&amp;zipcode=bbbbb">Weather Radar</a> | <a style="color: #ffffff;" target="_blank" href="http://hurricane.accuweather.com/hurricane/index.asp">Hurricane Center</a></div>
+<img style="float: right; padding-right: 5px;" src="http://vortex.accuweather.com/adc2004/common/images/misc/netweather_v2/adcwhite.png"></div>
+</div>
+</div>
+</div>
+<div class="block_container"></div>
+<div class="block_container">
+<div class="widget_container">
+<div class="widget_content">
+<h2>Welcome Members!</h2>
+</div>
+</div>
+</div>
+<div class="block_container">
+<div class="widget_container">
+<div class="widget_content">
+<table border="0">
+<tbody>
+<tr>
+<td style="padding-right: 10px;" valign="top">
+<div class="white_box">
+<div class="slide_container"><span class="slide_settings"></span>
+<div style="background-color: #ffffff;">
+<h4><strong>Golf Shop News:</strong></h4>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding-right: 10px; padding-top: 10px;" valign="top"><span></span><br>
+Coming soon.......<br><br><br><br><br><br><br><br><br><br></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="block_container"></div>
+<div class="block_container">
+<div class="widget_container">
+<div class="widget_content">
+<h3>Upcoming Events</h3>
+<br>Coming soon.......<br><br><br><br><br><br><br><br><br><br></div>
+</div>
+</div>
+</div>
+<div class="block_container"></div>
+<div class="clearfloat"></div>
+<div class="clearfloat"></div>
+<div class="block_container"></div>

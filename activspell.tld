@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+        <tlibversion>1.0</tlibversion>
+        <jspversion>1.1</jspversion>
+        <shortname>spell</shortname>
+        <uri>spellchecker</uri>
+        <info>JSpellCheck Library</info>
+<!-- SpellChecker Tag -->		 
+	 <tag>  
+		<name>jspellcheck</name>
+		<tagclass>jspellcheck.JSpellCheck</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info> A SpellChecker TAG</info>
+		<attribute>
+			<name>action</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+               		<name>userdict</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>words</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>searchdepth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>clx</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>tlx</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>englishphonetic</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>format</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>suggestions</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>multilingual</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>striphtml</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>variable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>charlimit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+                <attribute>
+               		<name>lexdir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+	        </attribute>
+       </tag>
+</taglib>

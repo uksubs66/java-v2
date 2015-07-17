@@ -1,0 +1,200 @@
+/* 
+    Document   : sitewide
+    Created on : Oct 30, 2013, 12:26:42 PM
+    Author     : Owner
+    Description:
+        THIS IS ONLY USED FOR LOGIN
+*/
+
+* {
+    padding:0;
+    margin:0
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+body {
+    background-color:#CCCCAA;
+    margin:0px; padding:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#142e24;
+    font-size:14px;
+}
+
+a {
+    color: #142e24;
+    text-decoration: none;
+    /* background-color: inherit; */
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size:30px;
+    font-weight:200;
+    color:#142e24;
+    line-height:60px;
+}
+
+h2 {
+    font-size:20px;
+    font-weight:bold;
+    line-height:26px;
+
+}
+
+/* ------- LOGIN PAGE ---------- */
+
+#title {
+    font-family: "Myriad Pro", Calibri, "Trebuchet MS", sans-serif;
+    color:#FFFFFF;
+    font-size:25px;
+    font-weight:600;
+    white-space: nowrap;
+    text-align:left;
+}
+
+#wrapper_login #title {
+
+    float:none;
+    padding: 30px 0 30px 0;
+    
+}
+
+#wrapper_login {
+    margin:auto;
+    width:850px;
+
+}
+
+#main_login {
+    margin:auto;
+    background-color:#FFFFFF;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width:720px;
+    padding:25px 60px 45px 60px;
+    color:#000000;
+    text-align:left;
+
+}
+
+#login {
+    line-height:35px;
+
+}
+
+
+#login_help {
+    float:right;
+    width:200px;
+    margin-left:10px;
+    margin-right:383px;
+    padding-top:0px;
+    line-height:23px;
+
+}
+
+
+
+.login {
+    width:355px;
+
+    border: 1px solid #c6d4cf;
+    padding:10px;
+    font-size:15px;
+    color:#142e24;
+
+}
+
+#login_welcome {
+    float:right;
+    width:208px;
+    background:#fbf8e8 url(../images/foretees_logo.png) bottom center no-repeat;
+    border:1px solid #f9f0d2;
+    display:block;
+    height:200px;
+    padding:20px;
+    text-align:left;
+
+}
+
+/* ------- END FOOTER ---------- */
+
+
+
+/* ------- END MAIN WINDOW ---------- */
+
+#footer {
+    font-size:11px;
+    text-align:center;    
+    color:#336633;        /* was cbcccc */
+    line-height:18px;
+    padding:60px;       /*  move the logo down to make room for the copyright notice */
+    float:center;
+    margin:0;
+    padding-top: 5px;
+    height: auto;        /* was 50px  */
+    /* white-space: nowrap;  */
+    background-image:url(../images/foretees_llc.png);
+    background-position:bottom center;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    display:block;
+}
+
+
+#footertext {
+    text-align: left;
+}
+
+#local_links {
+    float:right;
+    width:130px;
+    margin-left:120px;
+    text-align: left;
+
+}
+
+#footer a, #footer a:visited {
+
+    color:#FFFFFF;            /* was faf9d5 */
+    text-decoration: none;
+    background-color: inherit;
+}
+
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+#footer img {
+    border: 0;
+}
+
+.login_button_lg {
+    background-color: #8D8D8D;
+    background: linear-gradient(#bdbdbd, #4d4d4d);
+    /* @alternate */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bdbdbd), color-stop(100%,#4d4d4d));
+    /* @alternate */ background: -moz-linear-gradient(center top, #bdbdbd 0%, #4d4d4d 100%);
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    padding: 8px 25px;
+    border-color: #c9c9c9;
+    border-width: 4px;
+    border-style: solid;
+    text-align: center;
+    font-family: arial;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.login_button_lg:hover {
+    border-color: #adadad;
+    color: #ffffff;
+}

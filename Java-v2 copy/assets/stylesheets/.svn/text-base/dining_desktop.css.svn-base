@@ -1,0 +1,1222 @@
+/* @charset "UTF-8"; */
+/* CSS Document */
+/* ------- This is the CLASSIC version ------- */
+
+* {
+	padding:0;
+	margin: 0
+}
+
+/*  Classic style sheet legend (see other changes throughout sheet)
+
+  Primary colors used:
+           dark -          336633
+           med dark -      8B8970
+           med light -     CCCCAA
+           light -         F5F5DC
+           table matting - lightblue
+
+  color changes:
+           395248 changed to CCCCAA
+           2b2b2b changed to 336633
+           712221 changed to 8B8970
+           fbf8e8 changed to lightblue (except in sub_instructions)
+           f2f2f2 changed to lightblue (borders)
+           f9f0d2 changed to F5F5DC
+           e8e8e8 changed to 8B8970 in large calendar, and F5F5DC in small calendar
+           F7F7F7 changed to F5F5DC in large calendar
+           d3e2dc changed to lightblue in large calendar
+           efefef changed to CCCCAA in both calendars
+
+           #topnav changed to use blue logo instead of white
+*/
+
+body {
+	background:#CCCCAA;
+	margin:0px; padding:0px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#142e24;
+	font-size:14px;
+}
+
+
+/*  Changing the anchor tags to be underlined in normal state and blue on hover - originally wes no underline in normal and no color change + underlined on hover */
+
+a {
+	text-decoration: underline;
+}
+a:hover {
+	color: #00008B;
+	text-decoration: underline;
+}
+
+/*  background was 2b2b2b */
+
+/* START SUB NAVIGATION */
+
+#dining_logo {
+        display:block;
+        float:right;
+        margin-top:-8px;
+	height:52px;
+	width:120px;
+        top: 0px;
+        right: 0px;
+	/*margin-bottom: -22px; */    /*  removed when logo moved */
+	font-size:10px;
+	font-weight:bold;
+	background-image:url(../images/ft_dininglogo_hdr_blue.png);       /* use blue logo */
+	background-position:left;
+	background-repeat:no-repeat;
+	background-color:transparent;
+        padding:0px 20px 15px 0px;          /* added when logo moved to breadcrumb row */
+}
+
+
+/*------------- END SUB NAVIGATION--------------- */
+
+
+#wrapper {
+	margin:auto;
+	width:1000px;
+
+}
+
+#wrapper_wide {
+    margin:auto;
+	width:auto;
+
+}
+
+/*  color was fff */
+#title {
+	color:#336633;
+}
+
+#main {
+	margin:auto;
+	background-color:#FFF;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	width:auto;
+	padding:23px;
+	color:#000;
+	text-align:left;
+
+}
+
+h1 {
+	font-size:30px;
+	font-weight:200;
+	color:#142e24;
+	line-height:60px;
+}
+
+h2 {
+	font-size:20px;
+	font-weight:bold;
+	line-height:26px;
+
+}
+
+.small {
+	font-size:10px;
+}
+
+
+
+/* ------- LOGIN PAGE ------  NOW HAS ITS OWN CSS ------*/
+
+/* ----- ALSO USED IN OUTPUTERROR IN COMMON_SKIN ---------- */
+
+#wrapper_login {
+	margin:auto;
+	width:850px;
+
+}
+
+#main_login {
+	margin:auto;
+	background-color:#FFF;
+	-moz-border-radius: 10px;
+	/* border-radius: 10px; */
+	width:720px;
+	padding:25px 60px 45px 60px;
+	color:#000;
+	text-align:left;
+
+}
+
+/*  ---  No longer needed ------
+#login {
+	line-height:35px;
+
+}
+
+
+#login_help {
+	float:right;
+	width:200px;
+	margin-left:10px;
+	margin-right:383px;
+	padding-top:0px;
+	line-height:23px;
+
+}
+
+
+
+.login {
+	width:355px;
+
+	border: 1px solid #c6d4cf;
+	padding:10px;
+	font-size:15px;
+	color:#142e24;
+
+}
+
+#login_welcome {
+	float:right;
+	width:208px;
+	background:#fbf8e8 url(../images/foretees_logo.png) bottom center no-repeat;
+	border:1px solid #f9f0d2;
+	display:block;
+	height:200px;
+	padding:20px;
+	text-align:left;
+
+}
+-------- */
+/* ------- END LOGIN ---------- */
+
+
+#footer a img {
+    border: 0;
+}
+
+/* ------- END FOOTER ---------- */
+
+/* ------- MAIN WINDOW ---------- */
+
+#main_right {
+	float:right;
+	width:680px;
+	padding-left:10px;
+}
+
+#main_left {
+	display:inline;
+	width:250px;
+	padding:0px;
+
+}
+
+#club_logo {
+	background:#f5f5f5;
+	display:block;
+	height:220px;
+	width:250px;
+	padding:0px; margin:0px 0px 20px 0px;
+	color:#dadada;
+	font-size:36px;
+	line-height:40px;
+	text-align:center;
+
+}
+
+
+.left_links {
+	width:232px;
+	background:#e4f3f8;
+	padding:5px 10px 0px 10px;
+	margin:15px 0px 25px 0px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+
+
+}
+
+.left_links ul {
+	list-style-type:none;
+}
+
+.left_links li {
+	padding:10px;
+	border-bottom: solid 1px #ccddf0;
+}
+
+.left_links a, .left_links a:visited {
+	color:#177b9d;
+	text-decoration:none;
+
+}
+
+.left_links a:hover {
+	text-decoration:underline;
+}
+
+
+.left_info {
+	width:223px;
+	background:#f2f0e5;
+	padding:13px;
+	margin:5px 0px 25px 0px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+
+
+}
+
+.left_info p {
+	margin-bottom:10px;
+
+}
+
+.left_info a, .left_info a:visited {
+	color:#8B8970;
+	text-decoration:none;
+}
+
+
+.left_info a:hover {
+	color:#c9504e;
+}
+
+#main_ftlogo {
+	text-align:right;
+	margin:0px;
+	padding:0px 20px 0px 0px;
+}
+
+.main_message div {
+	background:#f5f5f5;
+	padding:20px;
+	margin-bottom:20px;
+
+}
+
+.main_message a, .main_message a:visited {
+	color:#8B8970;
+	text-decoration:none;
+
+}
+
+.main_message a:hover {
+	text-decoration:underline;
+}
+
+#breadcrumb {
+	float:left;
+	width:700px;
+	display:inline;
+	font-size:20px;
+	font-weight:bold;
+}
+
+/* color was 4093af  */
+#breadcrumb a, #breadcrumb a:visited {
+	color:#8B8970;
+	text-decoration:none;
+}
+
+#breadcrumb a:hover {
+	text-decoration:underline;
+}
+
+
+/* color was e4f3f8  */
+.main_instructions {
+	padding:10px;
+	background:#F5F5DC;
+	line-height:22px;
+	font-size:14px;
+	margin-bottom:20px;
+}
+
+.main_warning {
+	padding:10px;
+	background:#8B8970;
+	line-height:22px;
+	font-size:14px;
+	margin-bottom:20px;
+	color:#fff;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#tt1_right {
+	float:right;
+	width:280px;
+	margin-left:20px;
+}
+
+#tt1_left {
+
+	/* margin:20px 20px 20px 20px; */
+        margin:8px 0px 0px 0px;;
+
+}
+
+#tt2_right {
+	float:right;
+
+	margin:10px 0px 0px 322px;
+}
+
+
+
+
+#tt2_left {
+
+	margin:10px 20px 0px 0px;
+}
+
+
+#lesson_left {
+	width:630px;
+	margin:10px 20px 0px 0px;
+
+}
+
+#lesson_right {
+   float:right;
+   margin: 10px 0px 0px 10px;
+   width:33%;
+
+}
+
+/*  background was fbf8e8    */
+.sub_instructions {
+	background:#8B8970;
+	border: 1px solid #f9f0d2;
+	padding:10px;	                 /* was 20px */
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+
+}
+
+.tip_text {
+	font-size:10px;
+
+}
+
+
+a.tip_text, a:visited.tip_text {
+	color:#4093af;
+	text-decoration:none;
+
+
+}
+
+a:hover.tip_text {
+	text-decoration:underline;
+}
+
+#refresh {
+    margin:auto;
+	padding-bottom:20px;
+}
+
+.select {
+	padding:15px;
+	background:#336633;
+	color:#FFF;
+	font-weight:bold;
+
+
+}
+
+.select select {
+	width:500px;
+
+}
+/*
+label {
+	display:block;
+}
+*/
+.woman {
+    background-color:#ffcccc;
+	font-size:11px;
+}
+
+.man {
+     background-color:#9dd1e3;
+	font-size:11px;
+}
+
+
+/* ------- BEGIN MEMBER SETTINGS PAGE ----- */
+/*
+
+	background-color:#e8e8e8;
+	color:#000;
+	padding:5px;
+	background:#f9f0d2;
+
+*/
+
+#mem_settings table {
+	font-size:14px;
+	padding: 10px;
+	margin:10px 3px 10px 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+
+#mem_sub_settings table {
+	color:#000;
+	font-size:14px;
+	padding:5px;
+
+}
+
+#mem_sub_settings table td {
+	border:#efefef 2px solid;
+	margin:0px;
+	padding:5px;
+	text-align:left;
+	vertical-align:top;
+
+}
+
+#mem_sub_settings table td .detail {
+	font-weight:bold;
+
+}
+
+/* ------- END MEMBER SETTINGS PAGE ----- */
+
+
+/* ------- BEGIN RESERVATION CONFIRMATION PAGE ----- */
+
+
+#res_confirm {
+	background-color:#F5F5DC;
+
+}
+
+#res_confirm table {
+	color:#000;
+	font-size:14px;
+	padding:5px;
+
+}
+
+#res_confirm table td {
+	/*border:#efefef 2px solid;*/
+	margin:5px;
+	padding:7px 3px 3px 3px;
+	/* width:95px; */
+	text-align:left;
+	vertical-align:top;
+
+}
+
+#res_confirm table td.detail_name {
+	color:black;
+	font-weight:normal;
+
+}
+
+#res_confirm table td.detail {
+	font-weight:normal;
+	white_space:nowrap;
+
+}
+
+#res_confirm table td span.info {
+	font-size:12px;
+
+}
+
+/* ------- END RESERVATION CONFIRMATION PAGE ------- */
+
+
+/* ------- BEGIN LARGE CALENDAR -------  */
+
+#lg_calendar  {
+	width:100%;
+}
+
+#lg_calendar table {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	border:#8B8970 3px solid;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top:16px;
+
+}
+
+#lg_calendar table .month {
+	background-color:#8B8970;
+	color:#000;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	padding:5px;
+
+}
+
+#lg_calendar table td {
+	border:#CCCCAA 1px solid;        /* was 2px */
+	margin:0px;
+	width:95px;
+	text-align:left;
+	vertical-align:top;
+	color:#000;
+}
+
+#lg_calendar table .blocked1 {
+	background-color:#CCCCAA;
+	color:#FFF;
+
+}
+
+#lg_calendar table .old {
+	background-color:#F5F5DC;
+	color:#000;
+
+}
+
+#lg_calendar table .old1 {
+	background-color:#F5F5DC;
+	color:#000;
+
+}
+
+#lg_calendar table .today {
+	background-color:lightblue;
+	color:#FFF;
+	font-weight:bold;
+
+}
+
+#lg_calendar table .green {
+	background-color:#CCCCAA;
+	color:#FFF;
+	font-weight:bold;
+
+}
+
+#lg_calendar table .grey {
+	background-color:#8B8970;
+	color:#000;
+	font-weight:bold;
+	text-align:center;
+
+}
+
+#lg_calendar table .day  {
+	display:block;
+	padding:3px;
+
+}
+
+#lg_calendar table .legend  {
+	font-weight:bold;
+	padding:3px;
+
+}
+
+#lg_calendar table .diningLinkA  {
+	color:darkBlue;
+	font-size:11px;                    /* was 10 */
+}
+
+#lg_calendar table .diningLinkB  {
+	color:#000;
+	font-size:11px;                    /* was 10 */
+}
+
+#lg_calendar table .diningEventLink {
+	color:maroon;
+	font-size:11px;                    /* was 10 */
+}
+
+#lg_calendar table td a, #lg_calendar table td a:visited  {
+	text-decoration:none;
+	display:block;
+	padding:3px;
+	/*width:83px;*/
+}
+
+#lg_calendar table td a:hover {
+	background:#CCCCAA;
+	color:#FFF;
+	font-weight:bold;
+
+}
+
+#lg_calendar table .blocked1 a {
+	color:#FFF;
+
+}
+
+.arrowbttn_left {
+	float:left;
+	display:inline;
+	width:50px;
+
+}
+
+.arrowbttn_right {
+	float:right;
+	display:inline;
+	width:50px;
+
+}
+
+
+/* -------- END LARGE CALENDAR ---------   */
+
+
+
+/* ------- BEGIN SMALL CALENDAR -------  */
+
+#sm_calendar  {
+	width:30%;
+}
+
+#sm_calendar table {
+	font-family:Arial, Helvetica, sans-serif;
+	border:#F5F5DC 3px solid;
+	width:313px;
+
+}
+
+#sm_calendar table td {
+	border:#CCCCAA 1px solid;          /* was 2px */
+	margin:0px;
+
+}
+
+#sm_calendar table .blocked1 {
+	background-color:#CCCCAA;
+	color:#FFF;
+
+
+}
+
+#sm_calendar table .grey {
+	background-color:#F5F5DC;
+	color:#000;
+	font-weight:bold;
+
+}
+
+#sm_calendar table td a, #lg_calendar table td a:visited  {
+	text-decoration:none;
+	display:block;
+	padding:3px;
+
+}
+
+#sm_calendar table td a:hover {
+	background:#333;
+	color:#fff;
+	font-weight:bold;
+
+}
+
+#sm_calendar table .blocked1 a {
+	color:#FFF;
+
+
+}
+
+/* ------- END SMALL CALENDAR -------  */
+
+
+
+/* ------- BEGIN LARGE TABLE ---------  */
+
+#big_table_brdr {
+	background:lightblue;
+	padding:5px;
+
+}
+
+#big_table {
+    background:#F5F5DC;        /*  was fff  */
+	border: 1px solid #e4e4e4;
+	padding:5px;
+
+}
+
+#big_table table {
+	width:100%;
+
+}
+
+#big_table table td.head {
+	padding-top:15px;
+	background:#F5F5DC;
+	color:#8B8970;
+	font-weight:bold;
+	border-bottom:#000 2px solid;
+
+}
+
+#big_table table td{
+	font-size:11px;
+	padding:5px;
+	border-bottom:#CCC 1px solid;
+	height:30px;
+	line-height:20px;
+
+}
+
+#big_table table td select{
+	padding:0px;
+	margin:0px;
+}
+
+#big_table table td a,#big_table table td a:visited {
+	color:#003399;
+	text-decoration:underline;
+}
+
+
+.cell_highlight {
+	background:#EEE;
+
+}
+
+
+
+
+/* -------- END LARGE TABLE ----------  */
+
+
+
+/* ------- BEGIN RESERVATIONS PAGE-------  */
+
+#reservations {
+	text-align:center;
+	width:100%;
+}
+
+#reservation_action_title {
+	text-align:left;
+	width:100%;
+	font-size:16px;
+	font-weight:bold;
+	padding:10px;
+
+}
+
+.add_diner_text {
+	font-size:12px;
+	text-align:left;
+
+}
+
+
+a.add_diner_text, a:visited.add_diner_text {
+	color:#CCCCAA;                         /* 4093af */
+	text-decoration:none;
+
+}
+
+a:hover.add_diner_text {
+	text-decoration:underline;
+}
+
+.qa {
+	padding:10px;
+}
+
+.qa select {
+	margin:5px;
+}
+
+.name_list {
+	padding:0px;
+	margin:0px;
+}
+
+.res_left {
+	float:left;
+	display:inline;
+	width:500px;
+	display:block;
+
+}
+
+.res_mid {
+	float:left;
+	margin-left:10px;
+	display:inline;
+	width:230px;
+
+}
+
+.res_right {
+	float:left;
+	margin-left:10px;
+	display:inline;
+	width:200px;
+}
+
+.res_select {
+	padding: 10px;
+	margin:10px 3px 10px 3px;
+	background:#F5F5DC;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+}
+
+.res_select table {
+	width:100%;
+}
+
+.res_select table td {
+	padding:3px;
+
+}
+
+.res_select input {
+	padding:3px;
+	font-size:12px;
+}
+
+.res_select textarea {
+	width:240px;
+	margin-top:2px;
+	padding:3px;
+	font-size:12px;
+}
+
+.res_select input.ft-date-picker-dining {
+    display:none;
+}
+
+.res_name {
+        width:270px;
+}
+
+.search_name {
+width:400px;
+
+}
+
+.res_select_ltr {
+	padding: 10px;
+	margin:10px 3px 10px 3px;
+	background:#F5F5DC;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.res_select_ltr table td {
+	text-align:center;
+	background:#FFF;
+	padding:2px;
+}
+
+.res_select_ltr a, .res_select_ltr a:visited {
+	color:#007096;
+	text-decoration:underline;
+	display:block;
+	padding:2px;
+	background:#fff;
+}
+
+
+
+.res_select_ltr a:hover {
+	background:#333;
+	color:#fff;
+	font-weight:bold;
+
+}
+
+#back {
+
+	margin:10px;
+	width:100px;
+	padding:5px 10px 5px 10px;
+	background:#646464;
+	border: 1px solid #c5c6c6;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+}
+
+#cancel {
+
+	margin:10px;
+	width:170px;
+	padding:5px 10px 5px 10px;
+	background:#646464;
+	border: 1px solid #c5c6c6;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+}
+
+#submit {
+	margin:10px;
+	width:100px;
+	padding:5px 10px 5px 10px;
+	background:#007096;
+	border: 1px solid #e8f1f4;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+}
+
+#commit_sub, #commit_subl {
+	margin:10px;
+	width:100px;
+	padding:5px 10px 5px 10px;
+	background:#007096;
+	border: 1px solid #e8f1f4;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+}
+
+               /* NEW for this sheet - Search page - longer button */
+
+#commit_subl {
+	width:220px;
+}
+
+#view_res {
+	margin:10px;
+	width:320px;                    /* was 170 */
+	padding:5px 10px 5px 10px;
+	background:#646464;
+	border: 1px solid #c5c6c6;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	text-decoration: none;
+}
+
+#view_res:hover {
+    
+	text-decoration: none;
+}
+
+#submit:hover, #submit_long:hover, #back:hover, #commit_sub:hover, #cancel:hover, #view_res:hover {
+	background:#fff;
+	color:#333;
+	border: 1px solid #333;
+	cursor: pointer;
+}
+
+form#dining_reservation_form input[type=button][disabled], form#dining_reservation_form input[type=submit][disabled] {
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+/* ------- END RESERVATIONS PAGE-------  */
+
+
+/* ------- BEGIN EMAIL PAGE ----------  */
+
+input.email, textarea.email {
+	padding:3px;
+	width: 600px;
+	margin:4px 0px 10px 0px;
+
+}
+
+.sendto div {
+	background:#f5f5f5;
+	padding:20px;
+	margin-bottom:20px;
+	line-height:22px;
+
+}
+
+
+.sendto_left {
+	float:left;
+	margin-left:0px;
+	display:inline;
+	width:270px;
+
+}
+
+.sendto_left a {
+    font-size:11px;
+	color:red;
+	text-decoration:underline;
+
+}
+
+.sendto_right {
+	float:left;
+	margin-left:10px;
+	display:inline;
+	width:270px;
+}
+
+input.sendto {
+	margin:2px;
+	padding:5px 10px 5px 10px;
+	background:#007096;
+	border: 1px solid #e8f1f4;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+
+}
+
+
+input.sendto:hover {
+	background:#fff;
+	color:#333;
+	border: 1px solid #333;
+	cursor: pointer;
+
+}
+
+
+/* ------- END EMAIL PAGE ------------ */
+
+/* ------- BEGIN PARTNER PAGE ------------ */
+
+.partner_left {
+	float:left;
+	display:inline;
+	width:380px;
+	display:block;
+
+}
+
+input.partner_name, select.partner_name {
+	width:150px;
+
+}
+
+
+
+
+/* ------- END PARTNER PAGE ------------ */
+
+
+
+/*  This one is new - for Settings page */
+.sub_main_tan {
+	background:#F5F5DC;
+	border: 1px solid #f9f0d2;
+	padding:20px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+
+.sub_main {
+	background:lightblue;           /* was #fbf8e8 */
+	border: 1px solid #f9f0d2;
+	padding:10px;	                /* was 20px */
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+
+.res_qa_table {
+	padding: 5px;
+
+}
+
+
+.res_qa {
+	padding: 10px;
+	margin:10px 3px 10px 3px;
+	background:#F5F5DC;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+}
+
+.res_qa .required {
+	font-size: 11px;
+    color: red;
+}
+
+.res_qa .question {
+	font-style:italic;
+}
+
+.res_qa .names {
+	padding-left: 10px;
+}
+
+.res_qa table {
+	margin: 5px;
+}
+
+.res_qa table td {
+	padding:3px;
+
+}
+
+.res_qa input {
+	padding:3px;
+	font-size:12px;
+	width:200px;
+}
+
+.res_qa textarea {
+	width:240px;
+	margin-top:2px;
+	padding:3px;
+	font-size:12px;
+
+}
+
+
+/*  not needed - see sitewide.css  
+
+#footer {
+	font-size:11px;
+	text-align:left;
+	color:#336633;       
+	line-height:18px;
+	padding:25px;
+        text-align: center;
+
+}
+
+#local_links {
+	float:right;
+	width:130px;
+	margin-left:120px;
+
+}
+
+#footer a, #footer a:visited {
+
+	color:#FFFFFF;         
+	text-decoration: none;
+	background: inherit
+}
+
+
+#footer a:hover {
+	text-decoration: underline;
+}
+*/

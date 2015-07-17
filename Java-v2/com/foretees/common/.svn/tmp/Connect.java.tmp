@@ -1,0 +1,134 @@
+/***************************************************************************************
+ *   Connect:  This servlet will provide connection objects to various db servers
+ *
+ *       called by:  dbConn, verifySlot
+ *
+ *
+ *   created:  3/07/2006   Bob P.
+ *
+ *
+ *   last updated:
+ *
+ *       12/17/10  Added getDiningCon method for getting connections to the PostgeSQL server
+ *        3/15/10  Rewrote
+ *        8/15/08  Change from synchronized to not.
+ *
+ *
+ *   notes: As of 5/4/09 we were using url =
+ *          "jdbc:mysql://10.0.0.10/" + club + "?jdbcCompliantTruncation=false&autoReconnect=true";
+ *
+ *
+ ***************************************************************************************
+ */
+
+
+package com.foretees.common;
+
+import java.sql.*;          // mysql
+import javax.sql.*;         // postgres
+import javax.naming.*;
+
+
+public class Connect {
+   
+   // CONNECTION SETTINGS
+   private final static String DB_URL_READ = "jdbc:mysql://localhost/";
+   private final static String DB_URL_READ_CRITICAL = "jdbc:mysql://localhost/";
+   private final static String DB_URL_WRITE = "jdbc:mysql://localhost/";
+
+   private final static String DB_PARMS = "?jdbcCompliantTruncation=false&autoReconnect=true";
+   private final static String DB_USER = "bobp";
+   private final static String DB_PASS = "rdp0805";
+
+
+   // USED TO DETERMIN WHICH DB SERVER TO MAKE THE CONNECTION TO
+   private final static int READ = 1;
+   private final static int READ_CRITICAL = 2;
+   private final static int WRITE = 3;
+
+
+
+
+
+ /**
+  * getCon - Returns a default connection to the MySQL database
+  *
+  * @param club Name of club (and database) to connect to
+  * @param queryType Used to specify which database server the connection will be for
+  *
+  * @return Connection - Returns a connection object for the requested club (database)
+  */
+ public static Connection getCon(String club, int queryType) {
+
+   Connection con = null;
+
+   try {
+
+      Class.forName("com.mysql.jdbc.Driver").newInstance();
+
+      if (queryType == WRITE || queryType == READ_CRITICAL) {
+
+        con = DriverManager.getConnection(DB_URL_WRITE + club + DB_PARMS, DB_USER, DB_PASS);
+
+      } else {
+
+        con = DriverManager.getConnection(DB_URL_READ + club + DB_PARMS, DB_USER, DB_PASS);
+
+      }
+
+   } catch (Exception exc) {
+
+      Utilities.logErrorTxt("Connect: club=" + club + ", err=" + exc.toString(), ProcessConstants.REV);
+
+   }
+
+   return con;
+
+ }
+
+
+ /**
+  * getCon - Returns the default (writable) connection to the MySQL database
+  *
+  * @param club Name of club (and database) to connect to
+  *
+  * @return Connection - Returns a connection object for the requested club (database)
+  */
+ public static Connection getCon(String club) {
+
+     return getCon(club, WRITE);
+ }
+
+
+
+ /**
+  * getDiningCon - Returns a connection to the PostgreSQL dining database
+  *
+  * @return Connection - Returns a connection object for the dining database server (PostgreSQL)
+  */
+ public static Connection getDiningCon() {
+ 
+    Connection con_d = null;
+    
+    try {
+        
+        Context ctx = new InitialContext();
+        if(ctx == null )
+            throw new Exception("Boom - No Context");
+
+        javax.sql.DataSource ds = (javax.sql.DataSource)ctx.lookup("java:comp/env/jdbc/postgres");
+
+        if (ds != null) con_d = ds.getConnection();
+
+    } catch (Exception exc) {
+
+        Utilities.logError("Connect.getDiningCon(): err=" + exc.toString());
+        
+    } finally { }
+
+    return con_d;
+    
+ }
+ 
+}  // end of Connect class
+

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4
+END
+class.csstidy.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/class.csstidy.php
+END
+data.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/data.inc.php
+END
+cssparse.css
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/cssparse.css
+END
+lang.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/lang.inc.php
+END
+cssparsed.css
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/cssparsed.css
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/COPYING
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/README
+END
+class.csstidy_print.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/class.csstidy_print.php
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/NEWS
+END
+class.csstidy_optimise.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/class.csstidy_optimise.php
+END
+tablepress-standard.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/tablepress-standard.tpl
+END
+data-tp.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/data-tp.inc.php
+END
+template1.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/template1.tpl
+END
+template2.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/template2.tpl
+END
+template3.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/template3.tpl
+END
+css_optimiser.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/css_optimiser.php
+END
+template.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/template.tpl
+END

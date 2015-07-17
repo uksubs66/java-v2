@@ -1,0 +1,123 @@
+/* 
+    Document   : proshop_hybrid
+    Created on : May 1, 2015, 2:00:43 PM
+    Author     : Owner
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body {
+    background-color: white !important;
+    font-size: 16px; /* Seems to be the closest thing to default */
+}
+
+body.proshopHybrid>div#footer {
+    display:none;
+}
+
+body.proshopHybrid>div#main {
+    border-radius:0;
+    -moz-border-radius:0;
+    -webkit-border-radius:0;
+    border: none;
+}
+
+/* Invoice display */
+#main>.ftInvoiceList {
+    max-width:900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ftInvoiceSelectMode {
+    margin-top: 20px;
+    text-align: center;
+}
+
+table.ftClubInvoiceListing.standard_list_table tbody td {
+    font-size: 12px;
+    text-align: right;
+}
+
+table.ftClubInvoiceListing.standard_list_table thead th {
+    text-align: center;
+}
+
+table.ftClubInvoiceListing.standard_list_table tbody tr:hover {
+    background-color: #ffffcc;
+}
+
+table.ftClubInvoiceListing.standard_list_table tbody td.ftInvoiceNumber {
+    text-align: left;
+    font-weight: bold;
+}
+
+table.ftClubInvoiceListing tr.ftInvoiceUnpaid .ftInvoiceAmountDue, table.ftClubInvoiceListing tr.ftInvoiceUnpaid .ftInvoiceStatus {
+    font-weight: bold;
+    background-color:#ffff66;
+}
+
+
+table.ftClubInvoiceListing tr.ftInvoicePastDue td.ftInvoicePastDue, table.ftClubInvoiceListing tr.ftInvoicePastDue td.ftInvoiceStatus {
+    font-weight: bold;
+    background-color:#d63232;
+}
+.standard_button {
+    cursor: pointer;
+}
+
+table.ftClubInvoiceListing tfoot tr {
+  border: 2px solid black;
+  border-top-width: 0px;
+}
+table.ftClubInvoiceListing tfoot tr td {
+    padding: 5px;
+    text-align:center;
+}
+/* Hybrid Slot Member Select */
+
+.hybridSlotMemberSelect.slotMemberSelect {
+    width: 330px;
+}
+.hybridSlotTbdGuestSelect {
+    position:relative;
+    margin-top: 20px;
+}
+.hybridSlotTbdGuestSelect>br {
+    display:none;
+}
+.hybridSlotTbdGuestSelect>script+br+table {
+    position:absolute;
+    right:0;
+}
+.hybridSlotTbdGuestSelect>table ~ table {
+    position:absolute;
+    left:0;
+}
+
+/* Hybrid dashboard/reports */
+.ftd_report_item {
+    background-color: #FDFDEF;
+}
+.ftd_report_item:nth-child(even) {
+    background-color: #F5F5DC;
+}
+.ftd_caption {
+    background-color: #336633;
+    color:white;
+}
+
+/* 
+likno modal hacks
+Not sure why, but liknomodal never sets its objects to display:block.  This hack shows the modal, but it will display while it's painitng, not after it completes it load.
+Oh well.  It works.
+*/
+#foretees_modal-overlay.liknomodal-overlay, #foretees_modal-container.liknomodal-container, .liknomodal-wrap {
+    display:block !important;
+}
+

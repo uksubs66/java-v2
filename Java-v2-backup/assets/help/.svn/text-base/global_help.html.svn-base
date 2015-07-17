@@ -1,0 +1,57 @@
+<title>ForeTees Assistance</title>
+<div class="main_instructions"><strong>Please select a help topic:</strong></div>
+<div class="rwdCompact">
+    
+    <div class="sub_instructions pageHelp" data-fthelptitle="Why does everything look different?">
+        <p>You are currently using ForeTees' new "Mobile" interface.  You may have selected it when logging in to ForeTees, 
+            or your club may have chosen to use this new interface as a default for your device.</p>
+        <p>While this interface is called "Mobile", it is designed to operate on a wide variety of modern devices, 
+            including tablets, phones, laptop and desktop computers.</p>
+        <p>If your club has chosen to keep the previous "Desktop" view enabled, you should find a link for 
+            "Switch to Desktop View" at the bottom of every page.  Clicking that link should return you the previous interface.</p>
+    </div>
+    
+    <div class="sub_instructions pageHelp" data-fthelptitle="Navigation seems slow">
+        <p>Performance of ForeTees should be acceptable if you are using a tablet or phone built in the last 2 years, 
+            or a personal computer built in the last 5 years.</p>
+        <p>If you are using a device fitting the above criteria, yet ForeTees is unacceptably slow, 
+            please review the following:</p>
+        <p>Slow network performance can give the appearance of a slow device or application.  Please check that 
+            your mobile or wireless network is working well.</p>
+        <p>Viruses or malware can substantially impact the performance of your device.  Please make sure your system 
+            has been cleared of all malicious software. Please note that tablets and mobile phones are susceptible 
+            to viruses, just like personal computers.</p>
+    </div>
+    
+    <div class="sub_instructions pageHelp" data-fthelptitle="What are 'TIME OUT' or 'UNABLE TO LOAD PAGE' errors?">
+        <p>These errors are usually the result of a configuration issue in Microsoft Internet Explorer.</p>
+        <p>If you are using the Internet Explorer browser and are seeing these errors while using ForeTees, please try the following:</p>
+        <ol>
+            <li>Close all Internet Explorer and Windows Explorer windows that are currently open.</li>
+
+            <li>Open Internet Explorer by clicking the Start button. In the search box, type Internet Explorer, 
+                and then click Internet Explorer.</li> 
+
+            <li>Click the Tools button, and then click Internet options.</li>
+
+            <li>Click the Advanced tab, and then click Reset.<br> 
+                <b>DO NOT check the Delete Personal Settings box</b>, since checking this box will delete all favorites 
+                and stored passwords.</li>
+
+            <li>In the Reset Internet Explorer Settings dialog box, click Reset.</li>
+
+            <li>When Internet Explorer finishes applying default settings, click Close, and then click OK.</li>
+
+            <li>Close Internet Explorer.<br>
+                Your changes will take effect the next time you open Internet Explorer.</li>
+        </ol>
+        <p><a href="http://windows.microsoft.com/en-US/windows7/Reset-Internet-Explorer-settings-in-Internet-Explorer-9" target="_blank">Click Here</a>
+            to get Microsoft's full set of instructions.</p> 
+    </div>
+    
+    <div class="sub_instructions pageHelp" data-fthelptitle="I'm still having trouble.">
+        <p>Please contact your club for further assistance with ForeTees.</p>
+        <p>Thank you!</p>
+    </div>
+    
+</div>

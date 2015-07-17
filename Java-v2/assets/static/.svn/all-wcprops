@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/repos/java/trunk/!svn/ver/7595/assets/static
+END
+announcement_template.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/7595/assets/static/announcement_template.html
+END
+empty.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/java/trunk/!svn/ver/7456/assets/static/empty.html
+END
+old_announcement_template.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/7595/assets/static/old_announcement_template.html
+END

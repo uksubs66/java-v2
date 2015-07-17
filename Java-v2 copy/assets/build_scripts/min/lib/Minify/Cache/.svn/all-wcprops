@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Cache
+END
+XCache.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Cache/XCache.php
+END
+File.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Cache/File.php
+END
+Memcache.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Cache/Memcache.php
+END
+APC.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Cache/APC.php
+END
+ZendPlatform.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Cache/ZendPlatform.php
+END

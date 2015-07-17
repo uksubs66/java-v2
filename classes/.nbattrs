@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<attributes version="1.0">
+   <fileobject name="Proshop_editmrest.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_editmrest"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_editmrest"/>
+   </fileobject>
+   <fileobject name="Proshop_addmrest.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_addmrest"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_addmrest"/>
+   </fileobject>
+   <fileobject name="Member_select.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Member_select"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="Admin_services.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Admin_services"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Admin_services"/>
+   </fileobject>
+   <fileobject name="Support_init.java">
+      <attr name="NbAttrExecParamsName" serialvalue="aced0005737200316f72672e6f70656e6964652e66696c6573797374656d732e4d756c746946696c654f626a65637424566f696456616c7565d9ec9c94d5fd3ca40c0000787077040000000078"/>
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Support_init"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="NbAttrURI" stringvalue=""/>
+   </fileobject>
+   <fileobject name="Member_services.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Member_services"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Member_services"/>
+   </fileobject>
+   <fileobject name="Login.java">
+      <attr name="NbAttrExecParamsName" serialvalue="aced0005737200316f72672e6f70656e6964652e66696c6573797374656d732e4d756c746946696c654f626a65637424566f696456616c7565d9ec9c94d5fd3ca40c0000787077040000000078"/>
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Login"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="NetBeansAttrReqParams" stringvalue="user_name=support\u0026password=ztp853"/>
+      <attr name="NbAttrURI" stringvalue="/"/>
+      <attr name="NetBeansAttrArguments" serialvalue="aced0005757200135b4c6a6176612e6c616e672e537472696e673badd256e7e91d7b4702000078700000000174001e24757365725f6e616d653d61646d696e3b2470617373776f72643d616263"/>
+   </fileobject>
+   <fileobject name="TeeTimer.java">
+      <attr name="class_dependency_java.util.TimerTask" stringvalue="TeeTimer.timeTask"/>
+   </fileobject>
+   <fileobject name="Com_memlist.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Com_memlist"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Com_memlist"/>
+   </fileobject>
+   <fileobject name="Member_teelist.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Member_teelist"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="Proshop_events.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_events"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_events"/>
+   </fileobject>
+   <fileobject name="Proshop_editevnt.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_editevnt"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_editevnt"/>
+   </fileobject>
+   <fileobject name="Proshop_slot.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_slot"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="Member_buddy.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Member_buddy"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="Proshop_verify.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_verify"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="Proshop_searchmem.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_searchmem"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_searchmem"/>
+   </fileobject>
+   <fileobject name="Proshop_addevnt.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_addevnt"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_addevnt"/>
+   </fileobject>
+   <fileobject name="Admin_editmain.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Admin_editmain"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Admin_editmain"/>
+   </fileobject>
+   <fileobject name="Proshop_grest.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_grest"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_grest"/>
+   </fileobject>
+   <fileobject name="Admin_editmem.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Admin_editmem"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Admin_editmem"/>
+   </fileobject>
+   <fileobject name="Member_slot.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Member_slot"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="Admin_usereport.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Admin_usereport"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="Proshop_select.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_select"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_select"/>
+   </fileobject>
+   <fileobject name="Proshop_sheet.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_sheet"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="Proshop_services.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_services"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_services"/>
+   </fileobject>
+   <fileobject name="Admin_parms.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Admin_parms"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Admin_parms"/>
+   </fileobject>
+   <fileobject name="Admin_addmem.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Admin_addmem"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Admin_addmem"/>
+   </fileobject>
+   <fileobject name="Proshop_mrest.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_mrest"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_mrest"/>
+   </fileobject>
+   <fileobject name="Member_events.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Member_events"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="Support_display.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Support_display"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Support_display"/>
+   </fileobject>
+   <fileobject name="ConnHolder.java">
+      <attr name="class_dependency_javax.servlet.http.HttpSessionBindingListener" stringvalue="ConnHolder"/>
+   </fileobject>
+   <fileobject name="Proshop_editgrest.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_editgrest"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_editgrest"/>
+   </fileobject>
+   <fileobject name="Proshop_addgrest.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_addgrest"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Proshop_addgrest"/>
+   </fileobject>
+   <fileobject name="Admin_upload.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Admin_upload"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+      <attr name="class_dependency_javax.servlet.SingleThreadModel" stringvalue="Admin_upload"/>
+   </fileobject>
+   <fileobject name="Member_verify.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Member_verify"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="Member_sheet.java">
+      <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Member_sheet"/>
+      <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+   </fileobject>
+   <fileobject name="minTimer.java">
+      <attr name="class_dependency_java.util.TimerTask" stringvalue="minTimer.timeTask"/>
+   </fileobject>
+</attributes>

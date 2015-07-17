@@ -1,0 +1,512 @@
+/***************************************************************************************     
+ *   Proshop_club_hdcp:  This servlet will provide configuration options 
+ *                       for clubs handicap system
+ *
+ *
+ *   called by:  Proshop_club (doGet)
+ *
+ *   created: 03/13/2007
+ *
+ *
+ *   last updated:
+ *
+ *       12/10/08   Added order by clause to tees table query
+ *        5/02/08   Update javascript for Firefox & Safari browsers
+ *        3/25/07   Changes for hdcp - club_num & assoc_num are now strings not integers
+ *
+ *
+ *
+ ***************************************************************************************
+ */
+    
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.*;
+import java.sql.*;
+
+public class Proshop_club_hdcp extends HttpServlet {
+                         
+                                 
+ String rev = SystemUtils.REVLEVEL;       // Software Revision Level (Version)
+
+ 
+ public void doGet(HttpServletRequest req, HttpServletResponse resp)
+         throws ServletException, IOException {
+           
+    resp.setHeader("Pragma","no-cache");               // for HTTP 1.0
+    resp.setHeader("Cache-Control","no-store, no-cache, must-revalidate");    // for HTTP 1.1
+    resp.setDateHeader("Expires",0);                   // prevents caching at the proxy server
+    resp.setContentType("text/html");
+    
+    PrintWriter out = resp.getWriter();
+
+    HttpSession session = SystemUtils.verifyPro(req, out);
+    if (session == null) return;
+    Connection con = SystemUtils.getCon(session);
+    
+    if (con == null) {
+        
+        SystemUtils.buildDatabaseErrMsg("Unable to connect to the database.", "", out, true);
+        return;
+    }
+
+    String club = (String)session.getAttribute("club");
+    
+    int course_id = 0;
+    int tee_id = 0;
+    int multi = 0;
+    
+    String scid = (req.getParameter("course_id") == null) ? "1" : req.getParameter("course_id");
+    String tid = (req.getParameter("tee_id") == null) ? "0" : req.getParameter("tee_id");
+    
+    try {
+        course_id = Integer.parseInt(scid);
+        tee_id = Integer.parseInt(tid);
+    } catch (Exception ignore) { }
+    
+    
+    // handle adding/removing of values
+    if (req.getParameter("add") != null) {
+        
+        int val = 0;
+        String value = "";
+        String table = "";
+        value = (req.getParameter("club_num") == null) ? "" : req.getParameter("club_num");
+        value = value.trim();
+        if (!value.equals("")) {
+            // we have a club_num here to add for this club
+            table = "hdcp_club_num";
+            
+        } else {
+            value = (req.getParameter("assoc_num") == null) ? "" : req.getParameter("assoc_num");
+            value = value.trim();
+            if (!value.equals("")) {
+                // we have an assoc_num here to add for this club
+                table = "hdcp_assoc_num";
+                
+            }
+        }
+        
+        /*
+        try {
+            val = Integer.parseInt(value);
+        } catch (Exception ignore) {
+            table = "";
+        }
+        */
+        
+        if (!table.equals("")) {
+
+            try {
+                PreparedStatement pstmt = con.prepareStatement(
+                        "INSERT INTO " + table + " VALUES (NULL, ?, '')");
+                pstmt.clearParameters();
+                //pstmt.setInt(1, val);
+                pstmt.setString(1, value);
+                pstmt.executeUpdate();
+                pstmt.close();
+            
+            } catch (Exception exc) {
+                SystemUtils.buildDatabaseErrMsg("Error saving information.", exc.getMessage(), out, false);
+            }
+        }
+        
+    } else if (req.getParameter("remove") != null) {
+    
+        int id = 0;
+        String table = "";
+        String value = "";
+        
+        value = (req.getParameter("club_num_id") == null) ? "" : req.getParameter("club_num_id");
+        if (!value.equals("")) {
+        
+            table = "hdcp_club_num";
+
+        } else {
+            
+            value = (req.getParameter("club_assoc_id") == null) ? "" : req.getParameter("club_assoc_id");
+            if (!value.equals("")) {
+                // we have an assoc_num here to add for this club
+                table = "hdcp_assoc_num";    
+            }
+            
+        }
+        
+        try {
+            id = Integer.parseInt(value);
+        } catch (Exception ignore) {
+            table = "";
+        }
+        
+        if (!table.equals("")) {
+
+            try {
+                PreparedStatement pstmt = con.prepareStatement("DELETE FROM " + table + " WHERE " + table + "_id = ?");
+                pstmt.clearParameters();
+                pstmt.setInt(1, id);
+                pstmt.executeUpdate();
+                pstmt.close();
+            
+            } catch (Exception exc) {
+                SystemUtils.buildDatabaseErrMsg("Error deleting information.", exc.getMessage(), out, false);
+            }
+        }
+        
+    } else if (req.getParameter("removeTees") != null) {
+    
+        try {
+            PreparedStatement pstmt = con.prepareStatement("DELETE FROM tees WHERE tee_id = ?");
+            pstmt.clearParameters();
+            pstmt.setInt(1, tee_id);
+            pstmt.executeUpdate();
+            pstmt.close();
+            tee_id = 0; // set to zero so we don't try to load this tee later on
+        } catch (Exception exc) {
+            SystemUtils.buildDatabaseErrMsg("Error deleting tee.", exc.getMessage(), out, false);
+        }
+        
+    } else if (req.getParameter("update") != null) {
+        
+        double tee_rating18 = 0;
+        double tee_ratingF9 = 0;
+        double tee_ratingB9 = 0;
+        int tee_slope18 = 0;
+        int tee_slopeF9 = 0;
+        int tee_slopeB9 = 0;
+        
+        String rate18 = (req.getParameter("tee_rating18") == null) ? "0" : req.getParameter("tee_rating18");
+        String slope18 = (req.getParameter("tee_slope18") == null) ? "0" : req.getParameter("tee_slope18");
+        String rateF9 = (req.getParameter("tee_ratingF9") == null) ? "0" : req.getParameter("tee_ratingF9");
+        String rateB9 = (req.getParameter("tee_ratingB9") == null) ? "0" : req.getParameter("tee_ratingB9");
+        String slopeF9 = (req.getParameter("tee_slopeF9") == null) ? "0" : req.getParameter("tee_slopeF9");
+        String slopeB9 = (req.getParameter("tee_slopeB9") == null) ? "0" : req.getParameter("tee_slopeB9");
+
+        try {
+            tee_rating18 = Double.parseDouble(rate18);
+            tee_ratingF9 = Double.parseDouble(rateF9);
+            tee_ratingB9 = Double.parseDouble(rateB9);
+            tee_slope18 = Integer.parseInt(slope18);
+            tee_slopeF9 = Integer.parseInt(slopeF9);
+            tee_slopeB9 = Integer.parseInt(slopeB9);
+        } catch (Exception ignore) { }
+    
+        try {
+            PreparedStatement pstmt = con.prepareStatement(
+                "UPDATE tees " +
+                "SET " +
+                    "tee_rating18 = ?, tee_slope18 = ?, " +
+                    "tee_ratingF9 = ?, tee_slopeF9 = ?, " +
+                    "tee_ratingB9 = ?, tee_slopeB9 = ? " +
+                "WHERE tee_id = ?");
+            
+            pstmt.clearParameters();
+            pstmt.setDouble(1, tee_rating18);
+            pstmt.setInt(2, tee_slope18);
+            pstmt.setDouble(3, tee_ratingF9);
+            pstmt.setInt(4, tee_slopeF9);
+            pstmt.setDouble(5, tee_ratingB9);
+            pstmt.setInt(6, tee_slopeB9);
+            pstmt.setInt(7, tee_id);
+            pstmt.executeUpdate();
+            pstmt.close();
+
+        } catch (Exception exc) {
+            SystemUtils.buildDatabaseErrMsg("Error saving tee information.", exc.getMessage(), out, false);
+        }
+       
+    } else if (req.getParameter("addTee") != null) {
+        
+        String tee_name = (req.getParameter("tee_name") == null) ? "" : req.getParameter("tee_name");
+        tee_name = tee_name.trim();
+        if (!tee_name.equals("")) {
+            try {
+                PreparedStatement pstmt = con.prepareStatement(
+                        "INSERT INTO tees (course_id, tee_name, tee_rating18, tee_slope18, tee_ratingF9, tee_slopeF9, tee_ratingB9, tee_slopeB9) VALUES (?, ?, 0, 0, 0, 0, 0, 0)");
+                pstmt.clearParameters();
+                pstmt.setInt(1, course_id);
+                pstmt.setString(2, tee_name);
+                pstmt.executeUpdate();
+                
+                pstmt = con.prepareStatement("SELECT LAST_INSERT_ID()");
+                ResultSet rs = pstmt.executeQuery();
+                if (rs.next()) tee_id = rs.getInt(1);
+                
+                pstmt.close();
+                
+            } catch (Exception exc) {
+                SystemUtils.buildDatabaseErrMsg("Error adding tee.", exc.getMessage(), out, false);
+            }
+        }
+        
+    }
+    
+    // DONE PERFORMING PRE-PROCCESSING ACTIONS
+    
+    
+    // START PAGE OUTPUT
+    out.println("<html><head>");
+    out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1252\">");
+    out.println("<meta http-equiv=\"Content-Language\" content=\"en-us\">");
+    out.println("</head>");
+    out.println("<body bgcolor=\"#FFFFFF\" text=\"#000000\">");
+    
+    out.println("<h2 align=center>Handicap Configuration</h2>");
+    
+    out.println("<table width=560 align=center bgcolor=\"#336633\">");
+    out.println("<tr><td><font color=white size=2>");
+    out.println("<b>Instructions:</b>&nbsp; Use the interface below to manage your facilities 'Club Number(s)' and 'Club Association Numbers(s)' and to define the tees on each course.&nbsp; ");
+    out.println("Your club and association numbers are provided by your handicap provider.&nbsp; Other definable options include whether to allow members to post their ");
+    out.println("own scores online, and the season (or dates of operation) for your handicap association.&nbsp; Note that your handicap provider will only allow you and your members ");
+    out.println("access to their system via ForeTees while your facility is in season.");
+    out.println("</font></td></tr>");
+    out.println("</table><br><br>");
+    
+    out.println("<table border=0 align=center><tr valign=top><td bgcolor=#F5F5DC>");
+    
+    // CLUB NUMBERS
+    out.println("<table>");
+    out.println("<form method=get>");
+    out.println("<tr bgcolor=\"#336633\"><td align=center><b><font color=white>&nbsp;Club Number(s)&nbsp;</font></b></td></tr>");
+    try {
+
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM hdcp_club_num");
+        
+        out.println("<tr><td align=center>");
+        out.println("<select name=club_num_id size=7 style=\"width: 100px\">");
+        
+        while (rs.next()) {
+            
+            out.println("<option value=" + rs.getInt("hdcp_club_num_id") + ">" + rs.getString("club_num") + "</option>"); // + " (" + rs.getString("club_name")
+        }
+        
+        out.println("</select>");
+        out.println("</td></tr>");
+
+        out.println("<tr><td align=center><input type=submit value=\" Remove \" name=remove style=\"width:80px\" onclick=\"if (document.getElementById('club_num_id').selectedIndex == -1) return false; return confirm('Are you sure you want to delete the selected Club Number?');\"></td></tr>");
+        out.println("<tr><td align=center><hr><input type=text size=5 name=club_num maxlength=3></td></tr>");
+        out.println("<tr><td align=center><input type=submit value=\"Add\" name=add style=\"width:80px\" onclick=\"if (document.getElementById('club_num').value == '') return false;\"></td></tr>");
+        
+        out.println("</form>");
+        out.println("</table>");
+    
+    } catch (Exception exc) {
+        
+        SystemUtils.buildDatabaseErrMsg("Error loading up club information.", exc.getMessage(), out, false);
+        return;
+    }
+    
+    
+    out.println("</td><td>&nbsp; &nbsp;</td><td bgcolor=#F5F5DC>");
+    
+    
+    // ASSOCIATION NUMBERS
+    out.println("<table>");
+    out.println("<form method=get>");
+    out.println("<tr bgcolor=\"#336633\"><td align=center><b><font color=white>&nbsp;Association Number(s)&nbsp;</font></b></td></tr>");
+    
+    try {
+
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM hdcp_assoc_num");
+        
+        out.println("<tr><td align=center>");
+        out.println("<select name=club_assoc_id size=7 style=\"width: 100px\">");
+        
+        while (rs.next()) {
+            
+            out.println("<option value=" + rs.getInt("hdcp_assoc_num_id") + ">" + rs.getString("assoc_num") + "</option>"); // + " (" + rs.getString("assoc_name") 
+        }
+        
+        out.println("</select>");
+        out.println("</td></tr>");
+
+        out.println("<tr><td align=center><input type=submit value=\" Remove \" name=remove style=\"width:80px\" onclick=\"if (document.getElementById('club_assoc_id').selectedIndex == -1) return false; return confirm('Are you sure you want to delete the selected Club Association number?');\"></td></tr>");
+        out.println("<tr><td align=center><hr><input type=text size=5 name=assoc_num maxlength=2></td></tr>");
+        out.println("<tr><td align=center><input type=submit value=\"Add\" name=add style=\"width:80px\" onclick=\"if (document.getElementById('assoc_num').value == '') return false;\"></td></tr>");
+        
+        out.println("</form>");
+        out.println("</table>");
+        
+    } catch (Exception exc) {
+        
+        SystemUtils.buildDatabaseErrMsg("Error loading up club information.", exc.getMessage(), out, false);
+        return;
+    }
+    
+    out.println("</td>");
+    
+    
+    out.println("<td>&nbsp; &nbsp;</td><td bgcolor=#F5F5DC>");
+    
+    
+    // DEFINED TEES
+    out.println("<table>");
+    out.println("<form method=get name=frmTees>");
+    out.println("<tr bgcolor=\"#336633\"><td align=center><b><font color=white>&nbsp;Tees Setup</font></b></td></tr>");
+    int count = 0;
+    try {
+        
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("" +
+                "SELECT * " +
+                "FROM " +
+                "(" +
+                    "SELECT multi " +
+                    "FROM club5 " +
+                    "WHERE clubName != ''" +
+                ") AS t1, " +
+                "(" +
+                    "SELECT COUNT(*)  " +
+                    "FROM clubparm2" + 
+                ") AS t2");
+
+        if ( rs.next() ) {
+            multi = rs.getInt(1);
+            count = rs.getInt(2);
+        }
+        
+    }
+    catch (Exception exc) {
+
+        SystemUtils.buildDatabaseErrMsg("Error getting club options.", exc.getMessage(), out, false);
+        return;
+    }
+    
+    // only show tees configuration if there is a course already defined
+    if (count == 0) {
+        
+        out.println("<tr><td align=center><br>Please create at least one course before defining your tees.</td></tr>");
+        
+    } else {
+
+        if (multi == 1) {
+            out.println("<tr><td align=center>Choose a Course<br>");
+            out.println("<select name=course_id size=1 onchange=\"selectTees(this.options[this.selectedIndex].value)\" style=\"width:185px\">");
+            try {
+
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT clubparm_id, courseName FROM clubparm2 WHERE first_hr != 0");
+
+                int i = 0;
+                while (rs.next()) {
+                    out.print("<option value=\"" + rs.getInt(1) + "\"");
+                    if (course_id == rs.getInt(1)) out.print(" selected");
+                    out.print(">" + rs.getString(2) + "</option>");
+                    if (i == 0 && course_id == 0) course_id = rs.getInt(1);
+                    i++;
+                }
+
+            }
+            catch (Exception exc) {
+
+                SystemUtils.buildDatabaseErrMsg("Error getting courses.", exc.getMessage(), out, false);
+                return;
+            }
+
+            out.println("</select></td>");
+
+            out.println("</tr>");
+        } else {
+            out.println("<input type=hidden name=course_id value=1>");
+        }
+
+        try {
+
+            PreparedStatement pstmt = con.prepareStatement("SELECT * FROM tees WHERE course_id = ? ORDER BY tee_id");
+            pstmt.clearParameters();
+            pstmt.setInt(1, course_id);
+            ResultSet rs = pstmt.executeQuery();
+
+            out.println("<tr><td align=center>");
+            out.println("<select name=tee_id size=7 onchange=\"showTees(this.options[this.selectedIndex].value)\" style=\"width:185px\">");
+
+            while (rs.next()) {
+
+                out.println("<option value=" + rs.getInt("tee_id") + (tee_id == rs.getInt("tee_id") ? " selected" : "") + ">" + rs.getString("tee_name") + "</option>"); // + " (" + rs.getString("assoc_name") 
+            }
+
+            pstmt.close();
+
+            out.println("</select>");
+            out.println("</td></tr>");
+
+            out.println("<tr><td align=center><input type=submit value=\" Remove \" name=removeTees style=\"width:80px\" onclick=\"if (document.getElementById('tee_id').selectedIndex == -1) return false; return confirm('Are you sure you want to delete the selected tees?');\"></td></tr>");
+
+        } catch (Exception exc) {
+
+            SystemUtils.buildDatabaseErrMsg("Error loading up club information.", exc.getMessage(), out, false);
+            return;
+        }
+
+        if (tee_id != 0) {
+
+            out.println("<tr><td align=center>");
+            try {
+
+                PreparedStatement pstmt = con.prepareStatement("SELECT * FROM tees WHERE tee_id = ?");
+                pstmt.clearParameters();
+                pstmt.setInt(1, tee_id);
+                ResultSet rs = pstmt.executeQuery();
+
+                out.println("<table align=center><tr><td></td><td>Rating</td><td>Slope</td></tr>");
+
+                if (rs.next()) {
+                    out.println("<tr><td>18 Hole</td><td><input type=text name=tee_rating18 maxlength=5 size=5 value=\"" + rs.getDouble("tee_rating18") + "\"></td>");
+                    out.println("<td><input type=text name=tee_slope18 maxlength=3 size=5 value=\"" + rs.getInt("tee_slope18") + "\"></td></tr>");
+                    out.println("<tr><td>Front 9</td><td><input type=text name=tee_ratingF9 maxlength=5 size=5 value=\"" + rs.getDouble("tee_ratingF9") + "\"></td>");
+                    out.println("<td><input type=text name=tee_slopeF9 maxlength=3 size=5 value=\"" + rs.getInt("tee_slopeF9") + "\"></td></tr>");
+                    out.println("<tr><td>Back 9</td><td><input type=text name=tee_ratingB9 maxlength=5 size=5 value=\"" + rs.getDouble("tee_ratingB9") + "\"></td>");
+                    out.println("<td><input type=text name=tee_slopeB9 maxlength=3 size=5 value=\"" + rs.getInt("tee_slopeB9") + "\"></td></tr>");
+                }
+
+                out.println("<tr><td align=center colspan=3><input type=submit name=update value=\"Update\"></td></tr>");
+
+            } catch (Exception exc) {
+
+                SystemUtils.buildDatabaseErrMsg("Error loading up tee information.", exc.getMessage(), out, false);
+                return;
+            }
+            out.println("</table>");
+            out.println("</td></tr>");
+
+        }
+
+        out.println("<tr><td align=center><hr>Tee Name:&nbsp; <input type=text size=16 name=tee_name maxlength=32></td></tr>");
+        out.println("<tr><td align=center><input type=submit value=\"Add\" name=addTee style=\"width:80px\" onclick=\"if (document.getElementById('tee_name').value == '') return false;\"></td></tr>");
+    }
+    
+    out.println("</table>");
+    
+    out.println("<tr><td></td></tr>");
+    
+    out.println("</form>");
+    out.println("</table>");
+    
+    out.println("</td></tr></table>");
+    
+    out.println("<center>");
+    out.println("<form><input type=button value=\"  Close  \" onclick=\"window.close()\"></form>");
+    out.println("</center>");
+    
+    out.println("<script type=\"text/javascript\">");
+    out.println("function selectTees(pCourseId) {");
+    out.println(" f = document.forms[\"frmTees\"];");
+    out.println(" f.course_id.value = pCourseId;");
+    out.println(" f.tee_id.value = 0;");
+    out.println(" f.method = \"GET\";");
+    out.println(" f.submit();");
+    out.println("}");
+    out.println("function showTees(pTeeId) {");
+    out.println(" f = document.forms[\"frmTees\"];");
+    out.println(" f.method = \"GET\";");
+    out.println(" f.submit();");
+    out.println("}");
+    out.println("</script>");
+    
+    out.println("</body></html>");
+    
+ }  // end of doGet
+
+}

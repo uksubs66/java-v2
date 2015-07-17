@@ -1,0 +1,46 @@
+10
+
+dir
+7740
+http://192.168.1.100/repos/java/trunk/com/foretees
+http://192.168.1.100/repos/java/trunk
+
+
+
+2015-07-15T16:01:37.099759Z
+7740
+bkoch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6c956649-3d44-4e85-a33c-4d5d5f644045
+
+api
+dir
+
+client
+dir
+
+common
+dir
+
+communication
+dir
+
+event
+dir
+
+member
+dir
+

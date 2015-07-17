@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="Member_slot.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Member_slot"/>
+    </fileobject>
+    <fileobject name="Proshop_club.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_club"/>
+    </fileobject>
+    <fileobject name="Proshop_diary.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_diary"/>
+    </fileobject>
+    <fileobject name="Proshop_diary_report.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_diary_report"/>
+    </fileobject>
+    <fileobject name="Proshop_insert.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_insert"/>
+    </fileobject>
+    <fileobject name="Proshop_oldsheets.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_oldsheets"/>
+    </fileobject>
+    <fileobject name="Proshop_optsheet.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_optsheet"/>
+    </fileobject>
+    <fileobject name="Proshop_report_member_rounds.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_diary_report"/>
+    </fileobject>
+    <fileobject name="Proshop_report_member_rounds2.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_report_member_rounds"/>
+    </fileobject>
+    <fileobject name="Proshop_reports.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_reports"/>
+    </fileobject>
+    <fileobject name="Proshop_sheet.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_sheet"/>
+    </fileobject>
+    <fileobject name="Proshop_slot.java">
+        <attr name="class_dependency_javax.servlet.http.HttpServlet" stringvalue="Proshop_slot"/>
+    </fileobject>
+</attributes>

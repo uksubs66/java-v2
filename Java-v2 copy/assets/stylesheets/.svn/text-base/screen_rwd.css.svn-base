@@ -1,0 +1,261 @@
+/* 
+    Document   : screen_rwd.css
+    Created on : Oct 28, 2013, 12:37:37 PM
+    Author     : Owner
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+#rwdScreenMode {
+    max-width:1024px;
+}
+
+@media only screen and ( max-width: 1009px )
+{
+    #rwdScreenMode {
+        max-width:1009px;
+    }
+    #main {
+        border-width: 1px 0 1px 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        width: auto;
+    }
+    
+    #subnav li+li {
+        margin-left: 3px;
+    }
+    
+    #subnav a {
+        padding: 0 10px 0 10px;
+        font-size: 13px;
+    }
+
+    /* */
+    .banner_container #title {
+
+    }
+    /*
+    .banner_container:before, .banner_container:after {
+        display:block;
+        content: " ";
+        position:absolute;
+        height: 70px;
+        width:100%;
+        z-index: -1;
+        box-shadow: inset 0 40px 40px -60px #000000;
+        -moz-box-shadow: inset 0 40px 40px -60px #000000;
+    }
+    .banner_container:after {
+        box-shadow: inset 0 -40px 40px -60px #000000;
+        -moz-box-shadow: inset 0 -40px 40px -60px #000000;
+    }
+    #footer{
+        box-shadow: inset 0 40px 40px -60px #000000;
+        -moz-box-shadow: inset 0 40px 40px -60px #000000;
+    }
+*/
+    div.announcement_container div.widget_list_left {
+        width: 23.5%;
+        /*width: auto; float: none;margin: 0;*/
+        min-width:200px;
+        overflow: hidden;
+    }
+    
+    div.announcement_container div.widget_list_left img,
+    div.announcement_container div.widget_list_primary img {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    #member_select_calendar {
+        
+        /*font-size: 100%;*/ /* sets the size of the calendar */
+
+    }
+    
+    
+    
+
+}
+
+@media only screen and ( max-width: 880px )
+{
+    #rwdScreenMode {
+        max-width:880px;
+    }
+}
+@media only screen and ( max-width: 800px )
+{
+    #rwdScreenMode {
+        max-width:800px;
+    }
+    /* Main nav */
+    #top {
+        display: none;
+    }
+    #rwdNavBlock {
+        background-color: #fff;
+        line-height: 40px;
+        height:40px;
+    }
+    #rwdNav
+    {
+        display: none;
+    }
+    #rwdNav2
+    {
+        display: block;
+    }
+    #rwdNavLogo {
+        display:block;
+    }
+    #main_ftlogo {
+        display:none;
+    }
+    /* Sub nav */
+    #subnav {
+    text-align: center;
+        margin-top: 10px;
+    }
+    
+    /* banner */
+    #main_ftlogo, #rwdBannerLogo {
+        display:none;
+    }
+    .banner_container .welcome_member  {
+        position:absolute;
+        right:0px;
+        top:0px;
+        margin-right: 10px;
+        line-height: 40px;
+        height: 40px;
+    }
+    
+    /* Content */
+    #tt1_right, #tt1_left, .left_container {
+        float:inherit;
+        cleat:inherit;
+        margin:0;
+        width:auto;
+    }
+    /* Help/Info */
+    .pageHelp {
+        display: none;
+    }
+    .pageHelpHeader {
+        display: block;
+    }
+    
+}
+
+@media only screen and ( max-width: 640px )
+{
+    #rwdScreenMode {
+        max-width:640px;
+    }
+    div.announcement_container div.widget_list_left {
+        width: auto;
+        float: none;
+        margin: 0;
+        overflow: hidden;
+    }
+    /* Banner */
+    #pageHeader.hasSubNav .banner_container .rwd_banner {
+
+    }
+}
+
+
+@media only screen and ( max-width: 580px )
+{
+    #rwdScreenMode {
+        max-width:580px;
+    }
+    /* Banner */
+    .banner_container .rwd_banner, #rwdBannerLogo {
+        height: 60px;
+    }
+    .hasBanner #subnav {
+        margin-top: 30px;
+    }
+    .banner_container #title {
+        font-size:16px;
+    }
+    .banner_container #title, .banner_container .welcome_member  {
+        line-height: 30px;
+        height: 30px;
+    }
+    .banner_container .welcome_member span:first-child {
+        display:none;
+    }
+    .banner_container:after {
+        height: 60px;
+    }
+    #breadcrumb {
+        font-size:14px;
+    }
+}
+
+
+@media only screen and ( max-width: 480px )
+{
+    #rwdScreenMode {
+        max-width:480px;
+    }
+    /* Banner */
+
+    /* sub nav */
+    .mediumActivityList #subnav > ul {
+        display:none;
+    }
+    .mediumActivityList #subNavSelect {
+        display:inline-block;
+    }
+}
+
+@media only screen and ( max-width: 420px )
+{
+    #rwdScreenMode {
+        max-width:420px;
+    }
+    /* Banner */
+    #pageHeader.hasSubNav .banner_container .rwd_banner {
+        text-align: center;
+    }
+    .banner_container .welcome_member  {
+        display:none;
+    }
+    /* sub nav */
+    .mediumActivityList #subnav > ul {
+        display:none;
+    }
+    .mediumActivityList #subNavSelect {
+        display:inline-block;
+    }
+    /* Content */
+    
+}
+
+@media only screen and ( max-width: 400px )
+{
+    #rwdScreenMode {
+        max-width:400px;
+    }
+    /* Banner */
+    .banner_container #title {
+
+    }
+    /* sub nav */
+    .smallActivityList #subnav > ul {
+        display:none;
+    }
+    .smallActivityList #subNavSelect {
+        display:inline-block;
+    }
+
+}

@@ -1,0 +1,21 @@
+<title>Using the registration page</title>
+<div class="main_instructions">
+<p>You may select participants for this request by using the member selection tool.</p>
+<p>On devices with larger screens, like personal computers, you'll find the member selection tool on the right of the page.  
+    On smaller screen devices, like mobile phones, you can click an open position to bring up the member selection tool.</p>
+
+<p>If you have partners selected, they will show under the "Partners" tab of the member selection tool. 
+    You can search for other members by using the "Members" tab. If guests are allowed, you may see a "Guests" tab.  
+    If this request supports it, the "X" under the "TBD" tab is used to mark positions as "To Be Decided".</p>
+
+<p>Clicking the appropriate member or guest in the member selection tool will automatically add them to the first open position.</p>
+
+<p>To move a participant to a different position, grab the <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display:inline-block" title="Move"></span> icon, drag it to the desired position, and release.</p>
+
+<p>To clear a position, click the <span class="deleteButtonSmall" title="Erase"></span> icon to the left of the position.</p>
+
+<p>Select the desired Mode of Transportation for each player using the options under "Trans". To Specify a 9 hole round, select the box under 9-Holes.</p>
+
+<p>Use the 'Notes to Pro' text box to enter a short message for the Pro Shop staff to see with this tee time. The message may be no longer than 254 characters, including spaces. If the 'Notes to Pro' text box is not available, the Pro Shop has elected to not allow messages for this request.</p>
+
+</div>

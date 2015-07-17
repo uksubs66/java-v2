@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values
+END
+quoted-strings.csst
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/quoted-strings.csst
+END
+number-zero.csst
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/number-zero.csst
+END
+number-leadingzero.csst
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/number-leadingzero.csst
+END
+number-missingzero.csst
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/number-missingzero.csst
+END
+number-float.csst
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/number-float.csst
+END
+number-trailingzero.csst
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/number-trailingzero.csst
+END
+number-missingunit.csst
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/number-missingunit.csst
+END
+font-family.csst
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/font-family.csst
+END
+important.csst
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/important.csst
+END
+number-signed.csst
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/number-signed.csst
+END
+colors.csst
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/values/colors.csst
+END

@@ -1,0 +1,496 @@
+/* 
+    Document   : jquery.foreTeesSlot_rwd.css
+    Created on : Dec 13, 2013, 9:46:58 AM
+    Author     : Owner
+    Description:
+        
+*/
+
+
+/* --------- SLOT PAGE --------- */
+
+.date_time_course b {
+    margin-left:5px;
+}
+
+.date_time_course span {
+    margin:0 10px 0 0;
+    white-space: nowrap;
+    display:inline-block;
+}
+
+.ftS-slot  {
+     /* 
+     Think long and hard before overriding this font in slots,
+     if you do, test it on every mobile device, at every screen size
+    */
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.ftS-slot .ftS-header {
+    margin:0 10px 0 10px;
+}
+
+.ftS-slot .ftS-header:after {
+    content:"";
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    clear:both;
+}
+
+.ftS-slot .right_header,
+.ftS-slot .left_header{
+    padding:0;
+    margin:0;
+    font-weight: bold;
+    font-size: 15px;
+    overflow: hidden;
+    height: 33px;
+}
+.ftS-slot .right_header > span,
+.ftS-slot .left_header > span {
+    line-height:33px;
+    display:block;
+}
+
+.ftS-slot .right_header {
+    float: right;
+    font-weight: normal;
+}
+.ftS-slot .right_header.ftS-selectNamesButton {
+    display:none;
+    height:28px;
+    margin-top:3px;
+}
+.ftS-slot .right_header.ftS-selectNamesButton .standard_button {
+    lime-height:26px;
+}
+
+.ftS-slot .right_header b {
+    display:inline-block;
+    font-size: 30px;
+    height: 33px;
+    overflow:hidden;
+}
+.ftS-slot .right_header>span {
+    display:block;
+}
+.ftS-slot .right_header>span>span {
+    display:block;
+    float:left;
+    margin-right:5px;
+}
+
+.ftS-slot .ftS-tools {
+    float: right;
+    margin-left: 10px;
+}
+
+.ftS-slot .ftS-requestContainer {
+    overflow:hidden;
+}
+
+.ftS-slot .ftS-requestContainer {
+    background:lightblue;           /* was #fbf8e8 */
+    border: 1px solid #f9f0d2;
+    padding:0;	                /* was 20px */
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.ftS-slot .ftS-slots {
+    background:#f5f5dc;           /* was #fbf8e8 */
+    padding:10px 0 10px 0;
+    border:1px solid #aaa; /* set the same as groupSeparator div */
+    margin:0 3px 0 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.ftS-slotTable .slot_player_row.emptySlot .player_erase_button {
+    visibility: hidden;
+}
+
+.ftS-slotTable .ftS-playerCell>div:after {
+    content:"";
+    display:block;
+    width:0;
+    height:0;
+    visibility: hidden;
+    clear:both;
+}
+
+.ftS-slotTable .playerType {
+    display:none;
+    float:left;
+    line-height: 23px;
+    font-weight: bold; 
+    border: 1px solid grey;
+    background-color:#4391cf;
+    color: #fff;
+    margin:0 5px 0 0;
+    padding: 0 5px 0 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    min-width: 80px;
+}
+
+.ftS-slotTable .playerTypeMember .playerType {
+    display:block;
+}
+.ftS-slotTable .playerTypeGuestDb .playerType {
+    display:block;
+    background-color: #41953e;
+}
+.ftS-slotTable .playerTypeGuestTbd .playerType {
+    display:block;
+    background-color: #9999cc;
+}
+.ftS-slotTable .playerTypeGuest .playerType {
+    display:block;
+    background-color: #75c46b;
+}
+.ftS-slotTable .playerName {
+    display:block;
+    position:relative;
+    overflow:auto;
+    width:auto;
+}
+
+.ftS-slotTable input.ftS-playerNameInput {
+    width:100%;
+    height: 25px;
+    font-weight: bold; 
+    border: 1px solid grey;
+    background-color: #fff;
+    color: #000;
+    margin:0;
+    padding: 2px 5px 2px 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ftS-slotTable input.ftS-playerNameInput[disabled] {
+    color: #777;
+}
+
+.ftS-slotTable .redrawBug input.ftS-playerNameInput {
+    width:99%;
+}
+
+.ftS-slotTable input.slot_ghin {
+    width:60px;
+    height: 25px;
+    font-weight: normal; 
+    border: 1px solid grey;
+    background-color: #fff;
+    color: #000;
+    margin:0;
+    padding: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ftS-slotTable .rwdTd.ftS-option select {
+    height: 25px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.rwdTable.ftS-slotTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+    border-spacing: 0;
+}
+.ftS-slotTable .rwdTr.ftS-noDisplay {
+    display:none !important;
+}
+.ftS-slotTable .rwdTh {
+    vertical-align: middle;
+    padding: 0 2px 0 2px;
+}
+.ftS-slotTable .rwdTh.ftS-headOpt
+{
+    text-align: center;
+}
+
+.ftS-slotTable .rwdTd {
+    border: 0;
+    text-align: center;
+    width: 1%;
+    padding:0;
+    margin:0;
+}
+
+.ftS-slotTable .rwdTd p {
+    text-align: left;
+}
+
+.ftS-slotTable .rwdTd>span {
+    font-size: 80%;
+}
+
+.ftS-slotTable .rwdTd.ftS-playerCell {
+    width: auto;
+    padding-right:4px;  /* compensate for input element */
+}
+
+.ftS-slotTable .rwdTd.ftS-playerCountCell {
+    text-align: right;
+    padding-right: 3px;
+}
+
+.ftS-slotTable .rwdTd.ftS-mealOptionCell select {
+    max-width:150px;
+}
+
+.ftS-slotTable .slot_player_row:nth-child(odd) {
+    background-color: #ededd3; /* d5d5be ededd3 */
+}
+
+.ftS-slotTable .slot_player_row:hover,
+.ftS-slotTable .ui-sortable-helper {
+    background-color: #d5d5be; /* d5d5be ededd3 */
+}
+
+.ftS-addPlayers {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.ftS-addPlayers.hide {
+    display:none;
+}
+
+.ftS-notes .notes_erase_button {
+    margin-left: 10px;
+}
+
+.ftS-tmodeLegend {
+    font-size: 12px;
+    text-align: center;
+    margin: 0 5px 10px 5px;
+}
+
+.ftS-tmodeLegend>div>span>span {
+    white-space: nowrap;
+    display:inline-block;
+    margin: 0 2px 0 2px
+}
+
+.ftS-notes textarea {
+    width: 100%;
+    height: 80px;
+    resize: vertical;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ftS-slotTable rwdTbody {
+    border: 0;
+}
+
+.ftS-timePicker div>span:first-child {
+    display:inline-block;
+    font-weight: bold;
+    width:40px;
+    text-align: right;
+}
+
+.ftS-timePicker input {
+    width:20px;
+    margin-right: 5px;
+}
+.ftS-timePicker td {
+    text-align: left;
+}
+.ftS-timePicker td:first-child {
+    text-align: right;
+}
+
+.ftS-slot .button_container a {
+    line-height: 30px;
+}
+.ftS-slot .button_container a.help_link {
+    display:block;
+}
+
+
+.ftS-slot .button_container {
+    text-align: center;
+    margin:15px 0 15px 0;
+}
+
+.ftS-slot .ftS-sortHolder {
+    height:35px;
+}
+
+.ftS-slot .ftS-sortHolder .rwdTd {
+    height:35px;
+}
+
+.ftS-slot .sortHandle {
+    cursor:move;
+}
+
+.ftS-slot .sortHandle > div {
+    height:16px;
+    width:16px;
+    margin:8px;
+}
+
+.ftS-slotTable .ftS-groupSeparator {
+
+}
+
+.ftS-slotTable .ftS-groupSeparator .rwdTd {
+    padding:0;
+}
+
+.ftS-slotTable .ftS-groupSeparator .rwdTd div {
+    display:block;
+    width:auto;
+    overflow:hidden;
+    height:0px;
+    padding-top:5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #aaa; 
+}
+.ftS-slotTable .ftS-groupSeparator.ftS-withTitle .rwdTd div {
+    height:15px;
+    border-top: 1px solid #aaa; 
+    padding-bottom: 5px;
+    text-align: left;
+    background-color: #aaa;
+    color: #fff;
+    font-weight: bold;
+    margin:0;
+}
+.ftS-slotTable .columnTitle {
+    display:none;
+}
+
+.slotSubmit_container form table.question_list {
+    display: none; /* disable display of questions */
+    background-color: #ffffff;
+    border: 1px #bdbdbd solid;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.slotSubmit_container form table.question_list thead {
+    text-align: center;
+    background-color: #fbf8e8;
+}
+
+.slotSubmit_container form table.standard_list_table {
+    background-color: #ffffff;
+}
+
+.slotSubmit_container form table.standard_list_table th.question{
+    text-transform: none;
+    font-size: 70%;
+    line-height: 120%;
+    white-space: normal;
+}
+
+.slotSubmit_container form table.standard_list_table td {
+    width: 1%;
+}
+
+.slotSubmit_container form table.standard_list_table td:first-child {
+    width: auto;
+}
+
+.ftS-optionBlock {
+    border: 1px solid grey;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 10px;
+    padding-top: 40px;
+    position: relative;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.ftS-optionBlock legend {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+   display:block;
+   position:absolute;
+   width:100%;
+   margin:0;
+   top:0px;
+   left:0px;
+   right:0px;
+   line-height: 18px;
+   padding: 5px;
+   padding-left: 10px;
+   background-color: #007096;
+   font-weight: bold;
+   font-size: 14px;
+   color: #fff;
+
+}
+
+.ftS-optionBlock.ftS-recur label {
+    display:block;
+    position:relative;
+    padding:3px;
+}
+
+.ftS-optionBlock.ftS-recur div.recurLength {
+    border-top: 1px #4391cf solid;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+select.partner_list option.on_slot {
+    color:#777;
+}
+
+.slotMemberSelect {
+    width:280px;
+    height:400px;
+    border:1px solid #ccc;
+    position:relative;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #C1DAD7;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ftS-noDisplay {
+    display:none;
+}
+
+.ftS-noticeChange {
+    background-color: #00FF08;
+}
+.ftS-warningChange {
+    background-color: yellow;
+}
+.slot_container:empty{
+    min-height: 400px;
+}
+
+
+/* --------END SLOT PAGE --------- */

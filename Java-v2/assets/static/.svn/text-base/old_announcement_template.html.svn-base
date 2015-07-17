@@ -1,0 +1,63 @@
+<article class="ftAnnounce">
+    <!-- Main Welcome Header (optional) -->
+    <header>
+        <h1>Welcome message</h1>
+        <p>Welcome paragraph.</p>
+        <p>Another welcome paragraph.</p>
+    </header>
+
+    <!-- Article section -->
+    <section>
+        <header><h1>Section One Header</h1></header>
+
+        <!-- Article for this section -->
+        <article>
+            <header><h1>Section One Article One Header</h1></header>
+            <h2>Article content heading #1:</h2>
+            <p>First paragraph. <strong>Important text</strong>.</p>
+            <!-- Figure, without text -->
+            <p class="ftaFigure"><img src="http://www.foretees.com/images/app/app-logins.png" /></p>
+            <p>Second Paragraph</p>
+            <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>  
+            </ul>
+            <h2>Article content heading #2:</h2>
+            <!-- Figure, with text -->
+            <p class="ftaFigure">
+                <img src="http://www.foretees.com/images/app/Apple-Watch-Push.png" />
+                <span>Description of image</span>
+            </p>
+            <p>Another paragraph</p>
+            <!-- embedded  video -->
+            <div class="ftanEmbed">
+                <iframe src="https://player.vimeo.com/video/121199807" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            
+        </article>
+        
+        <!-- Another short article for this section (optional) -->
+        <article>
+            <header><h1>Section One Article Two Header</h1></header>
+            <p>A paragraph.</p>
+            <h2>Article content heading #1:</h2>
+            <p>Another paragraph.</p>
+            <p>Yet another paragraph.</p>
+        </article>
+    </section>
+    
+     <!-- Another article section (optional) -->
+    <section>
+        <header><h1>Section Two Header</h1></header>
+        <!-- Article for this section -->
+        <article>
+            <header><h1>Section Two Article One Header</h1></header>
+        </article>
+    </section>
+
+     <!-- Footer (Optional) -->
+    <footer>
+        <p>A centered paragraph in the footer.</p>
+    </footer>
+
+</article>

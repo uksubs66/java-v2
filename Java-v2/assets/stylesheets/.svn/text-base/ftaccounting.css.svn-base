@@ -1,0 +1,257 @@
+/* 
+    Document   : ftact
+    Created on : Nov 20, 2014, 1:13:53 PM
+    Author     : Owner
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+div.pq-grid *
+{
+    font-size:12px;    
+}
+
+tr.pq-grid-row td
+{
+    color:#888;
+}
+tr.pq-row-edit > td
+{
+    color:#000;
+}
+tr.pq-row-delete
+{
+    text-decoration:line-through;         
+}
+tr.pq-row-delete td
+{
+    background-color:pink;   
+}
+
+.pq-grid td.pq-detail-child {
+    padding: 3px 0px 3px 30px; 
+}
+
+.pq-grid-header-table-div {
+    white-space:nowrap !important;
+    box-sizing: border-box;
+    text-align:center;
+}
+.pq-grid-header-table-div input:not(.pq-from):not(.pq-to)  {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.pq-detail-child .ui-tabs {
+    padding: 2px;
+}
+
+.pq-detail-child .ui-tabs .pq-gridtab {
+    padding: 0px;
+}
+
+.ui-dialog-content>.pq-grid>div>div>div>div>.pq-grid-table .pq-grid-table {
+    margin-top: 0px !important;
+}
+
+.fta_side_by_side fieldset {
+    box-sizing: border-box;
+    display:inline-block;
+    width:49%;
+}
+
+.ui-dialog {
+    margin-bottom: -1px;
+}
+.fta-grid-top {
+    padding:3px;
+    overflow:hidden;
+}
+.fta-input-wrapper {
+    display:inline-block;
+    
+}
+.fta-input-wrapper label {
+    display:block;
+    text-align: left;
+    color:#fff;
+    background-color:#2e4e8c;
+}
+.fta-input-wrapper label span {
+    display:block;
+    padding:4px;
+}
+.fta-input-wrapper input, .fta-input-wrapper textarea {
+
+    color:#000;
+    box-sizing:border-box;
+    margin:0;
+    margin-left:0;
+    padding-left:3px;
+}
+.fta-input-wrapper label span+input[type=text], .fta-input-wrapper label span+input[type=text], .fta-input-wrapper select.ft_standard_input {
+    margin-left:0;
+    -webkit-border-radius: 03px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    height:26px;
+}
+select.ft_standard_input {
+    min-width: 150px;
+}
+.fta-field-long-date input {
+    width:120px;
+}
+.fta-input-wrapper textarea {
+    min-height:80px;
+    min-width:250px;
+   display:block;
+}
+
+.fta-input-wrapper label input.hasDatepicker[disabled]+button {
+    display:none;
+}
+.fta-left {
+    float:left;
+}
+.fta-right {
+    float:right;
+    text-align: right;
+}
+.fta-field-terms input {
+    width:100px
+}
+
+.fta-list-item.fta-selected {
+    text-decoration: underline;
+}
+
+.pq-grid-row>td>div>button.fta-btn-save-row,
+.pq-grid-row>td>div>button.fta-btn-cancel-row {
+    display:none;
+}
+
+.pq-grid-row.pq-row-edit>td>div>button.fta-btn-save-row,
+.pq-grid-row.pq-row-edit>td>div>button.fta-btn-cancel-row {
+    display:inline;
+}
+.pq-grid-row.pq-row-edit>td>div>button.fta-btn-delete-row,
+.pq-grid-row.pq-row-edit>td>div>button.fta-btn-edit-row {
+    display:none;
+}
+
+.pq-grid-summary .fta-no-summary {
+    visibility:hidden;
+}
+.pq-grid-summary+.pq-grid-footer {
+    overflow:hidden !important;
+    height: 0px !important;
+}
+.pq-grid-summary td {
+    border-bottom: 0px !important;
+}
+
+.pq-grid[style*='position:fixed'], .pq-grid[style*='position: fixed']{
+    z-index:auto !important;
+    top: 37px !important;
+}
+body.Accounting {
+    width: auto !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    overflow: hidden;
+}
+.pq-grid .pq-grid .pq-max {
+    display:none;
+}
+
+.pq-grid .pq-grid-top button.unvoid {
+    display:none;
+}
+.pq-grid.invoiceIsVoided .pq-grid-top button.unvoid {
+    display:inline-block;
+}
+.pq-grid.invoiceIsVoided .pq-grid-top button.void {
+    display:none;
+}
+.pq-grid.invoiceIsVoided .pq-grid-top input[name=voided] {
+    background-color: red;
+}
+
+.pq-grid .pq-grid-top button.unpaid {
+    display:none;
+}
+.pq-grid.invoiceIsPaid .pq-grid-top button.unpaid {
+    display:inline-block;
+}
+.pq-grid.invoiceIsPaid .pq-grid-top button.paid {
+    display:none;
+}
+.pq-grid.invoiceIsPaid .pq-grid-top input[name=last_payment] {
+    background-color: green;
+}
+.pq-grid .ftGridChk {
+    text-align:center;
+}
+
+.pq-grid-row.ftaSentToClub {
+    
+}
+.pq-grid-row.ftaNotSentToClub {
+    background-color:#FFFF8F;
+}
+.pq-grid-row.ftaPastDue {
+    background-color:#ffd3d1;
+}
+.pq-grid-row.ftaPaid {
+    background-color:#c1fbcb;
+}
+
+.pq-grid-row.ftaVoided {
+    background-color:#BBB;
+}
+
+.pq-grid-row.ftaVoided .ftaCls-total, .pq-grid-row.ftaVoided .ftaCls-due_date, .pq-grid-row.ftaVoided .ftaCls-amount_due, .pq-grid-row.ftaVoided .ftaCls-payment_amount, .pq-grid-row.ftaVoided .ftaCls-days_past_due {
+    text-decoration:line-through;
+}
+.pq-grid-row.ftaVoided .ftaCls-voided, .pq-grid-row.ftaPastDue .ftaCls-days_past_due, .pq-grid-row.ftaPastDue .ftaCls-amount_due, .pq-grid-row.ftaPastDue .ftaCls-due_date, .pq-grid-row.ftaSentToClub .ftaCls-sent_to_club, .pq-grid-row.ftaPaid .ftaCls-payment_amount {
+    font-weight: bold;
+    color:black;
+}
+.ftWindowSelectPulse {
+    background-color:#FFFF8F;
+}
+
+.pq-editor-outer {
+    z-index: 10000 !important;
+}
+
+.ftaDateRange .ftaClearFilter {
+    display:none;
+}
+.ftaDateRange .pq-from-div, .ftaDateRange .pq-to-div {
+    position:relative;
+}
+
+
+.ftaDateRange .pq-from-div:hover .ftaClearFilter, .ftaDateRange .pq-to-div:hover .ftaClearFilter {
+    position:absolute;
+    display:block;
+    right:3px;
+    top:1px;
+    cursor:pointer;
+}
+
+
+.ftaDateRange .pq-to-div .ftaClearFilter {
+    right:0;
+}
+
+.pq-grid-header-search-row td.pq-grid-col {
+
+}
+
+
+.ftaHidden {
+    display:none !important;
+}

@@ -1,0 +1,26 @@
+input { cursor: hand;}
+
+.mteetime:active {text-decoration: underline; color: green}
+.mteetime:link {text-decoration: underline; color: green}
+.mteetime:visited {text-decoration: underline; color: green}
+
+.mlottery:active {text-decoration: underline; color: brown}
+.mlottery:link {text-decoration: underline; color: brown}
+.mlottery:visited {text-decoration: underline; color: brown}
+
+.meventblue:active {text-decoration: underline; color: blue}
+.meventblue:link {text-decoration: underline; color: blue}
+.meventblue:visited {text-decoration: underline; color: blue}
+
+.meventred:active {text-decoration: underline; color: red}
+.meventred:link {text-decoration: underline; color: red}
+.meventred:visited {text-decoration: underline; color: red}
+
+.meventblack:active {text-decoration: underline; color: black}
+.meventblack:link {text-decoration: underline; color: black}
+.meventblack:visited {text-decoration: underline; color: black}
+
+.mlesson:active {text-decoration: underline; color: goldenrod}
+.mlesson:link {text-decoration: underline; color: goldenrod}
+.mlesson:visited {text-decoration: underline; color: goldenrod}
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/util
+END
+LimitedInputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/util/LimitedInputStream.java
+END
+Closeable.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/util/Closeable.java
+END
+FileItemHeadersImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/util/FileItemHeadersImpl.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/util/package.html
+END
+Streams.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/util/Streams.java
+END

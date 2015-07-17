@@ -1,0 +1,108 @@
+10
+
+dir
+2778
+http://192.168.1.100/repos/foretees/trunk/java/com/foretees/client
+http://192.168.1.100/repos/foretees
+
+
+
+2010-05-27T22:13:43.324165Z
+2662
+bparise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+971ec85c-b44a-0410-96e2-862f60d68bff
+
+wizard
+dir
+
+HTMLConstants.java
+file
+
+
+
+
+2008-11-14T18:17:02.000000Z
+31f8891b3f8fb2b65992fb96955d8c7e
+2008-05-19T18:01:39.184348Z
+3
+root
+
+ImageHelper.java
+file
+
+
+
+
+2008-11-14T18:17:02.000000Z
+0764a70239af45bef35c777b6d43303a
+2008-05-19T18:01:39.184348Z
+3
+root
+
+form
+dir
+
+attribute
+dir
+
+ScriptHelper.java
+file
+
+
+
+
+2008-11-14T18:17:02.000000Z
+57d7abc893bcc2638bdcd4621f85ad4d
+2008-07-30T19:30:45.231780Z
+358
+
+StyleSheetConstants.java
+file
+
+
+
+
+2008-11-14T18:17:02.000000Z
+867b52fa62353a4372d26a13764e28e1
+2008-05-19T18:01:39.184348Z
+3
+root
+
+table
+dir
+
+misc
+dir
+
+layout
+dir
+
+action
+dir
+
+SystemLingo.java
+file
+
+
+
+
+2008-11-14T18:17:02.000000Z
+27d4e1b3562ad6c85bb8c8fcc0f9bb22
+2008-05-19T18:01:39.184348Z
+3
+root
+

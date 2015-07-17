@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors
+END
+first-child.csst
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/first-child.csst
+END
+descendant.csst
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/descendant.csst
+END
+hover.csst
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/hover.csst
+END
+child.csst
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/child.csst
+END
+attribute-begins.csst
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/attribute-begins.csst
+END
+id.csst
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/id.csst
+END
+type.csst
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/type.csst
+END
+link.csst
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/link.csst
+END
+class.csst
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/class.csst
+END
+focus.csst
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/focus.csst
+END
+simple.csst
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/simple.csst
+END
+combinator-compressed.csst
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/combinator-compressed.csst
+END
+attribute-set.csst
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/attribute-set.csst
+END
+same-nomerge.csst
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/same-nomerge.csst
+END
+attribute-contains.csst
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/attribute-contains.csst
+END
+attribute-equals.csst
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/attribute-equals.csst
+END
+universal-optimization.csst
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/universal-optimization.csst
+END
+lang.csst
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/lang.csst
+END
+same-merge-siblings.csst
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/same-merge-siblings.csst
+END
+universal.csst
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/universal.csst
+END
+visited.csst
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/visited.csst
+END
+universal-shorthand.csst
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/universal-shorthand.csst
+END
+pseudo-elements.csst
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/pseudo-elements.csst
+END
+active.csst
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/active.csst
+END
+grouping.csst
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/grouping.csst
+END
+adjacent.csst
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/adjacent.csst
+END
+merge-optimization.csst
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/merge-optimization.csst
+END
+chain.csst
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/chain.csst
+END
+merge-preserve.csst
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/selectors/merge-preserve.csst
+END

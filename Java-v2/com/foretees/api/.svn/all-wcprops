@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/java/trunk/!svn/ver/7609/com/foretees/api
+END
+ApiClubSetting.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/ApiClubSetting.java
+END
+ApiGetCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/7259/com/foretees/api/ApiGetCommand.java
+END
+ApiAccess.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/ApiAccess.java
+END
+ApiResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/7358/com/foretees/api/ApiResponse.java
+END
+ApiCommon.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/ApiCommon.java
+END
+ApiConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7360/com/foretees/api/ApiConstants.java
+END
+ApiTasks.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/ApiTasks.java
+END
+ApiCredentials.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/7291/com/foretees/api/ApiCredentials.java
+END

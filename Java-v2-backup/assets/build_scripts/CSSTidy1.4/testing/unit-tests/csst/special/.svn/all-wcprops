@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special
+END
+font-face-atmedia.csst
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/font-face-atmedia.csst
+END
+newlines.csst
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/newlines.csst
+END
+atmedia-decimals.csst
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/atmedia-decimals.csst
+END
+font-face_woff.csst
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/font-face_woff.csst
+END
+hex.csst
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/hex.csst
+END
+font-face.csst
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/font-face.csst
+END
+cursor.csst
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/cursor.csst
+END
+same-atmedia-merge.csst
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/same-atmedia-merge.csst
+END
+same-atmedia-nomerge.csst
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/same-atmedia-nomerge.csst
+END
+iezoom.csst
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/iezoom.csst
+END
+complex-gradient.csst
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/complex-gradient.csst
+END
+ie-hacks-sort.csst
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/ie-hacks-sort.csst
+END
+font-face-simple.csst
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/font-face-simple.csst
+END
+font-face-atmedia-2.csst
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/font-face-atmedia-2.csst
+END
+ie-hacks.csst
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/special/ie-hacks.csst
+END

@@ -1,0 +1,365 @@
+/* 
+    Document   : ftinvoice
+    Created on : Nov 20, 2014, 1:13:53 PM
+    Author     : Owner
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.ftInvoice.ftInvoiceComplete{
+   -webkit-print-color-adjust: exact;
+   background-color: white;
+   text-align: center;
+}
+
+.ftInvoiceBody {
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.ftInvoicePage {
+    max-width: 7.5in !important;
+    width: 7.5in !important;
+    text-align: left;
+    margin-left:auto;
+    margin-right: auto;
+    display:block;
+    height: 9.5in !important;
+    position: relative;
+    font-size: 3.5mm;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+div.ftInvoiceTables {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    
+}
+div.ftInvoiceTables table {
+    border-collapse:collapse;
+    border:none;
+    font-size: 3.5mm;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+div.ftInvoiceCompany {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+div.ftInvoiceType {
+    position: absolute;
+    top: .5in;
+    line-height: .5in;
+    right: 0;
+    font-size: 6mm;
+    width: 2.5in;
+    text-align: center;
+    font-weight: bold;
+}
+
+div.ftInvoiceLogo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: .5in;
+    width: 2.5in;
+    text-align: center;
+    /* Background don't print
+    background-image: url('../images/ftRwdLogoGolf.png');
+    background-size: auto .5in;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-print-color-adjust: exact;
+    */
+}
+
+div.ftInvoiceLogo img {
+    text-align: center;
+    border: none;
+    height: .5in;
+    width: auto;
+}
+
+div.ftInvoiceInfo {
+    position: absolute;
+    top: 1.2in;
+    right: 0;
+    width: 2.5in;
+    
+}
+
+.ftInvoiceStamp {
+    position:absolute;
+    left: 50%;
+    top: 1in;
+}
+.ftInvoiceBuilding .ftInvoiceStamp {
+    display:none;
+}
+.ftInvoiceComplete .ftInvoiceStamp>div {
+    position:relative;
+    left: -50%;
+    -ms-transform: rotate(-30deg); /* IE 9 */
+    -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
+    transform: rotate(-30deg);
+    opacity: 0.6;
+    
+}
+.ftInvoiceComplete .ftInvoiceStamp>div>span {
+    font-size: 20mm;
+    font-weight: bold;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    display:block;
+    text-align: center;
+}
+.ftInvoiceComplete .ftInvoiceStamp>div>span+span {
+    font-size: 8mm;
+}
+.ftInvoiceComplete .ftInvoiceStamp.ftInvoicePaid {
+    color: green;
+}
+.ftInvoiceComplete .ftInvoiceStamp.ftInvoicePastDue {
+    color: red;
+}
+
+.ftInvoiceBlock {
+    width: 50%;
+    display:inline-block;
+    text-align: center;
+    margin-top: -1px;
+    *display: inline; /* IE7 hack */
+    *zoom: 1; /* IE7 hack */
+}
+.ftInvoiceBlock>div {
+    background-color:#D6D7D5;
+    border: 1px #777 solid;
+    line-height: .2in;
+    box-sizing: border-box;
+    margin-left: -1px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.ftInvoiceBlock.ftInvoiceDueDate {
+    display:block;
+    padding-bottom:.3in;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+}
+.ftInvoiceBlock.ftInvoiceDueDate>div {
+    border-color: black;
+    background-color: white;
+    border-width: 2px;
+    border-bottom-width: 1px;
+    
+}
+.ftInvoiceBlock.ftInvoiceDueDate>div+div {
+   border-bottom-width: 2px;
+}
+.ftInvoiceBlock>div+div {
+    border-top-width: 0px !important;
+    background-color: transparent;
+    margin-top:0;
+}
+.ftInvoiceBlock.ftInvoiceBillTo {
+    display:block;
+    width: 4in;
+    text-align: left;
+    position: absolute;
+    top: 1.25in;
+    left: 0;
+    
+}
+.ftInvoiceBlock.ftInvoiceBillTo>div {
+    margin-left: 0;
+}
+.ftInvoiceBlock.ftInvoiceBillTo>div+div {
+    height: 1in;
+}
+
+div.ftInvoiceAmountDivider, div.ftInvoiceLeftDivider, div.ftInvoiceRightDivider {
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:0;
+    border-left: 1px black solid;
+    right:20%;
+}
+
+div.ftInvoiceLeftDivider {
+    left:0;
+    right: auto;
+}
+
+div.ftInvoiceRightDivider {
+    right: 0;
+}
+
+div.ftInvoiceColumns, div.ftInvoiceDetails, div.ftInvoiceTotals{
+    position:relative;
+    /*border:1px solid black;*/
+}
+
+div.ftInvoiceDetails {
+    height: 5in;
+    overflow:hidden;
+}
+div.ftInvoiceColumns, div.ftInvoiceDetails {
+    border-bottom-width: 0px;
+}
+
+
+div.ftInvoiceTables table.ftInvoiceColumns, div.ftInvoiceTables table.ftInvoiceDetails, div.ftInvoiceTables table.ftInvoiceTotals{
+    width: 100%;
+    border:1px solid black;
+}
+div.ftInvoiceTables table.ftInvoiceDetails {
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: none;
+    border-top: none;
+}
+
+table.ftInvoiceDetails td {
+    padding: 4px;
+    vertical-align:top;
+}
+table.ftInvoiceDetails td.ftInvoiceDescription {
+    padding-right: 8px;
+}
+table.ftInvoiceDetails td.ftInvoiceAmount {
+    text-align: right;
+}
+
+table.ftInvoiceDetails tr:nth-child(even) {
+    background-color:#f1f1f1;
+}
+
+table.ftInvoiceColumns th {
+    text-align: center;
+    background-color: #D6D7D5;
+    line-height: .2in;
+}
+
+.ftInvoiceTag, .ftInvoiceValue {
+    border-bottom: 1px black solid;
+    line-height: .2in;
+    text-align: right;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.ftInvoiceTag {
+    border-left: 1px black solid;
+    padding-right: .25in;
+}
+
+table.ftInvoiceColumns th, .ftInvoiceAmountDue .ftInvoiceValue, .ftInvoiceAmountDue .ftInvoiceTag {
+    background-color: #D6D7D5;
+    line-height: .2in;
+    border-bottom-width: 0px;
+}
+.ftInvoiceAmountDue .ftInvoiceValue, .ftInvoiceAmountDue .ftInvoiceTag {
+    font-weight: bold;
+    line-height: .25in;
+}
+table.ftInvoiceColumns th {
+    text-align: center;
+}
+
+table .ftInvoiceDescription{
+    width:80%;
+}
+
+table .ftInvoiceAmount, table .ftInvoiceValue{
+    width:20%;
+}
+table .ftInvoiceNotes{
+    width:60%;
+    padding:2px;
+}
+table .ftInvoiceTag{
+    width:20%;
+    
+}
+.ftInvoicePager {
+    padding-top: .125in;
+    text-align: center;
+    line-height: .2in;
+}
+
+.ftInvoiceHidden {
+    display:block;
+    position:absolute;
+    width:0;
+    height:0;
+    overflow:hidden;
+}
+
+
+#ftInvoicePrintFrame {
+    overflow:hidden;
+    height:0px;
+    width:0px;
+    border:none;
+    padding:0;
+}
+
+/*
+#ftInvoicePrintFrame {
+    position:absolute;
+    height:500px;
+    width:800px;
+    top:0px;
+    left:0px;
+    z-index:99999999;
+}
+*/
+.ftInvoiceAfterPage + .ftInvoiceBeforePage, .ftInvoiceAfterPage {
+    padding-bottom: .25in;
+}
+.ftInvoiceAfterPage + .ftInvoiceBeforePage {
+    border-top: 1px #777 dotted;
+}
+
+.ftInvoicePage + .ftInvoicePage {
+    border-top: 1px #777 dotted;
+}
+@media print {
+    .ftInvoiceAfterPage + .ftInvoiceBeforePage {
+        page-break-before: avoid;
+        page-break-after: always;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        border-top: none !important;
+        height: 0 !important;
+    }
+    .ftInvoicePage {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        -webkit-column-break-inside: avoid !important;
+    }
+    .ftInvoiceBeforePage, .ftInvoiceAfterPage {
+        border:none !important;
+        padding:0 !important;
+        margin:0 !important;
+        height:0 !important;
+    }
+    body {
+        
+    }
+    @page {
+        size: letter portrait;
+        margin: 0.5cm !important;
+    }
+}
+

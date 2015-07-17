@@ -1,0 +1,259 @@
+/* 
+    Document   : dashboard
+    Created on : Jan 15, 2015, 7:12:56 PM
+    Author     : Owner
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+.ftd_left {
+    width:50%;
+    float:left;
+    padding-right: 3px;
+    box-sizing: border-box;
+}
+.ftd_right {
+    width:50%;
+    float:right;
+    padding-left: 3px;
+    box-sizing: border-box;
+}
+.ftd_container {
+    width:100%;
+}
+.ftd_container div.list_calendar {
+    margin: 0 0 6px 0;
+}
+
+.ftd_container .ftd_report {
+    margin: 0 0 6px 0;
+    border: 1px solid #aaa;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.ftd_container .ftd_3x2barGraph {
+    
+    /* background-color:#fafafa; */
+    line-height: 30px;
+    width: 100%;
+    min-height:180px;
+    padding: 15%; /* Controls dynamic height */
+    box-sizing: border-box;
+    position: relative;
+}
+
+.ftd_container .ftd_3x2barGraph .ftd_graph_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right:0;
+    margin:0 auto;
+}
+
+.ftd_report_title {
+    display:block;
+    line-height:30px;
+    font-weight:bold;
+    font-size:14px;
+}
+.ftd_report_subtitle {
+    font-weight: normal;
+}
+.ftd_report_item {
+    line-height: 20px;
+    padding: 5px;
+    clear:both;
+    overflow:auto;
+}
+.ftd_report_item:nth-child(even) {
+    background-color: #efefef;
+}
+.ftd_report_item:hover {
+    /* background-color:#f7ffb1; */
+}
+
+.ftd_report_item.ftd_clickable_item:hover {
+    background-color:#FFE7A1;
+    text-decoration:underline;
+}
+
+.ftd_report_item span {
+    display:block;
+    float:left;
+    line-height: 20px;
+}
+
+.ftd_report_item span+span {
+    float:right;
+}
+
+
+
+.ftd_report_item.ftd_days_until_0 {
+    background-color:#f7ffb1;
+}
+
+.ftd_report_item.ftd_days_until_0:nth-child(even) {
+    background-color: #ECF4A8;
+}
+
+.ftd_report_item.ftd_days_until_1 {
+    background-color:#ccffcc;
+}
+
+.ftd_report_item.ftd_days_until_1:nth-child(even) {
+    background-color: #C2F7C2;
+}
+
+.ftd_report_item.ftd_unread {
+    font-weight: bold;
+}
+
+.ftd_report_item .ftd_date_item {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 13px;
+}
+
+@media only screen and ( max-width: 600px ) {
+    .ftd_report_item .ftd_date_item {
+        float: none;
+    }
+}
+
+.ftd_report_list.ftd_constrain {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    overflow:auto;
+    max-height:400px;
+}
+
+#ftAnnouncementFrame {
+    border:0;
+    margin:0;
+    padding:0;
+    width: 100%;
+}
+
+.ftd_caption {
+    text-align: center;
+    line-height: 20px;
+    padding: 5px;
+    border-bottom: 1px solid #888;
+    background-color: #e4f3f8;
+}
+.ftd_caption span {
+    white-space: nowrap;
+    padding-left: 5px;
+    padding-right:5px;
+}
+
+.ftd_caption span+span:before {
+    content: '(';
+}
+.ftd_caption span+span:after {
+    content: ')';
+}
+
+.ftd_day_banner {
+    text-align: center;
+    /* border: 1px solid #aaa; */
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color:#666666;
+    color:#fff;
+    margin-bottom: 10px;
+}
+
+.ftd_day_banner span {
+    display: inline-block;
+    line-height: 20px;
+    padding: 5px;
+}
+.ftd_day_banner.ftd_is_today {
+    background-color:#006600;
+}
+
+.ftd_list-small {
+    display:inline-block;
+    width:16px;
+    height:16px;
+    margin:2px;
+    background-repeat: no-repeat;
+    background-image: url('../images/list-small.png');
+}
+
+.ftd_clickable_item {
+    cursor:pointer;
+}
+
+.fta_has_date_arrows {
+    position: relative;
+    padding-left: 27px;
+    padding-right: 27px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.fta_has_date_arrows .fts_date_select {
+    display:block;
+    padding:5px;
+    margin:0;
+    position: absolute;
+    top:50%;
+}
+.fta_has_date_arrows .fts_date_select div {
+    display:block;
+    position:relative;
+    margin-top:-17px;
+    padding:3px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    cursor:pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.fta_has_date_arrows .fts_date_select div:hover {
+    border: #aaa 1px solid;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.fta_has_date_arrows .fts_date_back {
+    left:0px;
+}
+.fta_has_date_arrows .fts_date_forward {
+    right:0px;
+}
+
+#ftAnnouncementFrame {
+    display:block;
+    width:100%;
+    border:0;
+    padding:0;
+    margin:0;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.ftd_hide {
+    display:none !important;
+}
+
+

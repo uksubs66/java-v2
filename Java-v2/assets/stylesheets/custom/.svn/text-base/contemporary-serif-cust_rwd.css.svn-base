@@ -1,0 +1,355 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+/* ------- This is the CONTEMPORARY version ------- */
+
+
+
+/*  Custom style sheet
+
+    NOTICE:  Please document ALL colors here!!!!!!!
+
+  Primary colors used:
+           dark -          336633      (now 223037)
+           med dark -      8B8970      (now A84B3A)
+           med light -     CCCCAA      (now 4C646B)
+           light -         F5F5DC      (now FFF7F5)
+           table matting - lightblue   (not changed)  
+*/
+
+
+@font-face {
+    font-family: 'CrimsonRoman';
+    src: url('../../webfonts/Crimson/Crimson-Roman-webfont.eot');
+    src: url('../../webfonts/Crimson/Crimson-Roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../webfonts/Crimson/Crimson-Roman-webfont.woff') format('woff'),
+         url('../../webfonts/Crimson/Crimson-Roman-webfont.ttf') format('truetype'),
+         url('../../webfonts/Crimson/Crimson-Roman-webfont.svg#CrimsonRoman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CrimsonBold';
+    src: url('../../webfonts/Crimson/Crimson-Bold-webfont.eot');
+    src: url('../../webfonts/Crimson/Crimson-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../webfonts/Crimson/Crimson-Bold-webfont.woff') format('woff'),
+         url('../../webfonts/Crimson/Crimson-Bold-webfont.ttf') format('truetype'),
+         url('../../webfonts/Crimson/Crimson-Bold-webfont.svg#CrimsonBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CrimsonItalic';
+    src: url('../../webfonts/Crimson/Crimson-Italic-webfont.eot');
+    src: url('../../webfonts/Crimson/Crimson-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../webfonts/Crimson/Crimson-Italic-webfont.woff') format('woff'),
+         url('../../webfonts/Crimson/Crimson-Italic-webfont.ttf') format('truetype'),
+         url('../../webfonts/Crimson/Crimson-Italic-webfont.svg#CrimsonItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body, body.LoginPrompt, body.Login, body.Member_msg, body.Logout {
+    background-color:#4C646B; font-family:'CrimsonRoman',Georgia, 'Times New Roman', Times, serif;
+	
+}
+
+#title {font-family:'CrimsonRoman',Georgia, 'Times New Roman', Times, serif;
+	}
+
+strong{
+	font-family:'CrimsonBold',Georgia, 'Times New Roman', Times, serif; 
+}
+	
+em {
+	font-family:'CrimsonItalic',Georgia, 'Times New Roman', Times, serif;
+	
+}
+
+
+body, body.LoginPrompt, body.Login, body.Member_msg, body.Logout  {
+    background-color:#4C646B;
+}
+
+#title, .welcome_member {
+    color:#FFFFFF;
+}
+
+/* START TOP NAVIGATION */
+
+
+#top {
+    background-color: #223037;
+}
+
+
+#topnav li li a {
+    background-color: #223037;
+    color: #fff;
+}
+
+#topnav li li a:hover {
+    background-color: #A84B3A;
+
+}
+
+
+a .topnav_item2 {
+    color:#faf9d5;
+}
+
+
+/* START SUB NAVIGATION */
+
+
+#subnav a, #subnav a:visited {
+    background-color: #223037;
+    color: #ffffff;
+    border-color: #fff;               /*  add a white border on the tabs */
+}
+
+#subnav a:hover {
+    color:#FFFFFF;
+    background-color:#333;
+}
+
+#subnav a.selected, #subnav a.selected:visited {
+    background-color:#A84B3A;
+}
+
+
+/*------------- END SUB NAVIGATION--------------- */
+
+
+
+
+
+
+h1 {
+    color:#142e24;
+}
+
+
+/* ------- Standard Elemets ------- */
+
+
+.standard_list_table a.teetime_button_alternate1 {
+    text-decoration: none;
+    background-color: lightgreen;
+}
+
+.standard_list_table .rwdTbody .rwdTd.highlight {
+    background-color: yellow;
+}
+
+.standard_list_table .rwdTbody .rwdTd.blackout {
+    background-color: black;
+}
+
+.standard_list_table .rwdTbody .rwdCaption {
+
+    background-color:#fafafa;
+}
+
+.standard_list_table .rwdTbody .rwdCaption hr {
+    background-color: #aaa;
+}
+
+.standard_list_table .rwdTbody .rwdTh {
+    background-color: #f9f0d2;
+    color: #A84B3A;
+}
+
+/* ------- LOGIN PAGE ---------- */
+
+/* ------- ALSO USED IN OUTPUTERROR IN COMMON_SKIN ---------- */
+
+#main_login {
+    background-color:#FFFFFF;
+    color:#000000;
+}
+
+
+.login {
+    border-color: #c6d4cf;
+    color:#142e24;
+}
+
+#login_welcome {
+    background-color:#FFF7F5;
+    border-color:#f9f0d2;
+}
+
+/* ------- END FOOTER ---------- */
+
+
+/* ------- MAIN WINDOW ---------- */
+
+#club_logo {
+    background-color:#f5f5f5;
+    color:#dadada;
+}
+
+
+.left_links {
+    background-color:#e4f3f8;
+}
+
+.left_links li {
+    border-bottom-color: #ccddf0;
+}
+
+.left_links a, .left_links a:visited {
+    color:#177b9d;
+}
+
+.left_info {
+    background-color:#f2f0e5;
+}
+
+.left_info a, .left_info a:visited {
+    color:#A84B3A;
+}
+
+.left_info a:hover {
+    color:#c9504e;
+}
+
+.main_message div {
+    background-color:#f5f5f5;
+}
+
+.main_message a, .main_message a:visited {
+    color:#A84B3A;
+}
+
+#breadcrumb a, #breadcrumb a:visited {
+    color:#4093af;
+}
+
+.main_instructions {
+    background-color:#e4f3f8;
+}
+
+.main_warning {
+    background-color:#A84B3A;
+    color:#ffffff;
+}
+
+
+
+.sub_instructions {
+    background-color:#FFF7F5;
+    border-color: #f9f0d2;
+}
+
+a.tip_text, a:visited.tip_text {
+    color:#4093af;
+}
+
+.select {
+    background-color:#4C646B;
+    color:#FFFFFF;
+}
+
+
+
+
+/* ------- BEGIN LARGE TABLE ---------  */
+
+#big_table_brdr {
+    background-color:#f2f2f2;
+}
+
+#big_table {
+    background-color:#FFF;        /*  fff - white */
+    border-color: #e4e4e4;
+}
+
+#big_table table td.head {
+    background-color:#f9f0d2;
+    color:#A84B3A;
+}
+
+#big_table table td a,#big_table table td a:visited {
+    color:#003399;
+}
+
+
+/* -------- END LARGE TABLE ----------  */
+
+
+
+/* ------- BEGIN RESERVATIONS PAGE-------  */
+
+.res_select {
+    background-color:#f9f0d2;
+}
+
+.res_select_ltr {
+    background-color:#f9f0d2;
+}
+
+.res_select_ltr table td {
+    background-color:#FFFFFF;
+}
+
+.res_select_ltr a, .res_select_ltr a:visited {
+    color:#007096;
+    background-color:#ffffff;
+}
+
+.res_select_ltr a:hover {
+    background-color:#333333;
+    color:#ffffff;
+}
+
+#back, .go_back_button {
+    background-color:#646464;
+    border-color: #c5c6c6;
+    color:#ffffff;
+}
+
+#submit, .submit_request_button {
+    background-color:#007096;
+    border-color: #e8f1f4;
+    color:#ffffff;
+}
+
+.cancel_request_button {
+    background-color:#8a2a28;
+    border-color: #e8f1f4;
+    color:#ffffff;
+}
+
+#submit:hover, #back:hover, .submit_request_button:hover, .go_back_button:hover, .cancel_request_button:hover {
+    background-color:#ffffff;
+    color:#333333;
+}
+
+
+/* ------- END RESERVATIONS PAGE-------  */
+
+
+
+/* ------- END MAIN WINDOW ---------- */
+
+#footer, #wrapper_login #footer {
+    color:#FFFFFF;        /* was cbcccc */
+}
+
+#footer a, #footer a:visited {
+
+    color:#FFFFFF;            /* was faf9d5 */
+    background-color: inherit;
+}
+
+

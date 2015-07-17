@@ -1,0 +1,16 @@
+/* 
+    Document   : ie8_compatibility
+    Created on : Oct 30, 2013, 8:19:22 AM
+    Author     : Owner
+    Description:
+        Hacks for IE8 compatibility
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.radioBarGroup>label.checked>input+span {
+    background-color: #adadad;
+}

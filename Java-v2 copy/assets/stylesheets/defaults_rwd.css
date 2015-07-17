@@ -1,0 +1,21 @@
+/* 
+    Document   : defaults_rwd
+    Created on : Oct 30, 2013, 10:40:30 AM
+    Author     : Owner
+    Description:
+        CSS that applies globally to elements.
+        Should only be used for body
+*/
+
+body {
+    /*
+    background-color:#CCCCAA;
+    margin:0px; padding:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#142e24;
+    font-size:14px;
+    */
+    margin:0px; padding:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+}

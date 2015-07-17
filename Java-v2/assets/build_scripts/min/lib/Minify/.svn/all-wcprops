@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify
+END
+Packer.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Packer.php
+END
+CommentPreserver.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/CommentPreserver.php
+END
+DebugDetector.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/DebugDetector.php
+END
+ClosureCompiler.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/ClosureCompiler.php
+END
+ClosureStylesheets.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/ClosureStylesheets.php
+END
+Source.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Source.php
+END
+HTML.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/HTML.php
+END
+ImportProcessor.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/ImportProcessor.php
+END
+Build.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Build.php
+END
+Lines.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Lines.php
+END
+Logger.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Logger.php
+END
+YUICompressor.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/YUICompressor.php
+END
+Loader.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Loader.php
+END
+CSS.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/CSS.php
+END

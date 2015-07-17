@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Authenticators
+END
+IPAuthenticator.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Authenticators/IPAuthenticator.php
+END
+SessionAuthenticator.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Authenticators/SessionAuthenticator.php
+END
+BaseAuthenticator.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/java/trunk/!svn/ver/2119/assets/jquery/tiny_mce/plugins/imagemanager/classes/Authenticators/BaseAuthenticator.php
+END

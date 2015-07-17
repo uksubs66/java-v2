@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/reportItems
+END
+BillableCount.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/7383/com/foretees/api/reportItems/BillableCount.java
+END
+ActivitySignupCounts.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/7399/com/foretees/api/reportItems/ActivitySignupCounts.java
+END
+Commission.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/7236/com/foretees/api/reportItems/Commission.java
+END
+LoginCount.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/7149/com/foretees/api/reportItems/LoginCount.java
+END
+CalendarEntry.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/reportItems/CalendarEntry.java
+END

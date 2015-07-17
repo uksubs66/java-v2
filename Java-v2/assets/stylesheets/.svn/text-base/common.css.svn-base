@@ -1,0 +1,957 @@
+/* 
+    Document   : common
+    Created on : Oct 30, 2013, 11:09:01 AM
+    Author     : Owner
+    Description:
+        CSS used by both desktop and rwd
+*/
+
+
+#rwdModeSwitch {
+    text-align: center;
+    margin-top: 5px;
+}
+.sortHandle {
+    -ms-touch-action:none;
+    touch-action:none;
+}
+
+.ftCenterText {
+    text-align:center;
+}
+
+.standard_list_table + .sub_instructions, .standard_list_table + .main_instructions {
+    margin-top: 10px;
+}
+
+
+
+/* Modal field container  */
+
+.modal_list .field_container {
+    /* margin-top: 5px;
+    margin-bottom: 5px; */
+    margin:0;
+    padding:5px;
+    line-height: 25px;
+}
+
+.modal_list .field_container label {
+    width:150px;
+    display:inline-block;
+    margin-right: 10px;
+    text-align: right;
+}
+.slotPageLoadNotification_container .field_container label {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width:45%;
+}
+.modal_list .field_container.ftDateSelect,
+.slotPageLoadNotification_container .field_container.ftDateSelect {
+    text-align: center;
+}
+.modal_list .field_container.center {
+    text-align: center;
+}
+.modal_list .field_container.ftDateSelect label,
+.slotPageLoadNotification_container .field_container.ftDateSelect label {
+    width:auto;
+    display:inline-block;
+}
+.modal_list .ftRadioSelect {
+    background-color:#fafab8;
+    
+    border: 1px solid #bbb;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-top: 5px;
+    
+    
+}
+.modal_list .ftRadioSelect label {
+    line-height: 25px;
+    padding:5px;
+    display:block;
+    cursor: pointer;
+}
+.modal_list .ftRadioSelect label span {
+    font-weight: bold;
+}
+.modal_list .ftRadioSelect label span.smallSign {
+    background-color: #fff;
+    color:#000;
+    display: inline-block;
+    font-weight: normal;
+    border: 1px solid #bbb;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding-right:5px;
+    padding-left:5px;
+}
+.modal_list .ftRadioSelect.warning label span.smallSign {
+    background-color:#999;
+    color:#000;
+}
+.modal_list .ftRadioSelect:hover {
+    background-color:#ffff66;
+}
+.modal_list .ftRadioSelect.active {
+  /* background-color: #0080CC; */
+    background-color: #729C8B;
+    color:#fff;
+    border-bottom: none;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    
+}
+.modal_list .ftRadioSelect.warning {
+    background-color:#646464;
+    color: #fff;
+}
+.modal_list .ftRadioSelectBlock {
+    border: 1px solid #bbb;
+    border-top: none;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    background-color: #fff;
+}
+.modal_list .ftRadioSelectBlock.inactive {
+    display:none;
+}
+
+.modal_list .ftFieldBlock {
+ /* border: 1px solid #003399; */
+    border: 1px solid #436356;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #f8f4e4;
+    padding:5px;
+    overflow: hidden;
+}
+.modal_list .ftFieldBlock + .ftFieldBlock {
+    margin-top: 5px;
+}
+.modal_list .ftFieldBlock > h3 {
+    display:block;
+    padding:5px;
+    margin:-5px -5px 0 -5px;
+    font-size: 14px;
+    line-height: 18px;
+ /* background-color:#003399; */
+    background-color:#436356;
+    color:#fff;
+}
+
+
+/* Fields, labels, datepickers, etc.  */
+label input.ft_date_picker_field, label .ft_standard_input {
+    line-height: 16px;
+    font-weight: bold; 
+    font-size: 13px; 
+    border: 1px solid grey;
+    background-color: #fff;
+    color: #000;
+    margin:0;
+    padding: 2px;
+    padding-left:5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+label input.ft_date_picker_field {
+    width: 100px;
+    -webkit-user-select: none; /* Stop mobile safari from displaying copy/cut/paste dialog along with datepicker */
+}
+
+
+label:hover input.ft_date_picker_field, label:hover input.ft_standard_input {
+    -moz-box-shadow: 0px 0px 15px #0099ff;
+    -webkit-box-shadow: 0px 0px 15px #0099ff;
+    box-shadow: 0px 0px 15px #0099ff;
+}
+
+label input.ft_date_picker_field[disabled], label .ft_standard_input[disabled] {
+    background-color:#ccc;
+}
+
+label input.ft_date_picker_field+button.ui-datepicker-trigger {
+    margin:0;
+    border:none;
+    padding:0;
+    width:16px;
+    line-height: 0px;
+    position:relative;
+    margin-left: -19px;
+    margin-right: 3px;
+    top:3px;
+    
+}
+
+label input.ft_date_picker_field+button.ui-datepicker-trigger img {
+    display:block;
+    margin:0;
+    border:none;
+    padding:0;
+}
+
+label input[type=radio] {
+    margin-right: 5px;
+}
+
+label span+input[type=text] {
+    margin-left: 5px;
+}
+
+.calendar.aboveMenu {
+    font-size: 135%;
+    max-width: 295px;
+}
+
+.calendar.aboveMenu .ui-datepicker-buttonpane {
+    font-size: 75%;
+}
+
+
+input.ft_date_picker+button.ui-datepicker-trigger {
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+    background: none;
+    cursor: pointer;
+}
+
+button.ui-datepicker-current:empty { display: none; }
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul.modal_field_list:after, ul.modal_field_list>li>div:after {
+    display:block;
+    content:"";
+    width:0;
+    height:0;
+    overflow:hidden;
+    clear:both;
+}
+
+.standard_list_table+h3.tee_list_ctr2 {
+    margin-top: 25px;
+}
+
+.sDd {
+    white-space: nowrap;
+}
+
+.rwdTr.ft-event {
+    background-color:#FFFF8F;
+}
+
+.ui-widget-overlay {
+    bottom:0;
+    right:0;
+    opacity:.6;
+    filter: Alpha(Opacity=60);
+}
+.ui-dialog .ui-dialog-title {
+    width: 95%;
+}
+
+
+.ftGdb-tabs, .ft-tabs {
+    display:none;
+    list-style: none;
+    padding:0;
+    margin:0;
+    text-align: center;
+    z-index:1;
+    position:relative;
+}
+.ft-tabs {
+    display:block;
+}
+.ftGdb-tabs>li, .ft-tabs>.ft-tab {
+    display:inline-block;
+    padding:0;
+    margin:0 2px 0 2px;
+}
+.ftGdb-tabs>li>div, .ft-tabs>.ft-tab>div {
+    height:25px;
+    padding:0 5px 0 5px;
+    line-height: 25px;
+    cursor: pointer;
+    background-color: #888;
+    color:#fff;
+    border: 1px solid #bbb;
+    border-bottom: none;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ftGdb-tabs>li>div.active, .ft-tabs>.ft-tab>div.active {
+    background-color: #fff;
+    color:#000;
+    height:26px;
+    margin-bottom: -1px;
+    margin-top: 1px;
+    
+}
+.ft-tabBlock {
+    display:none;
+    border: 1px solid #bbb;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding:2px;
+}
+.ft-tabBlock.active {
+    display:block;
+}
+
+a.standard_link {
+    color:#003399;
+}
+a.standard_link:hover {
+    text-decoration:underline;
+}
+
+/* Tables */
+
+.rwdCompactible.rwdShowPgInFull .rwdTh.plCol,
+.rwdCompactible.rwdShowPgInFull .sP {
+    display:none;
+}
+
+.rwdCompactible.rwdShowPgInFull .pgCol {
+    /* display:none; */
+}
+.rwdCompactible.rwdShowPgInFull .rwdTh.pgCol {
+    white-space: nowrap;
+}
+
+.rwdCompactible .rwdTd.sP>div,
+.rwdCompactible .rwdTd.pgCol>div {
+    display: inline-block;
+}
+.rwdCompactible .rwdTd.sP>div {
+    white-space: nowrap;
+}
+.rwdCompactible .rwdTd.sP>div:after,
+.rwdCompactible .rwdTd.pgCol>div:after {
+    content: ";";
+    margin-right: 5px;
+}
+.rwdCompactible .rwdTd.sP>div:last-child:after,
+.rwdCompactible .rwdTd.pgCol>div:last-child:after {
+    content: "";
+    margin-right: 0;
+}
+.rwdCompactible .rwdTd.sP>div.me>span,
+.rwdCompactible .rwdTd.pgCol>div.me>span {
+    font-weight: bold;
+}
+.rwdCompactible .rwdTd.sP>div>span+span:empty,
+.rwdCompactible .rwdTd.pgCol>div>span+span:empty {
+    display:none;
+}
+.rwdCompactible .rwdTd.sP>div>span+span:before,
+.rwdCompactible .rwdTd.pgCol>div>span+span:before {
+    margin-left: 5px;
+    content: "(";
+}
+.rwdCompactible .rwdTd.sP>div>span+span:after, 
+.rwdCompactible .rwdTd.pgCol>div>span+span:after {
+    content: ")";
+}
+.rwdCompactible .rwdTd.sP>div.slotCount {
+    border: 1px solid #336633;
+    background-color: #fff;
+    color: #000;
+    padding: 1px 3px;
+    margin-right: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.rwdCompactible .rwdTd.sP>div.slotCount:after {
+    display: none;
+}
+
+.rwdCompactible .rwdTd.sP>div.slotCount {
+    /* background-color:#41953e; */
+    background-color:#2e6a2c;
+    color:#fff;
+}
+
+.rwdCompactible .rwdTd.sP>div.slotCount.isRestricted {
+    /* background-color:#6d88c4; */
+    background-color:#003399;
+    color:#fff;
+}
+
+.rwdCompactible .rwdTd.sP>div.openSlots0,
+.rwdCompactible .rwdTd.sP>div.openSlots1,
+.rwdCompactible .rwdTd.sP>div.openSlots2 {
+    border-color:yellow;
+}
+
+.rwdCompactible .rwdTd.sP>div.openSlots0 {
+    border-color:red;
+}
+
+.rwdCompactible .rwdTd.sP>div.slotCount.maxPlayers2,
+.rwdCompactible .rwdTd.sP>div.slotCount.maxPlayers3 {
+    /* background-color:#6d88c4; */
+    background-color:#FFFF8F;
+    color:#000;
+}
+.rwdCompactible .rwdTd.sP>div.slotCount.maxPlayers2.openSlots2 {
+    border-color:#336633;
+}
+
+.rwdCompactible .rwdTd.sP>div.noLinkSlot, 
+.rwdCompactible .rwdTd.sP>div.fullSlot {
+    background-color: #ccc;
+    color:#000;
+}
+
+/* course(activity), date, view select */
+.rwdCourseDate {
+    text-align: center;
+    background-color: #e4f3f8;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.rwdCourseDate>div {
+    display:inline-block;
+    padding: 5px;
+}
+.rwdCourseDate select {
+    font-weight: bold;
+}
+.rwdCourseDate label {
+    white-space: nowrap;
+}
+.rwdCourseDate label b {
+    font-weight: normal;
+    margin-right: 5px;
+}
+.rwdCourseDate label b+span {
+    font-weight: bold;
+}
+
+
+.deleteButtonSmall{
+    display:inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/minus_circle.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding:0;
+    margin:0;
+}
+.deleteButtonMedium {
+    display:inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/minus_circle.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding:0;
+    margin:0;
+}
+.deleteButtonLarge {
+    display:inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url('../images/minus_circle.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding:0;
+    margin:0;
+}
+.deleteButtonSmall b, .deleteButtonMedium b, .deleteButtonLarge b{
+    display:none;
+    
+}
+.helpButton {
+    display:inline-block;
+    width:20px;
+    height: 20px;
+    position:relative;
+    z-index:1;
+}
+.helpButton span {
+    display:none;
+}
+.helpButton:before {
+    display:inline-block;
+    content:'?';
+    color:#fff;
+    font-weight: bold;
+    font-size: 12px;
+    width:20px;
+    line-height:20px;
+    height:20px;
+    text-align: center;
+    border:1px solid #fff;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #669933;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px;
+}
+
+ul.standard_list {
+    padding-left: 30px;
+}
+
+label.lesson_button {
+    text-align: left !important;
+    display:block;
+}
+label.lesson_button:hover {
+    border-color:#646464;
+}
+
+.unsupportedDevice {
+    border: 1px solid #aaa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color:#FFBD69;
+    overflow: hidden;
+    padding:10px;
+}
+.unsupportedDevice h2 {
+    font-size: 18px;
+}
+.unsupportedDevice a {
+    color:#0000FF;
+    text-decoration: underline;
+}
+.unsupportedDevice p+p, .unsupportedDevice h2+p {
+    margin-top: 20px;
+}
+
+#rwdModeSwitch a {
+    display:inline-block;
+    color:#00008B;
+    padding:2px 5px;
+    margin:2px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#20FFFFFF, endColorstr=#20FFFFFF)";
+    background-color: rgba(255,255,255,0.16);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#rwdModeSwitch a:hover {
+    text-decoration: underline;
+}
+
+.primaryUserSelectItem {
+    padding:0;
+    margin:5px;
+}
+
+.primaryUserSelectItem a {
+    
+}
+
+.slotSubmit_container .indented_list.guest_assoc {
+    text-indent: 0px;
+    padding-left: 0px;
+    
+}
+.slotSubmit_container .indented_list.guest_assoc li {
+    text-indent: 0px;
+    padding-left: 10px;
+}
+.slotSubmit_container .indented_list.guest_assoc li.guest_item {
+    padding-left: 20px;
+    font-size: 13px;
+    
+}
+.slotSubmit_container .guest_item {
+   color:darkorange;
+  font-weight: bold;
+}
+.slotSubmit_container .guest_item.no_owner {
+   color:red; 
+}
+.slotSubmit_container .indented_list.guest_assoc li.player_item {
+    font-size: 13px;
+}
+.slotSubmit_container .player_item {
+    font-weight: bold;
+}
+.slotSubmit_container .indented_list.guest_assoc li.guest_item span+span {
+    font-size: 11px;
+    display:none;
+}
+.slotSubmit_container .indented_list.guest_assoc li.guest_item span+span:before {
+    content: "(";
+}
+.slotSubmit_container .indented_list.guest_assoc li.guest_item span+span:after {
+    content: ")";
+}
+.slotSubmit_container .list_header {
+    text-decoration:underline;
+}
+
+.ftcAntiquewhite { background-color:Antiquewhite; color:#000; }
+.ftcAqua { background-color:Aqua; color:#000; }
+.ftcAquamarine { background-color:Aquamarine; color:#000; }
+.ftcBeige { background-color:Beige; color:#000; }
+.ftcBisque { background-color:Bisque; color:#000; }
+.ftcBlanchedalmond { background-color:Blanchedalmond; color:#000; }
+.ftcBlue { background-color:Blue; color:#fff; }
+.ftcBluevoilet { background-color:Bluevoilet; color:#fff; }
+.ftcBrown { background-color:Brown; color:#fff; }
+.ftcBurlywood { background-color:Burlywood; color:#000; }
+.ftcCadetblue { background-color:Cadetblue; color:#000; }
+.ftcChartreuse { background-color:Chartreuse; color:#000; }
+.ftcChocolate { background-color:Chocolate; color:#000; }
+.ftcCoral { background-color:Coral; color:#000; }
+.ftcCornflowerblue { background-color:Cornflowerblue; color:#000; }
+.ftcCornsilk { background-color:Cornsilk; color:#000; }
+.ftcCrimson { background-color:Crimson; color:#fff; }
+.ftcCyan { background-color:Cyan; color:#000; }
+.ftcDarkblue { background-color:Darkblue; color:#fff; }
+.ftcDarkcyan { background-color:Darkcyan; color:#fff; }
+.ftcDarkgoldenrod { background-color:Darkgoldenrod; color:#fff; }
+.ftcDarkgray { background-color:Darkgray; color:#fff; }
+.ftcDarkgreen { background-color:Darkgreen; color:#fff; }
+.ftcDarkkhaki { background-color:Darkkhaki; color:#000; }
+.ftcDarkmagenta { background-color:Darkmagenta; color:#fff; }
+.ftcDarkolivegreen { background-color:Darkolivegreen; color:#fff; }
+.ftcDarkorange { background-color:Darkorange; color:#fff; }
+.ftcDarkorchid { background-color:Darkorchid; color:#fff; }
+.ftcDarkred { background-color:Darkred; color:#fff; }
+.ftcDarksalmon { background-color:Darksalmon; color:#000; }
+.ftcDarkseagreen { background-color:Darkseagreen; color:#000; }
+.ftcDarkslateblue { background-color:Darkslateblue; color:#fff; }
+.ftcDarkslategray { background-color:Darkslategray; color:#fff; }
+.ftcDarkturquoise { background-color:Darkturquoise; color:#000; }
+.ftcDarkviolet { background-color:Darkviolet; color:#fff; }
+.ftcDeeppink { background-color:Deeppink; color:#fff; }
+.ftcDeepskyblue { background-color:Deepskyblue; color:#fff; }
+/* .ftcDefault { background-color:Default; color:#000; } */
+.ftcDimgray { background-color:Dimgray; color:#fff; }
+.ftcDodgerblue { background-color:Dodgerblue; color:#fff; }
+.ftcFirebrick { background-color:Firebrick; color:#fff; }
+.ftcForestgreen { background-color:Forestgreen; color:#fff; }
+.ftcFuchsia { background-color:Fuchsia; color:#fff; }
+.ftcGainsboro { background-color:Gainsboro; color:#000; }
+.ftcGold { background-color:Gold; color:#000; }
+.ftcGoldenrod { background-color:Goldenrod; color:#000; }
+.ftcGray { background-color:Gray; color:#fff; }
+.ftcGreen { background-color:Green; color:#fff; }
+.ftcGreenyellow { background-color:Greenyellow; color:#000; }
+.ftcHotpink { background-color:Hotpink; color:#000; }
+.ftcIndianred { background-color:Indianred; color:#000; }
+.ftcIndigo { background-color:Indigo; color:#fff; }
+.ftcIvory { background-color:Ivory; color:#000; }
+.ftcKhaki { background-color:Khaki; color:#000; }
+.ftcLavender { background-color:Lavender; color:#000; }
+.ftcLavenderblush { background-color:Lavenderblush; color:#000; }
+.ftcLawngreen { background-color:Lawngreen; color:#000; }
+.ftcLemonchiffon { background-color:Lemonchiffon; color:#000; }
+.ftcLightblue { background-color:Lightblue; color:#000; }
+.ftcLightcoral { background-color:Lightcoral; color:#fff; }
+.ftcLightgoldenrodyellow { background-color:Lightgoldenrodyellow; color:#000; }
+.ftcLightgreen { background-color:Lightgreen; color:#000; }
+.ftcLightgrey { background-color:Lightgrey; color:#000; }
+.ftcLightpink { background-color:Lightpink; color:#000; }
+.ftcLightsalmon { background-color:Lightsalmon; color:#000; }
+.ftcLightseagreen { background-color:Lightseagreen; color:#000; }
+.ftcLightskyblue { background-color:Lightskyblue; color:#000; }
+.ftcLightslategray { background-color:Lightslategray; color:#fff; }
+.ftcLightsteelblue { background-color:Lightsteelblue; color:#000; }
+.ftcLime { background-color:Lime; color:#000; }
+.ftcLimegreen { background-color:Limegreen; color:#fff; }
+.ftcLinen { background-color:Linen; color:#000; }
+.ftcMagenta { background-color:Magenta; color:#fff; }
+.ftcMediumauqamarine { background-color:Mediumauqamarine; color:#000; }
+.ftcMediumblue { background-color:Mediumblue; color:#fff; }
+.ftcMediumorchid { background-color:Mediumorchid; color:#fff; }
+.ftcMediumpurple { background-color:Mediumpurple; color:#fff; }
+.ftcMediumseagreen { background-color:Mediumseagreen; color:#fff; }
+.ftcMediumslateblue { background-color:Mediumslateblue; color:#fff; }
+.ftcMediumspringgreen { background-color:Mediumspringgreen; color:#000; }
+.ftcMediumturquoise { background-color:Mediumturquoise; color:#000; }
+.ftcMediumvioletred { background-color:Mediumvioletred; color:#fff; }
+.ftcMistyrose { background-color:Mistyrose; color:#000; }
+.ftcMoccasin { background-color:Moccasin; color:#000; }
+.ftcNavajowhite { background-color:Navajowhite; color:#000; }
+.ftcNavy { background-color:Navy; color:#fff; }
+.ftcOldlace { background-color:Oldlace; color:#000; }
+.ftcOlive { background-color:Olive; color:#fff; }
+.ftcOlivedrab { background-color:Olivedrab; color:#fff; }
+.ftcOrange { background-color:Orange; color:#fff; }
+.ftcOrangered { background-color:Orangered; color:#fff; }
+.ftcOrchid { background-color:Orchid; color:#000; }
+.ftcPalegoldenrod { background-color:Palegoldenrod; color:#000; }
+.ftcPalegreen { background-color:Palegreen; color:#000; }
+.ftcPaleturquoise { background-color:Paleturquoise; color:#000; }
+.ftcPalevioletred { background-color:Palevioletred; color:#fff; }
+.ftcPapayawhip { background-color:Papayawhip; color:#000; }
+.ftcPeachpuff { background-color:Peachpuff; color:#000; }
+.ftcPeru { background-color:Peru; color:#fff; }
+.ftcPink { background-color:Pink; color:#000; }
+.ftcPlum { background-color:Plum; color:#000; }
+.ftcPowderblue { background-color:Powderblue; color:#000; }
+.ftcPurple { background-color:Purple; color:#fff; }
+.ftcRed { background-color:Red; color:#fff; }
+.ftcRosybrown { background-color:Rosybrown; color:#fff; }
+.ftcRoyalblue { background-color:Royalblue; color:#fff; }
+.ftcSaddlebrown { background-color:Saddlebrown; color:#fff; }
+.ftcSalmon { background-color:Salmon; color:#000; }
+.ftcSandybrown { background-color:Sandybrown; color:#000; }
+.ftcSeagreen { background-color:Seagreen; color:#fff; }
+.ftcSienna { background-color:Sienna; color:#fff; }
+.ftcSilver { background-color:Silver; color:#000; }
+.ftcSkyblue { background-color:Skyblue; color:#000; }
+.ftcSlateblue { background-color:Slateblue; color:#fff; }
+.ftcSlategray { background-color:Slategray; color:#fff; }
+.ftcSpringgreen { background-color:Springgreen; color:#000; }
+.ftcSteelblue { background-color:Steelblue; color:#fff; }
+.ftcTan { background-color:Tan; color:#000; }
+.ftcTeal { background-color:Teal; color:#fff; }
+.ftcThistle { background-color:Thistle; color:#000; }
+.ftcTomato { background-color:Tomato; color:#fff; }
+.ftcTurquoise { background-color:Turquoise; color:#000; }
+.ftcViolet { background-color:Violet; color:#000; }
+.ftcWheat { background-color:Wheat; color:#000; }
+.ftcYellow { background-color:Yellow; color:#000; }
+.ftcYellowgreen { background-color:Yellowgreen; color:#000; }
+
+
+/* ------- Partner List Management ---------- */
+
+
+.partnerList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow:auto;
+    height:300px;
+    -webkit-overflow-scrolling:touch;
+    overflow-scrolling:touch;
+}
+
+.ftPlHdcpTrack+.partnerList {
+    height:269px; /* shorten list if hdcp checkbox exists */
+}
+
+.partnerList li  {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 24px;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 24px;
+    font-size: 13px;
+    clear: both;
+    white-space: nowrap;
+}
+
+.partnerList li.deleting {
+   overflow: hidden;
+}
+
+.partnerList li div.sortItem  {
+    position:relative;
+}
+
+.partnerList li.deleting div.sortItem {
+   background-color:gold;
+   opacity:0.4;
+   filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.partnerList li span {
+    display:inline;
+}
+
+.partnerList div.sortHandle{
+    display: block;
+    position: absolute;
+    padding: 4px;
+    padding-left: 15px;
+    cursor:move;
+    width: 16px;
+    height: 16px;
+    top:0px;
+    right:0px;
+}
+
+.ftPlManage .standard_button {
+    display: block;
+    width:auto;
+    margin: 0 4px 4px 4px;
+}
+
+.ftPlManage .standard_button.add_icon {
+    display: none;
+}
+
+.sortHandle > div.ui-icon {
+    cursor:move;
+}
+
+.ftS-lockedPlayer .sortHandle > div.ui-icon {
+    cursor:default;
+}
+
+
+.partnerList a.deleteButtonSmall{
+    float: left;
+    display:block;
+    width: 24px;
+    height: 24px;
+}
+
+.partnerlistcontainer {
+    width:70%;
+    float:left;
+}
+.ftPl {
+    float:left;
+    width:49%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border:1px solid #aaa;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 0 0 5px 0;
+}
+
+.ftPl:nth-child(odd) {
+    margin-right: 1%;
+}
+.ftPl .ftPlActivity {
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+}
+.ftPlAddPartner {
+    float:right;
+    width:30%;
+}
+
+.ftPlAddPartner {
+    
+}
+
+.partnerlistdiv {
+    width:290px;
+    float:left;
+}
+
+.partnerlistdiv table td {
+    padding:0;
+    margin:0;
+    border:0;
+}
+
+/* ForeTees Announcements */
+
+.ft_announce_unread > a {
+    display:block;
+    background-color:#fafab8;
+    color:black;
+    font-weight: bold;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding:8px;
+    line-height: 16px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.ft_announce_unread > a:hover {
+    background-color: #ffff66;
+    text-decoration: none;
+}
+.ft_announce_unread .ft_unread_count {
+    display:inline-block;
+    background-color: #0000FF;
+    color:white;
+    text-align: center;
+    line-height: 18px;
+    height:18px;
+    width:18px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+/* float clearing */
+#main:after,
+.clearfix:after,
+.notification_request:after,
+.ftMemberSetting fieldset:after,
+.partnerlistcontainer:after, 
+.ftPlAddPartner:after, 
+.ftPlSelect:after, 
+.ftPlMsTitle:after,
+.rwdTableGroup .hasPlayers>span:after, 
+.rwdTableGroup .hasPlayers>a:after,
+.sub_instructions.activitySelect:after {
+    content:"";
+    display:block;
+    height:0;
+    width:0;
+    overflow:hidden;
+    clear:both;
+}
+
+#scrollUp {
+    /*display: none;*/
+    position: fixed;
+    bottom: 15px;
+    right: 5px;
+    width: 48px;
+    height: 48px;
+    background-image: url('../images/scrollUp.png');
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* Hack for <= IE8  */
+}
+#scrollUp:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* Hack for <= IE8 */
+}
+.scrollUp_show {
+    display: block;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* Hack for <= IE8  */
+}
+.scrollUp_hide { // unused
+    display: none;
+    opacity: 0.0;
+    filter: alpha(opacity=80); /* Hack for <= IE8 */
+}

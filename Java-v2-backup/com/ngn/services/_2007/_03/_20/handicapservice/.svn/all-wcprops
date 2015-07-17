@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice
+END
+FetchHandicapListByUserRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice/FetchHandicapListByUserRequest.java
+END
+UpdateHandicapsRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice/UpdateHandicapsRequest.java
+END
+FetchHandicapListByNetworkIdRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice/FetchHandicapListByNetworkIdRequest.java
+END
+HandicapService.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice/HandicapService.java
+END
+FetchHandicapByUserRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice/FetchHandicapByUserRequest.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice/ObjectFactory.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice/package-info.java
+END
+HandicapService_Service.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice/HandicapService_Service.java
+END
+UpdateHandicapsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice/UpdateHandicapsResponse.java
+END
+FetchHandicapsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/handicapservice/FetchHandicapsResponse.java
+END

@@ -1,0 +1,33 @@
+/***************************************************************************************
+ *   DaysAdv:  This class defines an array of 'days in advance' that a member can make
+ *             tee times.  This is set a login time and used whenever the calendars are
+ *             built.
+ *
+ *   created:  1/08/2004   Bob P.
+ *
+ *   last updated:       ******* keep this accurate *******
+ *
+ ***************************************************************************************
+ */
+
+package com.foretees.common;
+
+import java.io.*;
+
+/**
+ ***************************************************************************************
+ *
+ *  This class is a utility that contains an array for Days in Advance for members to make tee times.
+ *
+ ***************************************************************************************
+ **/
+
+public class DaysAdv {
+
+  // max days in advance
+  public static int MAXDAYS = 366;                    // allow for 365 days !!
+    
+  // array to hold the indicators for days in advance
+  public int [] days = new int [MAXDAYS];                  // one per day 
+
+}

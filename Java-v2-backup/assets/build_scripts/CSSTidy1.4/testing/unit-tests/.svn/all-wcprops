@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests
+END
+class.csstidy_harness.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/class.csstidy_harness.php
+END
+_files.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/_files.php
+END
+class.csstidy_csst.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/class.csstidy_csst.php
+END
+class.csstidy_reporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/class.csstidy_reporter.php
+END
+test.csst.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/test.csst.php
+END
+class.Text_Diff_Renderer_parallel.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/class.Text_Diff_Renderer_parallel.php
+END

@@ -1,0 +1,263 @@
+
+/* START TOP NAVIGATION */
+
+
+#top {
+    background-color: #336633;
+    display:block;
+    height:5px;
+    width:100%;
+    min-width: 1010px;
+    padding:0;
+    margin:0;
+
+}
+
+#topnav_container {
+    display:block;
+    height: 26px;
+    padding-bottom: 4px;
+    white-space: nowrap;
+    line-height: 0px;
+
+}
+
+#topnav {
+    /*
+    
+    
+    width:680px;
+    background:url(../images/topnav.png) top center no-repeat;
+    margin-right:1px;
+    padding-right:27px;
+    */
+    display:block;
+    float:right;
+    height: 26px;
+    line-height: 0px;
+
+}
+
+#topnav div.topnav_open {
+    background:url(../images/topnav.png) top left no-repeat;
+    width:32px;
+    height: 26px;
+    float:left;
+
+}
+
+#topnav div.topnav_close {
+    background:url(../images/topnav.png) top right no-repeat;
+    width:32px;
+    height: 26px;
+    float:left;
+
+}
+
+
+#topnav ul{
+    background:url(../images/topnav_item.png) top center repeat-x;
+    list-style:none;
+    margin: 0;
+    padding:0;
+    height: 26px;
+    float:left;
+
+}
+
+#topnav li {
+    float: left;
+    display:block;
+    position:relative;
+
+}
+
+#topnav li.topnav_separation {
+    height: 10px;
+    margin: 8px 3px;
+    width: 0;
+    border-right: 1px solid #555;
+}
+
+#topnav a {
+    /* height: 20px; 
+    line-height: .6em; */
+    font-size:14px;        /*  was 13px */
+    line-height: 26px;
+    float: left;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    font-weight:bold;
+    padding:0px 7px 0px 7px;
+
+}
+
+#topnav a, #topnav a:visited {
+    color: #fff;
+}
+
+#topnav a:hover {
+    color:#FFFFFF;
+    text-decoration:underline;
+
+}
+
+
+#topnav li ul {
+    display: none;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top:25px;  /* one pixel short of nav_top height */
+    
+    clear: both;
+    width: auto;
+    z-index: 2000;
+    /*
+    -moz-border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+    */
+}
+
+#topnav li:hover {
+    background-color: #444;
+}
+
+#topnav li:hover ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    z-index: 2000;
+    position: absolute;
+    left:0;
+}
+
+#topnav li li {
+    float: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+#topnav li li a {
+    display:block;
+    background-color: #336633;
+    border-bottom: 1px solid #262626;
+    white-space: nowrap;
+    font-size:13px;                  /* was 11px   */
+    color: #fff;
+    padding:5px 4px 5px 0; /* Note: right and left padding will effectively be multiplied x2 on the right with width:100%, below */
+    text-indent:8px;
+    margin: 0;
+    line-height:16px !important;
+    width:100%;
+    text-align:left;
+    min-width: 110px;
+
+}
+
+#topnav li li a:hover {
+    background-color: #8B8970;
+}
+
+a .topnav_item2 {
+    color:#faf9d5;
+}
+
+#topnav li.topnav_right_item {
+    /* float:right; */
+
+}
+
+/* START SUB NAVIGATION */
+
+#weather {
+    float:right;
+    white-space: nowrap;
+    font-size:10px;
+    font-weight:bold;
+    background-image:url(../images/weather.png);
+    background-position:left center;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    display:block;
+    padding-left: 23px;
+    margin:0;
+    height: 30px;
+    line-height: 30px;
+}
+
+#weather a, #weather a:visited {
+    color:#FFFFFF;
+    /*	background:none;  */
+    display:block;
+    height:16px;
+
+}
+
+#weather a:hover {
+    text-decoration:underline;
+}
+
+#subnav {
+    margin-left:300px;
+    height: 32px;
+}
+
+
+#subnav ul{
+    list-style:none;
+    margin: 0;
+    padding:0px;
+
+}
+
+#subnav li {
+    float: left;
+    display:inline;
+    padding:0;
+
+}
+#subnav li+li {
+    margin-left: 5px;
+}
+
+#subnav a, #subnav a:visited {
+    background-color: #336633;
+    height: 26px;             /*  for size of activity tabs - was 30 */
+    line-height: 26px;         /*  for size of activity tabs */
+    float: left;
+    width: 7.5em;             /*  for size of activity tabs - was 9.5 */
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size:14px;
+    font-weight:bold;
+    margin:6px 0 0 0;
+    -moz-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+#subnav a:hover {
+    color:#FFFFFF;
+    background-color:#333;
+    text-decoration:none;
+
+}
+
+#subnav a.selected, #subnav a.selected:visited {
+    background-color:#8B8970;
+    height: 32px;             /*  for size of activity tabs - was 30 */
+    line-height: 32px;
+    margin-top:0;
+}
+
+#subnav a.selected:hover {
+    text-decoration:none;
+
+}
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/util
+END
+LimitedInputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/util/LimitedInputStream.java
+END
+Closeable.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/util/Closeable.java
+END
+FileItemHeadersImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/util/FileItemHeadersImpl.java
+END
+Streams.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/util/Streams.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/util/package.html
+END

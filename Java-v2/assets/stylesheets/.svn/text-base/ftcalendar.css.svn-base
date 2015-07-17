@@ -1,0 +1,349 @@
+/* 
+    Document   : ftcalendar
+    Created on : Jan 16, 2015, 8:33:36 AM
+    Author     : Owner
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+/* ------- BEGIN LIST CALENDAR -------  */
+
+div.list_calendar {
+    /*
+    background-color:#efefef;
+    border: 1px solid #aaa;
+    line-height:22px;
+    font-size:14px; 
+    
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding:10px;
+    margin-bottom:20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    */
+
+    margin: 20px auto 20px auto;
+
+    width: 100%; /* Set width of table here, set height of cell below in td class */
+}
+
+#list_calendar .print_button {
+    display: block;
+    margin: 20px auto 20px auto;
+    width: 120px;
+    overflow:visible;
+}
+
+.list_calendar {
+    border-collapse: collapse;
+    border: 0px;
+    width:100%;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+.list_calendar caption {
+
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    background-color:#fafafa;
+    line-height: 30px;
+    border: 1px solid #aaa;
+    border-bottom-width: 0px;
+
+}
+
+.list_calendar thead {
+    border: 1px solid #222; 
+}
+
+.list_calendar thead tr {
+    background-color:#8B8970;
+    color:#000;
+    font-size:100%;
+    text-align:center;
+    line-height:200%;
+    /*padding:5px;*/
+}
+
+.list_calendar thead th {
+    border:1px solid #222;
+    /*padding:2px;*/
+}
+.list_calendar thead th span+span {
+    display:none;
+}
+
+.list_calendar tbody {
+    border:1px solid #CCCCAA;
+}
+
+/* Base 'td' definition */
+.list_calendar td {
+    border:1px solid #CCCCAA;
+    background-color: #ffffff;
+    margin:0;
+    padding:0;
+    width:14.3%;
+    text-align:left;
+    vertical-align: top;
+    color:#000;
+    font-size: 80%;
+    overflow: visible;
+    height: 105px; /* Set height of cell here */
+}
+
+/* Old, out of date days */
+.list_calendar td.old {
+    background-color: #F5F5DC;
+}
+
+.list_calendar .day {
+    font-weight: bold;
+    font-size: 110%;
+    padding: 5px;
+    margin: 2px;
+    line-height: 100%;
+    display: block;
+    border: 1px solid #eaeaea;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.list_calendar .day {
+    color: #999;
+    border: 1px solid transparent;
+}
+
+.list_calendar .today .day {
+    background-color: lightblue;
+}
+
+/* Empty day slots */
+.list_calendar td.empty {
+    background-color: #F5F5DC;
+}
+
+.list_calendar .blocked1 {
+    background-color:#CCCCAA;
+    color:#FFFFFF;
+}
+
+.list_calendar .grey {
+    background-color:#e8e8e8;
+    color:#000000;
+    /* font-weight:bold; */
+}
+
+.list_calendar .item_container {
+    overflow:visible;
+    display: block;
+    white-space: nowrap;
+    line-height: 18px;
+    font-size: 10px;
+    padding:0;
+    margin:0;
+}
+
+.list_calendar .item_container a, 
+.list_calendar .item_container div {
+    text-decoration:none;
+    padding:0 3px 0 3px; 
+    display:inline-block;
+}
+
+.list_calendar .item_container span.item_state {
+    display: none;
+}
+
+.list_calendar .day_wrapper .item_container a b {
+    text-decoration: underline;
+}
+
+.list_calendar .item_container a:hover, 
+.list_calendar .day:hover {
+    background-color:#333;
+    color:#ffffff;
+
+}
+
+.list_calendar .item_container .ical_button {
+    padding:0;
+    margin:0;
+    display:none; /**/
+}
+.list_calendar .item_container .ical_button+a,
+.list_calendar .item_container .ical_button+div {
+    margin-right: 16px;
+}
+.list_calendar.processed .item_container .ical_button {
+    display:block;
+    float:right;
+}
+.list_calendar.processed .item_container .ical_button+a,
+.list_calendar.processed .item_container .ical_button+div {
+    margin-right: 0;
+}
+.list_calendar.processed .item_container a, 
+.list_calendar.processed .item_container div {
+    overflow:hidden;
+    display:block;
+}
+
+.list_calendar .blocked1 a {
+    color:#FFFFFF;
+
+}
+
+.list_calendar .day_wrapper, .list_calendar .day_wrapper_empty {
+   height: 105px; /* Set height of cell here */
+    margin:0;
+    position: relative;
+    overflow:hidden;
+}
+
+.list_calendar .day_wrapper {
+    border-collapse: separate;
+}
+
+.list_calendar .day_wrapper.active {
+    overflow: visible;
+}
+
+.list_calendar .day_container {
+    position: relative;
+    border: none;
+    margin:0;
+    padding: 0;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.list_calendar .day_wrapper.active .day_container {
+    position: absolute;
+    background-color: #ffffff;
+    border:1px solid #AAAA88;
+    top: -1px;
+    left: -1px;
+    -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    border-collapse: separate; /* so ie9 renders box-shadow inside table cell */
+    z-index: 98;
+}
+
+.list_calendar .day_wrapper .more_mask {
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-image: url(../images/cal_more.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+.list_calendar.waiting .day_wrapper .more_mask {
+    z-index: 99;
+}
+.list_calendar .day_wrapper.active .more_mask {
+    display:none;
+}
+.list_calendar .day_wrapper.active.touched .more_mask {
+    display:block;
+    background:none;
+    opacity:0.1;
+    background-color:rgba(255, 255, 255, 0.1);
+    z-index:9000;
+}
+
+.list_calendar .day_wrapper .more_mask b {
+    font-weight: normal;
+    position: absolute;
+    bottom:0;
+    right:0;
+    display:block;
+    color: #ffffff;
+    font-size: 9px;
+    line-height:9px;
+    margin-right: 2px;
+    margin-bottom: 1px;
+    
+}
+.list_calendar.ftLoading td:not(.empty):not(.old) {
+    background-color: #eee !important;
+}
+/*
+.list_calendar .day_wrapper .more_mask.hidden {
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-image: url(../images/cal_more.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+.list_calendar.find_overflow td {
+    width:auto;
+    overflow:visible;
+}
+
+.list_calendar.find_overflow td div.day_wrapper  {
+    overflow: visible;
+    display: inline-block;
+    width:auto;
+    height:auto;
+    
+}
+
+.list_calendar.find_overflow td div.day_wrapper .more_mask {
+   
+}
+
+.list_calendar.find_overflow td div.day_wrapper div.day_container {
+      
+}
+
+.list_calendar.find_overflow td div.day_wrapper .item_container a.ical_button+a, 
+.list_calendar.find_overflow td div.day_wrapper .item_container a.ical_button+div {
+    
+    overflow: visible;
+    display: inline-block;
+    width:auto;
+    
+}
+
+.list_calendar.find_overflow td div.day_wrapper .item_container a.ical_button {
+    float: none;
+    display: inline-block;
+    overflow: hidden;
+    height: 5px;
+}
+*/
+/* -------- END LIST CALENDAR ---------   */
+
+
+#ft_cal_outmask {
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+
+.ft_hide {
+    display:none;
+}

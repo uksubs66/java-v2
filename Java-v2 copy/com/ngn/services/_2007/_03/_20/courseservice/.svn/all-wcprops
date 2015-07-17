@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice
+END
+CourseService_Service.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice/CourseService_Service.java
+END
+FetchCoursesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice/FetchCoursesResponse.java
+END
+FetchClubsBySearchRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice/FetchClubsBySearchRequest.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice/ObjectFactory.java
+END
+CourseService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice/CourseService.java
+END
+FetchClubsBySourceRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice/FetchClubsBySourceRequest.java
+END
+FetchCourseByIdRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice/FetchCourseByIdRequest.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice/package-info.java
+END
+FetchClubsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice/FetchClubsResponse.java
+END
+FetchCoursesBySearchRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/courseservice/FetchCoursesBySearchRequest.java
+END

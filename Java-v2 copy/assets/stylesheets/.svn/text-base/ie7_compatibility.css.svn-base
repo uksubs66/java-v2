@@ -1,0 +1,73 @@
+/*
+
+Compatibility hacks for IE7
+
+*/
+
+#topnav li:hover ul {
+    zoom: 1;
+}
+
+table.list_calendar.ie7_zindex_fix td div.day_wrapper {
+    position:static;
+}
+
+table.list_calendar.ie7_zindex_fix td div.day_wrapper .more_mask {
+    display:none;
+}
+
+ul.modal_field_list>li {
+    width: 33%;
+}
+
+table.list_calendar td.find_overflow div.day_wrapper  {
+    width:500px !important; 
+}
+ul.modal_field_list>li.double_width {
+    width: 66%;
+}
+ul.modal_field_list>li.full_width {
+    width: 99%;
+}
+ul.modal_field_list>li.box_with_title {
+    width: 99%;
+}
+.slot_container .element_group select.transport_type {
+    width: 55px;
+}
+tr.partnerList li span {
+    width:0;
+}
+div.announcement_container div.widget_list_primary,
+body.mceContentBody div.widget_list_primary{
+    zoom:1;
+}
+div.announcement_container div#main_content,
+body.mceContentBody div#main_content{
+    zoom:1;
+}
+div.announcement_container .widget_content,
+body.mceContentBody .widget_content {
+    zoom:1;
+}
+div.announcement_container div.slide_container > div+div {
+    position:absolute;
+    visibility: hidden;
+    overflow: hidden;
+}
+div.announcement_container div.slideshow_pager_nav_container div.slideshow_pager_nav_box {
+    display: inline;
+    zoom: 1;
+}
+body.mceContentBody div.weather_widget_accuweather_wide .accuweather_footer,
+div.announcement_container div.weather_widget_accuweather_wide .accuweather_footer {
+    height: 1%;
+}
+body.mceContentBody {
+    width: 960px;
+}
+/*  IE6/7 clearfix hack -- this should be moved to IE6/7 conditional CSS, when complete */
+.clearfix {
+    zoom:1;
+}
+

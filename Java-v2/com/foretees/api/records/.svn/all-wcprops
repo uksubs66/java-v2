@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/java/trunk/!svn/ver/7609/com/foretees/api/records
+END
+ClubInvoicingRule.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/7358/com/foretees/api/records/ClubInvoicingRule.java
+END
+MembershipType.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/records/MembershipType.java
+END
+ClubMember.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/records/ClubMember.java
+END
+ExportFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/7236/com/foretees/api/records/ExportFile.java
+END
+UserAccess.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/records/UserAccess.java
+END
+Invoice.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/7609/com/foretees/api/records/Invoice.java
+END
+TaxRate.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/7147/com/foretees/api/records/TaxRate.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/records/User.java
+END
+InvoicingRuleTypeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/7609/com/foretees/api/records/InvoicingRuleTypeData.java
+END
+ClubOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/7147/com/foretees/api/records/ClubOptions.java
+END
+TaxGroupDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/7147/com/foretees/api/records/TaxGroupDetail.java
+END
+DbInterval.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/7259/com/foretees/api/records/DbInterval.java
+END
+ForeTeesAnnouncement.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/7440/com/foretees/api/records/ForeTeesAnnouncement.java
+END
+ClubInvoicingRuleDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/7300/com/foretees/api/records/ClubInvoicingRuleDetail.java
+END
+InvoiceItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/7383/com/foretees/api/records/InvoiceItem.java
+END
+InvoicingRuleType.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/7291/com/foretees/api/records/InvoicingRuleType.java
+END
+InvoiceDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/7300/com/foretees/api/records/InvoiceDetail.java
+END
+SingleUseAccessKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/java/trunk/!svn/ver/7367/com/foretees/api/records/SingleUseAccessKey.java
+END
+InvoiceItemType.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/7259/com/foretees/api/records/InvoiceItemType.java
+END
+InvoiceTerms.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/7259/com/foretees/api/records/InvoiceTerms.java
+END
+ClubSetting.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/7358/com/foretees/api/records/ClubSetting.java
+END
+Club.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7383/com/foretees/api/records/Club.java
+END
+ForeTeesSetting.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/7300/com/foretees/api/records/ForeTeesSetting.java
+END
+MemberType.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/records/MemberType.java
+END
+TaxGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/7147/com/foretees/api/records/TaxGroup.java
+END
+ClubInvoicing.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/7383/com/foretees/api/records/ClubInvoicing.java
+END

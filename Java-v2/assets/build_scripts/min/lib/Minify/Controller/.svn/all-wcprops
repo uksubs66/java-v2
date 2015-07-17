@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Controller
+END
+Files.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Controller/Files.php
+END
+Version1.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Controller/Version1.php
+END
+Page.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Controller/Page.php
+END
+MinApp.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Controller/MinApp.php
+END
+Base.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Controller/Base.php
+END
+Groups.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/min/lib/Minify/Controller/Groups.php
+END

@@ -1,0 +1,83 @@
+10
+
+dir
+4983
+http://192.168.1.100/repos/java/trunk/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst
+http://192.168.1.100/repos/java/trunk
+
+
+
+2013-11-14T19:19:36.845499Z
+4600
+jkielkopf
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6c956649-3d44-4e85-a33c-4d5d5f644045
+
+README
+file
+
+
+
+
+2013-11-18T17:31:45.000000Z
+1b49907facb7fa475229bcf9cfcdeaab
+2013-11-14T19:19:36.845499Z
+4600
+jkielkopf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+583
+
+print-plain
+dir
+
+properties
+dir
+
+selectors
+dir
+
+shorthands
+dir
+
+special
+dir
+
+values
+dir
+
+vendor-prefixed
+dir
+

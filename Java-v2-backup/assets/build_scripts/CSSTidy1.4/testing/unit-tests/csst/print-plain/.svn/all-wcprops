@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/print-plain
+END
+font-face-atmedia.csst
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/print-plain/font-face-atmedia.csst
+END
+simple-high.csst
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/print-plain/simple-high.csst
+END
+simple-low.csst
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/print-plain/simple-low.csst
+END
+simple-highest.csst
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/print-plain/simple-highest.csst
+END
+simple-default.csst
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/print-plain/simple-default.csst
+END
+atvalues.csst
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/print-plain/atvalues.csst
+END
+font-face-atmedia-2.csst
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/print-plain/font-face-atmedia-2.csst
+END
+ie-hacks.csst
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/java/trunk/!svn/ver/4600/assets/build_scripts/CSSTidy1.4/testing/unit-tests/csst/print-plain/ie-hacks.csst
+END

@@ -1,0 +1,420 @@
+/***************************************************************************************
+ *   TableModel:  This class represents the rows of data to display in a table
+ *
+ *
+ *   created: 10/02/2003   jag
+ *
+ *   last updated:       ******* keep this accurate *******
+ *
+ *      04/14/10  Updated the rows array decleration so that it's not using unchecked raw type
+ *      03/01/04  Added support for multi-select actions on a table
+ *
+ ***************************************************************************************
+ */
+
+package com.foretees.client.table;
+
+import java.io.*;
+import javax.servlet.http.*;
+import java.util.ArrayList;
+
+import com.foretees.client.action.ActionModel;
+import com.foretees.client.attribute.Attribute;
+//import com.foretees.client.table.Column;
+//import com.foretees.client.table.RowModel;
+
+
+public class TableModel {
+
+  //*****************************************************
+  // Initialize the attributes
+  //*****************************************************
+
+  private ArrayList<RowModel> rows = new ArrayList<RowModel>();
+  private ColumnModel columns = new ColumnModel();
+  private String label = "Header label is not initialized";
+  private boolean selectable = false;
+  private String id = "tableName";
+  private ActionModel contextActions = null;
+  private ActionModel multiSelectActions = null;
+  private boolean paging = false;
+  private int pageSize = 50;
+  private int currentPage = 1;
+  private String helpText = "";
+  private String mode = Attribute.VIEW;
+  private String editLabel = "";
+  private boolean printNumItems = true;
+
+  public TableModel(String theLabel)
+  {
+    label = theLabel;
+  }
+
+  public void setLabel(String theLabel)
+  {
+
+    label = theLabel;
+  }
+
+  public String getLabel()
+  {
+
+    return label;
+  }
+
+  public void setEditLabel(String theEditLabel)
+  {
+
+    editLabel = theEditLabel;
+  }
+
+  public String getEditLabel()
+  {
+
+    return editLabel;
+  }
+
+  public void setId(String theId)
+  {
+
+    id = theId;
+  }
+
+  public String getId()
+  {
+
+    return id;
+  }
+
+  public void setSelectable(boolean isSelectable)
+  {
+
+    selectable = isSelectable;
+  }
+
+  public boolean isSelectable()
+  {
+
+    return selectable;
+  }
+
+  public void setPaging(boolean isPaging)
+  {
+
+    paging = isPaging;
+  }
+
+  public int getPageSize()
+  {
+
+    return pageSize;
+  }
+
+  public void setPageSize(int thePageSize)
+  {
+
+    pageSize = thePageSize;
+  }
+
+  public int getCurrentPage()
+  {
+
+    return currentPage;
+  }
+
+  public void setCurrentPage(int theCurrentPage)
+  {
+
+    currentPage = theCurrentPage;
+  }
+
+  public boolean isPaging()
+  {
+
+    return paging;
+  }
+
+  public int getPageRowStart()
+  {
+
+    int rowToStart = 0;
+
+    //if this table model supports paging we only want to print the rows
+    //for the current page
+
+    int pageNumber = this.getCurrentPage();
+
+    if (pageNumber < 1)
+    {
+      pageNumber = 1;
+    }
+
+    rowToStart = ((pageNumber - 1) * this.getPageSize());
+
+    return rowToStart;
+
+
+  }
+
+  public int getPageRowEnd()
+  {
+
+    int rowsToEnd = this.getPageRowStart() + this.getPageSize();
+
+    if (rowsToEnd > this.size())
+    {
+      rowsToEnd = this.size();
+    }
+
+    return rowsToEnd;
+
+  }
+
+  public int getNumberOfPages()
+  {
+    int num_pages = 1;
+      if (this.size() > this.getPageSize())
+      {
+        num_pages = this.size()/this.getPageSize();
+        int rem = this.size()%this.getPageSize();
+
+        if (rem > 0)
+        {
+          num_pages = num_pages + 1;
+        }
+      }
+      return num_pages;
+  }
+
+  public void addColumn(Column theColumn)
+  {
+
+    columns.add(theColumn);
+  }
+
+  public void addRow(RowModel theRow)
+  {
+
+    rows.add(theRow);
+  }
+
+  public RowModel getRow(int theIndex)
+  {
+
+    return (rows.get(theIndex));
+  }
+
+  public void setContextActions(ActionModel theActions)
+  {
+    contextActions = theActions;
+  }
+
+  public ActionModel getContextActions()
+  {
+    return contextActions;
+  }
+
+  public void setMultiSelectActions(ActionModel theActions)
+  {
+    multiSelectActions = theActions;
+  }
+
+  public ActionModel getMultiSelectActions()
+  {
+    return multiSelectActions;
+  }
+
+   /**
+  ***************************************************************************************
+  *
+  * Sets the mode to use when displaying this table in the user interface.
+  *
+  * @param theValue the string to use as the value.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setMode(String theMode){
+
+    mode = theMode;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the mode to be used when displaying this table in the user
+  * interface.
+  *
+  * @return the mode.
+  *
+  *
+  ***************************************************************************************
+  **/
+
+  public String getMode(){
+
+    return mode;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Sets the help text to use when displaying this table in the ui.
+  *
+  * @param theHelpText the text to display.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setHelpText(String theHelpText){
+
+    helpText = theHelpText;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the help text to use when displaying this table in the user
+  * interface in edit mode.
+  *
+  * @return the help text.
+  *
+  *
+  ***************************************************************************************
+  **/
+
+  public String getHelpText(){
+
+    return helpText;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the row that has the given row id.
+  *
+  * @return the row model, null if a row is not found with that id.
+  *
+  ***************************************************************************************
+  **/
+
+  public RowModel getRow(String rowId)
+  {
+
+    RowModel row = null;
+    for (int i=0; i<rows.size(); i++)
+    {
+
+      RowModel nxtRow = rows.get(i);
+      if ((nxtRow.getId()).equals(rowId))
+      {
+        row = nxtRow;
+        break;
+      }
+    }
+    return row;
+
+  }
+  /**
+  ***************************************************************************************
+  *
+  * Removes the row with the given row id from the table model
+  *
+  ***************************************************************************************
+  **/
+
+  public void remove(String rowId)
+  {
+
+    //RowModel row = null;
+    for (int i=0; i<rows.size(); i++)
+    {
+
+      RowModel nxtRow = rows.get(i);
+      if ((nxtRow.getId()).equals(rowId))
+      {
+        rows.remove(nxtRow);
+        break;
+      }
+    }
+
+  }
+
+  public ColumnModel getColumns()
+  {
+
+    return columns;
+  }
+
+  public int size()
+  {
+
+    return rows.size();
+
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Updates the table with the table data from the http request.
+  *
+  * @param request the HttpServletRequest that contains the form data
+  * @param response the HttpServletResponse
+  * @param out the print writer
+  *
+  *
+  ***************************************************************************************
+  **/
+
+  public void update(HttpServletRequest request, HttpServletResponse response, PrintWriter out)
+  {
+
+
+    for (int i=0; i<rows.size(); i++)
+    {
+
+      RowModel row = this.getRow(i);
+
+      if (row != null)
+      {
+        row.update(request, response, out);
+      }
+
+
+    }
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Sets the value for the printNumItems to determine if the number of items should
+  * be printed at the top of the table.
+  *
+  * @param theHelpText the text to display.
+  *
+  ***************************************************************************************
+  **/
+
+  public void setPrintNumItems(boolean thePrintNumItems){
+
+    printNumItems = thePrintNumItems;
+  }
+
+  /**
+  ***************************************************************************************
+  *
+  * Returns the true if the number of items should be printed at the top of the table, false
+  * otherwise
+  *
+  * @return whether to print the number of items.
+  *
+  *
+  ***************************************************************************************
+  **/
+
+  public boolean printNumItems(){
+
+    return printNumItems;
+  }
+
+}

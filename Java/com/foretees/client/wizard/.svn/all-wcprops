@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/foretees/!svn/ver/3/trunk/java/com/foretees/client/wizard
+END
+WizardModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/foretees/!svn/ver/3/trunk/java/com/foretees/client/wizard/WizardModel.java
+END
+WizardRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/foretees/!svn/ver/3/trunk/java/com/foretees/client/wizard/WizardRenderer.java
+END
+WizardStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/foretees/!svn/ver/3/trunk/java/com/foretees/client/wizard/WizardStep.java
+END

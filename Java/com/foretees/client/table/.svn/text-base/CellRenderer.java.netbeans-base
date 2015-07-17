@@ -1,0 +1,434 @@
+/***************************************************************************************
+ *   CellRenderer:  This class will render a cell in a table
+ *
+ *
+ *   created: 10/02/2003   jag
+ *
+ *   last updated:       ******* keep this accurate *******
+ *
+ *   7/14/08  Added alternate Checkbox rendering for use with Admin_editproshopuser and Admin_addproshopuser
+ *   7/08/08  Changed render method for Checkboxes to handle differently based on if cell is being reindered on a proshop user associated page or not
+ * 
+ ***************************************************************************************
+ */
+
+package com.foretees.client.table;
+
+import java.io.*;
+
+import com.foretees.client.HTMLConstants;
+import com.foretees.client.StyleSheetConstants;
+import com.foretees.client.action.Action;
+import com.foretees.client.action.ActionModel;
+
+import com.foretees.client.attribute.Attribute;
+import com.foretees.client.attribute.Checkbox;
+import com.foretees.client.attribute.DatePicker;
+import com.foretees.client.attribute.SelectionList;
+import com.foretees.client.attribute.SelectionListRenderer;
+import com.foretees.client.attribute.TextBox;
+
+import com.foretees.client.layout.Separator;
+
+import com.foretees.client.misc.NameSelector;
+
+import com.foretees.client.table.TableRenderer;
+
+import com.foretees.client.table.Cell;
+
+public class CellRenderer {
+
+  //*****************************************************
+  // Initialize the attributes
+  //*****************************************************
+
+  private static HTMLConstants hc = new HTMLConstants();
+  private static StyleSheetConstants sc = new StyleSheetConstants();
+  private static String CELL_BEGIN = "<td valign=\"top\" nowrap class=\"";
+
+
+
+  public static void render(Cell theCell, PrintWriter out)
+  {
+
+    String styleShtClass = theCell.getStyleSheetClass();
+
+    if(styleShtClass == null || styleShtClass.equals(""))
+    {
+      styleShtClass = sc.TABLE_CELL;
+    }
+
+    out.print(CELL_BEGIN + styleShtClass + "\"");
+
+    if (theCell.getColSpan() > 1)
+    {
+      out.print(" colspan=\"" + theCell.getColSpan() + "\"");
+    }
+
+    if (theCell != null)
+    {
+
+      Object theContent = theCell.getContent();
+
+      if ( theContent != null)
+      {
+
+        if (theCell.getBackgroundColor() != null && !((theCell.getBackgroundColor()).equals("")))
+        {
+            out.print(" bgcolor=\"" + theCell.getBackgroundColor() + "\">");
+        }
+        else
+        {
+          out.print(">");
+        }
+
+        if (theContent instanceof String)
+        {
+          render((String)theContent, out);
+        }
+        else if (theContent instanceof TextBox)
+        {
+          render((TextBox)theContent, out);
+        }
+        else if (theContent instanceof Attribute)
+        {
+          render((Attribute)theContent, out);
+        }
+        else if (theContent instanceof ActionModel)
+        {
+          render((ActionModel)theContent, out);
+        }
+         else if (theContent instanceof SelectionList)
+        {
+          SelectionListRenderer.render((SelectionList)theContent, out);
+        }
+        else if (theContent instanceof TableModel)
+        {
+          render((TableModel)theContent, out);
+        }
+        else if (theContent instanceof Separator)
+        {
+          render((Separator)theContent, out);
+        }
+        else if (theContent instanceof Checkbox)
+        {
+          render((Checkbox)theContent, out);
+        }
+        else if (theContent instanceof NameSelector)
+        {
+          ((NameSelector)theContent).render(out);
+        }
+        else if (theContent instanceof DatePicker)
+        {
+          render((DatePicker)theContent, out);
+        }
+        else
+        {
+          //making an assumption here that the object has overridden the toString method
+          //and will print out something friendly
+          out.print(theContent);
+        }
+      }
+      else{
+        out.print(">" + hc.NON_BREAK_SPACE);
+      }
+    }
+    else{
+      out.print(">" + hc.NON_BREAK_SPACE);
+    }
+
+    out.print(hc.E_TD);
+    out.flush();
+  }
+
+  private static void render(String theContent, PrintWriter out)
+  {
+
+    if (theContent != null && !(theContent.equals("")))
+      out.print(theContent);
+    else
+      out.print("&nbsp;&nbsp;");
+
+  }
+
+  private static void render(Attribute theContent, PrintWriter out)
+  {
+
+    if (theContent.getMode().equals(Attribute.EDIT))
+    {
+
+      String label = theContent.getLabel();
+//      out.print("<table  cellSpacing=0 class=\"att\"><tr><td width=\"15%\" valign=\"top\">");
+
+      if (label != null && !(label.equals("")))
+      {
+        out.print(label + ":&nbsp;&nbsp;");
+      }
+      else
+      {
+        out.print("&nbsp;");
+      }
+
+//      out.print("</td><td align=\"left\" valign=\"top\">");
+
+
+      out.print("<input ");
+
+      String onChange = theContent.getOnChange();
+      if (onChange != null && !(onChange.equals("")))
+      {
+        out.print(" onChange=\"" + theContent.getOnChange() + "\" ");
+      }
+
+      out.print("maxlength=\"" + theContent.getMaxLength() + "\" size=\"" + theContent.getSize() + "\" type=\"text\" name=\"" + theContent.getName() + "\" value=\"" + theContent.getValue()+ "\">");
+
+ //     out.print("</td>");
+
+      if (theContent.getHelpText() != null && !(theContent.getHelpText().equals("")))
+      {
+//        out.print("<td width=\"15%\" valign=\"top\">");
+        out.print("&nbsp;&nbsp;&laquo;&laquo;&nbsp;" + theContent.getHelpText());
+//        out.print("</td>");
+
+      }
+
+//      out.print("</tr></table>");
+    }
+
+    else
+    {
+
+      render(theContent.getValue(), out);
+    }
+
+  }
+
+  private static void render(TextBox theContent, PrintWriter out)
+  {
+
+    if (theContent.getMode().equals(Attribute.EDIT))
+    {
+
+      out.print("<table class=\"att\"><tr><td width=\"15%\" valign=\"top\">");
+      String label = theContent.getLabel();
+      if (label != null && !(label.equals("")))
+      {
+        out.print(label + ":");
+      }
+      else
+      {
+        out.print("&nbsp;");
+      }
+
+      out.print("</td><td  valign=\"top\" align=\"left\"><textarea ");
+
+      String onChange = theContent.getOnChange();
+      if (onChange != null && !(onChange.equals("")))
+      {
+        out.print(" onChange=\"" + theContent.getOnChange() + "\" ");
+      }
+
+      out.print("cols=\"" + theContent.getMaxLength() + "\" rows=\"" + theContent.getSize() + "\" name=\"" + theContent.getName() + "\">" + theContent.getValue() + "</textarea>");
+
+      out.print("</td>");
+
+
+      if (theContent.getHelpText() != null && !(theContent.getHelpText().equals("")))
+      {
+        out.print("<td width=\"15%\" valign=\"top\">");
+        out.print("&nbsp;&nbsp;&laquo;&laquo;&nbsp;" + theContent.getHelpText());
+        out.print("</td>");
+      }
+
+      out.print("</tr></table>");
+
+
+    }
+    else{
+
+      render(theContent.getValue(), out);
+    }
+
+  }
+  private static void render(Checkbox theContent, PrintWriter out)
+  {
+      String label = theContent.getLabel();
+      // print differently based on what type of page it's being printed on
+      if (!theContent.isProshop()) {
+          
+          if (label != null && !(label.equals("")))
+          {
+              out.print(label + ":&nbsp;");
+          }
+          out.print("<input type=\"checkbox\"");
+
+          if (theContent.isSelected())
+          {
+              out.print("checked ");
+          }
+
+          out.print(" name=\"" + theContent.getName() + "\" value=\"" + theContent.getValue()+ "\">");
+          
+      } else {
+          
+          out.print("<input type=\"checkbox\" ");
+
+          if (theContent.isSelected())
+          {
+              out.print("checked ");
+          }
+
+          out.print(" name=\"" + theContent.getName() + "\" value=\"" + theContent.getValue()+ "\">");
+          
+          if (label != null && !label.equals("")) {
+              out.print(" - " + label);
+          }
+      }
+  }
+
+  private static void render(Separator theContent, PrintWriter out)
+  {
+
+    out.print("<hr width=\"90%\"");
+
+    String ssc = theContent.getStyleSheetClass();
+
+    if (ssc != null && !(ssc.equals("")))
+    {
+      out.print(" class=\"" + ssc + "\"");
+    }
+
+    out.print(">");
+
+   }
+
+  private static void render(ActionModel theActionModel, PrintWriter out)
+  {
+
+    if (theActionModel != null && theActionModel.size()>0)
+    {
+
+      for (int i=0; i<theActionModel.size(); i ++){
+
+        Object nxtObj = theActionModel.get(i);
+
+        if ( nxtObj instanceof Action)
+        {
+          Action action = (Action)nxtObj;
+
+
+          if (action != null){
+
+            out.print(hc.A + hc.CLASS + sc.ROW_DATA_ACTIONS + hc.CMP_STR);
+
+            renderToolTip(action, out);
+
+            out.print(hc.HREF + action.getUrl() + hc.CMP_STR + ">" + action.getLabel() + hc.E_A);
+
+            if (i < theActionModel.size() - 1){
+              out.print(hc.NON_BREAK_SPACE);
+            }
+          }
+        }
+
+      }
+
+
+    }
+    else
+    {
+      out.print(hc.NON_BREAK_SPACE);
+    }
+
+    out.flush();
+
+  }
+
+  private static void render(DatePicker theDatePicker, PrintWriter out)
+  {
+
+    String label = theDatePicker.getLabel();
+    boolean required = theDatePicker.isRequired();
+    if (label != null && !(label.equals("")))
+    {
+      out.print(label + ":&nbsp;");
+    }
+
+    //print out the selection list for the month
+    SelectionList month = new SelectionList(theDatePicker.monthField,"",theDatePicker.months, theDatePicker.monthsDisplay, (new Integer(theDatePicker.getMonth())).toString());
+    month.setRequired(required);
+    SelectionListRenderer.render(month,out);
+
+    //print out the selection list for the month
+    SelectionList day = new SelectionList(theDatePicker.dayField,"",theDatePicker.days, (new Integer(theDatePicker.getDay())).toString());
+    day.setRequired(required);
+    SelectionListRenderer.render(day, out);
+
+    //print out the selection list for the year
+    int count = 0;
+    int begin = theDatePicker.getStartYear();
+    int end = theDatePicker.getEndYear();
+    String[] years = new String[end - begin + 1];
+
+    while (count < (end - begin + 1))
+    {
+      years[count] = (new Integer(begin + count)).toString();
+      count++;
+    }
+    SelectionList year = new SelectionList(theDatePicker.yearField,"",years, (new Integer(theDatePicker.getYear())).toString());
+    year.setRequired(required);
+    SelectionListRenderer.render(year, out);
+
+  }
+
+  private static void render(TableModel theContent, PrintWriter out)
+  {
+
+    if (theContent.getMode().equals(Attribute.EDIT))
+    {
+
+      String label = theContent.getEditLabel();
+      out.print("<table class=\"att\"><tr><td width=\"15%\" valign=\"top\">");
+
+      if (label != null && !(label.equals("")))
+      {
+        out.print(label + ":");
+      }
+      else
+      {
+        out.print("&nbsp;");
+      }
+      out.print("</td><td  valign=\"top\" align=\"left\">");
+
+
+      TableRenderer.render((TableModel)theContent, out);
+
+      out.print("</td>");
+
+
+      if (theContent.getHelpText() != null && !(theContent.getHelpText().equals("")))
+      {
+        out.print("<td width=\"15%\" valign=\"top\">");
+        out.print("&nbsp;&nbsp;&laquo;&laquo;&nbsp;" + theContent.getHelpText());
+        out.print("</td></tr></table>");
+      }
+
+      out.print("</tr></table>");
+
+    }
+    else{
+
+       TableRenderer.render((TableModel)theContent, out);
+    }
+
+  }
+
+  private static void renderToolTip(Action action, PrintWriter out)
+  {
+
+    if (!(action.getToolTip().equals(""))){
+      out.print(" " + hc.ALT + action.getToolTip() + hc.CMP_STR + " " + hc.TITLE + action.getToolTip() + hc.CMP_STR + " ");
+    }
+
+  }
+}

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/servlet
+END
+FileCleanerCleanup.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/servlet/FileCleanerCleanup.java
+END
+ServletRequestContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/servlet/ServletRequestContext.java
+END
+ServletFileUpload.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/servlet/ServletFileUpload.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/foretees/!svn/ver/2217/trunk/java/org/apache/commons/fileupload/servlet/package.html
+END

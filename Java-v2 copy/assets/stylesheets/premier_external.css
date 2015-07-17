@@ -1,0 +1,25 @@
+/* 
+    Document   : foretees_premier
+    Created on : Jul 17, 2013, 6:18:38 PM
+    Author     : Owner
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+#ifrforetees {
+    height: 400px;
+    width: 1050px;
+    margin: 0;
+    padding: 0;
+    border:0px none transparent !important;
+}
+
+#ftControl blockquote {
+    margin: 0 !important;
+}

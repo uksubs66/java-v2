@@ -1,0 +1,845 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+@font-face {
+    font-family: 'CrimsonRoman';
+    src: url('http://www.foretees.com/assets/webfonts/Crimson-Roman-webfont.eot');
+    src: url('http://www.foretees.com/assets/webfonts/Crimson-Roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.foretees.com/assets/webfonts/Crimson-Roman-webfont.woff') format('woff'),
+         url('http://www.foretees.com/assets/webfonts/Crimson-Roman-webfont.ttf') format('truetype'),
+         url('http://www.foretees.com/assets/webfonts/Crimson-Roman-webfont.svg#CrimsonRoman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CrimsonBold';
+    src: url('http://www.foretees.com/assets/webfonts/Crimson-Bold-webfont.eot');
+    src: url('http://www.foretees.com/assets/webfonts/Crimson-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.foretees.com/assets/webfonts/Crimson-Bold-webfont.woff') format('woff'),
+         url('http://www.foretees.com/assets/webfonts/Crimson-Bold-webfont.ttf') format('truetype'),
+         url('http://www.foretees.com/assets/webfonts/Crimson-Bold-webfont.svg#CrimsonBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CrimsonItalic';
+    src: url('http://www.foretees.com/assets/webfonts/Crimson-Italic-webfont.eot');
+    src: url('http://www.foretees.com/assets/webfonts/Crimson-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.foretees.com/assets/webfonts/Crimson-Italic-webfont.woff') format('woff'),
+         url('http://www.foretees.com/assets/webfonts/Crimson-Italic-webfont.ttf') format('truetype'),
+         url('http://www.foretees.com/assets/webfonts/Crimson-Italic-webfont.svg#CrimsonItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+body {
+     background-color:#002861; font-family:'CrimsonRoman',Georgia, 'Times New Roman', Times, serif;
+	
+}
+
+#title {font-family:'CrimsonRoman',Georgia, 'Times New Roman', Times, serif;
+	}
+
+strong{
+	font-family:'CrimsonBold',Georgia, 'Times New Roman', Times, serif; 
+}
+	
+em {
+	font-family:'CrimsonItalic',Georgia, 'Times New Roman', Times, serif;
+	
+}
+
+
+/* ------- This is the BLUE version ------- */
+
+
+
+/*  Custom style sheet
+
+    NOTICE:  Please document ALL colors here!!!!!!!
+
+  Primary colors used:
+           dark -          336633      (now 4b4b49)
+           med dark -      8B8970      (now 4391cf)
+           med light -     CCCCAA      (now 002861)
+           light -         F5F5DC      (now f2f0e4)
+           table matting - lightblue   (now lightblue)  
+		   announcements - F2F0E5		(now e0dacb }
+		   topnav item2 - FAF9D5       (now 4391cf)
+		   breadcrumbs - 4093AF		   (now 4391cf)
+		   body links - 003399			(now 039)
+		   accuweather bg - 346797		(now 4391cf)
+		   instructions - E4F3F8		(now E4F3F8)
+		   submit request bttn - 007096 (now 002861)
+*/
+
+
+
+
+
+/* START TOP NAVIGATION */
+
+
+#top {
+    background-color: #4b4b49;
+}
+
+
+#topnav li li a {
+    background-color: #4b4b49;
+    color: #fff;
+}
+
+#topnav li li a:hover {
+    background-color: #344e26;
+
+}
+
+
+a .topnav_item2 {
+    color:#ddd9bf;
+}
+
+
+/* START SUB NAVIGATION */
+
+
+#subnav a, #subnav a:visited {
+    background-color: #0069b2;
+    color: #ffffff;	font-size:16px;
+    border: 1px solid #fff;               /*  add a white border on the tabs */
+}
+
+#subnav a:hover {
+    color:#FFFFFF;
+    background-color:#4391cf;
+}
+
+#subnav a.selected, #subnav a.selected:visited {
+    background-color:#344e26;
+}
+
+
+/*------------- END SUB NAVIGATION--------------- */
+
+
+
+#title {
+    
+    color:#FFFFFF;
+}
+
+
+h1 {
+    color:#142e24;
+}
+
+
+/* ------- Standard Elemets ------- */
+
+table.standard_list_table a.teetime_button_alternate1 {
+    text-decoration: none;
+    background-color: lightgreen;
+}
+
+table.standard_list_table td.highlight {
+    background-color: yellow;
+}
+
+table.standard_list_table td.blackout {
+    background-color: black;
+}
+
+table.standard_list_table caption {
+
+    background-color:#fafafa;
+}
+
+table.standard_list_table caption hr {
+    background-color: #aaa;
+}
+
+table.standard_list_table thead th {
+    background-color: #f9f0d2;
+    color: #4391cf;
+}
+
+table.standard_list_table tbody td {
+    color: #142e24;
+    font-size: 13px;                   /* was 11px */
+}
+
+
+
+/* ------- LOGIN PAGE ---------- */
+
+/* ------- ALSO USED IN OUTPUTERROR IN COMMON_SKIN ---------- */
+
+#main_login {
+    background-color:#FFFFFF;
+    color:#000000;
+}
+
+
+.login {
+    border: 1px solid #c6d4cf;
+    color:#142e24;
+}
+
+#login_welcome {
+    background:#f2f0e4 url(../../images/foretees_logo.png) bottom center no-repeat;
+    border:1px solid #f9f0d2;
+}
+
+/* ------- END FOOTER ---------- */
+
+
+/* ------- MAIN WINDOW ---------- */
+
+#club_logo {
+    background-color:#f5f5f5;
+    color:#dadada;
+}
+
+
+.left_links {
+    background-color:#fbf8e7;
+}
+
+.left_links li {
+    border-bottom: solid 1px #ccddf0;
+}
+
+.left_links a, .left_links a:visited {
+    color:#177b9d;
+}
+
+.left_info {
+    background-color:#e0dacb;
+}
+
+.left_info a, .left_info a:visited {
+    color:#4391cf;
+}
+
+.left_info a:hover {
+    color:#c9504e;
+}
+
+.main_message div {
+    background-color:#f5f5f5;
+}
+
+.main_message a, .main_message a:visited {
+    color:#4391cf;
+}
+
+#breadcrumb a, #breadcrumb a:visited {
+    color:#4391cf;font-size: 20px;
+}
+
+.main_instructions {
+    background-color:#E4F3F8;
+}
+
+.main_warning {
+    background-color:#4391cf;
+    color:#ffffff;
+}
+
+
+
+.sub_instructions {
+    background-color:#fbf8e7;
+    border: 1px solid #faf1cf;
+}
+
+a.tip_text, a:visited.tip_text {
+    color:#4391cf;
+}
+
+.select {
+    background-color:#002861;
+    color:#FFFFFF;
+}
+
+
+
+
+/* ------- BEGIN LARGE TABLE ---------  */
+
+#big_table_brdr {
+    background-color:#f2f2f2;
+}
+
+#big_table {
+    background-color:#FFF;        /*  fff - white */
+    border: 1px solid #e4e4e4;
+}
+
+#big_table table td.head {
+    background-color:#f9f0d2;
+    color:#4391cf;
+}
+
+#big_table table td a,#big_table table td a:visited {
+    color:#4391cf;
+}
+
+
+/* -------- END LARGE TABLE ----------  */
+
+
+
+/* ------- BEGIN RESERVATIONS PAGE-------  */
+
+.res_select {
+    background-color:#f9f0d2;
+}
+
+.res_select_ltr {
+    background-color:#f9f0d2;
+}
+
+.res_select_ltr table td {
+    background-color:#FFFFFF;
+}
+
+.res_select_ltr a, .res_select_ltr a:visited {
+    color:#002861;
+    background-color:#ffffff;
+}
+
+.res_select_ltr a:hover {
+    background-color:#4391cf;
+    color:#ffffff;
+}
+
+#back, .go_back_button {
+    background-color:#646464;
+    border: 1px solid #c5c6c6;
+    color:#ffffff;
+}
+
+#submit, .submit_request_button {
+    background-color:#002861;
+    border: 1px solid #e8f1f4;
+    color:#ffffff;
+}
+
+.cancel_request_button {
+    background-color:#8a2a28;
+    border: 1px solid #e8f1f4;
+    color:#ffffff;
+}
+
+#submit:hover, #back:hover, .submit_request_button:hover, .go_back_button:hover, .cancel_request_button:hover {
+    background-color:#ffffff;
+    color:#4391cf;
+}
+
+
+/* ------- END RESERVATIONS PAGE-------  */
+
+
+
+/* ------- END MAIN WINDOW ---------- */
+
+#footer {
+    color:#ffffff;      
+    background-image:url(../../images/foretees_llc_gray.png);
+}
+
+
+
+
+/* START GLOBAL UI ELEMENTS */
+
+
+.ical_button:hover {
+    background-color: #ddd !important;
+    border-color: #888;
+}
+
+.standard_button {
+    color: #000000;
+    background-color: #e3e3e3;
+}
+
+.standard_button.dark_background {
+    color: #ffffff;
+}
+
+.standard_button:hover {
+    border-color:#111;
+}
+
+.standard_button:active {
+    background-color: #ffffff !important;
+}
+
+.standard_button[disabled='disabled'], .standard_button[disabled], .standard_button:disabled, .standard_button.disabled {
+    background-color:#ffffff;
+    border-color: #777;
+    color: #888;
+}
+
+.standard_button.dark_background:active {
+    color: #000000;
+}
+
+.standard_button_lg {
+    border: 1px solid #888888;
+    color: #000000;
+    background-color: #FDFCFC;
+}
+
+.standard_button_lg:hover {
+    border-color:#000000;
+}
+
+.login_button_lg {
+    background-color: #8D8D8D;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bdbdbd), color-stop(100%,#4d4d4d));
+    background: -moz-linear-gradient(center top, #bdbdbd 0%, #4d4d4d 100%);
+    border-color: #c9c9c9;
+    color: #ffffff;
+}
+
+.login_button_lg:hover {
+    border-color: #adadad;
+    color: #ffffff;
+}
+
+fieldset.standard_fieldset, 
+fieldset.form_fieldset, 
+fieldset.standard_legend_list, 
+.event_category_filters fieldset {
+    border: 1px solid #aaa;
+    background-color: #ffffff;
+}
+
+fieldset.form_fieldset legend,
+fieldset.standard_fieldset legend, 
+fieldset.standard_legend_list legend, 
+.event_category_filters fieldset legend {
+    border: 1px solid #aaa;
+    background-color: #ffffff;
+}
+
+
+fieldset.standard_fieldset div div p.highlight {
+    background-color: #FFFF8F;
+}
+
+fieldset.standard_fieldset div div ul li ul {
+    background-color: #ffffff;
+}
+
+fieldset.standard_fieldset div div ul li:hover,
+fieldset.standard_fieldset>div>div>a:hover {
+    background-color: #ddd;
+}
+
+fieldset.standard_fieldset div div ul li:hover ul {
+    border: 1px solid #ddd;
+    background-color:#ffffff;
+}
+
+fieldset.standard_fieldset div div ul li ul li a:hover {
+    color: #ffffff;
+    background-color: #aaa;
+}
+
+/* END GLOBAL UI ELEMENTS */
+
+
+
+
+/* START MEMBER EVENTS */
+
+.event_category_filters fieldset div label {
+    border: 1px solid #777;
+    background-color:#f6f7fb;
+}
+
+.event_list_table td.open_event {
+    background-color:#f7ffb1;
+}
+
+/* END MEMBER EVENTS */
+
+
+/* START MEMBER SHEET */
+
+div.list_search div a.standard_button {
+    border-color: #555;
+}
+
+.modal_list table tbody td.waitlist_players span span {
+    color: #888888;
+}
+
+.modal_list table tr.member_participant {
+    background-color: #fcffe0;
+}
+
+ul.modal_field_list>li>div {
+    background-color: #f2f6f7;
+}
+
+ul.modal_field_list>li.box_with_title>div>b {
+    border-bottom: solid 1px #adb9bb;
+}
+
+/* this changes the bg color and font color of the tee time buttons  */
+table.standard_list_table a.teetime_button {
+    text-decoration: none;
+    color:#FFFFFF;                 
+    background-color: #395248;     
+}
+
+
+/* END MEMBER SHEET */
+
+
+
+/* --------- SLOT PAGE --------- */
+
+.slot_container .sub_main {
+    background:lightblue;           /* was #f2f0e4 */
+    border: 1px solid #f9f0d2;
+}
+
+.slot_container .sub_instructions, .widget_container_right .sub_instructions {
+    background-color: #4391cf; /* from dining slot   */
+    border: 1px solid #f9f0d2; /* from dining slot */
+    /*color: #ffffff;    ***** Use this (white font) if the background color is too dark for black font */
+}
+
+.slot_container .element_group {
+    background:#f2f0e4;           /* was #f2f0e4 */
+}
+
+.slot_container .element_group select .selected_option {
+    background-color: #555;
+    color: #ffffff;
+}
+
+.slot_container .member_tbd_button {
+    border: 1px solid #AAA;
+    background-color: #ffffff;
+    color: #002861;
+}
+
+.slot_container .member_tbd_button:hover {
+    color: #ffffff;
+    background-color: #333;
+}
+
+.slotSubmit_container form table.question_list {
+    background-color: #ffffff;
+    border: 1px #bdbdbd solid;
+}
+
+.slotSubmit_container form table.question_list thead {
+    background-color: #f2f0e4;
+}
+
+.slotSubmit_container form table.standard_list_table {
+    background-color: #ffffff;
+}
+
+select.partner_list option.on_slot {
+    color:#777;
+}
+
+.member_search_letter_table td a {
+    color: #002861;
+    background-color: #ffffff;
+}
+
+.member_search_letter_table td a:hover {
+    color: #ffffff;
+    background-color: #333;
+}
+
+/* --------END SLOT PAGE --------- */
+
+
+/* ------- LESSONS PAGE ---------- */
+
+.lesson_desc {
+    background-color: #4b4b49;
+    color: #ffffff;
+    border: 1px solid #808080;
+}
+
+.lesson_desc2 {
+    background-color: #f2f0e4;
+    color: #000000;
+    border: 1px solid #808080;
+}
+
+.lesson_desc3 {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.lesson_return_top input.subBtn {
+    background-color: #4391cf;
+}
+
+/*------------------------------------------------------*/
+
+table.lesson_time {
+    background-color: #f2f0e4;
+}
+
+table.lesson_time tbody td.hour {
+    background-color: #4391cf;
+}
+
+table.lesson_time a.lesson_choice:link {
+    color: #4b4b49;
+}
+
+table.lesson_time a.lesson_choice:visited, table.lesson_time a.lesson_choice:active {
+    color: #4391cf;
+}
+
+.lesson_req_add_chg_form_hdr {
+    background-color:#4391cf;
+    color: #000000;
+}
+
+.lesson_req_add_chg_form_body {
+    border:2px solid #4391cf; 
+    background-color: #f2f0e4;
+    color: #000000;
+}
+
+#lesson_cal_elem_tbl_wrap  {
+    border:2px solid #4391cf;
+}
+
+#lesson_cal_elem_0 table {
+    border: 1px solid #000000;
+    background-color: #f2f0e4;
+}
+
+#lesson_cal_elem_0 table thead {
+    background-color: #4391cf;
+    color: #f2f0e4;
+}
+
+#lesson_cal_elem_0 table td input {
+    background-color: #32CD32;
+}
+
+/* ------- END LESSONS PAGE ---------- */
+
+
+/* ------- TEE LIST PAGE ---------- */
+
+table.tee_list_legend thead tr {
+    background-color:#4391cf;
+    color:#000;
+}
+
+table.tee_list_legend tbody {
+    border:1px solid #4391cf; 
+}
+
+table.tee_list_legend tbody td {
+    color:#000;
+}
+.tee_list_color_1 {
+    color: blue;
+}
+.tee_list_color_2 {
+    color: red;
+}
+.tee_list_color_3 {
+    color: black;
+}
+.tee_list_color_4 {
+    color: green;
+}
+.tee_list_color_5 {
+    color: goldenrod;
+}
+.tee_list_color_6 {
+    color: brown;
+}
+.tee_list_color_7 {
+    color: #114411;
+}
+.tee_list_color_8 {
+    color: #4b4b49;
+}
+.tee_list_color_9 {
+    color: Steelblue;
+}
+.tee_list_color_10 {
+    color:#009999;
+}
+
+/* ------- END TEE LIST PAGE ---------- */
+
+
+/* ------- HANDICAPS PAGE (Member_handicaps) -------- */
+
+table.standard_list_table tbody td.hcaps_empty {    
+    background-color: #FFFF8F;
+}
+
+table.standard_list_table tbody td.hcaps_unmatch {    
+    background-color: #FFFF8F;
+}
+
+table.standard_list_table tbody td.hcaps_peer_hdr_data {
+    background-color: #f9f0d2;
+    color: #4391cf;
+}
+
+table.standard_list_table tbody td.hcaps_counts {    
+    background-color: lightblue;
+}
+
+/* ------- END HANDICAPS PAGE ---------- */
+
+
+
+/* ------- SETTINGS PAGE (Member_services) ----------- */
+
+.sub_main_tan {
+    background:#f2f0e4;
+}
+
+
+.res_qa {
+    background:#f2f0e4;
+}
+
+#mem_sub_settings table td {
+    border:#efefef 2px solid;
+}
+
+/* ------- END SETTINGS PAGE ---------- */
+
+.ajax_loader {
+    border:#666666 1px solid;
+    background-color: #ffffff;
+}
+
+
+/* Announce container */
+
+div.announcement_container a,
+body.mceContentBody a {
+    color: #003399;
+}
+
+.white_box {
+    background-color:#ffffff;
+}
+
+.grey_box {
+    background-color:#e0dacb;
+}
+
+body.mceContentBody table.mceItemTable,
+body.mceContentBody table.mceItemTable td {
+    border-color: #177b9d;
+}
+
+div.announcement_container .widget_content,
+body.mceContentBody .widget_content {
+    background-color:#e0dacb;
+}
+
+
+div.announcement_container .widget_content>h1,
+div.announcement_container .widget_content>h2,
+div.announcement_container .widget_content>h3,
+div.announcement_container .widget_content>h4,
+div.announcement_container .widget_content>h5,
+div.announcement_container .widget_content>h6,
+body.mceContentBody .widget_content>h1,
+body.mceContentBody .widget_content>h2,
+body.mceContentBody .widget_content>h3,
+body.mceContentBody .widget_content>h4,
+body.mceContentBody .widget_content>h5,
+body.mceContentBody .widget_content>h6 {
+    background-color:#ffffff;
+}
+
+div.announcement_container div.slideshow_pager_nav_container div.slideshow_pager_nav_box {
+    border: 1px solid #aaa;
+    background-color: #ffffff;
+}
+
+div.announcement_container div.slideshow_pager_nav_container.hide_box div.slideshow_pager_nav_box {
+   background-color: transparent;
+}
+div.announcement_container div.slideshow_pager_nav_container.hover_box div.slideshow_pager_nav_box {
+   background-color: transparent;
+   border-color: transparent;
+}
+
+div.announcement_container div.slideshow_pager_nav_container.hover_box div.slideshow_pager_nav_box:hover,
+div.announcement_container div.slideshow_pager_nav_container.fade_box div.slideshow_pager_nav_box:hover{
+   background-color: #ffffff;
+   border-color: #aaa;
+}
+
+div.announcement_container div.slideshow_pager_nav_container.hover_box.hide_box div.slideshow_pager_nav_box:hover,
+div.announcement_container div.slideshow_pager_nav_container.fade_box.hide_box div.slideshow_pager_nav_box:hover{
+   background-color: transparent;
+   border-color: transparent;
+}
+
+div.announcement_container div.slideshow_pager_nav_container.hover_box.fade_box div.slideshow_pager_nav_box:hover {
+   background-color: #ffffff ;
+}
+
+
+div.announcement_container div.slideshow_pager_nav_container div.slideshow_nav_container a:hover {
+    border: 1px solid #aaa;
+}
+
+/* Accuweather widget */
+body.mceContentBody div.weather_widget_accuweather_wide,
+div.announcement_container div.weather_widget_accuweather_wide {
+    background-color: #d1dae1;
+}
+
+body.mceContentBody div.weather_widget_accuweather_wide .accuweather_footer,
+div.announcement_container div.weather_widget_accuweather_wide .accuweather_footer {
+    color: #FFFFFF;
+    background-color: #4391cf;
+}
+
+/* Dining Override */
+
+.sub_main {
+	background: #e0dacb;
+	border: 1px solid #ffdca8;
+}
+
+#commit_sub, #commit_subl {
+	background: #002861;
+}
+#event_list_table_brdr, #event_list_table table td.head {
+	background: #e0dacb;	
+}

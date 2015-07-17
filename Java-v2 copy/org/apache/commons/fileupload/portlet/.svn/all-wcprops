@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/portlet
+END
+PortletRequestContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/portlet/PortletRequestContext.java
+END
+PortletFileUpload.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/portlet/PortletFileUpload.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/portlet/package.html
+END

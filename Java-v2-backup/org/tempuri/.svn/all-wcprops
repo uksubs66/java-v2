@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/repos/java/trunk/!svn/ver/1/org/tempuri
+END
+OnlineSaleRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/1/org/tempuri/OnlineSaleRequest.java
+END
+AddSaleOnline.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/1/org/tempuri/AddSaleOnline.java
+END
+IntegrationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/java/trunk/!svn/ver/1/org/tempuri/IntegrationService.java
+END
+OnlinePaymentResultEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/1/org/tempuri/OnlinePaymentResultEnum.java
+END
+AddSaleOnlineV2.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/java/trunk/!svn/ver/1/org/tempuri/AddSaleOnlineV2.java
+END
+ArrayOfOnlineSaleResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/1/org/tempuri/ArrayOfOnlineSaleResult.java
+END
+AddSaleOnlineMultiple.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/1/org/tempuri/AddSaleOnlineMultiple.java
+END
+ArrayOfInt.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/java/trunk/!svn/ver/1/org/tempuri/ArrayOfInt.java
+END
+AddSaleOnlineV2WithNotes.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/1/org/tempuri/AddSaleOnlineV2WithNotes.java
+END
+AddSaleOnlineResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/1/org/tempuri/AddSaleOnlineResponse.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/java/trunk/!svn/ver/1/org/tempuri/package-info.java
+END
+ArrayOfOnlineSaleRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/1/org/tempuri/ArrayOfOnlineSaleRequest.java
+END
+IntegrationServiceSoap.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/1/org/tempuri/IntegrationServiceSoap.java
+END
+OnlineSaleResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/java/trunk/!svn/ver/1/org/tempuri/OnlineSaleResult.java
+END
+AddSaleOnlineV2Response.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/1/org/tempuri/AddSaleOnlineV2Response.java
+END
+ArrayOfString.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/1/org/tempuri/ArrayOfString.java
+END
+AddSaleOnlineMultipleResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/1/org/tempuri/AddSaleOnlineMultipleResponse.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/1/org/tempuri/ObjectFactory.java
+END
+AddSaleOnlineV2WithNotesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/1/org/tempuri/AddSaleOnlineV2WithNotesResponse.java
+END

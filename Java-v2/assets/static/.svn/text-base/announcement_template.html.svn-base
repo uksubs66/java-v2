@@ -1,0 +1,252 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            /*  
+            This CSS is only used here:
+            */
+            body {padding:0; margin:0;}
+        </style>
+        <style type="text/css">
+            /*  
+            This CSS goes in Settings, ForeTeesSettings, announcement_css
+            Do NOT include the <style> tags or any other tags outside the <style> tages (html, head, etc.) 
+            */
+
+            .ftAnnounce h1, .ftAnnounce h2, .ftAnnounce h3, .ftAnnounce h4, .ftAnnounce h5, .ftAnnounce h6 {
+                margin:0;
+            }
+            
+            section, header, article, footer {
+                display: block;
+            }
+
+            .ftAnnounce {display:block; color:#333333; max-width: 780px; margin-left:auto; margin-right:auto; font-family:"Georgia, Times New Roman, Times, serif"; font-size:16px;}
+
+            .ftAnnounce p {}
+            .ftAnnounce p+p {margin-top:16px;}
+            .ftAnnounce header+p {margin-top:30px;}
+            .ftAnnounce h1+p {margin-top:30px;}
+            
+            .ftAnnounce h2 {margin-bottom:16px; font-size:16px; text-align:left; font-weight: bold; text-decoration: underline;}
+
+            .ftAnnounce blockquote, .ftAnnounce ie8blockquote {font-style:italic;}
+
+            .ftAnnounce .ftaFigure {text-align: center; margin-bottom:30px;}
+            .ftAnnounce .ftaFigure>* {display:block;margin-left:auto;margin-right: auto;}
+            .ftAnnounce .ftaFigure>span {font-weight: bold; margin-top:5px}
+            .ftAnnounce .ftaFigure img {max-width:100%;}
+            
+            .ftAnnounce .ftanEmbed {margin-bottom:30px; text-align:center; margin-left:-20px; margin-right:-20px;}
+            .ftAnnounce .ftanEmbed>iframe {width:500px; height:281px;}
+            p+.ftanEmbed {margin-top: 30px;}
+
+            .ftAnnounce>header, .ftAnnounce>.ie8header {background-color:#f1f1f1; border:1px solid #aaa; padding:20px 50px; margin:10px;}
+            .ftAnnounce>header>h1, .ftAnnounce>.ie8header>h1  {font-size:24px; text-align:center; font-weight: bold; font-style: italic;}
+            .ftAnnounce>header>p, .ftAnnounce>.ie8header>p {font-size:14px;}
+            
+            .ftAnnounce>section, .ftAnnounce>.ie8section {margin:10px; border:1px solid #aaa; }
+            .ftAnnounce>header + section, .ftAnnounce>section + section, .ftAnnounce>.ie8header + .ie8section, .ftAnnounce>.ie8section + .ie8section {margin-top:30px;}
+            .ftAnnounce>section>header, .ftAnnounce>.ie8section>.ie8header {background-color:#f1f1f1; border-bottom:1px solid #aaa; padding:10px; margin:0;}
+            .ftAnnounce>section>header>h1, .ftAnnounce>.ie8section>.ie8header>h1 {font-size:24px; text-align:center; font-weight: bold; font-style: italic;}
+            .ftAnnounce>section>article, .ftAnnounce>.ie8section>.ie8article {padding:20px;}
+            .ftAnnounce>section>article>header>h1, .ftAnnounce>.ie8section>.ie8article>.ie8header>h1 {margin-bottom:30px; font-size:20px; text-align:center; font-weight: bold; font-style: italic;}
+            .ftAnnounce>section>article>header>h1:before,
+            .ftAnnounce>section>article>header>h1:after,
+            .ftAnnounce>.ie8section>.ie8article>.ie8header>h1:before,
+            .ftAnnounce>.ie8section>.ie8article>.ie8header>h1:after
+            {content:''; display:block; margin:10px auto 10px auto; width:92%; height:0px; border-top:1px #999 solid;}
+            .ftAnnounce>section>article>header>h1:before, .ftAnnounce>.ie8section>article>.ie8header>h1:before {margin-top:0;}
+            
+            .ftAnnounce>footer, .ftAnnounce>.ie8footer {padding:30px;}
+            .ftAnnounce>footer>p, .ftAnnounce>.ie8footer>p {text-align:center;}
+            
+            @media screen and (max-width: 580px) {
+                .ftAnnounce .ftanEmbed>iframe {width:320px; height:180px;}
+            }
+
+            @media screen and (max-width: 500px) {
+                .ftAnnounce>header {padding:20px;}
+            }
+
+            @media screen and (max-width: 380px) {
+                .ftAnnounce .ftanEmbed>iframe {width:280px; height:157px;}
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!--  
+            The following HTML (inside the BODY tags) goes in: Manage ForeTees Announcements, HTML Content.  
+            Do NOT include the <body> tags or any other tags outside the <body> (html, head, etc.) 
+        -->
+
+        <article class="ftAnnounce">
+
+            <header>
+                <h1>Welcome to the ForeTees Message Board</h1>
+                <p>Check here for important notices of new products and features, as well as other important information that will assist you in using our system.</p>
+                <p>Note: &nbsp;This message will expire on Friday, June 5th. &nbsp;Thank you!</p>
+            </header>
+
+            <section>
+
+                <header><h1>Important News from ForeTees</h1></header>
+
+                <article>
+                    <header><h1>ForeTees ClubCentral Mobile App</h1></header>
+                    <p>If you do not already have the ClubCentral App at your club, then <strong>you need to read this</strong>.</p>
+                    <p>The ClubCentral App is <strong>the best marketing tool ever</strong> to be introduced to the Private Club Industry! &nbsp;Why? Because your members all carry 
+                        smartphones, they love using Apps, and its a great way to communicate with them!</p>
+                    <ul>
+                        <li>More than <strong>120 clubs</strong> have already signed up for this unique App</li>
+                        <li>To date, <strong>62 of those clubs have gone live</strong> and released the App to their members</li>
+                        <li><strong>More than 7,000 members</strong> are using the App free of charge</li>
+                        <li>Those members have used the App to access ForeTees <strong>more than 100,000 times</strong></li> 
+                        <li>Members have been downloading the App at a pace of <strong>approximately 200 per day</strong></li>   
+                    </ul>
+                    <p>The following graph illustrates the combined usage of the first 10 clubs to use the App during the month of April. The Mobile Logins represent the percentage of 
+                        member logins on mobile devices through the club's website or directly into ForeTees (22% of all logins), and DO NOT include member access from the App (37% of all logins).
+                    </p>
+                    <p class="ftaFigure"><img src="http://www.foretees.com/images/app/app-logins.png" /></p>
+                    <p>And this is only the beginning!</p>
+                    <p>The ClubCentral App requires a member to login only once. &nbsp;After the initial login, members can simply open the App and tap to view 
+                        club events, offers, club contacts and access ForeTees. &nbsp;The other highlight that has golf professionals and the management staff excited is the 
+                        ability to send out <strong>push notifications</strong> to their members. All of this for a one-time, low cost setup fee and <strong>no monthly or annual fee</strong>.</p>
+                    <p class="ftaFigure">
+                        <img src="http://www.foretees.com/images/app/Apple-Watch-Push.png" />
+                        <span>Looks great on the Apple Watch too!</span>
+                    </p>
+                    <p>To learn more about this exciting App just watch the video below.</p>
+                    <p>We would appreciate you passing this information and video on to your management.</p>
+
+                    <div class="ftanEmbed">
+                        <iframe src="https://player.vimeo.com/video/121199807" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+
+                    <p>To sign up for the ClubCentral App or for more information, contact <a href="mailto:sales@foretees.com">sales@foretees.com</a>.</p>
+                    <p><strong>Note:</strong> &nbsp;The ClubCentral App provides excellent marketing opportunities for your club as well as easy access to ForeTees. &nbsp;However, <strong>the full potential of the App is realized 
+                            when combined</strong> with our Dining System and our Premier Website product.</p>
+                </article>
+
+                <article>
+                    <header><h1>How Recent Google Changes Will Affect Private Clubs</h1></header>
+
+                    <p>If you <strong>rely on your club website</strong> to attract new members, promote events, banquets and catering services, then you should read this.</p>
+
+                    <h2>Mobile Searches Now Exceed Computer Searches</h2>
+                    <p>Google recently announced the following (full article <a href="http://adwords.blogspot.com/2015/05/building-for-next-moment.html" target="_blank">here</a>):</p>
+                    <blockquote>"Billions of times per day, consumers turn to Google for I want-to-know, I want-to-go, I want-to-do, and I want-to-buy moments. And at these times, consumers are increasingly picking 
+                        up their smartphones for answers. In fact, <strong>more Google searches take place on mobile devices than on computers</strong> in 10 countries including the US and Japan.  This presents a tremendous 
+                        opportunity for marketers to reach people throughout all the new touchpoints of a consumer's path to purchase."</blockquote>
+
+                    <h2>New Google Algorithm Now Rewards Mobile-Friendly Sites</h2>
+                    <p>As of April 21, 2015, Google has made a massive change to the way it ranks websites. &nbsp;The change comes down to one very important criterion: <strong>whether your website is 
+                            fully optimized for mobile</strong>.</p>
+                    <p>Google announced the change on its Webmaster Central Blog back in February and has done a thorough job ever since explaining to marketers and website owners how the change will 
+                        affect their site and search traffic. They explained:</p>
+                    <blockquote>"Starting April 21, we will be expanding our use of mobile-friendliness as a ranking signal. This change will affect mobile searches in all languages worldwide and will have a significant 
+                        impact in our search results. Consequently, users will find it easier to get relevant, high quality search results that are optimized for their devices."</blockquote>
+
+                    <h2>What does this mean to you?</h2>
+                    <p>If your club website is not current and not mobile-friendly, there is a very good chance that <strong>your site will not appear near the top of the list</strong> when someone performs a Google search
+                        for something associated with your club. &nbsp;This could be potential new members searching for private clubs in the area, or people searching for wedding and banquet services, or Monday outings.  
+                        &nbsp;Google is still the #1 search engine and how they rank websites is very important when it comes to landing on the coveted first page of results.</p>
+                    <p>Google's <strong>preferred method of website design is called "Responsive Web Design" (RWD)</strong>. &nbsp;With RWD a website will automatically format the pages to <strong>fit on any device</strong>, from desktops to tablets to smart phones.
+                        Sites that properly implement RWD will typically rank higher than sites that are not as mobile-friendly..</p>
+                    <p>ForeTees implemented RWD throughout our entire product line more than a year ago. &nbsp;We are still the <strong>only provider to offer RWD on the public website pages AND the entire member-only area (website and reservations)!</strong></p>
+                    <p>If you are considering an <strong>upgrade to your current website, or you want to properly mobilize your entire online presence</strong>, then please contact us to see 
+                        how our RWD solutions can out-perform anything else on the market.</p>
+                </article>
+
+
+                <article>
+                    <header><h1>ForeTees and Mobile</h1></header>
+
+                    <h2>How Your Members are Using Mobile</h2>
+
+                    <p>Its no secret that mobile usage is on the rise and is currently the hottest topic in the world of technology. &nbsp;That is one 
+                        reason why ForeTees has been investing heavily into mobile capabilities in all of our member-facing systems. The following graph illustrates that your members 
+                        have responded positively by using their mobile devices to book their reservations at a drastically higher rate each year. </p>
+
+                    <p class="ftaFigure">
+                        <img src="http://www.foretees.com/images/mobile-stats.png" />
+                    </p>
+
+                    <h2>History of Mobile at ForeTees</h2>
+
+                    <p>ForeTees has been adding mobile support ever since Apple introduced the first iPhone. &nbsp;The following 
+                        timeline provides a summary of our progress to date. </p>
+
+                    <ul>
+                        <li>2007 - Purchased an iPhone the first day they went on sale and began testing our software.</li>
+                        <li>2009 - Introduced ForeTees Mobile, a separate mobile ForeTees site for tee times.</li>
+                        <li>2012 - Responsive Web Design (RWD) technology introduced to industry. &nbsp;ForeTees begins transforming entire product line to RWD.</li>
+                        <li>2014 - ForeTees updates all of our member-facing software to Responsive Web Design to automatically support all mobile devices without the need of a separate mobile site.</li>
+                        <li>2015 - ForeTees introduces the industry's first Mobile App designed exclusively for private clubs using ForeTees.</li>
+                    </ul>
+
+                    <h2>Our Commitment to You</h2>
+
+                    <p>ForeTees was the first website/reservation provider in the industry to provide a mobile site for reservations. &nbsp;We were the first, and still the only, provider to offer all 
+                        member-facing solutions in Responsive Web Design. &nbsp;And, we are the first to offer an App specifically designed for private clubs with ForeTees. &nbsp;<strong>We are the leader in mobile solutions for private clubs!</strong></p>
+
+                    <p>The mobile technologies are changing and advancing at a very fast pace. &nbsp;ForeTees will continue to monitor these technologies and embrace those that will benefit our customers. &nbsp;We 
+                        already have additional app features under development, with plans to introduce mobile solutions not seen in this industry before. &nbsp;We will continue to provide you with the tools you need 
+                        to <strong>retain your membership, attract new members, and generate more revenue!</strong></p>
+
+                </article>
+
+
+                <article>
+                    <header><h1>New Features</h1></header>
+
+                    <h2>Course=ALL option on Old Tee Sheets (Golf)</h2>
+                    <p>If your club utilizes our golf system and you have multiple courses, you will now be allowed to view all courses when accessing the past tee sheets. &nbsp;On this page
+                        you will now see an -ALL- entry in the course selection list. Selecting this option will list the existing tee times for all courses.</p>
+
+                    <h2>Send Push Notifications from ForeTees</h2>
+                    <p>If you have the ClubCentral App, you can now send Push Notifications to your members directly from the Tee Sheet or Courts, or by using the new Send Push feature under Tools.</p>
+                    <p>A new item labeled <strong>'Send Push Notification' has been added to the Control Panel</strong> on the tee sheet/court page. Selecting this item will open a page that is similar to the Send Email 
+                        page. &nbsp;All members that are on the tee sheet or court, and have the app on at least one mobile device, will appear in the member list. &nbsp;All you need to do is enter a 
+                        brief message and hit Send. &nbsp;The message will appear on the members' app immediately.</p>
+                    <p>A new menu item also labeled <strong>'Send Push Notification' has been added to the Tools tab</strong> in the proshop Navigation. Selecting this menu item will open the same page as described above, 
+                        though there will not be any pre-selected members. &nbsp;You will be allowed to select the recipients (members that have the app), enter a brief message, and then send it.</p>
+
+                    <h2>Quickly and Easily Setup Members for the App from ForeTees</h2>
+                    <p>Also if you have the ClubCentral App, you can quickly assist your members in getting setup with the ClubCentral App by using the new App Setup feature under Tools.</p>
+                    <p>A new item labeled <strong>'ClubCentral App Setup' has been added to the Tools tab</strong>. &nbsp;Selecting this item will open a page that will allow you to select a member by name and then 
+                        generate credentials for that member to login to the App once its installed on their mobile device. &nbsp;This is the only time they will need to login on that device, so there is no need for 
+                        the member to record or memorize these credentials.</p>
+                    <p>This feature will be especially helpful when a member walks into your shop, or when your club hosts an 'Appy Hour', or other event, to assist members in getting setup with the ClubCentral App. &nbsp;<strong>Please 
+                            note we have created a special limited proshop login for staff that do not currently have proshop access</strong>.</p>
+                    <p>Contact our sales team or support staff if you would like to know how to use this login.</p>
+                </article>
+
+            </section>
+
+            <footer>
+                <p>Please contact sales if you would like more information or have any questions.</p>
+                <p><a href="mailto:sales@foretees.com">sales@foretees.com</a> or (651) 486-0715 opt 2</p>
+                <p>Thank you for using ForeTees! &nbsp;We are honored to provide this service to you and your members.</p>
+                <p><a href="http://www.foretees.com" target="_blank">www.foretees.com</a></p>
+            </footer>
+
+        </article>
+
+
+        <!--
+            END of Announcement
+        -->
+
+
+    </body>
+</html>

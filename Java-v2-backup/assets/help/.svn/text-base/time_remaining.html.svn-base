@@ -1,0 +1,7 @@
+<title>About the countdown timer</title>
+<div class="main_instructions">
+<p>This countdown shows the time you have remaining to complete this reservation.
+    During this time, the reservation is locked, allowing only you to modify it.</p>
+<p>If the time expires before you successfully complete and submit your reservation, 
+    the reservation time will be returned to the system, allowing other members to use it.</p>
+</div>

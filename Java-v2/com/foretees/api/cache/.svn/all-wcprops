@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/cache
+END
+BooleanCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/cache/BooleanCache.java
+END
+LongCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/cache/LongCache.java
+END
+IntegerCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/cache/IntegerCache.java
+END
+CacheBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/cache/CacheBase.java
+END
+StringCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/7593/com/foretees/api/cache/StringCache.java
+END

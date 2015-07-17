@@ -1,0 +1,1761 @@
+10
+
+dir
+0
+http://192.168.1.100/repos/foretees/trunk/java/imports
+http://192.168.1.100/repos/foretees
+add
+
+Support_import_HartefeldMships.java
+file
+
+
+
+add
+
+Support_port_AGC NGC Members.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_AltoLakesSocials.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_AspenValleyGC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_AtlantaCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_AustinCCSpDep.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_AvonOaksCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_BallenIsles.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_BearCreekCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_BirminghamCCDeps.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_BoulderCCSocials.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_BraeBurnCC_Updated.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_BrettonWoodsCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_BrettonWoodsReload.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_BrookridgeGF.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_BrookridgeGF9Hole.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_BrynwoodNewGolf.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_CCofBuffalo.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_CCofLansingSocial.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_CCofNaplesSocials.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_CCofPittsfield.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_CWCPGA_Am.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_CanterburyGC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_CapitalCity.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_ChambersburgCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_ChampionHills.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_CobblestoneCreekCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_ContraCostaCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_DesertForestGC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_DesertHorizonsCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_ElginCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_EngineersCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_EsteroCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_EsteroCCExtras.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_FireRockCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_ForsythCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_FortCollinsTennis.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_FourHillsCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_FoxDenCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_FoxHillMNumUpdate.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_FrippIslandResort.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_GenevaNationalGC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_GolfcrestCCAdditionalMems.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_GreatOaksCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_GreenAcres.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_HeritageGC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_HillwoodCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_InterlachenSocial.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_KingsCreekCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_KingsCreekCCSocials.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_LakeForestCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_LakesideCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_LakewoodCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_LakewoodCCTennis.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_LeawoodSouthCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_LedgemontCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_LeisureWorldNonMembers.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_LincolnshireFieldsCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_LochLloydCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_ManorCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_MayfieldSRTennis.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_MedinaCCSocials.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_MinnehahaCCSocials.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_MirabelSocials.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_MissionValleyCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_MountVernonDependents.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_Nevillewood.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_NorthRiverYC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_OakhursCCSpouseDep.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_OklahomaCity.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_OldElmClub.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_OneidaGCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_OregonGolfClub.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_OregonSrGolf.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_OronoqueCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_PhilmontCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_PinehurstCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_PlatteviewCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_PortlandGCDeps.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_PrestonwoodCCPrimaryMems.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_PrestonwoodCCSpouseDeps.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_Ptarmigan.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_PumpkinRidgeGhostPass.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_QuakerRidgeGC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_QuecheeClubTennisDeps.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_RamseyGCCPaddleTennis.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_RehobothBeachCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_RivieraCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_RollingHillsGC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_RosemontCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_Sagamore.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_Salisbury.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_SalisburyCCTennis.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_SeaCliff POSID Fix.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_SeminoleGCReload.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_ShadowGlen.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_ShakerHeights.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_SkylineCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_TahoeDonner.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_TamOShanterClub.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_TheConcessionGC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_TheDeuceAtTheNational.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_TheForestCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_TheLegendClubs_Bergamont.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_TheNationalGCofKansasCity.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_TheSpringsClub.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_TontoVerde.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_TurlockG&CC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_Walden.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_WestonHillsGC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_WestwoodCC-OH.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_WildcatRunCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_WildernessRidgeGC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_Yacht&CC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_YellowstoneCC.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_bloomcc.java
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+Support_port_goaks.java
+file
+
+
+
+add
+
+Support_port_meridianhillscc.java
+file
+
+
+
+add
+
+Support_port_thestrandcc.java
+file
+
+
+
+add
+

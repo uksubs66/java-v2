@@ -1,0 +1,38 @@
+
+// Needed imports
+import org.apache.commons.lang.*;
+import com.google.gson.*; // for json
+
+// Define objects
+Gson gson_obj = new Gson(); // Create Json response for later use
+Map<String, Object> hashMap = new LinkedHashMap<String, Object>(); // Create hashmap response for later use
+
+// For Waitlist buttons
+hashMap.clear();
+hashMap.put("type", "Member_waitlist");
+hashMap.put("name_of_form_element", value_of_form_element);  // repeat for every form element passed by old_skin button
+
+out.print("<a class=\"waitlist_button standard_button\" href=\"#\" data-ftjson=\""+StringEscapeUtils.escapeHtml(gson_obj.toJson(hashMap))+"\">Button Text Here</a>");
+
+
+// For Event buttons
+hashMap.clear();
+hashMap.put("type", "Member_events2");
+hashMap.put("name_of_form_element", value_of_form_element);  // repeat for every form element passed by old_skin button
+
+out.print("<a class=\"event_button standard_button\" href=\"#\" data-ftjson=\""+StringEscapeUtils.escapeHtml(gson_obj.toJson(hashMap))+"\">Button Text Here</a>");
+
+
+// Lottery
+hashMap.clear();
+hashMap.put("type", "Member_mlottery");
+hashMap.put("name_of_form_element", value_of_form_element);  // repeat for every form element passed by old_skin button
+
+out.print("<a class=\"lottery_button standard_button\" href=\"#\" data-ftjson=\""+StringEscapeUtils.escapeHtml(gson_obj.toJson(hashMap))+"\">Button Text Here</a>");
+
+// Tee Time
+hashMap.clear();
+hashMap.put("type", "Member_slot");
+hashMap.put("name_of_form_element", value_of_form_element);  // repeat for every form element passed by old_skin button
+
+out.print("<a class=\"teetime_button standard_button\" href=\"#\" data-ftjson=\""+StringEscapeUtils.escapeHtml(gson_obj.toJson(hashMap))+"\">Button Text Here</a>");

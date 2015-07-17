@@ -1,0 +1,81 @@
+/* 
+    Document   : servlet_Member_teelist.css
+    Created on : Jan 22, 2012, 4:18:04 PM
+    Author     : John Kiekopf
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+
+*/
+
+
+/* -- Member_list (calendar) Print display --*/
+
+@media print {
+
+    #top, #topnav, #subnav, #title, #breadcrmb, #main_ftlogo, .print_button, .sub_instructions {
+        display: none !important;
+    }
+    body {
+       padding:0;
+       margin:0; 
+    }
+    #main {
+        padding:0;
+        margin:0;
+        border-radius:none;
+        width: 100%;
+    }
+    #wrapper {
+        width: 100%;
+        padding:0;
+        margin:0;
+        border-radius:none;
+        
+    }
+    #footer a, #footer img, #footer br {
+        display: none;
+    }
+    fieldset.standard_legend_list div div {
+        font-size: 8px !important;
+    }
+    table.list_calendar {
+        width: 100%;
+        padding:0;
+        margin:0;
+        table-layout: auto;
+    }
+    div.list_calendar {
+        padding:0;
+        margin:0;
+        margin-top: 20px;
+        width: 100%;
+    }
+    div.list_calendar+div.list_calendar {
+        page-break-before: always;
+    }
+    table.list_calendar td .item_container a.ical_button {
+        display: none;
+    }
+    table.list_calendar td .item_container {
+        white-space: normal;
+        line-height: 10px;
+        padding: 2px 0 2px 0;
+        font-size: 8px;
+    }
+    table.list_calendar td div.day_wrapper {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    table.list_calendar td div.day_wrapper .day_container {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    table.list_calendar td div.day_wrapper .more_mask {
+        display: none !important;
+    }
+
+}
+

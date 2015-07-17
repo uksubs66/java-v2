@@ -1,0 +1,20 @@
+<title>About the server clock</title>
+<div class="sub_instructions">
+    <p>This clock represents the actual server time as closely as possible.</p>
+    
+    <p>The time being displayed could vary from the time being
+        reported by your computer as the clock is representing the ForeTees server time and not your computer's 
+        local time.</p>
+</div>
+<div class="main_instructions">
+    <p>This clock can be used to monitor the actual time on the ForeTees server 
+        so that you will know precisely when the next day will become available to make reservations.</p>
+
+    <p>For instance, if the current server time is 6:58:12 AM and next Saturday is not available 
+        (is not green on the calendar), but it will become available at 7:00 AM, 
+        you can watch the clock until it gets to 7:00:00 AM.  
+        At that time you can simply click on the day in the calendar even though it is not yet green.</p>
+    
+    <p>If needed, you can refresh the calendars by clicking on the 'Refresh Calendars' or 
+        'Refresh Page' link under the clock.</p>
+</div>

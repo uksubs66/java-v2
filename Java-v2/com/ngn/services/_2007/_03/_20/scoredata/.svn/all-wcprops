@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata
+END
+HoleScoreInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/HoleScoreInfo.java
+END
+ArrayOfHoleScoreInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ArrayOfHoleScoreInfo.java
+END
+ScoreInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ScoreInfo.java
+END
+ScoreList.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ScoreList.java
+END
+PlayType.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/PlayType.java
+END
+ScoreType.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ScoreType.java
+END
+ScoreIdInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ScoreIdInfo.java
+END
+ScoreIdList.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ScoreIdList.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ObjectFactory.java
+END
+ScoreAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ScoreAction.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/package-info.java
+END
+ScoreStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ScoreStatus.java
+END
+ScoreResponseInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ScoreResponseInfo.java
+END
+ScoreResponseList.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/scoredata/ScoreResponseList.java
+END

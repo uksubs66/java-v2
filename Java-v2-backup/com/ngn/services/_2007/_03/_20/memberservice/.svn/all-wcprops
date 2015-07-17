@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice
+END
+UpdateMemberRosterResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/UpdateMemberRosterResponse.java
+END
+FetchMemberByUsernameRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMemberByUsernameRequest.java
+END
+FetchTournamentSSOResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchTournamentSSOResponse.java
+END
+FetchMembersWithoutSourceRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMembersWithoutSourceRequest.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/ObjectFactory.java
+END
+FetchMembersSearchResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMembersSearchResponse.java
+END
+UpdateMemberIdsAddSourceRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/UpdateMemberIdsAddSourceRequest.java
+END
+UpdateTournamentMembersRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/UpdateTournamentMembersRequest.java
+END
+FetchMembersByClubNoSourceRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMembersByClubNoSourceRequest.java
+END
+FetchTournamentSSORequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchTournamentSSORequest.java
+END
+FetchMembersByClubRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMembersByClubRequest.java
+END
+UpdateMemberRosterRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/UpdateMemberRosterRequest.java
+END
+FetchMembersResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMembersResponse.java
+END
+UpdateMembersRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/UpdateMembersRequest.java
+END
+FetchMemberSourceByUserRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMemberSourceByUserRequest.java
+END
+FetchMembersBySourceRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMembersBySourceRequest.java
+END
+MemberService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/MemberService.java
+END
+UpdateMemberIdsRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/UpdateMemberIdsRequest.java
+END
+FetchMemberByUserRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMemberByUserRequest.java
+END
+FetchMemberByCardIdRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMemberByCardIdRequest.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/package-info.java
+END
+FetchMemberSourceByUserResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMemberSourceByUserResponse.java
+END
+MemberService_Service.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/MemberService_Service.java
+END
+UpdateMembersResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/UpdateMembersResponse.java
+END
+FetchMemberByNetworkIdRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMemberByNetworkIdRequest.java
+END
+FetchMembersBySearchRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberservice/FetchMembersBySearchRequest.java
+END

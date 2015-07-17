@@ -1,0 +1,219 @@
+/***************************************************************************************
+ *   Support_stripSpace:  This servlet will strip any spaces from the usernames in member2b.
+ *
+ *
+ *    
+ *      Strip any spaces from the start of the username
+ *
+ * 
+ *       12/01/09   Updated updBuddy method call to the new updPartner method
+ *
+ ***************************************************************************************
+ */
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.*;
+import java.sql.*;
+
+
+public class Support_stripSpace extends HttpServlet {
+
+
+ // Process the form request
+
+ public void doGet(HttpServletRequest req, HttpServletResponse resp)
+         throws ServletException, IOException {
+
+   resp.setContentType("text/html");
+   PrintWriter out = resp.getWriter();
+
+   Connection con = null;                  // init DB objects
+   Connection con2 = null;                 // init DB objects
+   Statement stmt = null;
+   Statement stmt2 = null;
+   PreparedStatement pstmt = null;
+   ResultSet rs = null;
+   ResultSet rs2 = null;
+
+   String support = "support";             // valid username
+
+   HttpSession session = null;
+
+
+   String mNum = "";
+   String user = "";
+   String userNew = "";
+   String fname = "";
+   String mi = "";
+   String lname = "";
+     
+
+   // Make sure user didn't enter illegally.........
+
+   session = req.getSession(false);  // Get user's session object (no new one)
+
+   if (session == null) {
+
+      invalidUser(out);            // Intruder - reject
+      return;
+   }
+
+   String userName = (String)session.getAttribute("user");   // get username
+//   String club = (String)session.getAttribute("club");       // get club
+  
+
+   if (!userName.equals( support )) {
+
+      invalidUser(out);            // Intruder - reject
+      return;
+   }
+
+
+   String club = "noaks";                                        // get club!!!!!!!!!!!!!!!!!!
+
+
+   //
+   // Load the JDBC Driver and connect to DB
+   //
+   try {
+      con = dbConn.Connect(club);                   
+
+   }
+   catch (Exception exc) {
+
+      // Error connecting to db....
+
+      out.println("<HTML><HEAD><TITLE>DB Connection Error Received</TITLE></HEAD>");
+      out.println("<BODY><CENTER><H3>DB Connection Error</H3>");
+      out.println("<BR><BR>Unable to connect to the DB.");
+      out.println("<BR>Exception: "+ exc.getMessage());
+      out.println("<BR><BR> <A HREF=\"/v5/servlet/Support_main\">Return</A>.");
+      out.println("</CENTER></BODY></HTML>");
+      return;
+   }
+
+
+   try {
+
+      stmt = con.createStatement();           // create a statement
+
+      rs = stmt.executeQuery("SELECT username, name_last, name_first, name_mi FROM member2b");
+
+      while (rs.next()) {
+
+         user = rs.getString("username");
+         fname = rs.getString("name_last");
+         lname = rs.getString("name_first");
+         mi = rs.getString("name_mi");
+
+         if (user.startsWith( " " )) {
+
+            userNew = user.trim();                  // remove any spaces
+
+            //
+            //  Member updated - now see if the username or name changed
+            //
+            if (!user.equals(userNew)) {             // if username changed 
+                      
+               pstmt = con.prepareStatement (
+                        "UPDATE member2b SET username = ? " +
+                        "WHERE username = ?");
+
+               pstmt.clearParameters();        
+               pstmt.setString(1, userNew);
+               pstmt.setString(2, user);
+               pstmt.executeUpdate();    
+
+               pstmt.close();
+
+               //
+               //  username or name changed - we must update other tables now
+               //
+               StringBuffer mem_name = new StringBuffer( fname );       // get the new first name
+
+               if (!mi.equals( "" )) {
+                  mem_name.append(" " +mi);               // new mi
+               }
+               mem_name.append(" " +lname);               // new last name
+
+               String newName = mem_name.toString();          // convert to one string
+
+               Admin_editmem.updTeecurr(newName, userNew, user, con);      // update teecurr with new values
+
+               Admin_editmem.updTeepast(newName, userNew, user, con);      // update teepast with new values
+
+               Admin_editmem.updLreqs(newName, userNew, user, con);        // update lreqs with new values
+
+               Admin_editmem.updPartner(userNew, user, con);               // update partner with new values
+
+               Admin_editmem.updEvents(newName, userNew, user, con);        // update evntSignUp with new values
+
+               Admin_editmem.updLessons(newName, userNew, user, con);       // update the lesson books with new values
+            }
+
+         }
+      }
+
+      stmt.close();
+        
+   }
+   catch (Exception e2) {
+
+      // Error connecting to db....
+
+      out.println("<HTML><HEAD><TITLE>DB Connection Error Received</TITLE></HEAD>");
+      out.println("<BODY><CENTER><H3>DB Error</H3>");
+      out.println("<BR><BR>Error trying to update the DB - error2.");
+      out.println("<BR>Exception: "+ e2.getMessage());
+      out.println("<BR><BR> <A HREF=\"/v5/servlet/Support_main\">Return</A>.");
+      out.println("</CENTER></BODY></HTML>");
+      return;
+   }
+
+   out.println("<HTML><HEAD><TITLE>Upgrade Complete</TITLE></HEAD>");
+   out.println("<BODY><CENTER><H3>Upgrade Complete</H3>");
+   out.println("<BR><BR>Club " + club + " has been updated (V5).");
+   out.println("<BR><BR> <A HREF=\"/v5/servlet/Support_main\">Return</A>");
+   out.println("</CENTER></BODY></HTML>");
+ }
+
+
+ // *********************************************************
+ //  Strip last letter from end of string
+ // *********************************************************
+
+ private final static String stripA( String s ) {
+
+      char[] ca = s.toCharArray();
+      char[] ca2 = new char [ca.length - 1];
+
+
+      for ( int i=0; i<(ca.length-1); i++ ) {
+         char oldLetter = ca[i];
+         ca2[i] = oldLetter;
+      } // end for
+
+      return new String (ca2);
+
+ } // end stripA2
+
+
+ // *********************************************************
+ // Illegal access by user - force user to login....
+ // *********************************************************
+
+ private void invalidUser(PrintWriter out) {
+
+   out.println(SystemUtils.HeadTitle("Access Error - Redirect"));
+   out.println("<BODY><CENTER><img src=\"/v5/images/foretees.gif\"><BR>");
+   out.println("<hr width=\"40%\">");
+   out.println("<BR><H2>Access Error</H2><BR>");
+   out.println("<BR><BR>Sorry, you must login before attempting to access these features.<BR>");
+   out.println("<BR><BR>Please <A HREF=\"Logout\">login</A>");
+   out.println("</CENTER></BODY></HTML>");
+
+ }
+
+}

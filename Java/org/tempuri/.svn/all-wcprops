@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/foretees/!svn/ver/2553/trunk/java/org/tempuri
+END
+AddSaleOnline.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/foretees/!svn/ver/734/trunk/java/org/tempuri/AddSaleOnline.java
+END
+OnlineSaleRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/foretees/!svn/ver/2322/trunk/java/org/tempuri/OnlineSaleRequest.java
+END
+IntegrationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/foretees/!svn/ver/2553/trunk/java/org/tempuri/IntegrationService.java
+END
+OnlinePaymentResultEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/foretees/!svn/ver/734/trunk/java/org/tempuri/OnlinePaymentResultEnum.java
+END
+AddSaleOnlineV2.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/foretees/!svn/ver/843/trunk/java/org/tempuri/AddSaleOnlineV2.java
+END
+ArrayOfOnlineSaleResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/foretees/!svn/ver/843/trunk/java/org/tempuri/ArrayOfOnlineSaleResult.java
+END
+AddSaleOnlineMultiple.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/foretees/!svn/ver/843/trunk/java/org/tempuri/AddSaleOnlineMultiple.java
+END
+ArrayOfInt.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/foretees/!svn/ver/843/trunk/java/org/tempuri/ArrayOfInt.java
+END
+AddSaleOnlineV2WithNotes.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/foretees/!svn/ver/2322/trunk/java/org/tempuri/AddSaleOnlineV2WithNotes.java
+END
+AddSaleOnlineResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/foretees/!svn/ver/734/trunk/java/org/tempuri/AddSaleOnlineResponse.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/foretees/!svn/ver/734/trunk/java/org/tempuri/package-info.java
+END
+ArrayOfOnlineSaleRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/foretees/!svn/ver/843/trunk/java/org/tempuri/ArrayOfOnlineSaleRequest.java
+END
+IntegrationServiceSoap.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/foretees/!svn/ver/2322/trunk/java/org/tempuri/IntegrationServiceSoap.java
+END
+OnlineSaleResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/foretees/!svn/ver/734/trunk/java/org/tempuri/OnlineSaleResult.java
+END
+AddSaleOnlineV2Response.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/foretees/!svn/ver/843/trunk/java/org/tempuri/AddSaleOnlineV2Response.java
+END
+ArrayOfString.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/foretees/!svn/ver/843/trunk/java/org/tempuri/ArrayOfString.java
+END
+AddSaleOnlineMultipleResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/foretees/!svn/ver/843/trunk/java/org/tempuri/AddSaleOnlineMultipleResponse.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/foretees/!svn/ver/2322/trunk/java/org/tempuri/ObjectFactory.java
+END
+AddSaleOnlineV2WithNotesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/foretees/!svn/ver/2322/trunk/java/org/tempuri/AddSaleOnlineV2WithNotesResponse.java
+END

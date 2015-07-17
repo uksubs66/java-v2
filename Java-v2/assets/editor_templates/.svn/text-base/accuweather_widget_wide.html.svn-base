@@ -1,0 +1,17 @@
+<div class="widget_container">
+    <div class="widget_content weather_widget_accuweather_wide">
+        <div id="NetweatherContainer"></div>
+        <div class="accuweather_footer">
+            <div style="float: left; padding-left: 10px;">
+                <a style="color: #FFFFFF" target="_blank" href="http://www.accuweather.com/us/mn/saint-paul/55107/city-weather-forecast.asp?partner=accuweather" >Weather Forecast</a>
+                |
+                <a style="color: #FFFFFF" target="_blank" href="http://www.accuweather.com/maps-satellite.asp" >Weather Maps</a>
+                |
+                <a style="color: #FFFFFF" target="_blank" href="http://www.accuweather.com/index-radar.asp?partner=accuweather&zipcode=55107" >Weather Radar</a>
+                |
+                <a style="color: #FFFFFF" target="_blank" href="http://hurricane.accuweather.com/hurricane/index.asp" >Hurricane Center</a>
+            </div>
+            <img style="float: right; padding-right: 5px;" src="http://vortex.accuweather.com/adc2004/common/images/misc/netweather_v2/adcwhite.png" />
+        </div>
+    </div>
+</div>

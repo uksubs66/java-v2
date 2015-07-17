@@ -1,0 +1,632 @@
+/***************************************************************************************
+ *   Admin_editmultimem:  This servlet will process the 'edit multi club member' request from Admin's
+ *                   editmain page.
+ *
+ *
+ *   called by:  Admin_editmain
+ *
+ *   created: 10/11/2003   JAG
+ *
+ *   last updated:
+ *
+ *       11/26/12   Add call to updDemoClubs when username changes.
+ *        8/30/11   Committed partial update for porting changes to the Dining system.
+ *       12/01/09   Updated updBuddy method call to the new updPartner method
+ *        1/16/09   Add walk/cart options to Optional editall list.
+ *        7/19/07   Change non-golf (billing) flag labels from NON_GOLF to EXCLUDE.
+ *        7/18/07   Add 'non-golf' to form for Roster Sync clubs for our billing purposes.
+ *        5/17/07   Add 'inact' flag processing (NOT finished - see also Admin_memlistedit).
+ *       05/16/07   Do not allow duplicate names.
+ *        9/21/06   Add 2nd 'Edit All' processing so we can add more items to the edit all display.
+ *       10/14/05   RDP - If member's name or username changes, update all other tables.
+ *        3/13/04   JAG bug fixes for checking if the member exists
+ *        7/18/03   Enhancements for Version 3 of the software.
+ *        1/14/03   Enhancements for Version 2 of the software.
+ *
+ *
+ *
+ ***************************************************************************************
+ */
+
+//third party imports
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.*;
+import java.sql.*;
+
+//foretees imports
+import com.foretees.client.action.ActionHelper;
+import com.foretees.client.action.ActionModel;
+
+import com.foretees.client.form.FormModel;
+
+import com.foretees.client.table.Cell;
+import com.foretees.client.table.RowModel;
+import com.foretees.client.table.TableModel;
+
+import com.foretees.common.FeedBack;
+import com.foretees.common.ProcessConstants;
+import com.foretees.common.Utilities;
+
+import com.foretees.member.Member;
+
+/**
+***************************************************************************************
+*
+* This servlet will process the input from the multi edit member screen to validate and
+* update the member records
+*
+***************************************************************************************
+**/
+
+public class Admin_editmultimem extends HttpServlet {
+
+  //initialize the attributes
+  String omit = "";
+  private static String versionId = ProcessConstants.CODEBASE;
+    
+  int debugCount = 0;
+    
+
+  /**
+  ***************************************************************************************
+  *
+  * This method will process the data from the multi edit member screen
+  *
+  ***************************************************************************************
+  **/
+
+  public void doPost(HttpServletRequest req, HttpServletResponse resp)
+         throws ServletException, IOException {
+
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+
+    String newName = "";
+    String oldFname = "";
+    String oldLname = "";
+    String oldMname = "";
+
+    //
+    //  Prevent caching so sessions are not mangled
+    //
+    resp.setHeader("Pragma","no-cache");               // for HTTP 1.0
+    resp.setHeader("Cache-Control","no-store, no-cache, must-revalidate");    // for HTTP 1.1
+    resp.setDateHeader("Expires",0);                   // prevents caching at the proxy server
+
+    resp.setContentType("text/html");
+    PrintWriter out = resp.getWriter();
+
+    HttpSession session = SystemUtils.verifyAdmin(req, out);       // check for intruder
+
+    if (session == null) {
+
+      return;
+    }
+
+    String club = (String)session.getAttribute("club");
+    int rsync = (Integer)session.getAttribute("rsync");          // get Roster Sync indicator for this club
+
+    Connection con = SystemUtils.getCon(session);            // get DB connection
+
+    if (con == null) {
+
+      out.println(SystemUtils.HeadTitleAdmin("DB Connection Error"));
+      out.println("<BODY><CENTER>");
+      out.println("<BR><BR><H3>Database Connection Error</H3>");
+      out.println("<BR><BR>Unable to connect to the Database.");
+      out.println("<BR>Please try again later.");
+      out.println("<BR><BR>If problem persists, contact customer support.");
+      out.println("<BR><BR>");
+      out.println("<a href=\"" +versionId+ "servlet/Admin_announce\">Return</a>");
+      out.println("</CENTER></BODY></HTML>");
+      return;
+    }
+
+    String letter = req.getParameter(Member.LETTER);
+
+    String memShip = "";
+    String memType = "";
+    String bagSlot = "";
+    String posId = "";
+    String webid = "";
+    String wc = "";
+    String ghin = "";
+    String memberNumber = "";
+    String editall = "";
+
+    int inact = 0;
+    int exclude = 0;
+    int billable = 0;
+
+    //  Get the editall parm if provided (button 1 or button 2)
+    if (req.getParameter("editall") != null) {
+       editall = req.getParameter("editall");
+    }
+
+    String nextAction = (String)(req.getAttribute(ActionHelper.NEXT_ACTION));
+
+    if (nextAction == null || nextAction.equals("")){
+      nextAction = req.getParameter(ActionHelper.NEXT_ACTION);
+    }
+
+    if (nextAction.equals(ActionHelper.CANCEL))
+    {
+      session.removeAttribute(Member.MULTI_EDIT_MEM_FRM);
+      session.removeAttribute(Member.MULTI_MEM_FEEDBACK);
+      resp.sendRedirect(versionId + "servlet/Admin_memlist?letter=" + letter);
+
+    }
+    else if (nextAction.equals(ActionHelper.CLEANUP))
+    {
+      session.removeAttribute(Member.MULTI_EDIT_MEM_FRM);
+      session.removeAttribute(Member.MULTI_MEM_FEEDBACK);
+      resp.sendRedirect(versionId + "servlet/Admin_memlist?letter=" + letter);
+
+    }
+
+    Object form = session.getAttribute(Member.MULTI_EDIT_MEM_FRM);
+    Member member = new Member();
+    FeedBack feedback = new FeedBack();
+    boolean errorOccurred = false;
+    boolean displayErrors = false;
+
+    if (form != null  && form instanceof FormModel)
+    {
+      
+          /*
+            //     *********** for DEBUG ********************************************
+            debugCount++;
+
+            if (debugCount > 1) {                 // if 2nd time here
+               Common_debug.printParms(req, out);    // dump parms
+               return;
+            }
+            //     *********** for DEBUG ********************************************
+          */
+  
+      FormModel theForm = (FormModel)form;
+      theForm.update(req, resp, out);             // update the form with new values (in case user returns to this page)!!
+
+
+      //get the row of the form that contains the table
+      RowModel tableRow = theForm.getRow(Member.MEM_LIST_TABLE);
+      Object table = tableRow.get(0).getContent();
+
+      if (table != null && table instanceof TableModel)
+      {
+
+        TableModel theTable = (TableModel)table;
+
+        int rowToStart = theTable.getPageRowStart();
+        int rowsToEnd = theTable.getPageRowEnd();
+
+        //only save the rows that were shown in the current page
+        for (int i=rowToStart; i<rowsToEnd; i++)
+        {
+          //get the data for the row
+          RowModel row = theTable.getRow(i);
+          String rowId = row.getId();
+          String uniqueCellId = ":" + rowId;
+          errorOccurred = false;
+
+          //  last name
+          String lNameId = member.LAST_NAME + uniqueCellId;
+          String lastName = req.getParameter(lNameId);
+          feedback = (member.isLastNameValid(lNameId, req));
+          if (!feedback.isPositive())
+          {
+            //the last name has invalid data, update the form and change the background
+            Cell cell = row.getCell(lNameId);
+            cell.setStyleSheetClass("err");
+            errorOccurred = true;
+            displayErrors = true;
+
+          }
+
+          //  first name
+          String fNameId = member.FIRST_NAME + uniqueCellId;
+          String firstName = req.getParameter(fNameId);
+          feedback = (member.isFirstNameValid(fNameId, req));
+          if (!feedback.isPositive())
+          {
+            //the first name has invalid data, update the form and change the background color
+            Cell cell = row.getCell(fNameId);
+            cell.setStyleSheetClass("err");
+            errorOccurred = true;
+            displayErrors = true;
+
+          }
+
+          String middleInitial = req.getParameter(Member.MIDDLE_INITIAL + uniqueCellId);
+
+          if (req.getParameter(Member.MEMSHIP_TYPE + uniqueCellId) != null) {
+             memShip = req.getParameter(Member.MEMSHIP_TYPE + uniqueCellId);
+          }
+
+          if (req.getParameter(Member.MEM_TYPE + uniqueCellId) != null) {
+             memType = req.getParameter(Member.MEM_TYPE + uniqueCellId);
+          }
+
+          if (req.getParameter(Member.MEM_NUM + uniqueCellId) != null) {
+             memberNumber = req.getParameter(Member.MEM_NUM + uniqueCellId);
+          }
+
+          if (req.getParameter(Member.BAG_SLOT + uniqueCellId) != null) {
+             bagSlot = req.getParameter(Member.BAG_SLOT + uniqueCellId);
+          }
+
+          if (req.getParameter(Member.POS_ID + uniqueCellId) != null) {
+             posId = req.getParameter(Member.POS_ID + uniqueCellId);
+          }
+
+          if (req.getParameter(Member.GHIN + uniqueCellId) != null) {
+             ghin = req.getParameter(Member.GHIN + uniqueCellId);
+          }
+
+          if (req.getParameter(Member.WEBID + uniqueCellId) != null) {
+             webid = req.getParameter(Member.WEBID + uniqueCellId);
+          }
+
+          if (req.getParameter(Member.WALK_CART + uniqueCellId) != null) {
+             wc = req.getParameter(Member.WALK_CART + uniqueCellId);
+          }
+
+          if (editall.equals( "1" )) {       // if 'Edit All Required' button selected 
+
+             inact = 0;             // init to 'not checked' as checkbox parm not passed if not checked
+
+             if (req.getParameter(Member.MEM_INACT + uniqueCellId) != null) {
+                inact = 1;
+             }
+               
+             //  
+             //  Check for Non-Golf checkbox (billable flag)
+             //
+  
+             exclude = 0;             // init to 'not checked' as checkbox parm not passed if not checked
+
+             if (req.getParameter(Member.EXCLUDE + uniqueCellId) != null) {
+                exclude = 1;
+             }
+          }
+
+
+          //The very last thing to validate is the user name.  Do NOT move the order of
+          //validation for the username!  It could mess things up
+          boolean useridChanged = false;
+
+          //  username
+          String uNameId = Member.USER_NAME + uniqueCellId;
+          String changedUserName = req.getParameter(uNameId);
+          if (!(changedUserName.equals(rowId)))
+          {
+            //the user name changed, verify the data is ok
+            feedback = (member.isUserNameValid(uNameId, req));
+            if (!feedback.isPositive())
+            {
+              //the user name has invalid data, update the form and change the background
+              Cell cell = row.getCell(uNameId);
+              cell.setStyleSheetClass("err");
+              errorOccurred = true;
+              displayErrors = true;
+
+            }
+            else
+            {
+              //check if this userid is already being used
+              feedback = (member. memberExists(changedUserName, uNameId, con));
+              if (!feedback.isPositive())
+              {
+                //the user name has invalid data, update the form and change the background
+                Cell cell = row.getCell(uNameId);
+                cell.setStyleSheetClass("err");
+                errorOccurred = true;
+                displayErrors = true;
+              }
+
+            }
+            useridChanged = true;
+          }
+
+          if (!errorOccurred) {
+
+             //
+             //  Now get the old name and see if it or the username has changed
+             //
+             try {
+
+                stmt = con.prepareStatement (
+                         "SELECT name_last, name_first, name_mi " +
+                         "FROM member2b WHERE username = ?");
+
+                stmt.clearParameters();               // clear the parms
+                stmt.setString(1, rowId);
+                rs = stmt.executeQuery();
+
+                while(rs.next()) {
+
+                   oldLname = rs.getString("name_last");
+                   oldFname = rs.getString("name_first");
+                   oldMname = rs.getString("name_mi");
+                }
+                stmt.close();
+
+                //
+                //  check if username or name changed
+                //
+                if (!changedUserName.equals(rowId) || !oldFname.equals(firstName) || !oldLname.equals(lastName) || !oldMname.equals(middleInitial)) {
+
+                   //
+                   //  First check if the name already exists
+                   //
+                   boolean dupName = false;
+
+                   stmt = con.prepareStatement (
+                            "SELECT inact FROM member2b WHERE username != ? AND name_last = ? AND name_first = ? AND name_mi = ?");
+
+                   stmt.clearParameters();
+                   stmt.setString(1, rowId);
+                   stmt.setString(2, lastName);
+                   stmt.setString(3, firstName);
+                   stmt.setString(4, middleInitial);
+                   rs = stmt.executeQuery();            // execute the prepared stmt
+
+                   if (rs.next()) {
+
+                      dupName = true;
+                   }
+                   stmt.close();              // close the stmt
+
+                   if (dupName == true) {
+                     
+                      //the first name has invalid data, update the form and change the background color
+                      Cell cell = row.getCell(fNameId);
+                      cell.setStyleSheetClass("err");
+
+                      session.setAttribute(Member.MULTI_EDIT_MEM_FRM, theForm);
+
+                      feedback = new FeedBack();
+                      feedback.setPositive(false);
+                      feedback.addMessage("The name (first, mi, last) already exists.  It must be unique. Please change one of the name fields.");
+
+                      session.setAttribute(Member.MULTI_MEM_FEEDBACK, feedback);
+
+                      resp.sendRedirect(versionId + "servlet/Admin_memlistedit?editall=" +editall);
+                      return;
+                   }
+
+                   //
+                   //  username or name changed - we must update other tables now
+                   //
+                   StringBuffer mem_name = new StringBuffer( firstName );       // get the new first name
+
+                   if (!middleInitial.equals( "" )) {
+                      mem_name.append(" " +middleInitial);                         // new mi
+                   }
+                   mem_name.append(" " +lastName);                            // new last name
+
+                   newName = mem_name.toString();                          // convert to one string
+
+                   Admin_editmem.updTeecurr(newName, changedUserName, rowId, con); // update teecurr with new values
+
+                   Admin_editmem.updLreqs(newName, changedUserName, rowId, con);   // update lreqs with new values
+
+                   Admin_editmem.updPartner(changedUserName, rowId, con);   // update buddy with new values
+
+                   Admin_editmem.updEvents(newName, changedUserName, rowId, con);  // update evntSignUp with new values
+
+                   Admin_editmem.updLessons(newName, changedUserName, rowId, con); // update the lesson books with new values
+
+                   Admin_editmem.updDemoClubs(changedUserName, rowId, con);   // update demo_clubs_usage with new values
+                }
+             }
+             catch (Exception exc) {
+             }
+             //
+             //  Update the member record
+             //
+             try {
+
+                if (editall.equals( "1" )) {       // if first Edit All button selected (required parms)
+
+                   if (rsync == 0) {            // if club does not use Roster Sync
+
+                     stmt = con.prepareStatement (
+                           "UPDATE member2b SET username = ?, name_last = ?, name_first = ?, " +
+                           "name_mi = ?, m_ship = ?, m_type = ?, memNum = ?, inact = ? " +
+                           "WHERE username = ?");
+
+                   } else {     // Roster Sync - set billing indicator (excluded)
+
+                     stmt = con.prepareStatement (
+                           "UPDATE member2b SET username = ?, name_last = ?, name_first = ?, " +
+                           "name_mi = ?, m_ship = ?, m_type = ?, memNum = ?, inact = ?, billable = ? " +
+                           "WHERE username = ?");
+                  }
+
+                  stmt.clearParameters();               // clear the parms
+                  stmt.setString(1, changedUserName);   // put parms in statement
+                  stmt.setString(2, lastName);
+                  stmt.setString(3, firstName);
+                  stmt.setString(4, middleInitial);
+                  stmt.setString(5, memShip);
+                  stmt.setString(6, memType);
+                  stmt.setString(7, memberNumber);
+                  stmt.setInt(8, inact);
+                  if (rsync > 0) {            // if club does not use Roster Sync (DO NOT alter the billable flag if no RS - see Support_billing)
+                     billable = 1;             // default = billable
+                     if (exclude == 1) {       // if member is to be excluded (not billable)
+                        billable = 0;          // NOT billable
+                     }
+                     stmt.setInt(9, billable);
+                     stmt.setString(10, rowId);                // rowid is the original username
+                  } else {
+                     stmt.setString(9, rowId);                // rowid is the original username
+                  }
+                  stmt.executeUpdate();
+
+                  stmt.close();
+
+               } else {       // 2nd Edit All button (optional parms)
+
+                  stmt = con.prepareStatement (
+                           "UPDATE member2b SET name_last = ?, name_first = ?, " +
+                           "name_mi = ?, memNum = ?, ghin = ?, bag = ?, posid = ?, webid = ?, wc = ? " +
+                           "WHERE username = ?");
+
+                  stmt.clearParameters();               // clear the parms
+                  stmt.setString(1, lastName);
+                  stmt.setString(2, firstName);
+                  stmt.setString(3, middleInitial);
+                  stmt.setString(4, memberNumber);
+                  stmt.setString(5, ghin);
+                  stmt.setString(6, bagSlot);
+                  stmt.setString(7, posId);
+                  stmt.setString(8, webid);
+                  stmt.setString(9, wc);
+                  stmt.setString(10, rowId);                // rowid is the original username
+                  stmt.executeUpdate();
+
+                  stmt.close();
+               }
+
+               // If organization_id is greater than 0, Dining system is in use.  Push updates to this member's record over to the dining system database
+               if (Utilities.getOrganizationId(con) > 0) {
+                   Admin_editmem.updDiningDB(changedUserName, con);
+               }
+
+               //if the username changed, update the rowid and the cell ids for the cells contained
+               //in the row to reflect the new id
+
+               if (useridChanged)
+               {
+                 String newCellId = null;
+
+                 for (int j=0; j<row.size();j++)
+                 {
+                   Cell nxtCell = row.get(j);
+
+                   String oldCellId = nxtCell.getId();
+                   String oldCellIdPrefix = oldCellId.substring(0, oldCellId.lastIndexOf(":") + 1);
+                   newCellId = oldCellIdPrefix + changedUserName;
+                   nxtCell.setId(newCellId);
+                   nxtCell.updateContentId(newCellId);
+
+                 }
+
+                 row.setId(changedUserName);
+               }
+
+             }
+             catch (Exception exc) {
+
+               String message = exc.getMessage();
+               out.println(message);
+               dbError(out);
+               return;
+             }
+          }
+
+        }
+
+        if (displayErrors)
+        {
+          //errors occurred in one or more of the records.  Redisplay the page
+          //and allow the user to change the values
+          session.setAttribute(Member.MULTI_EDIT_MEM_FRM, theForm);
+
+          feedback = new FeedBack();
+          feedback.setPositive(false);
+          feedback.addMessage("Some of the input you have added is invalid.  Please correct this data and try again.");
+
+          session.setAttribute(Member.MULTI_MEM_FEEDBACK, feedback);
+
+          resp.sendRedirect(versionId + "servlet/Admin_memlistedit?editall=" +editall);
+
+        }
+        else if (nextAction.equals(ActionHelper.UPDATE_AND_CLOSE))
+        {
+          session.removeAttribute(Member.MULTI_EDIT_MEM_FRM);
+          resp.sendRedirect(versionId + "servlet/Admin_memlist?letter=" + letter);
+
+        }
+        else if (nextAction.equals(ActionHelper.SAVE_AND_PREV))
+        {
+          int current_page = theTable.getCurrentPage();
+          theTable.setCurrentPage(current_page - 1);
+
+          if ( theTable.getCurrentPage() <= 1)
+          {
+            ActionModel actions = theForm.getActions();
+            (actions.getAction(ActionHelper.SAVE_AND_PREV)).setSelected(true);
+          }
+          if ( theTable.getCurrentPage() < theTable.getNumberOfPages())
+          {
+            ActionModel actions = theForm.getActions();
+            (actions.getAction(ActionHelper.SAVE_AND_NEXT)).setSelected(false);
+
+          }
+
+          resp.sendRedirect(versionId + "servlet/Admin_memlistedit?letter=" +letter+ "&editall=" +editall);
+        }
+        else if (nextAction.equals(ActionHelper.SAVE_AND_NEXT))
+        {
+          int current_page = theTable.getCurrentPage();
+          theTable.setCurrentPage(current_page + 1);
+
+          if ( theTable.getCurrentPage() >= theTable.getNumberOfPages())
+          {
+            ActionModel actions = theForm.getActions();
+            (actions.getAction(ActionHelper.SAVE_AND_NEXT)).setSelected(true);
+
+          }
+          if ( theTable.getCurrentPage() > 1)
+          {
+            ActionModel actions = theForm.getActions();
+            (actions.getAction(ActionHelper.SAVE_AND_PREV)).setSelected(false);
+          }
+
+          resp.sendRedirect(versionId + "servlet/Admin_memlistedit?letter=" +letter+ "&editall=" +editall);
+
+        }
+        else
+        {
+          session.removeAttribute(Member.MULTI_EDIT_MEM_FRM);
+          resp.sendRedirect(versionId + "servlet/Admin_memlistedit?letter=" +letter+ "&editall=" +editall);
+
+        }
+
+      }// end of if table exists
+
+    }
+    else
+    {
+      //we will need to create a form model.
+      out.println("Error, problems getting form from session!!");
+    }
+
+
+ }   // end of doPost
+
+
+ // *********************************************************
+ // Database Error
+ // *********************************************************
+
+ private void dbError(PrintWriter out) {
+
+   out.println(SystemUtils.HeadTitleAdmin("Database Error"));
+   out.println("<BODY><CENTER>");
+   out.println("<BR><BR><H3>Database Access Error</H3>");
+   out.println("<BR><BR>Sorry, we are unable to access the database at this time.");
+   out.println("<BR>Please try again later.");
+   out.println("<BR><BR>If problem persists, contact customer support.");
+   out.println("<BR><BR>");
+   out.println("<a href=\"javascript:history.back(1)\">Return</a>");
+   out.println("</CENTER></BODY></HTML>");
+
+ }
+
+}

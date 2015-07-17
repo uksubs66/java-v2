@@ -1,0 +1,2189 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/java/trunk/!svn/ver/586/org/ibsservices
+END
+GetSystemCodeAllRetailDepartmentsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailDepartmentsResponse.java
+END
+GetDemographicByPlayerTypeStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByPlayerTypeStringResponse.java
+END
+GetMemberByMemberTypeStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByMemberTypeStringResponse.java
+END
+ArrayOfAccountingCodeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfAccountingCodeData.java
+END
+GetMemberByStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByStatus.java
+END
+TenderData.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/java/trunk/!svn/ver/586/org/ibsservices/TenderData.java
+END
+GetSystemCodeAllFBTaxCodes.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBTaxCodes.java
+END
+ClubDiningRetailInventoryItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ClubDiningRetailInventoryItem.java
+END
+GetMemberByAddressTypeStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByAddressTypeStringResponse.java
+END
+GetSchedulingbyMemberTypeStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingbyMemberTypeStringResponse.java
+END
+GetTenderRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderRequester.java
+END
+GetMemberBalanceWCourseIDResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberBalanceWCourseIDResponse.java
+END
+GetTenderAllTenderMethodsForDepartmentString.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllTenderMethodsForDepartmentString.java
+END
+GetDemographicByPostalCodeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByPostalCodeString.java
+END
+GetMemberPictureResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberPictureResponse.java
+END
+GetMembersFreeFields.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMembersFreeFields.java
+END
+GetFinancialAllStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFinancialAllStringResponse.java
+END
+GetFinancialRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFinancialRequester.java
+END
+GetFinancialByMemberID.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFinancialByMemberID.java
+END
+GetSchedulingByPostalCodeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByPostalCodeString.java
+END
+GetAllFBItemsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllFBItemsStringResponse.java
+END
+GetSchedulingByMemberIDStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByMemberIDStringResponse.java
+END
+GetSystemCodeAllRetailTaxCodesString.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailTaxCodesString.java
+END
+Options.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Options.java
+END
+ArrayOfGratuity.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfGratuity.java
+END
+ArrayOfChitDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfChitDetail.java
+END
+GetClubDiningFBItemsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetClubDiningFBItemsStringResponse.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ObjectFactory.java
+END
+GetSystemCodeAllGratCodesForDepartment.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllGratCodesForDepartment.java
+END
+GetSystemCodeAllActiveMinimumsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllActiveMinimumsResponse.java
+END
+GetDemographicByAwardLevelResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByAwardLevelResponse.java
+END
+GetDataWithSQLResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDataWithSQLResponse.java
+END
+GetSystemCodeAllGratCodesForDepartmentStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllGratCodesForDepartmentStringResponse.java
+END
+ArrayOfInvMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfInvMenu.java
+END
+GetMemberByPostalCodeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByPostalCodeString.java
+END
+GetMemberByStateStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByStateStringResponse.java
+END
+DemographicData.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/DemographicData.java
+END
+GetSystemCodeAllTaxCodesForDepartmentResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllTaxCodesForDepartmentResponse.java
+END
+GetTenderAllFBTenderMethodsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllFBTenderMethodsStringResponse.java
+END
+FinancialData.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/586/org/ibsservices/FinancialData.java
+END
+GetSchedulingAll.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingAll.java
+END
+TaxCodeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/586/org/ibsservices/TaxCodeData.java
+END
+GetDemographicByStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByStatus.java
+END
+GetDemographicByStateStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByStateStringResponse.java
+END
+GetSystemCodeAllStatCodesStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllStatCodesStringResponse.java
+END
+GetSDRequestOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSDRequestOptions.java
+END
+GetInvItemsForInvMenuString.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetInvItemsForInvMenuString.java
+END
+GetSystemCodeAllDiscountCodesForDepartmentStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllDiscountCodesForDepartmentStringResponse.java
+END
+GetSystemCodeAllAccountingCodes.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllAccountingCodes.java
+END
+GetDemographicAllString.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicAllString.java
+END
+Person.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Person.java
+END
+GetDemographicByMemberIDString.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByMemberIDString.java
+END
+EnterBatchData.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/586/org/ibsservices/EnterBatchData.java
+END
+GetAllRetailItems.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllRetailItems.java
+END
+GetMemberByStatusStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByStatusStringResponse.java
+END
+Privlege.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Privlege.java
+END
+AccountingCodeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/586/org/ibsservices/AccountingCodeData.java
+END
+GetMemberAllWith2AddressesStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberAllWith2AddressesStringResponse.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/java/trunk/!svn/ver/586/org/ibsservices/package-info.java
+END
+GetAllItemsForDepartmentResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllItemsForDepartmentResponse.java
+END
+GetSystemCodeAllTaxCodesForDepartmentString.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllTaxCodesForDepartmentString.java
+END
+Balance.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Balance.java
+END
+GetInvItemsForInvMenuResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetInvItemsForInvMenuResponse.java
+END
+GetClubDiningRetailItemsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetClubDiningRetailItemsStringResponse.java
+END
+GetAllSchedulingsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllSchedulingsString.java
+END
+GetClubDiningFBItems.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetClubDiningFBItems.java
+END
+GetACHTenderIDResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetACHTenderIDResponse.java
+END
+CodeDescriptionPair.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/CodeDescriptionPair.java
+END
+GetDemographicByAwardLevelStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByAwardLevelStringResponse.java
+END
+GetMemberBalanceResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberBalanceResponse.java
+END
+GetMembersWithEmail.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMembersWithEmail.java
+END
+GetSystemCodeAllFBDiscountCodesString.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBDiscountCodesString.java
+END
+ArrayOfDemographicData.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfDemographicData.java
+END
+GetClubDiningRetailItemsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetClubDiningRetailItemsResponse.java
+END
+ArrayOfTaxCodeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfTaxCodeData.java
+END
+GetTenderAllFBTenderMethods.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllFBTenderMethods.java
+END
+GetSchedulingByCity.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByCity.java
+END
+ChitDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ChitDetail.java
+END
+GetSystemCodeAllRetailGratCodesStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailGratCodesStringResponse.java
+END
+ClubDiningItemBaseClass.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ClubDiningItemBaseClass.java
+END
+IBSWebMemberAPISoap.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/IBSWebMemberAPISoap.java
+END
+GetMemberByMemberTypeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByMemberTypeString.java
+END
+GetDemographicByPlayerTypeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByPlayerTypeString.java
+END
+GetSchedulingByStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByStatus.java
+END
+FreeField.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/java/trunk/!svn/ver/586/org/ibsservices/FreeField.java
+END
+GetSchedulingByPlayerTypeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByPlayerTypeString.java
+END
+GetSystemCodeAllFBDiscountCodesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBDiscountCodesResponse.java
+END
+GetSystemCodeAllFBGratCodesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBGratCodesResponse.java
+END
+GetDemographicByStateResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByStateResponse.java
+END
+InventoryRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/586/org/ibsservices/InventoryRequester.java
+END
+GetDemographicbyMemberTypeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicbyMemberTypeString.java
+END
+GetMemberByPostalCodeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByPostalCodeResponse.java
+END
+GetMemberAll.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberAll.java
+END
+GetSchedulingbyMemberTypeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingbyMemberTypeString.java
+END
+GetMemberByCityStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByCityStringResponse.java
+END
+GetMemberByAddressTypeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByAddressTypeString.java
+END
+GetSystemCodeAllFBTaxCodesString.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBTaxCodesString.java
+END
+ItemStock.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ItemStock.java
+END
+GetMemberPicture.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberPicture.java
+END
+GetMemberByPlayerTypeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByPlayerTypeString.java
+END
+Months.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Months.java
+END
+GetAllFBItemsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllFBItemsString.java
+END
+GetMembersFreeFieldsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMembersFreeFieldsString.java
+END
+ArrayOfSpaScheduling.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfSpaScheduling.java
+END
+GetSchedulingByPlayerTypeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByPlayerTypeResponse.java
+END
+ArrayOfCodeDescriptionPair.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfCodeDescriptionPair.java
+END
+GetClubDiningFBItemsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetClubDiningFBItemsString.java
+END
+CardSwipe.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/java/trunk/!svn/ver/586/org/ibsservices/CardSwipe.java
+END
+TenderRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/TenderRequester.java
+END
+GetDemographicByMemberID.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByMemberID.java
+END
+GetSystemCodeAllActiveMinimums.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllActiveMinimums.java
+END
+ClubDiningFBInventoryItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ClubDiningFBInventoryItem.java
+END
+FinancialRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/586/org/ibsservices/FinancialRequester.java
+END
+GetMemberByStatusResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByStatusResponse.java
+END
+GetDataWithSQL.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDataWithSQL.java
+END
+GetDemographicbyMemberTypeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicbyMemberTypeResponse.java
+END
+CreateTickets.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/586/org/ibsservices/CreateTickets.java
+END
+GetTenderAllFBTenderMethodsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllFBTenderMethodsString.java
+END
+GetDemographicByPostalCodeStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByPostalCodeStringResponse.java
+END
+GetTenderAllTenderMethodsForDepartmentStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllTenderMethodsForDepartmentStringResponse.java
+END
+GetFinancialRequesterResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFinancialRequesterResponse.java
+END
+GetFinancialByMemberIDResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFinancialByMemberIDResponse.java
+END
+ArrayOfSchedulingData.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfSchedulingData.java
+END
+GetMembersWithEmailStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMembersWithEmailStringResponse.java
+END
+GetDemographicByStateString.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByStateString.java
+END
+GetSystemCodeAllStatCodesString.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllStatCodesString.java
+END
+CreateMemberBatchPaymentResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/CreateMemberBatchPaymentResponse.java
+END
+UpdateMembersResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/UpdateMembersResponse.java
+END
+GetSystemCodeAllFBDepartmentsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBDepartmentsString.java
+END
+GetSystemCodeAllActiveMinimumsForDepartment.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllActiveMinimumsForDepartment.java
+END
+GetSystemCodeAllDiscountCodesForDepartmentString.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllDiscountCodesForDepartmentString.java
+END
+GetSystemCodeAllFBGratCodesStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBGratCodesStringResponse.java
+END
+GetMemberByStateResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByStateResponse.java
+END
+Request.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Request.java
+END
+ArrayOfString.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfString.java
+END
+CreateMemberAdjustment.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/CreateMemberAdjustment.java
+END
+SDRequestOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/586/org/ibsservices/SDRequestOptions.java
+END
+GetAllItemsForDepartmentString.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllItemsForDepartmentString.java
+END
+GetMemberByStatusString.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByStatusString.java
+END
+GetSchedulingAllResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingAllResponse.java
+END
+MinimumCodeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/MinimumCodeData.java
+END
+GetTenderAllAdminTenderMethodsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllAdminTenderMethodsString.java
+END
+GetAllRetailItemsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllRetailItemsString.java
+END
+GetMemberAllWith2AddressesString.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberAllWith2AddressesString.java
+END
+GetAllItemsForDepartment.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllItemsForDepartment.java
+END
+GetSystemCodeAllFBDepartmentsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBDepartmentsResponse.java
+END
+GetInvItemsForInvMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetInvItemsForInvMenu.java
+END
+GetSchedulingByStateString.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByStateString.java
+END
+GetMemberByAddressType.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByAddressType.java
+END
+GetSchedulingbyMemberType.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingbyMemberType.java
+END
+GetDemographicByAwardLevelString.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByAwardLevelString.java
+END
+GetInvItemsForInvMenuStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetInvItemsForInvMenuStringResponse.java
+END
+GetMemberBalance.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberBalance.java
+END
+GetSchedulingByAwardLevelString.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByAwardLevelString.java
+END
+GetDemographicAllStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicAllStringResponse.java
+END
+GetClubDiningRetailItems.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetClubDiningRetailItems.java
+END
+GetDemographicRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicRequester.java
+END
+GetAllFBItems.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllFBItems.java
+END
+GetMemberMinimums.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberMinimums.java
+END
+GetMemberRequesterResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberRequesterResponse.java
+END
+GetTenderAllRetailTenderMethodsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllRetailTenderMethodsString.java
+END
+SchedulingFinancial.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/SchedulingFinancial.java
+END
+GetFinancialByMemberIDStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFinancialByMemberIDStringResponse.java
+END
+ArrayOfReservationInformation.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfReservationInformation.java
+END
+GetSystemCodeRequesterResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeRequesterResponse.java
+END
+GetMemberByAwardLevelString.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByAwardLevelString.java
+END
+GetSystemCodeAllRetailTaxCodes.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailTaxCodes.java
+END
+GetDemographicByCity.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByCity.java
+END
+GetSchedulingByAwardLevelResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByAwardLevelResponse.java
+END
+GetSystemCodeAllFBDiscountCodes.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBDiscountCodes.java
+END
+GetClubDiningFBItemsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetClubDiningFBItemsResponse.java
+END
+GetAllSchedulingsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllSchedulingsStringResponse.java
+END
+GetSystemCodeAllFBDiscountCodesStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBDiscountCodesStringResponse.java
+END
+DiscountCodeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/586/org/ibsservices/DiscountCodeData.java
+END
+SchedulingData.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/586/org/ibsservices/SchedulingData.java
+END
+GetSystemCodeAllStatCodes.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllStatCodes.java
+END
+ArrayOfMinimumCodeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfMinimumCodeData.java
+END
+GetSystemCodeAllActiveMinimumsForDepartmentStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllActiveMinimumsForDepartmentStringResponse.java
+END
+GetTenderAllFBTenderMethodsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllFBTenderMethodsResponse.java
+END
+GetSystemCodeAllDiscountCodesForDepartment.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllDiscountCodesForDepartment.java
+END
+GetMemberPictureString.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberPictureString.java
+END
+GetFRRequestOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFRRequestOptions.java
+END
+GetMemberStatement.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberStatement.java
+END
+IBSWebMemberAPI.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/IBSWebMemberAPI.java
+END
+GetSchedulingByPlayerType.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByPlayerType.java
+END
+ArrayOfExtension.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfExtension.java
+END
+ArrayOfPrivlege.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfPrivlege.java
+END
+GetSchedulingByStatusResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByStatusResponse.java
+END
+GetSchedulingRequesterResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingRequesterResponse.java
+END
+GetSchedulingByPlayerTypeStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByPlayerTypeStringResponse.java
+END
+GetDemographicbyMemberType.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicbyMemberType.java
+END
+GetMemberByCityResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByCityResponse.java
+END
+GetSystemCodeAllActiveMinimumsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllActiveMinimumsString.java
+END
+GetDemographicbyMemberTypeStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicbyMemberTypeStringResponse.java
+END
+GetMemberAllResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberAllResponse.java
+END
+ArrayOfPlayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfPlayer.java
+END
+GetSystemCodeAllFBTaxCodesStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBTaxCodesStringResponse.java
+END
+GetMembersWithEmailString.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMembersWithEmailString.java
+END
+GetMemberByPlayerTypeStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByPlayerTypeStringResponse.java
+END
+GetMembersFreeFieldsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMembersFreeFieldsStringResponse.java
+END
+Week.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Week.java
+END
+CreateMemberBatchPayment.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/586/org/ibsservices/CreateMemberBatchPayment.java
+END
+GetFinancialAllResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFinancialAllResponse.java
+END
+GetMemberMinimumsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberMinimumsStringResponse.java
+END
+UpdateMembers.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/586/org/ibsservices/UpdateMembers.java
+END
+GetMemberByPlayerTypeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByPlayerTypeResponse.java
+END
+GetDemographicByMemberIDResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByMemberIDResponse.java
+END
+GetSystemCodeAllFBGratCodesString.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBGratCodesString.java
+END
+GetMemberByState.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByState.java
+END
+GetSchedulingByMemberIDResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByMemberIDResponse.java
+END
+GetSystemCodeAllRetailDiscountCodesStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailDiscountCodesStringResponse.java
+END
+ReservationInformation.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ReservationInformation.java
+END
+GetDemographicByStatusString.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByStatusString.java
+END
+CreateTicketsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/CreateTicketsResponse.java
+END
+GetTenderAllTenderMethodsForDepartmentResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllTenderMethodsForDepartmentResponse.java
+END
+GetDemographicByPostalCodeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByPostalCodeResponse.java
+END
+GetAllMembersString.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllMembersString.java
+END
+GetDemographicByCityStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByCityStringResponse.java
+END
+BalanceStatusTypes.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/586/org/ibsservices/BalanceStatusTypes.java
+END
+ArrayOfMemberData.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfMemberData.java
+END
+GetSystemCodeAllRetailDepartmentsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailDepartmentsStringResponse.java
+END
+GetInvMenusForDepartmentString.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetInvMenusForDepartmentString.java
+END
+GetSystemCodeAllFBDepartments.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBDepartments.java
+END
+GetSystemCodeAllAccountingCodesString.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllAccountingCodesString.java
+END
+GetSchedulingByStatusStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByStatusStringResponse.java
+END
+GetDemographicByPlayerType.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByPlayerType.java
+END
+AreYouThere.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/586/org/ibsservices/AreYouThere.java
+END
+GetSystemCodeAllFBDepartmentsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBDepartmentsStringResponse.java
+END
+GetSystemCodeAllActiveMinimumsForDepartmentResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllActiveMinimumsForDepartmentResponse.java
+END
+ArrayOfClubDiningRetailInventoryItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfClubDiningRetailInventoryItem.java
+END
+GetMemberRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberRequester.java
+END
+CreateMemberAdjustmentResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/CreateMemberAdjustmentResponse.java
+END
+GetAllItemsForDepartmentStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllItemsForDepartmentStringResponse.java
+END
+GetFinancialByMemberIDString.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFinancialByMemberIDString.java
+END
+GetInvMenusForDepartmentResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetInvMenusForDepartmentResponse.java
+END
+GetTenderAllAdminTenderMethodsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllAdminTenderMethodsStringResponse.java
+END
+GetSystemCodeRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeRequester.java
+END
+GetAllRetailItemsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllRetailItemsStringResponse.java
+END
+DemographicRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/586/org/ibsservices/DemographicRequester.java
+END
+GetSchedulingByAwardLevel.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByAwardLevel.java
+END
+GetSchedulingByStateStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByStateStringResponse.java
+END
+GetTenderAllAdminTenderMethodsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllAdminTenderMethodsResponse.java
+END
+GetEnterBatchDataResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetEnterBatchDataResponse.java
+END
+EZPay.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/java/trunk/!svn/ver/586/org/ibsservices/EZPay.java
+END
+SpaScheduling.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/586/org/ibsservices/SpaScheduling.java
+END
+GetMemberByAddressTypeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByAddressTypeResponse.java
+END
+GetSchedulingbyMemberTypeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingbyMemberTypeResponse.java
+END
+GetDemographicAllResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicAllResponse.java
+END
+Player.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Player.java
+END
+LoyaltyPointAssignValues.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/586/org/ibsservices/LoyaltyPointAssignValues.java
+END
+GetMemberbyMemberType.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberbyMemberType.java
+END
+GetSchedulingByAwardLevelStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByAwardLevelStringResponse.java
+END
+GetSchedulingByPostalCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByPostalCode.java
+END
+GetSystemCodeAllRetailDiscountCodes.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailDiscountCodes.java
+END
+GetSchedulingByCityString.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByCityString.java
+END
+GetSchedulingByStateResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByStateResponse.java
+END
+GetAllFBItemsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllFBItemsResponse.java
+END
+GetDemographicRequesterResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicRequesterResponse.java
+END
+ArrayOfFinancialData.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfFinancialData.java
+END
+GetSystemCodeAllActiveMinimumsForDepartmentString.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllActiveMinimumsForDepartmentString.java
+END
+GetTenderAllRetailTenderMethodsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllRetailTenderMethodsStringResponse.java
+END
+Gratuity.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Gratuity.java
+END
+GetMemberByAwardLevelStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByAwardLevelStringResponse.java
+END
+GetSystemCodeAllRetailDepartments.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailDepartments.java
+END
+GetTenderAllRetailTenderMethodsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllRetailTenderMethodsResponse.java
+END
+GetSystemCodeAllRetailTaxCodesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailTaxCodesResponse.java
+END
+GetSystemCodeAllRetailGratCodesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailGratCodesResponse.java
+END
+GetSchedulingRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingRequester.java
+END
+GetDemographicByCityResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByCityResponse.java
+END
+GetMemberByAwardLevelResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByAwardLevelResponse.java
+END
+GetMemberByCity.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByCity.java
+END
+GetSystemCodeAllStatCodesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllStatCodesResponse.java
+END
+MemberData.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/java/trunk/!svn/ver/586/org/ibsservices/MemberData.java
+END
+GetMemberBalanceWCourseID.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberBalanceWCourseID.java
+END
+GetFinancialAllString.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFinancialAllString.java
+END
+GetMemberPictureStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberPictureStringResponse.java
+END
+GetSystemCodeAllDiscountCodesForDepartmentResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllDiscountCodesForDepartmentResponse.java
+END
+GetMemberStatementResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberStatementResponse.java
+END
+GetFRRequestOptionsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFRRequestOptionsResponse.java
+END
+Minimum.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Minimum.java
+END
+GetSchedulingByMemberIDString.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByMemberIDString.java
+END
+GetMemberAllWith2Addresses.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberAllWith2Addresses.java
+END
+GetInventoryRequesterResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetInventoryRequesterResponse.java
+END
+GetMemberMinimumsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberMinimumsString.java
+END
+GetFinancialAll.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetFinancialAll.java
+END
+GetMemberByPlayerType.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByPlayerType.java
+END
+ItemMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ItemMenu.java
+END
+GetDemographicByAwardLevel.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByAwardLevel.java
+END
+GetSchedulingByMemberID.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByMemberID.java
+END
+GetSystemCodeAllGratCodesForDepartmentString.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllGratCodesForDepartmentString.java
+END
+GetSystemCodeAllRetailDiscountCodesString.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailDiscountCodesString.java
+END
+Greetings.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Greetings.java
+END
+GetSystemCodeAllActiveMinimumsStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllActiveMinimumsStringResponse.java
+END
+GetMemberByStateString.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByStateString.java
+END
+GetSystemCodeAllFBTaxCodesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBTaxCodesResponse.java
+END
+GetDemographicByPostalCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByPostalCode.java
+END
+GetTenderAllTenderMethodsForDepartment.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllTenderMethodsForDepartment.java
+END
+GetDemographicByCityString.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByCityString.java
+END
+GetSystemCodeAllTaxCodesForDepartment.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllTaxCodesForDepartment.java
+END
+GetTenderRequesterResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderRequesterResponse.java
+END
+ArrayOfDiscountCodeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfDiscountCodeData.java
+END
+ArrayOfTicketData.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfTicketData.java
+END
+GetSchedulingByPostalCodeStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByPostalCodeStringResponse.java
+END
+GetSystemCodeAllRetailDepartmentsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailDepartmentsString.java
+END
+ArrayOfFreeField.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfFreeField.java
+END
+FRequestOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/FRequestOptions.java
+END
+GetSystemCodeAllRetailTaxCodesStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailTaxCodesStringResponse.java
+END
+GetSchedulingByStatusString.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByStatusString.java
+END
+Button.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Button.java
+END
+RetailInventoryItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/RetailInventoryItem.java
+END
+GetSystemCodeAllGratCodesForDepartmentResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllGratCodesForDepartmentResponse.java
+END
+FBInventoryItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/FBInventoryItem.java
+END
+Address.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Address.java
+END
+GetMemberByPostalCodeStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByPostalCodeStringResponse.java
+END
+GetDemographicByStatusStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByStatusStringResponse.java
+END
+GetAllMembersStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllMembersStringResponse.java
+END
+GetInvMenusForDepartment.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetInvMenusForDepartment.java
+END
+ArrayOfMinimum.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfMinimum.java
+END
+ArrayOfTenderData.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfTenderData.java
+END
+GetDemographicByStatusResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByStatusResponse.java
+END
+Profile.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Profile.java
+END
+GetInvMenusForDepartmentStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetInvMenusForDepartmentStringResponse.java
+END
+ArrayOfCardSwipe.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfCardSwipe.java
+END
+GetSystemCodeAllAccountingCodesStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllAccountingCodesStringResponse.java
+END
+ArrayOfClubDiningFBInventoryItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfClubDiningFBInventoryItem.java
+END
+MemberRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/586/org/ibsservices/MemberRequester.java
+END
+GetClubDiningRetailItemsString.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetClubDiningRetailItemsString.java
+END
+GetEnterBatchData.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetEnterBatchData.java
+END
+GetTenderAllAdminTenderMethods.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllAdminTenderMethods.java
+END
+GetSDRequestOptionsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSDRequestOptionsResponse.java
+END
+GetACHTenderID.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetACHTenderID.java
+END
+ItemPricing.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ItemPricing.java
+END
+AreYouThereResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/AreYouThereResponse.java
+END
+GetDemographicAll.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicAll.java
+END
+GetDemographicByPlayerTypeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByPlayerTypeResponse.java
+END
+Extension.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Extension.java
+END
+SystemCodeRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/SystemCodeRequester.java
+END
+GetSystemCodeAllAccountingCodesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllAccountingCodesResponse.java
+END
+GetSchedulingByState.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByState.java
+END
+GetDemographicByMemberIDStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByMemberIDStringResponse.java
+END
+GetAllRetailItemsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetAllRetailItemsResponse.java
+END
+GetSystemCodeAllRetailGratCodesString.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailGratCodesString.java
+END
+ArrayOfRetailInventoryItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfRetailInventoryItem.java
+END
+GetTenderAllRetailTenderMethods.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetTenderAllRetailTenderMethods.java
+END
+GetSystemCodeAllTaxCodesForDepartmentStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllTaxCodesForDepartmentStringResponse.java
+END
+GetSystemCodeAllRetailGratCodes.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailGratCodes.java
+END
+ArrayOfFBInventoryItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfFBInventoryItem.java
+END
+GetMemberByAwardLevel.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByAwardLevel.java
+END
+ArrayOfAddress.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/586/org/ibsservices/ArrayOfAddress.java
+END
+GetMemberbyMemberTypeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberbyMemberTypeResponse.java
+END
+GetSystemCodeAllFBGratCodes.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllFBGratCodes.java
+END
+GetSchedulingByPostalCodeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByPostalCodeResponse.java
+END
+TicketData.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/java/trunk/!svn/ver/586/org/ibsservices/TicketData.java
+END
+GetDemographicByState.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetDemographicByState.java
+END
+GetSchedulingByCityStringResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByCityStringResponse.java
+END
+GetSystemCodeAllRetailDiscountCodesResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSystemCodeAllRetailDiscountCodesResponse.java
+END
+GetMemberByPostalCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByPostalCode.java
+END
+InvMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/586/org/ibsservices/InvMenu.java
+END
+GetMemberByCityString.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetMemberByCityString.java
+END
+SchedulingRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/586/org/ibsservices/SchedulingRequester.java
+END
+GetSchedulingByCityResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetSchedulingByCityResponse.java
+END
+GetInventoryRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/586/org/ibsservices/GetInventoryRequester.java
+END
+InventoryItemBaseClass.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/586/org/ibsservices/InventoryItemBaseClass.java
+END
+Loyalty.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/java/trunk/!svn/ver/586/org/ibsservices/Loyalty.java
+END

@@ -1,0 +1,17 @@
+<html>
+<body>
+<form method="post" action="http://dev2.foretees.com/v5/servlet/Login">
+<input type=text name="clubname" value="demov4"><br>
+<input type=text name="user_name" value="6700"><br>
+<input type=text name="caller" value="CHCC0475"><br>
+<input type=text name="zipcode" value="99218"><br>
+<!--
+<input type=text name="primary" value="Yes"><br>
+<input type=text name="mnum" value="Yes"><br>
+-->
+
+<br>
+<input type=submit name="submit" value="ForeTees - Tee Times"><br>
+</form>
+</body>
+</html>

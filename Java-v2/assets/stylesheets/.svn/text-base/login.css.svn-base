@@ -1,0 +1,426 @@
+/* 
+    Document   : login.css
+    Created on : Oct 30, 2013, 12:26:42 PM
+    Author     : Owner
+    Description:
+        For LoginPrompt Servlet -- Also included in RWD CSS
+        DO NOT ADD GLOBAL CS SELECTORS!  Target #wrapper_login and login specifc selectors ONLY
+*/
+
+body {
+    background-color:#CCCCAA;
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#142e24;
+    font-size:14px;
+    position:relative;
+}
+#wrapper_login a {
+    color: #142e24;
+    text-decoration: none;
+    /* background-color: inherit; */
+}
+#wrapper_login a:hover {
+    text-decoration: underline;
+}
+
+/* ------- LOGIN PAGE ---------- */
+
+#wrapper_login #title {
+    font-family: "Myriad Pro", Calibri, "Trebuchet MS", sans-serif;
+    color:#FFFFFF;
+    font-size:25px;
+    font-weight:600;
+    white-space: nowrap;
+    text-align:left;
+    padding: 25px 0 25px 0;
+    
+}
+
+#wrapper_login {
+    margin:auto;
+    width:840px;
+
+}
+#content_wrapper {
+    width:86%;
+    margin:auto;
+    position:relative;
+}
+
+#login {
+    line-height:35px;
+
+}
+
+#login_help_wrapper {
+    float:right;
+    margin-right:5px;
+    padding-top:0px;
+    line-height:23px;
+    display:table;
+    min-height:43px;
+}
+#login_help {
+    display:table-cell;
+    vertical-align: middle;
+}
+
+#login_welcome {
+    position:absolute;
+    top:0;
+    right:0;
+    width:208px;
+    background-color:#fbf8e8;
+    border:1px solid #f9f0d2;
+    display:block;
+    padding:20px;
+    text-align:left;
+    overflow:visible;
+}
+body.Login #login_welcome, body.Member_msg #login_welcome, body.Logout #login_welcome{
+    float:right;
+    position:relative;
+    margin: 0 20px 5px 10px;
+}
+body.Login #login_welcome p, body.Member_msg #login_welcome p, body.Logout #login_welcome p {
+    margin:0;
+}
+#login_welcome:after {
+    display:block;
+    content:"";
+    height:40px;
+    margin-top: 20px;
+    background-image:url(../images/ftRwdLogoGolf.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+#main_login {
+    background-color:#FFFFFF;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding:25px 0 45px 0;
+    color:#000000;
+    text-align:left;
+    position:relative;
+
+}
+#main_login h1, #main_login h2 {
+    padding: 0;
+    margin:0;
+}
+#main_login h1 {
+    font-size:26px;
+    font-weight:200;
+    color:#142e24;
+    line-height:50px;
+}
+
+#main_login h2 {
+    font-size:18px;
+    font-weight:bold;
+    line-height:22px;
+
+}
+body.Login #main_login, body.Member_msg #main_login, body.Logout #main_login {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#main_login .sub_instructions br:first-child, #main_login .main_instructions br:first-child {
+    display:none;
+}
+#main_login form[name=login] {
+    display:block;
+    width:52%;
+}
+#main_login .fields>label>span>input {
+    display:block;
+
+    border: 1px solid #c6d4cf;
+    padding:10px;
+    font-size:15px;
+    color:#142e24;
+    width:100%;
+    -moz-box-sizing: border-box; /* ff2 */
+    -ms-box-sizing: border-box; /* ie8 */
+    -webkit-box-sizing: border-box; /* safari3 */
+    -khtml-box-sizing: border-box; /* konqueror */
+    box-sizing: border-box; /* css3 rec */
+}
+#main_login .fields>label>span {
+    display:block;
+}
+#main_login .fields>label>span:first-child {
+    line-height: 25px;
+    padding-top:8px;
+}
+#wrapper_login .radioBarGroup {
+    
+}
+#wrapper_login .radioBarGroup>label {
+    width:50%;
+}
+
+
+/* ------- END FOOTER ---------- */
+
+
+
+/* ------- END MAIN WINDOW ---------- */
+
+#wrapper_login #footer {
+    font-size:11px;
+    text-align:center;    
+    color:#336633;        /* was cbcccc */
+    line-height:18px;
+    margin: 5px auto 10px auto;
+    width: 85%;
+    height: auto;        /* was 50px  */
+    /* white-space: nowrap;  */
+    background-image:url(../images/foretees_llc.png);
+    background-position:bottom center;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    display:block;
+}
+
+#wrapper_login #footer:after {
+    display:block;
+    height:0;
+    width:0;
+    overflow:hidden;
+    content:"";
+    clear:both;
+}
+
+
+#wrapper_login #footertext {
+    text-align: left;
+}
+#wrapper_login #footertext:after {
+    content:"";
+    visibility: hidden;
+    display:block;
+    height:40px; /* height of logo background in #footer (73px), or smaller if space allows */
+}
+#wrapper_login #footertext>p:first-child { /* Privacy notice */
+    font-weight: bold;
+}
+#wrapper_login #footertext>p+p { /* Copyright notice */
+   
+}
+#wrapper_login #footertext>p+p span {
+    white-space: nowrap;
+}
+#wrapper_login #footertext>p+p span:first-child:after {
+    content:' -';
+}
+
+#wrapper_login #local_links {
+    float:right;
+    margin-left:10%;
+    text-align: left;
+
+}
+#wrapper_login #local_links h3 {
+    padding:0;
+    margin:0;
+}
+
+#wrapper_login #local_links a {
+    display:block;
+}
+
+#wrapper_login #footer a, #wrapper_login #footer a:visited {
+
+    color:#FFFFFF;            /* was faf9d5 */
+    text-decoration: none;
+    background-color: inherit;
+}
+
+
+#wrapper_login #footer a:hover {
+    text-decoration: underline;
+}
+
+#wrapper_login .login_button_lg {
+    background-color: #8D8D8D;
+    background: linear-gradient(#bdbdbd, #4d4d4d);
+    /* @alternate */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bdbdbd), color-stop(100%,#4d4d4d));
+    /* @alternate */ background: -moz-linear-gradient(center top, #bdbdbd 0%, #4d4d4d 100%);
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    padding: 8px 25px;
+    border-color: #c9c9c9;
+    border-width: 4px;
+    border-style: solid;
+    text-align: center;
+    font-family: arial;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.login_button_lg:hover {
+    border-color: #adadad;
+    color: #ffffff;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+@media only screen and ( max-width: 865px )
+{
+    #wrapper_login #title {
+        margin-left:10px;
+    }
+    #wrapper_login {
+        width:auto;
+        margin:0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+    
+    #main_login {
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+
+
+}
+
+@media only screen and ( max-width: 715px )
+{
+    #wrapper_login #footertext>p+p { /* Copyright notice */
+        width:200px;
+    }
+    #wrapper_login #footertext>p+p span:first-child:after {
+        content:" ";
+    }
+
+}
+
+
+@media only screen and ( max-width: 700px )
+{
+    #main_login {
+        padding-left:10px;
+        padding-right:10px;
+    }
+    #content_wrapper {
+        width:auto;
+        margin:0;
+        position:relative;
+    }
+
+}
+
+@media only screen and ( max-width: 600px )
+{
+    #main_login {
+        padding:10px !important;
+    }
+    #main_login form[name=login] {
+        width:auto;
+        
+    }
+    #main_login form h1 {
+        display:none;
+    }
+    #wrapper_login #title {
+        margin:15px 10px 15px 10px;
+        text-align:center;
+        padding:0;
+        font-size: 22px;
+    }
+    #login_welcome {
+        position:relative;
+        float:none !important;
+        margin:0 !important;
+        width:auto;
+        height:auto;
+        padding:10px;
+    }
+    #login_welcome h2 {
+        font-size: 18px;
+    }
+    #login_welcome:after {
+        content:"  "; /*IE* requires content to change for changes in before and after to take affect */
+        display:none;
+    }
+    #login_welcome:before {
+        margin:0 0 0 20px;
+        float:right;
+        display:block;
+        content:" ";
+        height:30px;
+        width:100px;
+        background-image:url(../images/ftRwdLogoGolf.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100px auto;
+    }
+
+}
+
+@media only screen and ( max-width: 470px )
+{
+    #wrapper_login #footer {
+        width:auto;
+        margin: 5px 5px 10px 5px;
+    }
+    #wrapper_login #local_links {
+        float:none;
+        width:auto;
+        margin: 10px 10px 10px 10px;
+        text-align:center;
+    }
+    #wrapper_login #local_links a {
+        display:inline-block;
+        width: 50%;
+    }
+    #wrapper_login #footertext:after {
+        content:"  ";
+        visibility: hidden;
+        overflow:hidden;
+        display:block;
+        margin-top:10px;
+        height:73px; /* height of logo background in #footer (73px), or smaller if space allows */
+    }
+    #wrapper_login #footertext>p+p, #wrapper_login #footertext>p { /* Copyright notice */
+        width:auto;
+        text-align:center;
+    }
+    #wrapper_login #footertext>p+p span:first-child:after {
+        content:' - ';
+    }
+
+}
+
+
+@media only screen and ( max-width: 360px )
+{
+    #login_welcome {
+        text-align:center;
+        
+    }
+    
+    #login_welcome:before {
+        margin:0 0 10px 0;
+        float:none;
+        display:block;
+        content:"";
+        height:30px;
+        width:auto;
+        background-image:url(../images/ftRwdLogoGolf.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100px auto;
+    }
+}
+
+

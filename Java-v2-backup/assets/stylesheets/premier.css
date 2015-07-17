@@ -1,0 +1,53 @@
+/* 
+    Document   : premier
+    Created on : Sep 6, 2013, 1:51:15 PM
+    Author     : 
+    Description:
+*/
+/*
+body {
+    background: transparent;
+}
+
+html {
+    background: transparent;
+}
+
+div#top {
+    display:none;
+}
+
+div#wrapper {
+    padding: 0;
+}
+
+div#wrapper div.banner_container {
+    display: block;
+    overflow:hidden;
+    visibility: hidden;
+    height: 10px;
+}
+
+div#wrapper div.banner_container:first-child {
+    display:none;
+}
+
+
+*/
+
+
+.banner_container {
+    display: none;
+}
+
+#footer {
+    background-image: none;
+    padding: 10px 0px 10px 0px;
+}
+
+#main_ftlogo {
+    margin: -5px 5px 2px 0px;
+    display: block;
+    height: 35px;
+    width: 104px;
+}

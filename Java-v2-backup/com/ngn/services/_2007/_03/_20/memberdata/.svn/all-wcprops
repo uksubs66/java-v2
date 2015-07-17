@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata
+END
+ArrayOfMemberHandicapInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/ArrayOfMemberHandicapInfo.java
+END
+MembershipType.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MembershipType.java
+END
+MemberAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberAction.java
+END
+MemberSearchInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberSearchInfo.java
+END
+MemberClubMemberships.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberClubMemberships.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/ObjectFactory.java
+END
+ArrayOfMemberSubgroups.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/ArrayOfMemberSubgroups.java
+END
+MemberResponseInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberResponseInfo.java
+END
+MemberInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberInfo.java
+END
+TournamentTeeType.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/TournamentTeeType.java
+END
+MemberRosterList.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberRosterList.java
+END
+MemberHandicapAssoc.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberHandicapAssoc.java
+END
+Gender.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/Gender.java
+END
+MemberSearchList.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberSearchList.java
+END
+MemberIdSourceInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberIdSourceInfo.java
+END
+MemberSubgroups.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberSubgroups.java
+END
+MemberResponseList.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberResponseList.java
+END
+MemberTournamentAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberTournamentAction.java
+END
+MemberList.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberList.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/package-info.java
+END
+TournamentMemberInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/TournamentMemberInfo.java
+END
+MobileCarrierType.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MobileCarrierType.java
+END
+MemberHandicapType.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberHandicapType.java
+END
+MemberIdInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberIdInfo.java
+END
+TournamentMemberList.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/TournamentMemberList.java
+END
+MemberHandicapInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberHandicapInfo.java
+END
+EventMemberStatusType.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/EventMemberStatusType.java
+END
+ArrayOfMemberClubMemberships.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/ArrayOfMemberClubMemberships.java
+END
+TournamentSSOInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/TournamentSSOInfo.java
+END
+MembershipCategory.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MembershipCategory.java
+END
+MemberRosterInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberRosterInfo.java
+END
+MemberIdList.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/java/trunk/!svn/ver/2961/com/ngn/services/_2007/_03/_20/memberdata/MemberIdList.java
+END

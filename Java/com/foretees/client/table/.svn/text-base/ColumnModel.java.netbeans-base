@@ -1,0 +1,47 @@
+/***************************************************************************************
+ *   ColumnModel:  This class represents the columns to display in a table
+ *
+ *
+ *   created: 10/02/2003   jag
+ *
+ *   last updated:       ******* keep this accurate *******
+ *
+ ***************************************************************************************
+ */
+
+package com.foretees.client.table;
+
+import java.io.*;
+import java.util.ArrayList;
+
+
+public class ColumnModel {
+
+  //*****************************************************
+  // Initialize the attributes
+  //*****************************************************
+
+  private ArrayList rows = new ArrayList();
+  private ArrayList columns = new ArrayList();
+
+  public void add(Column theColumn)
+  {
+
+    columns.add(theColumn);
+  }
+
+  public Column get(int theIndex)
+  {
+
+    return (Column)(columns.get(theIndex));
+  }
+
+
+  public int size()
+  {
+
+    return columns.size();
+
+  }
+
+}

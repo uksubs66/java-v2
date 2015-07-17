@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/disk
+END
+DiskFileItemFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/disk/DiskFileItemFactory.java
+END
+DiskFileItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/disk/DiskFileItem.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/1/org/apache/commons/fileupload/disk/package.html
+END

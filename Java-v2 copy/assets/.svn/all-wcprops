@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/repos/java/trunk/!svn/ver/4934/assets
+END
+script.ver
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/java/trunk/!svn/ver/4600/assets/script.ver
+END
+login.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/java/trunk/!svn/ver/3857/assets/login.jsp
+END
+mlogin.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/java/trunk/!svn/ver/3365/assets/mlogin.jsp
+END

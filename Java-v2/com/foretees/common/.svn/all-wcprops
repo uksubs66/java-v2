@@ -1,0 +1,563 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/repos/java/trunk/!svn/ver/7740/com/foretees/common
+END
+reservationPrompt.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/6634/com/foretees/common/reservationPrompt.java
+END
+scriptTools.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/4992/com/foretees/common/scriptTools.java
+END
+parmEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/4992/com/foretees/common/parmEvent.java
+END
+diningLocation.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/4992/com/foretees/common/diningLocation.java
+END
+parmCore.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/parmCore.java
+END
+parmSlot.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/7651/com/foretees/common/parmSlot.java
+END
+medinahCustom.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/1/com/foretees/common/medinahCustom.java
+END
+getRests.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/7638/com/foretees/common/getRests.java
+END
+parmPOS.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/java/trunk/!svn/ver/5795/com/foretees/common/parmPOS.java
+END
+parmCourse.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/java/trunk/!svn/ver/1/com/foretees/common/parmCourse.java
+END
+Question.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/5022/com/foretees/common/Question.java
+END
+parmSlotm.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7446/com/foretees/common/parmSlotm.java
+END
+mTypeArrays.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/1/com/foretees/common/mTypeArrays.java
+END
+diningEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/5108/com/foretees/common/diningEvent.java
+END
+ProcessConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/7614/com/foretees/common/ProcessConstants.java
+END
+reqUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/reqUtil.java
+END
+Labels.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/7437/com/foretees/common/Labels.java
+END
+parmItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/java/trunk/!svn/ver/1/com/foretees/common/parmItem.java
+END
+parmCoreAlt.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/6004/com/foretees/common/parmCoreAlt.java
+END
+memberSettings.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/5205/com/foretees/common/memberSettings.java
+END
+dataLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/7722/com/foretees/common/dataLoader.java
+END
+DaysAdv.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/java/trunk/!svn/ver/7702/com/foretees/common/DaysAdv.java
+END
+memberUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/7229/com/foretees/common/memberUtil.java
+END
+parmActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/4711/com/foretees/common/parmActivity.java
+END
+cordilleraCustom.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/1/com/foretees/common/cordilleraCustom.java
+END
+verifySlot.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/7712/com/foretees/common/verifySlot.java
+END
+Common_Server.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/Common_Server.java
+END
+BasicSHA256.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/4056/com/foretees/common/BasicSHA256.java
+END
+verifyNSlot.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/226/com/foretees/common/verifyNSlot.java
+END
+getParms.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/1634/com/foretees/common/getParms.java
+END
+dateOpts.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/java/trunk/!svn/ver/1/com/foretees/common/dateOpts.java
+END
+reservationUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/7539/com/foretees/common/reservationUtil.java
+END
+reservationPlayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/6004/com/foretees/common/reservationPlayer.java
+END
+htmlUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/6004/com/foretees/common/htmlUtil.java
+END
+verifyWLSlot.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/3900/com/foretees/common/verifyWLSlot.java
+END
+getSMTP.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/java/trunk/!svn/ver/1/com/foretees/common/getSMTP.java
+END
+getClub.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/java/trunk/!svn/ver/7647/com/foretees/common/getClub.java
+END
+StatCounters.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/StatCounters.java
+END
+Utilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/Utilities.java
+END
+TimedSocket.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/1856/com/foretees/common/TimedSocket.java
+END
+teeCurrGroupDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/6004/com/foretees/common/teeCurrGroupDetail.java
+END
+formUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/6004/com/foretees/common/formUtil.java
+END
+FeedBack.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/java/trunk/!svn/ver/1/com/foretees/common/FeedBack.java
+END
+parmDining.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/7675/com/foretees/common/parmDining.java
+END
+slotPostBack.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/6004/com/foretees/common/slotPostBack.java
+END
+parmSlotPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/7555/com/foretees/common/parmSlotPage.java
+END
+slotId.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/4992/com/foretees/common/slotId.java
+END
+mobileAPI.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7590/com/foretees/common/mobileAPI.java
+END
+verifyActSlot.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/6861/com/foretees/common/verifyActSlot.java
+END
+AESencrypt.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/AESencrypt.java
+END
+LoginCredentials.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/LoginCredentials.java
+END
+diningMealOption.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/4992/com/foretees/common/diningMealOption.java
+END
+Common_skin.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/7713/com/foretees/common/Common_skin.java
+END
+alphaTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/7632/com/foretees/common/alphaTable.java
+END
+parmEmail.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7565/com/foretees/common/parmEmail.java
+END
+timeUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/timeUtil.java
+END
+parmMidPacific.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/java/trunk/!svn/ver/6004/com/foretees/common/parmMidPacific.java
+END
+slotPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/1813/com/foretees/common/slotPage.java
+END
+Misc.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/java/trunk/!svn/ver/1/com/foretees/common/Misc.java
+END
+congressionalCustom.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/java/trunk/!svn/ver/2175/com/foretees/common/congressionalCustom.java
+END
+browserDetect.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/1/com/foretees/common/browserDetect.java
+END
+verifyCustom.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/7735/com/foretees/common/verifyCustom.java
+END
+Connect.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/Connect.java
+END
+nameLists.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/nameLists.java
+END
+getWaitList.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/1907/com/foretees/common/getWaitList.java
+END
+parmTee.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/java/trunk/!svn/ver/1/com/foretees/common/parmTee.java
+END
+verifyNCustom.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/java/trunk/!svn/ver/7378/com/foretees/common/verifyNCustom.java
+END
+reservationSignup.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/java/trunk/!svn/ver/5007/com/foretees/common/reservationSignup.java
+END
+VerifyUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/VerifyUser.java
+END
+parmClub.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/7646/com/foretees/common/parmClub.java
+END
+parmSMTP.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/3940/com/foretees/common/parmSMTP.java
+END
+httpConnect.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/7223/com/foretees/common/httpConnect.java
+END
+StringEncrypter.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/1/com/foretees/common/StringEncrypter.java
+END
+parmNSlot.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/6004/com/foretees/common/parmNSlot.java
+END
+jonasAPI.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/6194/com/foretees/common/jonasAPI.java
+END
+ArrayUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/ArrayUtil.java
+END
+diningUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/java/trunk/!svn/ver/7740/com/foretees/common/diningUtil.java
+END
+sendEmail.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/7743/com/foretees/common/sendEmail.java
+END
+verifyLesson.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/java/trunk/!svn/ver/6070/com/foretees/common/verifyLesson.java
+END
+BigDate.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/java/trunk/!svn/ver/1/com/foretees/common/BigDate.java
+END
+uaUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/java/trunk/!svn/ver/5162/com/foretees/common/uaUtil.java
+END
+parmDining2.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/6102/com/foretees/common/parmDining2.java
+END
+getItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/java/trunk/!svn/ver/5633/com/foretees/common/getItem.java
+END
+iCalendar.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/3309/com/foretees/common/iCalendar.java
+END
+getActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/java/trunk/!svn/ver/7595/com/foretees/common/getActivity.java
+END
+htmlTags.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/5187/com/foretees/common/htmlTags.java
+END
+RequestListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/4992/com/foretees/common/RequestListener.java
+END
+parmDiningCosts.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/java/trunk/!svn/ver/1284/com/foretees/common/parmDiningCosts.java
+END
+parmRest.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/java/trunk/!svn/ver/3218/com/foretees/common/parmRest.java
+END
+parmWaitList.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/java/trunk/!svn/ver/1/com/foretees/common/parmWaitList.java
+END
+diningMealPeriod.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/4992/com/foretees/common/diningMealPeriod.java
+END
+parmDiningSeatings.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/java/trunk/!svn/ver/2133/com/foretees/common/parmDiningSeatings.java
+END
+MidPacificCustom.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/java/trunk/!svn/ver/6004/com/foretees/common/MidPacificCustom.java
+END

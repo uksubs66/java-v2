@@ -1,0 +1,63 @@
+/* 
+    Document   : foretees_premier
+    Created on : Jul 17, 2013, 6:18:38 PM
+    Author     : Owner
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#fwContent table#calEventTitle {
+    width:100% !important;
+}
+
+#fwContent table#calEventTitle+table,
+#fwContent table#calEventTitle+table tbody,
+#fwContent table#calEventTitle+table tr, 
+#fwContent table#calEventTitle+table td {
+    display:block;
+    padding:0;
+    margin:0;
+}
+
+
+#ifrforetees {
+    height: 400px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border:0px none transparent !important;
+    overflow: hidden;
+}
+
+#ftControl blockquote {
+    margin: 0 !important;
+}
+
+@media only screen and ( max-width: 767px )
+{
+    .wrapper {
+        margin: 0;
+       
+    }
+    body {
+        margin-left:0;
+        margin-right:0;
+        padding-left:0;
+        padding-right:0;
+    }
+    .sidebar, #footer {
+        padding-left:20px;
+        padding-right:20px;
+        margin-left:0;
+        margin-right:0;
+    }
+    .navbar-fixed-top {
+        margin-left:0;
+        margin-right:0;
+    }
+}

@@ -1,0 +1,1875 @@
+/*************************************************************************************** 
+ *     
+ *   Login2:  This servlet will process the initial login from a Web Site form that we provide for customers.
+ *            We will prompt them for their member number and password.  If this is the member's first
+ *            login, we will ask them to change their password.  We will also provide instructions on
+ *            how to save their username and password info on their browser.
+ * 
+ *       Used as a generic seamless interface so clubs do not have to pay for an interface from their website provider.    
+ *
+ *
+ *   created:  9/08/2009   Bob P.
+ *
+ *
+ *   last updated:       ******* keep this accurate *******
+ *
+ * 
+ *   ***************** This servlet is not being used *******************
+ *
+ *
+ ***************************************************************************************
+ */
+    
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.*;
+import java.sql.*;
+
+// foretees imports
+import com.foretees.common.parmClub;
+import com.foretees.common.getClub;
+import com.foretees.common.FeedBack;
+import com.foretees.member.Member;
+import com.foretees.member.MemberHelper;
+
+
+public class Login2 extends HttpServlet {
+
+    
+ String rev = SystemUtils.REVLEVEL;       // Software Revision Level (Version)
+
+ String id = SystemUtils.id;
+        
+ String omit = "";             // ommitted
+
+ static final int MEMBER_TIMEOUT = SystemUtils.MEMBER_TIMEOUT;
+
+
+ String iCalNotice = "<p><b>Notice:</b> We've added a new feature that allows you to receive iCalendar files along with your email notifications.&nbsp; " +
+                     "You may choose to receive them at either email address using the options below, or at anytime by clicking on the Settings tab from within ForeTees.&nbsp; " +
+                     "<a href=\"/"+rev+"/member_help_icalendar.htm\" target=_memberHelp>Click here for more information regarding iCalendar.</a>" +
+                     "<br><br><u>BlackBerry Users:</u> If your tee time notifications from ForeTees appear to have an empty message body, you will need to disable iCal attachments to that email address.&nbsp; " +
+                     "</p>";
+
+
+
+ //***********************************************************************************************
+ //  Process doGet - Call from Web Site and help button comes here.
+ //***********************************************************************************************
+ 
+ public void doGet(HttpServletRequest req, HttpServletResponse resp)
+         throws ServletException, IOException {
+
+
+   resp.setContentType("text/html");
+   PrintWriter out = resp.getWriter();
+
+   
+   // ********* temp **********     displays header parms and values (use to check for 'referer')
+   /*
+   if (req.getParameter("web") != null) {
+      
+   
+    //  Enumeration enum1 = req.getHeaderNames();
+
+      out.println(SystemUtils.HeadTitle("Database Error"));
+      out.println("<BODY><CENTER>");
+      out.println("<BR><BR><H1>Header Parameters</H1>");
+
+      out.println("<BR><BR>Header Names: ");
+      
+      Enumeration headerNames = req.getHeaderNames();
+      while(headerNames.hasMoreElements()) {
+        String headerName = (String)headerNames.nextElement();
+        out.print("<BR>" + headerName);
+        out.println(" = " + req.getHeader(headerName));
+      }
+      out.println("</CENTER></BODY></HTML>");
+      out.close();
+      return;
+   }
+   // ********* temp **********
+    */
+   
+   
+   //
+   //   If first call from website form - go prompt user for mNum and password
+   //
+   if (req.getParameter("web") != null) {  // initial call from website?
+      
+      //  make sure we came from a website and NOT a bookmark!!!
+      
+      if (req.getHeader("referer") != null) {  
+
+         promptUser(req, resp);      // if call from website - build login page and wait for credentials
+         
+      } else {
+         
+         rejectCaller(out);          // reject if came from bookmark
+      }
+      
+      return;                     // exit 
+   }
+   
+   
+   String club = "";     
+   String caller = "";     
+   String browser = "";     
+   String version = "";     
+   String os = "";     
+
+   if (req.getParameter("clubname") != null) {
+      
+      club = req.getParameter("clubname");       // which club request came from
+   }
+   if (req.getParameter("caller") != null) {
+      
+      caller = req.getParameter("caller");         // which website provider
+   }
+   if (req.getParameter("browser") != null) {
+      
+      browser = req.getParameter("browser");         // get browser detect values
+   }
+   if (req.getParameter("version") != null) {
+      
+      version = req.getParameter("version");        
+   }
+   if (req.getParameter("os") != null) {
+      
+      os = req.getParameter("os");        
+   }
+   
+   
+   //
+   //  Check if this is a request for help
+   //
+   if (req.getParameter("help") != null) {
+      
+      boolean found = true;     // default to browser found 
+     
+      //
+      //  Output a page to provide help on saving their credentials (opens in new window - close window on exit)
+      //
+      out.println(SystemUtils.HeadTitle("Login Help"));
+      out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+      out.println("<hr width=\"40%\">");
+      out.println("<br><br>");
+        
+      out.println("<table align=\"center\" bgcolor=\"#F5F5DC\" width=\"440\" border=\"1\"><tr><td align=\"left\">");
+      out.println("<font size=\"2\">");
+
+      out.println("For version " +version+ " of the " +browser+ " browser on your " +os+ " computer,<br>");
+      out.println("please follow these steps:<br><br>");
+    
+      if (os.equalsIgnoreCase("Mac")) {         // if on a Mac
+         
+         if (browser.equalsIgnoreCase("Safari")) {             // if Safari 4 (others ??)
+         
+            out.println("1. From the menu bar at the top of your browser screen, select Safari - Preferences.<br>");
+            out.println("2. Select the Autofill icon.<br>");
+            out.println("3. Under 'Autofill web forms:' select the 'User names and passwords' option.<br>");
+            out.println("4. Exit preferences.");
+            
+         } else if (browser.equalsIgnoreCase("Firefox")) {     // if Firefox 2.x & 3.x
+         
+            out.println("1. From the menu bar at the top of your browser screen, select Firefox - Preferences.<br>");
+            out.println("2. Select the Security icon.<br>");
+            out.println("3. Under 'Passwords' select the 'Remember passwords for sites' option.<br>");
+            out.println("4. Select the Privacy icon.<br>");
+            out.println("5. Under 'History' select the 'Firefox will: Remember History' option.<br>");
+            out.println("6. Exit preferences.");
+               
+         } else {     // unknown browser
+         
+            found = false;
+         }         
+         
+      } else if (os.startsWith("Win")) {        // if on a Windows PC
+         
+         if (browser.equalsIgnoreCase("Explorer")) {             // if IE
+         
+            if (version.equalsIgnoreCase("6")) {                 // IE 6
+         
+               out.println("1. From the menu bar at the top of your browser screen, select Tools - Internet Options.<br>");
+               out.println("2. Select the Content tab.<br>");
+               out.println("3. Under 'Personal information' select the 'AutoComplete' button.<br>");
+               out.println("4. Under 'Use AutoComplete for', select the following options:<br>");
+               out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forms<br>");
+               out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User names and passwords<br>");
+               out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prompt me to save passwords<br>");
+               out.println("5. Click OK.<br>");
+               out.println("6. Click OK again to exit.");
+            
+            } else if (version.equalsIgnoreCase("7")) {                 // IE 7
+         
+               out.println("1. From the menu bar at the top of your browser screen, select Tools - Internet Options.<br>");
+               out.println("2. Select the Content tab.<br>");
+               out.println("3. Under 'AutoComplete', click the Settings button.<br>");
+               out.println("4. Under 'Use AutoComplete for', check the boxes for:<br>");
+               out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forms<br>");
+               out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User names and passwords on forms<br>");
+               out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prompt me to save passwords<br>");
+               out.println("5. Click OK.<br>");
+               out.println("6. Click OK again to exit.");
+            
+            } else if (version.equalsIgnoreCase("8")) {                 // IE 8 
+         
+               out.println("1. From the menu bar at the top of your browser screen, select Tools - Internet Options.<br>");
+               out.println("2. Select the Content tab.<br>");
+               out.println("3. Under 'AutoComplete', click the Settings button.<br>");
+               out.println("4. Under 'Use AutoComplete for', check the boxes for:<br>");
+               out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forms<br>");
+               out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User names and passwords on forms<br>");
+               out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ask me before saving passwords<br>");
+               out.println("5. Click OK.<br>");
+               out.println("6. Click OK again to exit.");
+               
+            } else {     // unknown version
+         
+               found = false;
+            }
+            
+         } else if (browser.equalsIgnoreCase("Firefox")) {     // if Firefox 2.x & 3.x for Windows
+         
+            out.println("1. From the menu bar at the top of your browser screen, select Tools - Options.<br>");
+            out.println("2. Select the Privacy icon.<br>");
+            out.println("3. Under 'History' select the 'Remember what I enter in forms and the search bar' option.<br>");
+            out.println("4. Select the Security icon.<br>");
+            out.println("5. Under 'Passwords' select the 'Remember passwords for sites' option.<br>");
+            out.println("6. Click OK to exit options.");
+            
+         } else if (browser.equalsIgnoreCase("Chrome")) {     // if Chrome 2 for Windows
+         
+            out.println("1. From the menu bar in the upper right corner at the top of your browser screen, select the Wrench icon.<br>");
+            out.println("2. Select Options for the drop down list.<br>");
+            out.println("3. Select the Minor Tweaks tab.<br>");
+            out.println("4. Under 'Passwords' select the 'Offer to save passwords' option.<br>");
+            out.println("5. Click Close to exit options.");
+            
+         } else if (browser.equalsIgnoreCase("Safari")) {     // if Safari 
+         
+            out.println("1. From the menu bar at the top of your browser screen, select Edit - Preferences.<br>");
+            out.println("2. Select the Autofill icon.<br>");
+            out.println("3. Under 'Autofill web forms' select the 'User names and passwords' option.<br>");
+            out.println("4. Exit preferences.");
+               
+         } else {     // unknown browser
+         
+            found = false;
+         }         
+         
+         
+      } else {     // Linux, iPhone, or unknown (find the values in v5/web utilities/BrowserDetect.js)
+         
+         found = false;
+      }
+      
+      if (found == false) {       // if browser or os not found
+         
+         out.println("Sorry, we do not currently have instructions available for your device and/or browser.<BR>");
+         out.println("Please send an email to support@foretees.com and include the above information so we can<br>");
+         out.println("locate the instructions and get back to you.  Thank you.");       
+      }
+
+      out.println("<br></font></td></tr></table>");
+         
+      out.println("<br>");
+      out.println("<form><input type=\"button\" value=\"Close\" style=\"text-decoration:underline; background:#8B8970\" onClick='self.close();'></form>");
+      out.println("</CENTER></BODY></HTML>");
+      out.close();
+      return;
+      
+   } else {        // unknown user/caller - reject
+      
+      rejectCaller(out);          // reject if came from bookmark
+   }
+   
+ }         // end of doGet
+
+
+ //*****************************************************
+ // Perform doPost processing - someone is logging in
+ //*****************************************************
+
+ public void doPost(HttpServletRequest req, HttpServletResponse resp)
+         throws ServletException, IOException {
+   
+    
+   //
+   //   If first call from website form - go prompt user for mNum and password (NOT USED, but might be needed later) !!!
+   //
+   if (req.getParameter("web") != null) {
+
+      promptUser(req, resp);
+      return;                     // exit and wait for login
+   }
+   
+   //
+   //  Set a P3P Compact Policy Statement in the HTTP Header.
+   //  This informs the client of our intended use of the persistent cookie
+   //  used to manage this session.
+   //
+   //  Definitions:
+   //
+   //      ALL (access=ALL):         We will provide access to ALL information collected.
+   //      NOI (access=):            Web site does not collect identified data
+   //      DSP (disputes=);          We will settle any disputes.
+   //      COR (remedies=):          We will 'correct' any disputes
+   //      NID (non-identifiable=):  This session cookie does not collect data and cannot identify the individual person  
+   //      CURa (purpose=):          The information is used to complete the activity of the service (N/A if NID)          
+   //      OUR (recipient=)          Only our service will process information received in cookie (N/A if NID)
+   //      STP (retention=)          Information is retained for the 'stated purpose' (N/A if NID)
+   //      PUR (categories=)         We may use the informaiton used to purchase a product or service (N/A if NID)
+   //
+   resp.setHeader("P3P","CP=\"NOI DSP COR NID\"");
+     
+   //
+   //  Prevent caching so sessions are not mangled
+   //
+   resp.setHeader("Pragma","no-cache");                                      // for HTTP 1.0
+   resp.setHeader("Cache-Control","no-store, no-cache, must-revalidate");    // for HTTP 1.1
+   resp.setDateHeader("Expires",0);    // prevents caching at the proxy server
+
+   resp.setContentType("text/html");
+   PrintWriter out = resp.getWriter();
+     
+   Connection con = null;                 // init DB objects
+   PreparedStatement pstmt = null;
+   ResultSet rs = null;
+   
+   //
+   // Get the username and password entered.........  
+   //
+   String username = "";
+   String userpw = "";
+   String club = "";
+   String caller = "";
+   String errMsg = "";
+
+   //
+   //  Get club name and user name provided
+   //
+   if (req.getParameter("clubname") != null) {
+
+      club = req.getParameter("clubname");       // which club login came from
+   }
+   
+   if (req.getParameter("caller") != null) {
+
+      caller = req.getParameter("caller");     
+   }
+   
+   if (req.getParameter("user_name") != null) {
+
+      username = req.getParameter("user_name").trim();
+   }
+
+   if (req.getParameter("password") != null) {
+
+      userpw = req.getParameter("password").trim();
+   }
+      
+   //
+   // Make sure both were entered.......
+   //
+   if (club.equals("") || !caller.equals( "foreteeslink" ) || username.equals( "" ) || userpw.equals( "" )) {
+     
+     errMsg = "Username or Password not provided.";
+     
+     invalidLogin(errMsg, req, out, null, 0);
+     return;
+   }
+   
+   //
+   //  Make sure the club requested is currently running this version of ForeTees.
+   //  The user may need to refresh the login page so they pull up the new page.
+   //
+   try {
+       
+      con = dbConn.Connect(rev);       // get a connection for this version level
+
+      pstmt = con.prepareStatement (
+               "SELECT fullname, inactive FROM clubs WHERE clubname = ?");
+
+      pstmt.clearParameters();        // clear the parms
+      pstmt.setString(1, club);
+      rs = pstmt.executeQuery();
+
+      if (!rs.next()) {          // if club not found in this version
+
+         out.println(SystemUtils.HeadTitle("Invalid Login"));
+         out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+         out.println("<hr width=\"40%\">");
+         out.println("<p>&nbsp;</p><p>&nbsp;</p>");
+         out.println("<BR><H2>Login Rejected</H2><BR>");
+         out.println("<BR>Your club is not yet authorized to access ForeTees.");
+         out.println("<BR>The site must be completed before you can proceed.<BR>");
+         out.println("<BR>Please try again later.  Thank you.<BR>");
+         out.println("<BR><BR>Please <A HREF=\"javascript:history.back(1)\">Return</A>.");
+         out.println("</CENTER></BODY></HTML>");
+         out.println("<!-- " + club + " -->");
+         out.close();
+         pstmt.close();           // close the stmt
+         con.close();
+         return;                  // exit
+
+      } else {
+
+          // allow special proshop & adimn users to access inactive clubs
+          if (rs.getInt("inactive") == 1) {
+
+             out.println(SystemUtils.HeadTitle("Invalid Login"));
+             out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+             out.println("<hr width=\"40%\">");
+             out.println("<p>&nbsp;</p><p>&nbsp;</p>");
+             out.println("<BR><H2>Site Unavailable</H2><BR>");
+             out.println("<BR>Your club is no longer authorized to access ForeTees.");
+             out.println("<BR>Please contact your club managment for more information.<br><br>Thank you.<BR>");
+             out.println("</CENTER></BODY></HTML>");
+             out.close();
+             pstmt.close();           // close the stmt
+             con.close();
+             return;                  // exit
+
+          }
+      }
+
+      pstmt.close();              // close the stmt
+      con.close();                // close the connection
+      
+   }
+   catch (Exception exc) {
+      // Error connecting to db....
+      out.println("<HTML><HEAD><TITLE>DB Connection Error Received</TITLE></HEAD>");
+      out.println("<BODY><CENTER><H3>DB Connection Error</H3>");
+      out.println("<BR><BR>Unable to connect to the DB.");
+      out.println("<BR>Exception: "+ exc.getMessage());
+      out.println("<BR><BR>Please <A HREF=\"javascript:history.back(1)\">try again</A>.");
+      out.println("</CENTER></BODY></HTML>");
+      out.close();
+      return;
+   }
+
+   //   Process the login request
+   remoteUser(req, out, username, userpw, club, caller);  // go process 'remote' user
+   
+ }
+
+ 
+ //
+ //   Call is from the website - prompt user for credentials
+ //
+ public void promptUser(HttpServletRequest req, HttpServletResponse resp) {
+
+   resp.setContentType("text/html");
+   PrintWriter out = null;
+
+   try {
+      out = resp.getWriter();
+   }
+   catch (Exception exc) {
+   }
+
+   
+   String club = "";     
+   String caller = "";     
+
+   if (req.getParameter("clubname") != null) {
+      
+      club = req.getParameter("clubname");       // which club request came from
+   }
+
+   if (req.getParameter("caller") != null) {
+      
+      caller = req.getParameter("caller");         // which website provider
+   }
+   
+   if (!club.equals("") && caller.equals("foreteeslink")) {       // did caller come from one of our links?
+      
+      //
+      //  Solicit member for their credentials - output ForeTees Login Page
+      //
+      out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
+      out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
+      out.println("<head>");
+      out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />");
+      out.println("<meta name=\"viewport\" id=\"viewport\" content=\"width=device-width, user-scalable=yes\" />");
+
+      out.println("<title>Foretees Login</title>");
+      out.println("<style type=\"text/css\">");
+      out.println("#login 	{");
+                      out.println("font-family:Arial, Helvetica, sans-serif;");
+                      out.println("font-size:1em;");
+                      out.println("text-align:center;");
+                      out.println("}");
+      out.println("#login div ");
+                      out.println("{");
+                      out.println("margin: 5px 0px;");
+                      out.println("text-align:center;");
+                      out.println("}");
+      out.println("#logo	{");
+                      out.println("text-align:center;");
+                      out.println("}");
+
+      out.println(".headertext");
+                      out.println("{");
+                      out.println("font-family:Arial, Helvetica, sans-serif;");
+                      out.println("font-size:1.2em;");
+                      out.println("}");
+      out.println(".headertext2");
+                      out.println("{");
+                      out.println("font-family:sans-serif, Arial, Helvetica;");
+                      out.println("font-style:italic;");
+                      out.println("font-size:1.5em;");
+                      out.println("}");
+      out.println(".prompt");
+                      out.println("{");
+                      out.println("font-family:Arial, Helvetica, sans-serif;");
+                      out.println("font-size:1em;");
+                      out.println("}");
+      out.println(".notice");
+                      out.println("{");
+                      out.println("font-family:Arial, Helvetica, sans-serif;");
+                      out.println("font-size:.8em;");
+                      out.println("}");
+      out.println(".blank");
+                      out.println("{");
+                      out.println("font-family:Arial, Helvetica, sans-serif;");
+                      out.println("font-size:.5em;");
+                      out.println("}");
+
+      out.println("</style>");
+      
+      out.println("<script type='text/javascript' charset='UTF-8' src='/" +rev+ "/web utilities/BrowserDetect.js'></script>");   // Browser Detect script !!!!!
+      
+      out.println("</head>");
+      out.println("<body>");
+      out.println("<div id=\"logo\"><img src=\"/" +rev+ "/images/foretees.gif\">");
+      out.println("</div>");
+      out.println("<div class=\"blank\">&nbsp;</div>");
+      
+      out.println("<div id=\"login\">");
+      out.println("<table align=\"center\" bgcolor=\"#F5F5DC\" width=\"330\" border=\"0\"><tr><td align=\"center\">");
+      out.println("<div class=\"blank\">&nbsp;</div>");
+      out.println("<div class=\"headertext\">Welcome to the ForeTees Reservation System</div>");
+
+        out.println("<div class=\"blank\">&nbsp;</div>");
+        out.println("<div class=\"prompt\">Please Login</div>");
+        out.println("<div class=\"blank\">&nbsp;</div>");
+
+        out.println("<form action=\"/v5/servlet/Login2\" method=\"post\" name=\"f\" id=\"f\">");
+        
+         out.println("<input type=\"hidden\" name=\"clubname\" value=\"" +club+ "\">");
+         out.println("<input type=\"hidden\" name=\"caller\" value=\"" +caller+ "\">");
+         
+           out.println("<div class=\"prompt\">Member Number:<br>");
+      out.println("<input type=\"text\" name=\"user_name\" size=\"15\" maxlength=\"15\"></div>");
+          out.println("<div class=\"prompt\">Password:<br>");
+      out.println("<input type=\"password\" name=\"password\" size=\"15\" maxlength=\"15\"></div><BR>");
+      out.println("<div class=\"prompt\"><input type=\"submit\" name=\"submit\" border=\"0\"  style=\"text-decoration:underline; background:#8B8970\"></div>");
+        out.println("</form>");
+      
+      out.println("<BR><hr align=\"center\" size=\"3\" width=\"75%\">");
+      
+      out.println("<div class=\"notice\"><b>NOTICE:</b> To save time, set your browser's AutoFill option to save Usernames and Passwords.<BR>" +
+              "For instructions on how to enable this option, ");
+             
+      out.println("<form action=\"/v5/servlet/Login2\" method=\"get\" name=\"helpform\" id=\"helpform\" target=\"_blank\">");
+         out.println("<input type=\"hidden\" name=\"help\" value=\"yes\">");
+         out.println("<input type=\"hidden\" name=\"browser\" value=\"\">");
+         out.println("<input type=\"hidden\" name=\"version\" value=\"\">");
+         out.println("<input type=\"hidden\" name=\"os\" value=\"\">");
+         out.println("<div class=\"prompt\"><input type=\"submit\" value=\"Click Here\" border=\"0\"  style=\"text-decoration:underline; background:#8B8970\"></div>");
+         out.println("</form></div>");
+     
+      //  Put broswer detect data in help form
+      out.println("<script type=\"text/javascript\">");
+      out.println("<!--");
+         out.println("var f = document.forms['helpform'];");
+         out.println("f.browser.value = BrowserDetect.browser;");
+         out.println("f.version.value = BrowserDetect.version;");
+         out.println("f.os.value = BrowserDetect.OS;");
+      out.println("// -->");
+      out.println("</script>");
+      
+      out.println("</td></tr></table></div>");      
+      out.println("</BODY></HTML>");
+      out.close();
+      
+   } else {        // unknown user/caller - reject
+      
+      out.println(SystemUtils.HeadTitle("Invalid Login"));
+      out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+      out.println("<hr width=\"40%\">");
+      out.println("<p>&nbsp;</p><p>&nbsp;</p>");
+      out.println("<BR><H2>Invalid Access</H2><BR>");
+      out.println("<BR>Your club is not yet authorized to access ForeTees.");
+      out.println("<BR>Please try again later.  Thank you.<BR>");
+      out.println("<BR><BR>");
+      out.println("<form><input type=\"button\" value=\"Close\" style=\"text-decoration:underline; background:#8B8970\" onClick='self.close();'></form>");
+      out.println("</CENTER></BODY></HTML>");
+      out.close();      
+   }
+   
+ }         // end of promptUser
+
+
+ // *********************************************************
+ // Process user = remote web site....
+ // *********************************************************
+
+ private void remoteUser(HttpServletRequest req,
+                 PrintWriter out, String user, String password, String club, String caller) {
+
+   Connection con = null;                  // init DB objects
+   ResultSet rs = null;
+   PreparedStatement stmt = null;
+
+   Member member = new Member();
+
+   String lname = "";
+   String username = "";
+   String mship = "";
+   String mtype = "";
+   String wc = "";
+   String zipcode = "";
+   String primary = "No";
+   String mNumParm = "No";
+   String mNum = "";
+   String oldemail1 = "";
+   String oldemail2 = "";
+   String email1 = "";
+   String email2 = "";
+   String emailErr = "";
+   String email2Err = "";
+   String logMsg = "";
+   String mapping = "No";
+   String stripZero = "No";
+   String errMsg = "";
+   String eventName = "";
+   String courseName = "";
+     
+   int rsynci = 0;           // values from club5 table for this club
+   int seamless = 0;
+   int primaryif = 0;
+   int mnumi = 0;
+   int mappingi = 0;
+   int stripzeroi = 0;
+   int signUp = 0;
+   int memcount = 0;
+   int activity_id = 0;         // inticator for default activity (0=golf)
+
+   int email_bounced = 0;
+   int email2_bounced = 0;
+   int iCal1 = 0;
+   int iCal2 = 0;
+     
+   boolean rsync = false;
+   boolean changepw = false;
+   boolean stripEnd = false;
+   boolean fatalError = false;
+
+   //
+   // Load the JDBC Driver and connect to DB for this club
+   //
+   try {
+      con = dbConn.Connect(club);          // get a connection
+   }
+   catch (Exception exc) {
+
+      errMsg = "Login.remoteUser - Unable to Connect to club: " +club+ ", User = " +user+ ". Error: " + exc.toString();
+      fatalError = true;
+   }
+
+   //
+   //  If any of above failed, return error message to user and log error in v5 error log table
+   //
+   if (fatalError == true) {
+      
+      out.println(SystemUtils.HeadTitle("Invalid Login"));
+      out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+      out.println("<hr width=\"40%\">");
+      out.println("<p>&nbsp;</p><p>&nbsp;</p>");
+      out.println("<BR><H2>Access Rejected</H2><BR>");
+      out.println("<BR>Sorry, we cannot complete the connection to ForeTees due to an interface error.");
+      out.println("<BR>Exception: " +errMsg+ "<BR>");
+      out.println("<BR>Please contact your club (and provide this information) or try again later.  Thank you.<BR>");
+      out.println("<BR><BR><form><input type=\"button\" value=\"EXIT\" onClick='self.close();'></form>");
+      out.println("</CENTER></BODY></HTML>");
+      out.close();
+      
+      SystemUtils.logError(errMsg);                           // log it
+
+      if (con != null) {
+
+         try {
+
+            con.close();                // close the connection
+
+         }
+         catch (Exception exp) {
+         }
+      }
+      
+      return;
+   }
+   
+
+   //
+   //****************************************************
+   //  Get the I/F options from club5 (set via support) 
+   //****************************************************
+   //
+   try {
+
+      stmt = con.prepareStatement (
+               "SELECT rsync, seamless, zipcode, primaryif, mnum, mapping, stripzero " +
+               "FROM club5");
+
+      stmt.clearParameters();        // clear the parms
+      rs = stmt.executeQuery();
+
+      if (rs.next()) {          // get club options 
+
+         rsynci = rs.getInt(1);
+         seamless = rs.getInt(2);
+         zipcode = rs.getString(3);
+         primaryif = rs.getInt(4);
+         mnumi = rs.getInt(5);
+         mappingi = rs.getInt(6);
+         stripzeroi = rs.getInt(7);
+      }
+      stmt.close();              // close the stmt
+
+   }
+   catch (Exception exc) {
+       
+      invalidRemote("Unable to Connect to Club Database for options. Error: " + exc.getMessage(), req, out, con);
+      return;
+   }
+
+   
+   //
+   //  Set internal 'strip' flag for specific clubs
+   //
+   if (club.equals( "portage" )) {
+
+      stripEnd = true;            // strip trailing end character on username (or mNum)
+   }
+
+
+   //
+   //  Set parms based on club options
+   //
+   if (primaryif == 1) {
+
+      primary = "Yes";
+   }
+
+   if (mnumi == 1) {
+
+      mNumParm = "Yes";
+   }
+
+   if (mappingi == 1) {
+
+      mapping = "Yes";
+   }
+
+   if (stripzeroi == 1) {
+
+      stripZero = "Yes";
+   }
+
+   if (rsynci == 1) {
+
+      rsync = true;
+   }
+
+
+   //
+   //  Strip end char off user if required
+   //
+   if (stripEnd == true) {
+     
+      if (!user.endsWith( "0" ) && !user.endsWith( "1" ) && !user.endsWith( "2" ) && !user.endsWith( "3" ) &&
+          !user.endsWith( "4" ) && !user.endsWith( "5" ) && !user.endsWith( "6" ) && !user.endsWith( "7" ) &&
+          !user.endsWith( "8" ) && !user.endsWith( "9" )) {
+
+         user = stripA2( user );        // remove trailing alpha char
+      }
+   }
+
+      
+   //
+   //  Get club's POS Type for Member_slot processing
+   //
+   String posType = getPOS(con);
+
+   //
+   //  Get TLT indicator
+   //
+   int tlt = (getTLT(con)) ? 1 : 0;
+
+   //
+   //  Strip leading zeros in user requested it (NEW option)
+   //
+   if (stripZero.equalsIgnoreCase( "yes" )) {
+
+      if (username.startsWith( "0" )) {     // if leading zero
+
+         username = remZero2(username);      // strip them
+      }
+   }
+
+   String remote_ip = req.getHeader("x-forwarded-for");
+   if (remote_ip == null || remote_ip.equals("")) remote_ip = req.getRemoteAddr();
+
+   //
+   // use a prepared statement to find username (string) in the DB..
+   //
+   try {
+
+      PreparedStatement pstmt = con.prepareStatement ("SELECT COUNT(*) " +
+                                                      "FROM member2b " +
+                                                      "WHERE inact = 0 AND billable = 1 AND memNum = ? AND password = ?");
+
+      pstmt.clearParameters();         
+      pstmt.setString(1, user);    
+      pstmt.setString(2, password);    
+      rs = pstmt.executeQuery();       
+
+      if (rs.next()) {
+
+         memcount = rs.getInt(1);        // get # of members matching these credentials
+      }
+      pstmt.close();
+
+      
+      String stmtString = "SELECT username, name_last, name_first, name_mi, m_ship, m_type, email, count, wc, message, " +
+                          "memNum, email2, email_bounced, email2_bounced, iCal1, iCal2 " +
+                          "FROM member2b " +
+                          "WHERE inact = 0 AND billable = 1 AND memNum = ? AND password = ?";
+
+      pstmt = con.prepareStatement (stmtString);
+
+      pstmt.clearParameters();         
+      pstmt.setString(1, user);    
+      pstmt.setString(2, password);    
+      rs = pstmt.executeQuery();       
+
+      if (rs.next()) {
+
+         username = rs.getString("username");                           // get username
+
+         String lastName = rs.getString("name_last");                   // get last name
+
+         // Get the member's full name.......
+
+         StringBuffer mem_name = new StringBuffer(rs.getString("name_first"));  // get first name
+
+         String mi = rs.getString("name_mi");                                // middle initial
+         if (!mi.equals( omit )) {
+            mem_name.append(" ");
+            mem_name.append(mi);
+         }
+         mem_name.append(" " + rs.getString("name_last"));                     // last name
+
+         String name = mem_name.toString();                          // convert to one string
+
+         // Get the member's membership type
+
+         mship = rs.getString("m_ship");       // Get mship type
+         mtype = rs.getString("m_type");       // Get member type
+
+         // Get the member's email addresses
+
+         oldemail1 = rs.getString("email");
+         oldemail2 = rs.getString("email2");
+
+         email_bounced = rs.getInt("email_bounced");       
+         email2_bounced = rs.getInt("email2_bounced");
+
+         iCal1 = rs.getInt("iCal1");
+         iCal2 = rs.getInt("iCal2");
+
+         // Get the number of visits and update it...
+
+         int count = rs.getInt("count");         // Get login count
+         count++;                                // bump counter..
+
+         //  Get wc and last message displayed at login
+
+         wc = rs.getString("wc");                            // w/c pref
+         String lastMessage = rs.getString("message");       // message
+         mNum = rs.getString("memNum");                      // member #
+
+         String message = "";                 // init message to display
+         
+         if (password.equals(lastName)) {     // has user changed their pw yet?
+            
+            changepw = true;              // force user to change their pw
+         }
+
+
+         pstmt.close();                   // done with statement
+
+
+         //
+         //  If Medinah CC - do not allow certain members to login
+         //
+         if (club.equals( "medinahcc" )) {
+
+            if (mship.equals( "Social" ) || mship.startsWith( "Social Pro" ) || mtype.startsWith( "FM " ) || mtype.startsWith( "Fam Member" )) {
+
+               errMsg = "Membership Class Not Allowed.";
+
+               invalidRemote(errMsg, req, out, con);
+               return;
+            }
+         }
+
+         //
+         //  Trace good logins - display parms passed for verification purposes
+         //
+         logMsg = "Remote Login Successful: Username=" +user+ ", Primary=" +primary+ ", mNum=" +mNumParm+ ", Mapping=" +mapping+ ", IP=" + remote_ip + " ";
+         SystemUtils.sessionLog(logMsg, username, omit, club, caller, con);            // log it
+
+         recordLogin(user, "", club, remote_ip, 1);
+
+         // Save the connection in the session block for later use.......
+         HttpSession session = req.getSession(true);   // Create a session object
+
+         ConnHolder holder = new ConnHolder(con);      // create a new holder from ConnHolder class
+
+         session.setAttribute("connect", holder);      // save DB connection holder
+         session.setAttribute("sess_id", id);          // set session id for validation ("foretees")
+         session.setAttribute("user", username);       // save username
+         session.setAttribute("name", name);           // save members full name
+         session.setAttribute("club", club);           // save club name
+         session.setAttribute("caller", caller);       // save caller's name
+         session.setAttribute("mship", mship);         // save member's mship type
+         session.setAttribute("mtype", mtype);         // save member's mtype
+         session.setAttribute("wc", wc);               // save member's w/c pref (for _slot)
+         session.setAttribute("posType", posType);     // save club's POS Type
+         session.setAttribute("zipcode", zipcode);     // save club's zipcode
+         session.setAttribute("tlt", tlt);             // timeless tees indicator
+         session.setAttribute("mobile", 0);            // NOT mobile user
+         session.setAttribute("activity_id", activity_id);  // activity indicator
+
+         //
+         // set inactivity timer for this session
+         //  use 10 mins to prevent user from hanging a tee slot too long
+         //
+         session.setMaxInactiveInterval( MEMBER_TIMEOUT );
+
+         //
+         //  If more than one member with this mNum and PW, prompt the user to see who they are
+         //
+         if (memcount > 1) {
+
+            promptPrimary(mNum, password, lastMessage, club, out, con);
+            return;                                                      // reply handled by Member_msg
+           
+         }
+
+         //
+         //  Count the number of users logged in
+         //
+         countLogin("mem", con);
+
+         //
+         //   Determine if auto-refresh to be used
+         //
+         boolean autoRefresh = true;
+
+         if (oldemail1.equals( "" ) && (rsync == false || club.equals("mesaverdecc"))) {    // if email not present and NOT a Roster Sync Club
+
+            autoRefresh = false;                                        // do not refresh
+         }
+
+         if (!emailErr.equals( "" ) || !email2Err.equals( "" ) || iCal1 == -1 || iCal2 == -1 || changepw == true) {
+
+            autoRefresh = false;
+         }
+
+
+         //
+         //  Output the response and route to system
+         //
+         out.println("<HTML><HEAD><Title>Member Login Page</Title>");
+
+         if (autoRefresh == true) {
+
+            out.println("<meta http-equiv=\"Refresh\" content=\"1; url=/" + rev + "/member_welcome.htm\">");
+         }
+         out.println("</HEAD>");
+         out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+         out.println("<hr width=\"40%\">");
+         out.println("<BR><H2>Member Access Accepted</H2><BR>");
+         out.println("<table border=\"2\" bgcolor=\"#F5F5DC\" cellpadding=\"6\"><tr><td align=\"center\">");
+
+         out.println("<font size=\"3\">");
+         out.println("<BR>Welcome <b>" + name );
+
+         out.println("</b><BR><BR>");
+         out.println("Please note that this session will terminate if inactive for more than " + (MEMBER_TIMEOUT / 60) + " minutes.<BR><BR>");
+         out.println("<br><br>");
+
+
+         if (rsync == false || club.equals("mesaverdecc")) {       // if not a roster sync club
+
+            if (!emailErr.equals( "" ) || !email2Err.equals( "" )) {   // problem with email address?
+
+                if (!emailErr.equals( "" )) {   // problem with email1 address?
+
+                    out.println("<b>Warning:</b>  Your email address (" +oldemail1+ ") is invalid.");
+                    out.println("<BR>" +emailErr);
+
+                } else {
+
+                    out.println("<b>Warning:</b>  Your email address (" +oldemail2+ ") is invalid.");
+                    out.println("<BR>" +email2Err);
+                }
+
+                out.println("<BR><BR>To correct this, please change it below.");
+
+            } else if (oldemail1.equals( "" )) {
+
+                out.println("<b>Notice:</b> In order to receive email notifications and to stay informed,");
+                out.print("<br>you must maintain a current, working email address.");
+
+            }
+
+            out.println("<br><br>");
+
+            if (autoRefresh == false) {
+
+               if (oldemail1.equals( "" )) {
+
+                   out.println("Please add at least one valid email address below.");
+
+               } else if (iCal1 == -1 || iCal2 == -1) {
+
+                   out.println(iCalNotice);
+
+               } else {
+
+                   out.println("Please verify and/or change the email address(es) below.");
+
+               }
+
+               out.print("&nbsp;&nbsp;");
+               out.print("Thank you!");
+               out.print("<br><br>");
+
+               out.println("<form method=\"get\" action=\"/" +rev+ "/servlet/Login\">");
+               out.println("<input type=\"hidden\" name=\"message\" value=\"" +message+ "\">");
+
+               out.println("<b>Email Address 1:</b>&nbsp;&nbsp;");
+               out.println("<input type=\"text\" name=\"email\" value=\"" +oldemail1+ "\" size=\"40\" maxlength=\"50\">");
+
+               out.println("<br>&nbsp;&nbsp;&nbsp;Receive <a href=\"/"+rev+"/member_help_icalendar.htm\" target=_memberHelp>iCal attachments</a> at this email address? ");
+               out.println("<select size=\"1\" name=\"iCal1\">");
+                out.println("<option value=1" + ((iCal1 == 1) ? " selected" : "") + ">Yes</option>");
+                out.println("<option value=0" + ((iCal1 != 1) ? " selected" : "") + ">No</option>");
+               out.println("</select>");
+
+               out.println("<br><br>");
+
+               out.println("<b>Email Address 2:</b>&nbsp;&nbsp;");
+               out.println("<input type=\"text\" name=\"email2\" value=\"" +oldemail2+ "\" size=\"40\" maxlength=\"50\">");
+
+               out.println("<br>&nbsp;&nbsp;&nbsp;Receive <a href=\"/"+rev+"/member_help_icalendar.htm\" target=_memberHelp>iCal attachments</a> at this email address? ");
+               out.println("<select size=\"1\" name=\"iCal2\">");
+                out.println("<option value=1" + ((iCal2 == 1) ? " selected" : "") + ">Yes</option>");
+                out.println("<option value=0" + ((iCal2 != 1) ? " selected" : "") + ">No</option>");
+               out.println("</select>");
+
+               out.println("<br><br>");
+               
+               if (changepw == true) {
+                  
+                  out.println("<b>NOTICE:</b> For security purposes we strongly suggest you change your password.<br>");
+                  out.println("To do this, click on the <b>Settings</b> Tab once in ForeTees.");
+                  out.println("<br><br>");
+               }
+
+            } else {
+
+               if (message.equals( "" )) {      // if no message to display
+                  out.println("<form method=\"get\" action=\"/" + rev + "/member_welcome.htm\">");
+               } else {
+                  out.println("<form method=\"get\" action=\"/" +rev+ "/servlet/Member_msg\">");
+               }
+             
+            }
+
+         } else {    // Roster Sync club
+
+            if (iCal1 == -1 || iCal2 == -1) {
+
+               out.println("<form method=\"get\" action=\"/" +rev+ "/servlet/Login\">");
+               out.println("<input type=\"hidden\" name=\"message\" value=\"" +message+ "\">");
+
+                out.println(iCalNotice);
+
+               out.println("<b>Email Address 1:</b>&nbsp;&nbsp;"+oldemail1);
+               out.println("<input type=\"hidden\" name=\"email\" value=\"" +oldemail1+ "\" size=\"40\" maxlength=\"50\">");
+
+               out.println("<br>&nbsp;&nbsp;&nbsp;Receive <a href=\"/"+rev+"/member_help_icalendar.htm\" target=_memberHelp>iCal attachments</a> at this email address? ");
+               out.println("<select size=\"1\" name=\"iCal1\">");
+                out.println("<option value=1" + ((iCal1 == 1) ? " selected" : "") + ">Yes</option>");
+                out.println("<option value=0" + ((iCal1 != 1) ? " selected" : "") + ">No</option>");
+               out.println("</select>");
+
+               out.println("<br><br>");
+
+               out.println("<b>Email Address 2:</b>&nbsp;&nbsp;"+oldemail2);
+               out.println("<input type=\"hidden\" name=\"email2\" value=\"" +oldemail2+ "\" size=\"40\" maxlength=\"50\">");
+
+               out.println("<br>&nbsp;&nbsp;&nbsp;Receive <a href=\"/"+rev+"/member_help_icalendar.htm\" target=_memberHelp>iCal attachments</a> at this email address? ");
+               out.println("<select size=\"1\" name=\"iCal2\">");
+                out.println("<option value=1" + ((iCal2 == 1) ? " selected" : "") + ">Yes</option>");
+                out.println("<option value=0" + ((iCal2 != 1) ? " selected" : "") + ">No</option>");
+               out.println("</select>");
+
+            } else {
+
+              if (message.equals( "" )) {      // if no message to display
+                  out.println("<form method=\"get\" action=\"/" + rev + "/member_welcome.htm\">");
+               } else {
+                  out.println("<form method=\"get\" action=\"/" +rev+ "/servlet/Member_msg\">");
+               }
+            }
+
+         }     // end of IF rsync
+
+         out.println("</font></td></tr></table>");
+         out.println("<br>");
+         out.println("<input type=\"submit\" value=\"Continue\" style=\"text-decoration:underline; background:#8B8970\">");
+         out.println("</input></form></font>");
+         out.println("</CENTER></BODY></HTML>");
+         out.close();
+
+    
+
+      } else {                               // username not found
+
+         //
+         //  Trace all failed login attempts
+         //
+         logMsg = "Remote Login Failed - Invalid User (msg#1) IP=" + remote_ip + " ";
+         SystemUtils.sessionLog(logMsg, username, omit, club, caller, con);            // log it twice to get all info
+
+         //
+         //  Trace additional information and output error reply
+         //
+         logMsg = "Invalid Username Received. User Id " +username+ " does not exist in the ForeTees roster.";
+         invalidRemote(logMsg, req, out, con);
+
+         recordLogin(user, "", club, remote_ip, 0);
+
+         if (con != null) {
+            try {
+               con.close();       // Close the db connection........
+            }
+            catch (SQLException ignored) {
+            }
+         }
+
+      }        // end of if username found
+   }
+   catch (SQLException exc) {
+
+      errMsg = "DB Error. Exception: " +exc.getMessage();
+
+      invalidRemote(errMsg, req, out, con);
+      recordLogin(user, "", club, remote_ip, 0);
+      return;
+   }
+
+ }
+
+ 
+ // *********************************************************
+ // Process prompt user request - prompt for member to process
+ // *********************************************************
+
+ private void promptPrimary(String mNum, String password, String message, String club, PrintWriter out, Connection con) {
+
+
+   PreparedStatement pstmt = null;
+   ResultSet rs = null;
+
+   boolean addit = false;
+     
+   String user = "";
+   String fname = "";
+   String mi = "";
+   String lname = "";
+   String mtype = "";
+     
+  
+   //
+   // find all members with this member# & PW to display a selection list
+   //
+   try {
+
+      //
+      //  Output page to prompt for real user
+      //
+      out.println("<HTML><HEAD><Title>Member Login Page</Title>");
+      out.println("</HEAD>");
+      out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+      out.println("<hr width=\"40%\">");
+      out.println("<p>&nbsp;</p>");
+      out.println("<BR><H2>Member Identification Required</H2><BR>");
+      out.println("<table border=\"2\" bgcolor=\"#F5F5DC\" cellpadding=\"6\"><tr><td align=\"center\">");
+
+      out.println("<BR>Welcome to ForeTees");
+      out.println("<font size=\"2\">");
+      out.println("<BR><BR>");
+      out.println("Please select your name from the following list:<BR><BR>");
+
+      pstmt = con.prepareStatement (
+         "SELECT username, name_last, name_first, name_mi, m_type " +
+         "FROM member2b WHERE memNum = ? AND password = ? AND inact = 0 AND billable = 1");
+
+      pstmt.clearParameters();        
+      pstmt.setString(1, mNum);        
+      pstmt.setString(2, password);        
+      rs = pstmt.executeQuery();     
+
+      while (rs.next()) {
+
+         user = rs.getString(1);                         
+         lname = rs.getString(2);
+         fname = rs.getString(3);
+         mi = rs.getString(4);
+         mtype = rs.getString(5);
+
+         addit = true;                // default to ok (use boolean in case we add more checks here)
+
+         //
+         // weed out juniors if Cherry Hills CC
+         //
+         if (club.equals( "cherryhills" ) && mtype.startsWith( "Junior" )) {  
+
+            addit = false;                             // do not add this member
+
+         } else {
+
+            if (club.equals( "congressional" )) {       // weed out Dependents if Congressional
+
+               if (mtype.startsWith( "Dependent" ) || mtype.endsWith( "Dependent" )) {   // if a dependent
+
+                  addit = false;                             // do not add this member
+               }
+            }
+         }
+
+         if (addit == true) {
+
+            //
+            //  Build the name
+            //
+            StringBuffer mem_name = new StringBuffer(fname);  // get first name
+
+            if (!mi.equals( "" )) {
+               mem_name.append(" " + mi);             // add mi
+            }
+            mem_name.append(" " + lname);             // add last name
+
+            String name = mem_name.toString();        // convert to one string
+            String url_name = name;
+
+            // add for brookings cc, but any clubs with a trailing # in their last name will need this
+            if (name.endsWith("#")) {
+
+                url_name = name.substring(0, name.length() - 1) + "%23";
+            }
+
+            //
+            //   Output a link with the member's name
+            //
+            out.println("<a href=\"/" +rev+ "/servlet/Member_msg?user=" +user+ "&name=" +url_name+ "&message=" +message+ "\" style=\"color:#336633\" alt=\"" +name+ "\">");
+            out.println(name + "</a><br>");
+         }
+      }
+
+      pstmt.close();
+
+      out.println("<BR><b>IMPORTANT NOTICE:</b> To skip this step in the future, click on the<BR>Settings tab once in ForeTees and change your password.");
+      out.println("</font>");
+      out.println("</td></tr></table><br>");
+      out.println("</CENTER></BODY></HTML>");
+      out.close();
+
+   }
+   catch (SQLException exc) {
+   }
+     
+ }
+
+
+ //
+ //  Reject the login attempt
+ //
+ private void invalidLogin(String errMsg, HttpServletRequest req, PrintWriter out, Connection con, int mobile) {
+
+  
+   String user = "";
+   String club = "";
+   String pw = "";
+   String caller = "";
+     
+   //
+   //  Get club name and user name provided
+   //
+   if (req.getParameter("clubname") != null) {
+
+      club = req.getParameter("clubname");    
+   }
+   if (req.getParameter("user_name") != null) {
+
+      user = req.getParameter("user_name");
+   }
+   if (req.getParameter("password") != null) {
+
+      pw = req.getParameter("password");
+   }
+   if (req.getParameter("caller") != null) {
+
+      caller = req.getParameter("caller");
+   }
+
+   //
+   //  Trace all login attempts
+   //
+   if (con != null) {
+     
+      String logMsg = "Login Failed - Invalid Login - Error: " +errMsg;
+      SystemUtils.sessionLog(logMsg, user, pw, club, omit, con);                   // log it
+   }
+
+    out.println(SystemUtils.HeadTitle("Invalid Login"));
+    out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+    out.println("<hr width=\"40%\">");
+    out.println("<p>&nbsp;</p><p>&nbsp;</p>");
+    out.println("<BR><H2>Login Rejected</H2><BR>");
+    out.println("<BR>The login information you submitted was either missing or invalid.");
+    out.println("<BR><BR>Error: " +errMsg);
+    out.println("<BR><BR><BR>Please <A HREF=\"web.foretees.com/v5/servlet/Login2?clubname=" +club+ "&caller=" +caller+ "\">try again</A>.");
+    out.println("</CENTER></BODY></HTML>");
+    out.close();
+   
+ }
+
+ // *********************************************************
+ // Invalid call from remote user - reject
+ // *********************************************************
+
+ private void invalidRemote(String errMsg, HttpServletRequest req, PrintWriter out, Connection con) {
+
+
+   String user = "";
+   String club = "";
+   String pw = "";
+   String caller = "";
+   String primary = "";
+   String mNum = "";
+   String mapping = "";
+   String strip = "";
+
+   //
+   //  Get club name and user name provided
+   //
+   if (req.getParameter("clubname") != null) {
+
+      club = req.getParameter("clubname");
+   }
+   if (req.getParameter("user_name") != null) {
+
+      user = req.getParameter("user_name");
+   }
+
+   if (req.getParameter("password") != null) {
+
+      pw = req.getParameter("password");
+   }
+
+   if (req.getParameter("caller") != null) {
+
+      caller = req.getParameter("caller");
+   }
+
+   if (req.getParameter("primary") != null) {
+
+      primary = req.getParameter("primary");
+   }
+
+   if (req.getParameter("mnum") != null) {
+
+      mNum = req.getParameter("mnum");
+   }
+
+   if (req.getParameter("mapping") != null) {
+
+      mapping = req.getParameter("mapping");      // get mapping parm - used to map member ids
+   }
+     
+   if (req.getParameter("stripzero") != null) {
+
+      strip = req.getParameter("stripzero");   
+   }
+
+   //
+   //  Trace all login attempts
+   //
+   if (con != null) {
+
+      String logMsg = "Login Failed - Invalid Remote - Error: " +errMsg;
+      logMsg = logMsg + " Primary=" +primary+ ", mNum=" +mNum+ ", mapping=" +mapping+ ", stripzero=" +strip+ ", ";
+      SystemUtils.sessionLog(logMsg, user, pw, club, caller, con);                   // log it
+        
+      try {
+
+         con.close();                // close the connection
+
+      }
+      catch (Exception exp) {
+      }
+
+   }
+
+
+   out.println(SystemUtils.HeadTitle("Invalid Login"));
+   out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+   out.println("<hr width=\"40%\">");
+   out.println("<p>&nbsp;</p><p>&nbsp;</p>");
+   out.println("<BR><H2>Access Rejected</H2><BR>");
+   out.println("<BR>Some information provided was either missing or invalid.");
+   out.println("<BR><BR>Error: " +errMsg);
+   out.println("<BR><BR>Contact your Web Site Administrator or Web Site Provider for assistance (provide this message).");
+   out.println("<BR><BR><form><input type=\"button\" value=\"EXIT\" onClick='self.close();'></form>");
+   out.println("</CENTER></BODY></HTML>");
+   out.close();
+
+ }
+
+
+ // *********************************************************
+ // Record the detils of this login for record keeping
+ // *********************************************************
+ private void recordLogin(String user, String pass, String club, String ip, int success) {
+
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    
+    try {
+        
+        con = dbConn.Connect(rev);
+        pstmt = con.prepareStatement ("" +
+                "INSERT INTO logins (club, username, password, ip, node, success, datetime) " +
+                "VALUES (?, ?, ?, ?, ?, ?, now());");
+        pstmt.clearParameters();
+        pstmt.setString(1, club);
+        pstmt.setString(2, user);
+        pstmt.setString(3, pass);
+        pstmt.setString(4, ip);
+        pstmt.setInt(5, Common_Server.SERVER_ID);
+        pstmt.setInt(6, success);
+           
+        pstmt.executeUpdate();
+        
+    } catch (Exception e) {
+        
+        SystemUtils.logError(e.getMessage());
+        
+    } finally {
+        
+        if (pstmt != null) {
+           try {
+              pstmt.close();
+           } catch (SQLException ignored) {}
+        }
+        
+        if (con != null) {
+           try {
+              con.close();
+           } catch (SQLException ignored) {}
+        }
+    }
+    
+    pstmt = null;
+    con = null;
+    
+ }
+ 
+ 
+ // *********************************************************
+ //  Remove leading zeros in member id string
+ // *********************************************************
+
+ private final static String remZero( String s ) {
+
+      int memid = 0;
+      String newS = "";
+
+      //
+      //  convert string to int to drop leading zeros
+      //
+      try {
+         memid = Integer.parseInt(s);
+      }
+      catch (NumberFormatException e) {
+         // ignore error
+      }
+
+      newS = String.valueOf( memid );      // convert back to string
+
+      return new String (newS);
+
+ } // end remZero
+
+
+ // *********************************************************
+ //  Remove leading zeros in member id string
+ // *********************************************************
+
+ private final static String remZero2( String s ) {
+
+      int i = 0;
+      int count = 0;
+      String s2 = s;
+      char[] ca = s.toCharArray();
+
+      loop1:
+      while (i < ca.length) {
+        
+         char letter = ca[i];
+         if ( letter == '0' ) {        // if leading zero
+            count++;                   // count them           
+         } else {
+            break loop1;               // else exit
+         }
+         i++;
+      }
+        
+      if (count > 0) {
+           
+         char[] ca2 = new char [ca.length - count];      // new char array
+           
+         i = 0;
+         while (count < ca.length) {
+
+            char letter = ca[count];                     // set new string w/o zeros
+            ca2[i] = letter;
+            i++;
+            count++;
+         }           
+         s2 = new String (ca2);
+      }
+      
+      return (s2);
+
+ } // end remZero2
+
+
+ // *********************************************************
+ //  Strip last letter from end of string
+ // *********************************************************
+
+ private final static String stripA2( String s ) {
+
+      char[] ca = s.toCharArray();
+      char[] ca2 = new char [ca.length - 1];
+
+
+      for ( int i=0; i<(ca.length-1); i++ ) {
+         char oldLetter = ca[i];
+         ca2[i] = oldLetter;
+      }
+
+      return new String (ca2);
+
+ } // end stripA2
+
+
+ // *********************************************************
+ // Check if this club was upgraded from V4 to V5
+ // *********************************************************
+
+ private boolean checkUpgrade(Connection con) {
+
+    Statement stmt = null;
+    ResultSet rs = null;
+
+    boolean upgrade = false;
+
+    try {
+       
+        stmt = con.createStatement();        // create a statement
+        rs = stmt.executeQuery("SELECT multi FROM club2");   // does club2 exist in this system ?
+
+        if (rs.next()) upgrade = true;
+
+        stmt.close();
+
+    } catch (Exception ignore) {
+
+    } finally {
+
+        if (rs != null) {
+           try {
+              rs.close();
+           } catch (SQLException ignored) {}
+        }
+        
+        if (stmt != null) {
+           try {
+              stmt.close();
+           } catch (SQLException ignored) {}
+        }
+    }
+
+    return(upgrade);
+ }
+
+
+ // *********************************************************
+ // Connection error received - inform user to try again....
+ // *********************************************************
+
+ private void Connerror(PrintWriter out, Exception exc, Connection con) {
+
+   out.println(SystemUtils.HeadTitle("Connection Error - Login"));
+   out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+   out.println("<hr width=\"40%\">");
+   out.println("<BR><H2>Connection Error</H2><BR>");
+   out.println("<BR>Sorry, we are unable to connect to the system database at this time.<BR>");
+   out.println("<BR>Exception: " + exc.getMessage());
+   out.println("<BR>Please <A HREF=\"javascript:history.back(1)\">try again</A> later.");
+   out.println("</CENTER></BODY></HTML>");
+   out.close();
+
+   if (con != null) {
+      try {
+         con.close();
+      }
+      catch (SQLException ignored) {
+      }
+   }
+ }
+
+ private void Connerror2(PrintWriter out) {
+
+   out.println(SystemUtils.HeadTitle("Connection Error - Login"));
+   out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+   out.println("<hr width=\"40%\">");
+   out.println("<BR><H2>Connection Error2</H2><BR>");
+   out.println("<BR>Sorry, we are unable to connect to the system database at this time.<BR>");
+   out.println("<BR>Please <A HREF=\"javascript:history.back(1)\">try again</A> later.");
+   out.println("</CENTER></BODY></HTML>");
+   out.close();
+ }
+
+ 
+ private void rejectCaller(PrintWriter out) {
+ 
+      out.println(SystemUtils.HeadTitle("Invalid Request"));
+      out.println("<BODY><CENTER><img src=\"/" +rev+ "/images/foretees.gif\"><BR>");
+      out.println("<hr width=\"40%\">");
+      out.println("<p>&nbsp;</p><p>&nbsp;</p>");
+      out.println("<BR><H2>Invalid Access</H2><BR>");
+      out.println("<BR>Sorry, some required information is missing.");
+      out.println("<BR>Please return to your club's website and try again.  Thank you.<BR>");
+      out.println("<BR><BR>");
+      out.println("<form><input type=\"button\" value=\"Close\" style=\"text-decoration:underline; background:#8B8970\" onClick='self.close();'></form>");
+      out.println("</CENTER></BODY></HTML>");
+      out.close();      
+ }
+ 
+ 
+ // ***************************************************************
+ //  getLottery
+ //
+ //      Get the club's Lottery Support Indicator.
+ //
+ // ***************************************************************
+
+ private String getLottery(Connection con) {
+
+    Statement stmt = null;
+    ResultSet rs = null;
+
+    int lottery = 0;
+    String lotteryS = "0";
+
+    try {
+        
+        stmt = con.createStatement();        // create a statement
+        rs = stmt.executeQuery("SELECT lottery FROM club5");          // get lottery flag
+
+        if (rs.next()) lottery = rs.getInt("lottery");
+        
+        stmt.close();
+
+    } catch (Exception ignore) {
+
+    } finally {
+
+        if (rs != null) {
+           try {
+              rs.close();
+           } catch (SQLException ignored) {}
+        }
+        
+        if (stmt != null) {
+           try {
+              stmt.close();
+           } catch (SQLException ignored) {}
+        }
+    }
+     
+    if (lottery > 0) {
+
+        lotteryS = "1";        // return 'lottery supported' indicator
+    }
+
+    return(lotteryS);
+ }
+
+
+ // ***************************************************************
+ //  getPOS
+ //
+ //      Get the club's POS Type.
+ //
+ // ***************************************************************
+
+ private String getPOS(Connection con) {
+
+    Statement stmt = null;
+    ResultSet rs = null;
+
+    String posType = "";
+
+    try {
+        
+        stmt = con.createStatement();        // create a statement
+        rs = stmt.executeQuery("SELECT posType FROM club5");          // get pos type
+
+        if (rs.next()) posType = rs.getString("posType");
+        
+        stmt.close();
+
+    } catch (Exception ignore) {
+       
+    } finally {
+
+        if (rs != null) {
+           try {
+              rs.close();
+           } catch (SQLException ignored) {}
+        }
+        
+        if (stmt != null) {
+           try {
+              stmt.close();
+           } catch (SQLException ignored) {}
+        }
+    }
+
+    return(posType);
+ }
+
+
+ // ***************************************************************
+ //  getTLT(Connection con)
+ //
+ //      Get the club's time-less tees support indicator.
+ //
+ // ***************************************************************
+
+ private boolean getTLT(Connection con) {
+
+    Statement stmt = null;
+    ResultSet rs = null;
+    int tlt = 0;
+
+    try {
+
+        stmt = con.createStatement();
+        rs = stmt.executeQuery("SELECT no_reservations FROM club5");
+        if (rs.next()) tlt = rs.getInt(1);
+        stmt.close();
+        
+    } catch (Exception ignore) {
+        
+    } finally {
+
+        if (rs != null) {
+           try {
+              rs.close();
+           } catch (SQLException ignored) {}
+        }
+        
+        if (stmt != null) {
+           try {
+              stmt.close();
+           } catch (SQLException ignored) {}
+        }
+    }
+    
+    return ((tlt == 1) ? true : false);
+ }
+ 
+ // ***************************************************************
+ //  countLogin
+ //
+ //      Track the number of users logged in for each club.
+ //
+ // ***************************************************************
+
+ public static void countLogin(String type, Connection con) {
+
+
+    //
+    //  Keep internal counts in SystemUtils - these will reset each time tomcat is bounced
+    //
+    if (type.equals( "pro" ) || type.equals( "mem" )) {      // skip admin and hotel users
+
+        if (SystemUtils.startDate.equals( "" )) {             // if first login since bounce
+
+            SystemUtils.startDate = String.valueOf( new java.util.Date() );   // set new date & time                  
+        }
+
+        //
+        //  Get the hour of day (24 hr clock)
+        //
+        Calendar cal = new GregorianCalendar();       // get todays date
+
+        int hour = cal.get(Calendar.HOUR_OF_DAY);     // 24 hr clock (0 - 23)
+
+        //
+        //  Increment the counter for this hour
+        //
+        if (type.equals( "pro" )) {   
+
+            SystemUtils.loginCountsPro[hour]++;
+        }
+
+        if (type.equals( "mem" )) {
+
+            SystemUtils.loginCountsMem[hour]++;
+        }
+    }
+     
+ }
+
+
+
+}
